@@ -1,7 +1,9 @@
 const addProduct = () => {
   return (
     <>
-      <h1>Add Product</h1>
+      <div>
+        <h1>Ini adalah halaman Add Product</h1>
+      </div>
     </>
   );
 };
