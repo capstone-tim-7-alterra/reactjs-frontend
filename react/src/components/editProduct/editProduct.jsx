@@ -1,7 +1,7 @@
 const editProduct = () => {
   return (
     <>
-      <h1>Edit Product</h1>
+      <h1>Ini adalah halaman Edit Product</h1>
     </>
   );
 };
