@@ -4,6 +4,9 @@ const addProduct = () => {
       <div>
         <h1>Ini adalah halaman Add Product</h1>
       </div>
+      <div>
+        <h1>Ini adalah halaman Add Product</h1>
+      </div>
     </>
   );
 };
