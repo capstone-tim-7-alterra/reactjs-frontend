@@ -1,11 +1,11 @@
-import HomePage from './pages/HomePage'
+import Routing from './Routing'
 import './App.css'
 
 
 const App = () => {
   return (
     <>
-      <HomePage />
+      <Routing />
     </>
   )
 }
