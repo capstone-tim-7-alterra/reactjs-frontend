@@ -4,7 +4,7 @@ export default function Breadcrumbs() {
             <ul>
                 <li><a href="#">Dashboard</a></li> 
                 <li><a href="#">Manage Product</a></li> 
-                <li>Edit Product</li>
+                <li>Add Product</li>
             </ul>
         </div>
     );
