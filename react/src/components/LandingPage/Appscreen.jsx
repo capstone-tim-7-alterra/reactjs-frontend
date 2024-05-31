@@ -7,7 +7,8 @@ import hp5 from "../../assets/hp5.png";
 import awan1 from "../../assets/awan1.png";
 export default function Appscreen() {
   return (
-    <section className="container flex justify-between items-start mx-auto mt-44 text-left">
+    <section className="container mx-auto mt-44 text-left">
+      <div className=" flex justify-between items-start ">
       <div>
         <h1 className="text-4xl font-bold text-primary-0 text-left">
           Apps Screens -{" "}
@@ -23,10 +24,13 @@ export default function Appscreen() {
       <button className="bg-base-150 hover:bg-base-150 text-white font-normal px-4 h-[40px] !pt-0 rounded-xl">
         Download Now →
       </button>
-      <div className="relative w-full bg-base-170">
+      </div>
+{/* 
+      <div className="relative flex justify-center w-full bg-base-170">
         <img src={hp1} className="absolute w-[30%] translate-x-[-90%] translate-y-[80%]"/>
-        <img src={hp2} className="absolute w-[30%] translate-x-[-49%] translate-y-[30%] -rotate-12"/>
-        </div>
+        <img src={hp2} className="absolute w-[30%] translate-x-[-49%] translate-y-[30%]"/>
+        <img src={hp3} className="absolute w-[30%] translate-x-[10%] translate-y-[10%] -rotate-20"/>
+        </div> */}
     </section>
   );
 }
