@@ -14,45 +14,45 @@ export default function DashboardArticles() {
     return (
         <>
             <div className="flex flex-row font-poppins">
-                <aside className="xl:w-[300px] relative z-50 shadow bg-white xl:h-[1890px]">
-                    <header className="xl:mx-[47px]  justify-start items-center gap-3 inline-flex xl:mt-[22px] xl:mb-[44px]">
+                <aside className="sidebar">
+                    <header className="sidebar-heading">
                         <img className="xl:w-[85px]" src={ Logo } />
                         <h1 className="text-red-700 text-xl font-semibold leading-[23px]">Kreasi<br/>Nusantara</h1>
                     </header>
 
-                    <nav className="flex-col justify-start items-start gap-[13px] inline-flex">
-                        <div className=" xl:w-[300px]">
-                            <div className="inline-flex font-semibold text-sm space-x-5 items-center mx-[45px] my-[17px]">
+                    <nav className="sidebar-nav">
+                        <div className="xl:w-[300px]">
+                            <div className="sidebar-list]">
                                 <img className="xl:w-6" src={Category} alt="" />
                                 <h2 className="text-zinc-600">Dashboard</h2>
                             </div>
                         </div>
-                        <div className=" xl:w-[300px]">
-                            <div className="inline-flex font-semibold text-sm space-x-5 items-center mx-[45px] my-[17px]">
+                        <div className="xl:w-[300px]">
+                            <div className="sidebar-list">
                                 <img className="xl:w-6" src={Event} alt="" />
                                 <h2 className="text-zinc-600">Manage Event</h2>
                             </div>
                         </div>
-                        <div className=" xl:w-[300px]">
-                            <div className="inline-flex font-semibold text-sm space-x-5 items-center mx-[45px] my-[17px] ">
+                        <div className="xl:w-[300px]">
+                            <div className="sidebar-list">
                                 <img className="xl:w-6" src={Product} alt="" />
                                 <h2 className="text-zinc-600">Manage Product</h2>
                             </div>
                         </div>
                         <div className="bg-[#980019] xl:w-[300px] px-[45px] py-[17px]">
-                            <div className=" inline-flex font-semibold text-sm space-x-5 items-center px-[30px] ">
+                            <div className=" inline-flex font-semibold text-sm space-x-5 items-center px-[30px]">
                                 <img className="xl:w-6" src={Article} alt="" />
                                 <h2 className="text-white leading-[18px]">Manage Article</h2>
                             </div>
                         </div>
                         <div className=" xl:w-[300px]">
-                            <div className="inline-flex font-semibold text-sm space-x-5 items-center mx-[45px] my-[17px] ">
+                            <div className="sidebar-list">
                                 <img className="xl:w-6" src={Admin} alt="" />
                                 <h2 className="text-zinc-600">Manage Admin</h2>
                             </div>
                         </div>
-                        <div className=" xl:w-[300px]">
-                            <div className="inline-flex font-semibold text-sm space-x-5 items-center mx-[45px] my-[17px] ">
+                        <div className="xl:w-[300px]">
+                            <div className="sidebar-list">
                                 <img className="xl:w-6" src={Logout} alt="" />
                                 <h2 className="text-zinc-600">Log Out</h2>
                             </div>
@@ -72,29 +72,29 @@ export default function DashboardArticles() {
                         </div>
 
                         <div className="inline-flex space-x-[27px]">
-                            <div className="xl:py-[30px] xl:px-[43px] inline-flex shadow rounded-xl space-x-[20px]">
-                                <img className="xl:w-[50px]" src={Buy} alt="Sold" />
+                            <div className="dashboard-summary-primary">
+                                <img className="xl:w-[50px]" src={Buy} alt="Product-Sold" />
                                 <div className="flex-col">
                                     <h3 className="font-bold text-sm text-[#9593A0] capitalize">Product Sold</h3>
                                     <p className="text-xl font-bold leading-[30px]">12</p>
                                 </div>
                             </div>
-                            <div className="xl:py-[30px] xl:px-[30px] inline-flex shadow rounded-xl space-x-[20px]">
-                                <img className="xl:w-[50px]" src={Profit} alt="Sold" />
+                            <div className="dashboard-summary-secondary">
+                                <img className="xl:w-[50px]" src={Profit} alt="Product-Profit" />
                                 <div className="flex-col">
                                     <h3 className="font-bold text-sm text-[#9593A0] capitalize">Product Profit</h3>
                                     <p className="text-xl font-bold leading-[30px]">IDR 589.000</p>
                                 </div>
                             </div>
-                            <div className="xl:py-[30px] xl:px-[43px] inline-flex shadow rounded-xl space-x-[20px]">
-                                <img className="xl:w-[50px]" src={Buy} alt="Sold" />
+                            <div className="dashboard-summary-primary">
+                                <img className="xl:w-[50px]" src={Buy} alt="Ticket-Sold" />
                                 <div className="flex-col">
                                     <h3 className="font-bold text-sm text-[#9593A0] capitalize">Ticket Sold</h3>
                                     <p className="text-xl font-bold leading-[30px]">320</p>
                                 </div>
                             </div>
-                            <div className="xl:py-[30px] xl:px-[30px] inline-flex shadow rounded-xl space-x-[20px]">
-                                <img className="xl:w-[50px]" src={Profit} alt="Sold" />
+                            <div className="dashboard-summary-secondary">
+                                <img className="xl:w-[50px]" src={Profit} alt="Ticket-Profit" />
                                 <div className="flex-col">
                                     <h3 className="font-bold text-sm text-[#9593A0] capitalize">Event Ticket Profit</h3>
                                     <p className="text-xl font-bold leading-[30px]">IDR 712.000</p>
@@ -114,7 +114,7 @@ export default function DashboardArticles() {
                         </div>
 
                         <div className="mx-auto grid grid-cols-1 gap-x-6 gap-y-6 lg:grid-cols-3">
-                            <article className="xl:p-4 flex-col space-y-3 rounded-xl shadow">
+                            <article className="article-list">
                                 <img className="rounded-xl w-full xl:h-178px" src="../../../public/news/hero-article.jpg" alt="article-hero"/>
                                 <div>
                                     <h3 className="text-black text-xs font-semibold leading-normal tracking-wide">
@@ -130,7 +130,7 @@ export default function DashboardArticles() {
                                 </div>
                             </article>
 
-                            <article className="xl:p-4 flex-col space-y-3 rounded-xl shadow">
+                            <article className="article-list">
                                 <img className="rounded-xl w-full xl:h-178px" src="../../../public/news/hero-article.jpg" alt="article-hero"/>
                                 <div>
                                     <h3 className="text-black text-xs font-semibold leading-normal tracking-wide">
@@ -146,7 +146,7 @@ export default function DashboardArticles() {
                                 </div>
                             </article>
 
-                            <article className="xl:p-4 flex-col space-y-3 rounded-xl shadow">
+                            <article className="article-list">
                                 <img className="rounded-xl w-full xl:h-178px" src="../../../public/news/hero-article.jpg" alt="article-hero"/>
                                 <div>
                                     <h3 className="text-black text-xs font-semibold leading-normal tracking-wide">
@@ -162,7 +162,7 @@ export default function DashboardArticles() {
                                 </div>
                             </article>
 
-                            <article className="xl:p-4 flex-col space-y-3 rounded-xl shadow">
+                            <article className="article-list">
                                 <img className="rounded-xl w-full xl:h-178px" src="../../../public/news/hero-article.jpg" alt="article-hero"/>
                                 <div>
                                     <h3 className="text-black text-xs font-semibold leading-normal tracking-wide">
@@ -178,7 +178,7 @@ export default function DashboardArticles() {
                                 </div>
                             </article>
 
-                            <article className="xl:p-4 flex-col space-y-3 rounded-xl shadow">
+                            <article className="article-list">
                                 <img className="rounded-xl w-full xl:h-178px" src="../../../public/news/hero-article.jpg" alt="article-hero"/>
                                 <div>
                                     <h3 className="text-black text-xs font-semibold leading-normal tracking-wide">
@@ -194,7 +194,7 @@ export default function DashboardArticles() {
                                 </div>
                             </article>
 
-                            <article className="xl:p-4 flex-col space-y-3 rounded-xl shadow">
+                            <article className="article-list">
                                 <img className="rounded-xl w-full xl:h-178px" src="../../../public/news/hero-article.jpg" alt="article-hero"/>
                                 <div>
                                     <h3 className="text-black text-xs font-semibold leading-normal tracking-wide">
@@ -210,7 +210,7 @@ export default function DashboardArticles() {
                                 </div>
                             </article>
 
-                            <article className="xl:p-4 flex-col space-y-3 rounded-xl shadow">
+                            <article className="article-list">
                                 <img className="rounded-xl w-full xl:h-178px" src="../../../public/news/hero-article.jpg" alt="article-hero"/>
                                 <div>
                                     <h3 className="text-black text-xs font-semibold leading-normal tracking-wide">
@@ -226,7 +226,7 @@ export default function DashboardArticles() {
                                 </div>
                             </article>
 
-                            <article className="xl:p-4 flex-col space-y-3 rounded-xl shadow">
+                            <article className="article-list">
                                 <img className="rounded-xl w-full xl:h-178px" src="../../../public/news/hero-article.jpg" alt="article-hero"/>
                                 <div>
                                     <h3 className="text-black text-xs font-semibold leading-normal tracking-wide">
