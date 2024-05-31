@@ -22,7 +22,7 @@ export default function DashboardArticles() {
 
                     <nav className="sidebar-nav">
                         <div className="xl:w-[300px]">
-                            <div className="sidebar-list]">
+                            <div className="sidebar-list">
                                 <img className="xl:w-6" src={Category} alt="" />
                                 <h2 className="text-zinc-600">Dashboard</h2>
                             </div>
