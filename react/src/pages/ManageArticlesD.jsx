@@ -7,18 +7,20 @@ import Article  from "../../assets/icons/Globe.svg"
 import Admin  from "../../assets/icons/GearSix.svg"
 import Logout  from "../../assets/icons/Logout.svg"
 import Buy from "../../assets/icons/GroupProduct.svg"
+import Profit from "../../assets/icons/GroupProfit.svg"
 
 
 export default function DashboardArticles() {
     return (
         <>
             <div className="flex flex-row font-poppins">
-                <div className="xl:w-[300px] relative z-50 shadow bg-white xl:h-[1890px]">
-                    <div className="xl:mx-[47px]  justify-start items-center gap-3 inline-flex xl:mt-[22px] xl:mb-[44px]">
+                <aside className="xl:w-[300px] relative z-50 shadow bg-white xl:h-[1890px]">
+                    <header className="xl:mx-[47px]  justify-start items-center gap-3 inline-flex xl:mt-[22px] xl:mb-[44px]">
                         <img className="xl:w-[85px]" src={ Logo } />
                         <h1 className="text-red-700 text-xl font-semibold leading-[23px]">Kreasi<br/>Nusantara</h1>
-                    </div>
-                    <div className="flex-col justify-start items-start gap-[13px] inline-flex">
+                    </header>
+
+                    <nav className="flex-col justify-start items-start gap-[13px] inline-flex">
                         <div className=" xl:w-[300px]">
                             <div className="inline-flex font-semibold text-sm space-x-5 items-center mx-[45px] my-[17px]">
                                 <img className="xl:w-6" src={Category} alt="" />
@@ -55,19 +57,19 @@ export default function DashboardArticles() {
                                 <h2 className="text-zinc-600">Log Out</h2>
                             </div>
                         </div>
-                    </div>
-                </div>
-                <div className="xl:w-[1140px] relative z-30 grow">
+                    </nav>
+                </aside>
+
+                <main className="xl:w-[1140px] relative z-30 grow">
                     <Navbar pages={ "Manage Article" }/>
 
-                    <div className="xl:mx-[42px] xl:py-6 space-y-6">
+                    <section className="xl:mx-[42px] xl:py-6 space-y-6">
                         <div className="breadcrumbs ">
                             <ul>
                                 <li><a href="#">Dashboard</a></li> 
                                 <li><a href="#">Manage Product</a></li> 
                             </ul>
                         </div>
-                        
 
                         <div className="inline-flex space-x-[27px]">
                             <div className="xl:py-[30px] xl:px-[43px] inline-flex shadow rounded-xl space-x-[20px]">
@@ -78,7 +80,7 @@ export default function DashboardArticles() {
                                 </div>
                             </div>
                             <div className="xl:py-[30px] xl:px-[30px] inline-flex shadow rounded-xl space-x-[20px]">
-                                <img className="xl:w-[50px]" src={Buy} alt="Sold" />
+                                <img className="xl:w-[50px]" src={Profit} alt="Sold" />
                                 <div className="flex-col">
                                     <h3 className="font-bold text-sm text-[#9593A0] capitalize">Product Profit</h3>
                                     <p className="text-xl font-bold leading-[30px]">IDR 589.000</p>
@@ -92,7 +94,7 @@ export default function DashboardArticles() {
                                 </div>
                             </div>
                             <div className="xl:py-[30px] xl:px-[30px] inline-flex shadow rounded-xl space-x-[20px]">
-                                <img className="xl:w-[50px]" src={Buy} alt="Sold" />
+                                <img className="xl:w-[50px]" src={Profit} alt="Sold" />
                                 <div className="flex-col">
                                     <h3 className="font-bold text-sm text-[#9593A0] capitalize">Event Ticket Profit</h3>
                                     <p className="text-xl font-bold leading-[30px]">IDR 712.000</p>
@@ -115,9 +117,9 @@ export default function DashboardArticles() {
                             <article className="xl:p-4 flex-col space-y-3 rounded-xl shadow">
                                 <img className="rounded-xl w-full xl:h-178px" src="../../../public/news/hero-article.jpg" alt="article-hero"/>
                                 <div>
-                                    <div className="text-black text-xs font-semibold leading-normal tracking-wide">
+                                    <h3 className="text-black text-xs font-semibold leading-normal tracking-wide">
                                         Mengenal Sejarah dan Asal Tari Kecak - Kreasi Nusantara
-                                    </div>
+                                    </h3>
                                     <time className="text-[10px] tracking-wide">Published • May 29, 2023</time>
                                     <p className="text-black text-xs">Admin Nanda</p>
                                 </div>
@@ -131,9 +133,9 @@ export default function DashboardArticles() {
                             <article className="xl:p-4 flex-col space-y-3 rounded-xl shadow">
                                 <img className="rounded-xl w-full xl:h-178px" src="../../../public/news/hero-article.jpg" alt="article-hero"/>
                                 <div>
-                                    <div className="text-black text-xs font-semibold leading-normal tracking-wide">
+                                    <h3 className="text-black text-xs font-semibold leading-normal tracking-wide">
                                         Mengenal Sejarah dan Asal Tari Kecak - Kreasi Nusantara
-                                    </div>
+                                    </h3>
                                     <time className="text-[10px] tracking-wide">Published • May 29, 2023</time>
                                     <p className="text-black text-xs">Admin Nanda</p>
                                 </div>
@@ -147,9 +149,9 @@ export default function DashboardArticles() {
                             <article className="xl:p-4 flex-col space-y-3 rounded-xl shadow">
                                 <img className="rounded-xl w-full xl:h-178px" src="../../../public/news/hero-article.jpg" alt="article-hero"/>
                                 <div>
-                                    <div className="text-black text-xs font-semibold leading-normal tracking-wide">
+                                    <h3 className="text-black text-xs font-semibold leading-normal tracking-wide">
                                         Mengenal Sejarah dan Asal Tari Kecak - Kreasi Nusantara
-                                    </div>
+                                    </h3>
                                     <time className="text-[10px] tracking-wide">Published • May 29, 2023</time>
                                     <p className="text-black text-xs">Admin Nanda</p>
                                 </div>
@@ -163,9 +165,9 @@ export default function DashboardArticles() {
                             <article className="xl:p-4 flex-col space-y-3 rounded-xl shadow">
                                 <img className="rounded-xl w-full xl:h-178px" src="../../../public/news/hero-article.jpg" alt="article-hero"/>
                                 <div>
-                                    <div className="text-black text-xs font-semibold leading-normal tracking-wide">
+                                    <h3 className="text-black text-xs font-semibold leading-normal tracking-wide">
                                         Mengenal Sejarah dan Asal Tari Kecak - Kreasi Nusantara
-                                    </div>
+                                    </h3>
                                     <time className="text-[10px] tracking-wide">Published • May 29, 2023</time>
                                     <p className="text-black text-xs">Admin Nanda</p>
                                 </div>
@@ -179,9 +181,9 @@ export default function DashboardArticles() {
                             <article className="xl:p-4 flex-col space-y-3 rounded-xl shadow">
                                 <img className="rounded-xl w-full xl:h-178px" src="../../../public/news/hero-article.jpg" alt="article-hero"/>
                                 <div>
-                                    <div className="text-black text-xs font-semibold leading-normal tracking-wide">
+                                    <h3 className="text-black text-xs font-semibold leading-normal tracking-wide">
                                         Mengenal Sejarah dan Asal Tari Kecak - Kreasi Nusantara
-                                    </div>
+                                    </h3>
                                     <time className="text-[10px] tracking-wide">Published • May 29, 2023</time>
                                     <p className="text-black text-xs">Admin Nanda</p>
                                 </div>
@@ -195,9 +197,9 @@ export default function DashboardArticles() {
                             <article className="xl:p-4 flex-col space-y-3 rounded-xl shadow">
                                 <img className="rounded-xl w-full xl:h-178px" src="../../../public/news/hero-article.jpg" alt="article-hero"/>
                                 <div>
-                                    <div className="text-black text-xs font-semibold leading-normal tracking-wide">
+                                    <h3 className="text-black text-xs font-semibold leading-normal tracking-wide">
                                         Mengenal Sejarah dan Asal Tari Kecak - Kreasi Nusantara
-                                    </div>
+                                    </h3>
                                     <time className="text-[10px] tracking-wide">Published • May 29, 2023</time>
                                     <p className="text-black text-xs">Admin Nanda</p>
                                 </div>
@@ -211,9 +213,9 @@ export default function DashboardArticles() {
                             <article className="xl:p-4 flex-col space-y-3 rounded-xl shadow">
                                 <img className="rounded-xl w-full xl:h-178px" src="../../../public/news/hero-article.jpg" alt="article-hero"/>
                                 <div>
-                                    <div className="text-black text-xs font-semibold leading-normal tracking-wide">
+                                    <h3 className="text-black text-xs font-semibold leading-normal tracking-wide">
                                         Mengenal Sejarah dan Asal Tari Kecak - Kreasi Nusantara
-                                    </div>
+                                    </h3>
                                     <time className="text-[10px] tracking-wide">Published • May 29, 2023</time>
                                     <p className="text-black text-xs">Admin Nanda</p>
                                 </div>
@@ -227,9 +229,9 @@ export default function DashboardArticles() {
                             <article className="xl:p-4 flex-col space-y-3 rounded-xl shadow">
                                 <img className="rounded-xl w-full xl:h-178px" src="../../../public/news/hero-article.jpg" alt="article-hero"/>
                                 <div>
-                                    <div className="text-black text-xs font-semibold leading-normal tracking-wide">
+                                    <h3 className="text-black text-xs font-semibold leading-normal tracking-wide">
                                         Mengenal Sejarah dan Asal Tari Kecak - Kreasi Nusantara
-                                    </div>
+                                    </h3>
                                     <time className="text-[10px] tracking-wide">Published • May 29, 2023</time>
                                     <p className="text-black text-xs">Admin Nanda</p>
                                 </div>
@@ -239,17 +241,9 @@ export default function DashboardArticles() {
                                     <img src="../../../public/icons/article/Eye.svg" alt="Eye" />
                                 </div>
                             </article>
-
-                            
-                        </div>
-
-
-
-                            
-                    </div>
-                </div>
-
-
+                        </div>                            
+                    </section>
+                </main>
             </div>
         </>
     )
