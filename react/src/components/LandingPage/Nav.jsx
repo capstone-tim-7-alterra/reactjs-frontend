@@ -1,41 +1,38 @@
 import React from "react";
 import Logo from "../../assets/logokn.png";
-const Nav = () => {
+export default function Nav() {
   return (
-    <section>
-      <div className="navbar bg-base-100">
-        <div className="navbar-start">
-          <img className="w-10" src={Logo} alt="logo" />
+    <nav className="mx-auto container bg-base-170 w-full flex justify-between items-center">
+        <div className="navbar bg-base-170">
+          <div className="navbar-start">
+          <img className="w-16" src={Logo} alt="logo" />
           <div className="dropdown"></div>
-          <p className="text-medium ml-3">Kreasi Nusantara</p>
-        </div>
-        <div className="navbar bg-base-100">
-          <div className="navbar-start"></div>
-          <div className="navbar-center flex">
-            <ul className="menu menu-horizontal px-25 gap-5">
+          <p className="text-left text-lg ml-2 text-base-150 font-medium">
+            Kreasi<br></br>Nusantara
+          </p>
+          </div>
+          <div className="navbar-end">
+            <ul className="menu menu-horizontal px-25 gap-5 flex items-center">
               <li>
-                <a>Home</a>
+                <a className="text-base-150 font-bold">Home</a>
               </li>
-              <li>
+              <li className="text-primary-0">
                 <a>Benefit</a>
               </li>
-              <li>
+              <li className="text-primary-0">
                 <a>Product</a>
               </li>
-              <li>
+              <li className="text-primary-0">
                 <a>Testimoni</a>
+              </li>
+              <li>
+                <a className="btn bg-base-150 font-medium text-primary-100 rounded-xl hover:bg-primary-40 px-8 ">
+                  Get The App
+                </a>
               </li>
             </ul>
           </div>
         </div>
-        <div className="navbar-end">
-          <a className="btn text-white bg-red-700 hover:bg-red-500">
-            Get The App
-          </a>
-        </div>
-      </div>
-    </section>
+    </nav>
   );
-};
-
-export default Nav;
+}

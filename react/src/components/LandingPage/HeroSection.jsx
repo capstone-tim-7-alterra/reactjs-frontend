@@ -1,46 +1,27 @@
 import Gambar from "../../assets/handphone.png";
-
+import Oval from "../../assets/oval.png";
+import Logokn1 from "../../assets/logokn1.png"
+import Awan from "../../assets/awan.png"
 export default function HeroSection () {
     return (
-        <div className="flex flex-col justify-center items-center">
-          <div className="text-center mt-10 mb-10 flex flex-col-2">
-            <h1 className="text-4xl font-bold text-gray-800">Embrace Local Creativity with Kreasi Nusantara</h1>
-          </div>
-          <div className="text-xl text-gray-600 px-8 mb-10">
-            <p>Embrace Local Creativity with Kreasi Nusantara</p>
-          </div>
-          <img src={Gambar} className="flex justify-items-start w-1/4 ml-80" />
-          <div className="flex justify-center pt-16">
-            <button className="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded">
+      <section className="mx-auto container bg-base-170">
+        <div className="grid grid-cols-1 md:grid-cols-2 mt-10 items-center text-left">
+          <article className="text-xl px-2 mb-40"> 
+            <h1 className="text-5xl font-bold text-primary-0">Embrace Local Creativity with<br></br><span className="text-base-150 font-bold">Kreasi Nusantara</span></h1> 
+            <p className="mt-3 font-light text-base-160 text-2xl">Discover, Connect, and Celebrate Indonesia's<br></br> Diverse Art and Culture</p>
+            <button className="bg-base-150 hover:bg-primary-40 text-white font-normal py-1 px-4 rounded-xl mt-5">
               Download Now →
             </button>
-          </div>
-          <div className="flex justify-center pt-16">
-            <div className="flex flex-col items-center space-y-2">
-              <p className="text-gray-800 font-semibold">Jones Adam</p>
-              <p className="text-sm text-gray-500">
-                The perfect opp for discovering and supporting local ortan
-              </p>
-            </div>
-            <div className="flex flex-col items-center space-y-2 px-16">
-              <p className="text-gray-800 font-semibold">Jenny Wilson</p>
-              <p className="text-sm text-gray-500">
-                This app is a must have! It's my go-to for local art events.
-              </p>
-            </div>
-            <div className="flex flex-col items-center space-y-2">
-              <p className="text-gray-800 font-semibold">Ronald Richards</p>
-              <p className="text-sm text-gray-500">
-                One of the best local culture apps I have ever come across.
-              </p>
-            </div>
+          </article>
+          <div className="relative w-full ">
+            <img src={Oval} className="w-[97%]"/>
+            <img src={Awan} className="absolute top-[20%] -left-10" />
+            <img src={Awan} className="absolute top-[50%] left-20" />
+            <img src={Awan} className="absolute bottom-[3%] -left-10" />
+            <img src={Logokn1} className="absolute w-[70%] bottom-[10%] -right-[10%]" />
+            <img src={Gambar} className="absolute w-[60%] bottom-0 left-0 translate-x-1/2" />
           </div>
         </div>
+        </section>
       );
 }
-
-
-
-
-  
-
