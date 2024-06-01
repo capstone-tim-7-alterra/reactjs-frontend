@@ -1,5 +1,5 @@
 import PropTypes from 'prop-types';
-import Stroke from "../../assets/icons/Down.svg"
+import Stroke from "../assets/icons/Down.svg"
 
 export default function Navbar({ pages }) {
     return (

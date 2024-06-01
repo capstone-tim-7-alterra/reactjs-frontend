@@ -36,7 +36,7 @@ export default function HeroSection () {
             <div className="flex flex-col items-center space-y-2 px-16">
               <p className="text-gray-800 font-semibold">Jenny Wilson</p>
               <p className="text-sm text-gray-500">
-                This app is a must have! It's my go-to for local art events.
+                This app is a must have! Its my go-to for local art events.
               </p>
             </div>
             <div className="flex flex-col items-center space-y-2">

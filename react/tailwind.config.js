@@ -2,14 +2,24 @@ import daisyui from 'daisyui';
 
 /** @type {import('tailwindcss').Config} */
 export default {
-  content: ["./index.html", "./src/*/.{js,ts,jsx,tsx}"],
+  content: [
+    "./index.html", 
+    "./src/*/.{js,ts,jsx,tsx}",
+    "./src/assets/fonts/fonts.css",
+  ],
   theme: {
+    screens: {
+      sm: '320px',
+      md: '768px',
+      lg: '1024px',
+      xl: '1440px',
+    },
     extend: {
       fontFamily: {
-        poppins: ["Poppins"],
-        roboto: ["Roboto"],
+        poppins: ["Poppins", "sans-serif"],
       },
-      colors: {
+    },
+    colors: {
         primary: {
           0: "#000000",
           10: "#410005",
@@ -17,6 +27,7 @@ export default {
           30: "#980019",
           35: "#930018",
           40: "#BE0924",
+          41: "#C00C25", // Warna Primer / Main Color Raisal
           50: "#E22D39",
           60: "#FF5355",
           70: "#FF8984",
@@ -119,6 +130,5 @@ export default {
         custom: "0px 8px 16px 0px #00000014",
       },
     },
-  },
   plugins: [daisyui,],
 };

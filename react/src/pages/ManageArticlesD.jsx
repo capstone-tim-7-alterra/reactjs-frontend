@@ -1,13 +1,13 @@
 import Navbar from "../navbar/Navbar"
-import Logo from "../../assets/icons/Logo.png"
-import Category  from "../../assets/icons/Category.svg"
-import Event  from "../../assets/icons/Event.svg"
-import Product  from "../../assets/icons/Cube.svg"
-import Article  from "../../assets/icons/Globe.svg"
-import Admin  from "../../assets/icons/GearSix.svg"
-import Logout  from "../../assets/icons/Logout.svg"
-import Buy from "../../assets/icons/GroupProduct.svg"
-import Profit from "../../assets/icons/GroupProfit.svg"
+import Logo from "../assets/icons/Logo.png"
+import Category  from "../assets/icons/Category.svg"
+import Event  from "../assets/icons/Event.svg"
+import Product  from "../assets/icons/Cube.svg"
+import Article  from "../assets/icons/Globe.svg"
+import Admin  from "../assets/icons/GearSix.svg"
+import Logout  from "../assets/icons/Logout.svg"
+import Buy from "../assets/icons/GroupProduct.svg"
+import Profit from "../assets/icons/GroupProfit.svg"
 
 
 export default function DashboardArticles() {
