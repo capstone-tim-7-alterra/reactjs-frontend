@@ -1,7 +1,17 @@
 /** @type {import('tailwindcss').Config} */
 export default {
-  content: ["./index.html", "./src/**/*.{js,ts,jsx,tsx}"],
+  content: [
+    "./index.html",
+    "./src/**/*.{js,ts,jsx,tsx}",
+    "./src/assets/fonts/fonts.css",
+  ],
   theme: {
+    screens: {
+      sm: "320px",
+      md: "768px",
+      lg: "1024px",
+      xl: "1440px",
+    },
     extend: {
       fontFamily: {
         poppins: ["Poppins"],
@@ -15,6 +25,8 @@ export default {
           30: "#980019",
           35: "#930018",
           40: "#BE0924",
+          41: "#C00C25",
+          45: "#C00C25",
           50: "#E22D39",
           60: "#FF5355",
           70: "#FF8984",
@@ -26,18 +38,23 @@ export default {
         },
         secondary: {
           0: "#000000",
+          5: "#020617",
           10: "#1A1C1C",
           20: "#2F3131",
           30: "#454747",
           40: "#3E4040",
+          45: "#61646B;",
           50: "#575859",
+          55: "#61646B",
           60: "#909191",
+          65: "#9593A0",
           70: "#AAABAB",
           80: "#C6C6C7",
           90: "#E2E2E2",
           95: "#FFFBFF",
           99: "#FFF5F5",
-          100: "#FFFFFF",
+          100: "#F5F5F5",
+          101: "#FFFFFF",
         },
         tertiary: {
           0: "#000000",
@@ -73,7 +90,9 @@ export default {
           0: "#000000",
           10: "#201A1A",
           20: "#362F2E",
+          21: "#4C4C4C",
           30: "#4D4544",
+          35: "#4F4F4F",
           40: "#374151",
           45: "#8B8B8B",
           50: "#7F7574",
@@ -83,6 +102,7 @@ export default {
           85: "#CFCFCF",
           90: "#EDE0DE",
           95: "#FBEEEC",
+          96: "#E6DEDD",
           99: "#FFFBFF",
           100: "#FFFFFF",
         },
@@ -101,16 +121,53 @@ export default {
           99: "#FFFBFF",
           100: "#FFFFFF",
         },
+        //custom warna yang tidak terdapat di design sistem UI/UX
         base: {
-          400: "#D4DBFF",
-          300: "#E5E6E6",
           100: "#1F2937",
+          110: "#64748B",
+          120: "#1F2937",
+          140: "#D1D5DB",
+          150: "#980019",
+          160: "#6F6F6F",
+          170: "#FAFAFA",
+          180: "#383A47",
+          300: "#E5E6E6",
+          400: "#D4DBFF",
+          401: "#F0F4FF",
         },
       },
       boxShadow: {
         custom: "0px 8px 16px 0px #00000014",
+        "custom-1": "0px 8px 16px 0px #00000014",
+        "custom-3": "0px 2px 4px 0px #00000024",
+        "custom-5": "0px 1px 2px -1px #0000001A",
+      },
+      Shadow: {
+        "custom-2": "0px 0px 4px 0px #0000000A",
+        "custom-4": "0px 0px 6px 0px #0000000D",
+        "custom-6": "0px 1px 3px 0px #0000001A",
+      },
+      screens: {
+        sm: "640px",
+        md: "768px",
+        lg: "1024px",
+        xl: "1280px",
+        "2xl": "1440px",
       },
     },
   },
   plugins: [require("daisyui")],
 };
+
+// List Pageckage/Library yang di install
+// 1.
+// 2.
+// 3.
+// 4.
+// 5.
+// 6.
+// 7.
+// 8.
+// 9.
+// 10.
+// Dst
