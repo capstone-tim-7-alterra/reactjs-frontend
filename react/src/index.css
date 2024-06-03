@@ -1,3 +1,50 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+@layer components {
+  /* Start Section addEvent */
+  .section-addEvent {
+    @apply bg-primary-100 w-[1440px] h-[27848px] top-[3196px] left-[3373px] gap-0 mx-auto font-poppins;
+  }
+  .header-addEvent {
+    @apply w-full h-[108px] left-[1px]  px-6 py-0 mx-auto navbar bg-primary-100  justify-between  shadow-custom md:flex;
+  }
+  .event-information {
+    @apply w-[1156px] h-[556px] pt-[24px] pr-[22px] pb-[24px] pl-[22px] gap-[58px] mx-auto bg-primary-100  mt-10;
+  }
+
+  .input-addEvent {
+    @apply input input-md border w-[603px] min-h-[46px] border-base-300 bg-primary-100 rounded-md text-sm text-base-100;
+  }
+
+  .span-addEvent{
+    @apply ml-3 w-[94px] h-[44px] p-2.5 bg-neutral-85 rounded-[5px] gap-2.5 text-neutral-45 text-sm leading-6 flex items-center justify-center;
+  }
+  .dropdownInput-addEvent {
+    @apply select select-bordered border w-[603px] min-h-[46px] border-base-300 bg-primary-100 rounded-md text-sm text-base-100;
+  }
+  .div-detailEvent {
+    @apply w-[1156px] h-[983px] pt-[24px] pr-[22px] pb-[24px] pl-[22px] gap-[58px] mx-auto bg-primary-100  mt-10;
+  }
+
+  .textarea-addEvent {
+    @apply textarea textarea-md border min-w-[603px] h-[229px] border-base-300 bg-primary-100 rounded-md text-sm  text-secondary-50 placeholder:text-secondary-55 placeholder:pr-16  text-[16px] leading-[24px] font-normal  overflow-hidden gap-[space-x-2];
+  }
+  .event-Price {
+    @apply w-[1156px] h-[453px] pt-[24px] pr-[22px] pb-[24px] pl-[22px] gap-[58px] mx-auto bg-primary-100 text-primary-0 mt-10;
+  }
+
+  .btn-addEvent {
+    @apply btn w-[97px] h-[46px] rounded-lg pt-[3.5px] pr-[4px] pb-[3.5px] pl-[4px] gap-[2px] bg-primary-30 border-primary-30 text-base-400 hover:bg-primary-30 hover:border-primary-30;
+  }
+
+  
+  /* End Section EditProduct */
+
+  /* Start Header Navbar */
+  .header-navbar {
+    @apply w-[1440px] h-[108px] left-[1px]  pt-[0px] pr-[24px] pb-[0px] pl-[24px] mx-auto navbar bg-primary-100  justify-between md:flex;
+  } 
+   /* End Header Navbar */
+}
