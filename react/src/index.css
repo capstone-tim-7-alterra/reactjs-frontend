@@ -16,7 +16,7 @@
     }
 
     .breadcrumbs {
-        @apply max-w-full text-[10px] md:text-[12px] lg:text-sm text-neutral font-normal
+        @apply max-w-full text-[10px] md:text-[12px] lg:text-sm text-[#374151] font-normal
     }
 
     .form-primary {
