@@ -1,9 +1,15 @@
-import daisyui from 'daisyui';
-
 /** @type {import('tailwindcss').Config} */
 export default {
-  content: ["./index.html", "./src/*/.{js,ts,jsx,tsx}"],
+  content: ["./index.html", "./src/**/*.{js,ts,jsx,tsx}",
+  "./src/assets/fonts/fonts.css",
+],
   theme: {
+    screens: {
+      sm: "320px",
+      md: "768px",
+      lg: "1024px",
+      xl: "1440px",
+    },
     extend: {
       fontFamily: {
         poppins: ["Poppins"],
@@ -43,6 +49,7 @@ export default {
           99: "#FFF5F5",
           100: "#F5F5F5", //baru thalita
           101: "#FFFFFF",
+          100: "#FFFFFF",
         },
         tertiary: {
           0: "#000000",
@@ -105,20 +112,41 @@ export default {
           90: "#F4DDDB",
           95: "#FFEDEB",
           99: "#FFFBFF",
-          100: "#FFFFFF",
+          100:"#FFFFFF",
         },
         base: {
-          400: "#D4DBFF",
-          300: "#E5E6E6",
           100: "#1F2937",
-          110: "#64748B", //baru thalita
-          120: "#1F2937", //baru thalita
+          110: "#64748B",
+          120: "#1F2937",
+          140: "#D1D5DB",
+          150: "#980019",
+          160: "#6F6F6F",
+          170: "#FAFAFA",
+          180: "#383A47",
+          300: "#E5E6E6",
+          400: "#D4DBFF",
+          401: "#F0F4FF",
         },
       },
       boxShadow: {
         custom: "0px 8px 16px 0px #00000014",
+        "custom-1": "0px 8px 16px 0px #00000014",
+        "custom-3": "0px 2px 4px 0px #00000024",
+        "custom-5": "0px 1px 2px -1px #0000001A",
+      },
+      Shadow: {
+        "custom-2": "0px 0px 4px 0px #0000000A",
+        "custom-4": "0px 0px 6px 0px #0000000D",
+        "custom-6": "0px 1px 3px 0px #0000001A",
+      },
+      screens: {
+        sm: "640px",
+        md: "768px",
+        lg: "1024px",
+        xl: "1280px",
+        "2xl": "1440px",
       },
     },
   },
-  plugins: [daisyui,],
+  plugins: [require("daisyui")],
 };
