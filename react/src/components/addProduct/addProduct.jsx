@@ -1,7 +1,7 @@
 import Navbar from "./NavbarManage"
 import Breadcrumbs from "./Breadcrumb"
-import uploadImage from "../assets/icons/Picture.svg"
-import uploadVideo from "../assets/icons/Video.svg"
+import uploadImage from "../../assets/icons/Picture.svg"
+import uploadVideo from "../../assets/icons/Video.svg"
 
 export default function AddProduct() {
     return (

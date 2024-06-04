@@ -3,7 +3,7 @@
 @tailwind utilities;
 
 @layer components {
-  /* .navbar {
+  .navbar {
       @apply min-h-10 h-11 p-0 md:p-2 xl:px-6 bg-white text-black w-full shadow-lg md:h-14 lg:h-20 xl:h-[108px] 
   }
 
@@ -13,7 +13,7 @@
   
   .container {
       @apply px-2 md:p-6 mx-auto xl:space-y-20
-  } */
+  }
 
   .breadcrumbs {
       @apply max-w-full text-[10px] md:text-[12px] lg:text-sm text-[#374151] font-normal
