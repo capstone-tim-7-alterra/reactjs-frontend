@@ -99,7 +99,40 @@
       @apply xl:p-4 flex-col space-y-3 rounded-xl shadow
   }
 
-  html {
-    scroll-behavior: smooth;
-  }
+    .question-input-icon {
+        @apply flex items-center gap-2 sm:w-[248px] md:w-[360px] lg:w-[500px] xl:w-[603px] xl:h-[46px]
+    }
+
+    .button-form {
+        @apply sm:text-xs sm:p-1 sm:w-16 xl:w-[97px] 
+    }
+
+    .sidebar {
+        @apply xl:w-[300px] relative z-50 shadow bg-white xl:h-[1890px]
+    }
+
+    .sidebar-heading {
+        @apply xl:mx-[47px]  justify-start items-center gap-3 inline-flex xl:mt-[22px] xl:mb-[44px]
+    }
+
+    .sidebar-nav {
+        @apply flex-col justify-start items-start gap-[13px] inline-flex
+    }
+
+    .sidebar-list {
+        @apply inline-flex font-semibold text-sm space-x-5 items-center mx-[45px] my-[17px]
+    }
+
+    .dashboard-summary-primary {
+        @apply xl:py-[30px] xl:px-[43px] inline-flex shadow rounded-xl space-x-[20px]
+    }
+
+    .dashboard-summary-secondary {
+        @apply xl:py-[30px] xl:px-[30px] inline-flex shadow rounded-xl space-x-[20px]
+    }
+
+    .article-list {
+        @apply xl:p-4 flex-col space-y-3 rounded-xl shadow
+    }
+
 }
