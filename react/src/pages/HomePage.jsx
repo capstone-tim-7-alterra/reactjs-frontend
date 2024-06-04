@@ -3,6 +3,7 @@ import HeroSection from "../components/LandingPage/HeroSection";
 import Nav from "../components/LandingPage/Nav";
 import Benefit from "../components/LandingPage/Benefit";
 import Appscreen from "../components/LandingPage/Appscreen";
+import Testimoni from "../components/LandingPage/Testimoni";
 export default function HomePage() {
     return (
         <>
@@ -10,6 +11,7 @@ export default function HomePage() {
             <HeroSection/>
             <Benefit/>
             <Appscreen/>
+            <Testimoni/>
             {/* <Footer/> */}
         </>
 
