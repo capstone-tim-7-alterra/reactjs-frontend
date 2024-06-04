@@ -34,17 +34,21 @@ export default {
         },
         secondary: {
           0: "#000000",
+          5: "#020617", //baru thalita
           10: "#1A1C1C",
           20: "#2F3131",
           30: "#454747",
           40: "#3E4040",
           50: "#575859",
+          55: "#61646B",
           60: "#909191",
           70: "#AAABAB",
           80: "#C6C6C7",
           90: "#E2E2E2",
           95: "#FFFBFF",
           99: "#FFF5F5",
+          100: "#F5F5F5", //baru thalita
+          101: "#FFFFFF",
           100: "#FFFFFF",
         },
         tertiary: {
@@ -91,6 +95,7 @@ export default {
           85: "#CFCFCF",
           90: "#EDE0DE",
           95: "#FBEEEC",
+          96: "#E6DEDD", //baru thalita
           99: "#FFFBFF",
           100: "#FFFFFF",
         },
