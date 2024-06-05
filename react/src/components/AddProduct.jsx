@@ -1,6 +1,6 @@
 import Navbar from "./NavbarManage"
 import Breadcrumbs from "./Breadcrumb"
-import uploadImage from "../assets/icons/Picture.svg"
+import uploadImage from "../../assets/icons/Picture.svg"
 
 export default function AddPost() {
     return (

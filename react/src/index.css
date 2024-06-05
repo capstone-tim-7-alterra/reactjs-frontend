@@ -3,65 +3,101 @@
 @tailwind utilities;
 
 @layer components {
-    .navbar {
-        @apply min-h-10 h-11 p-0 md:p-2 xl:px-6 bg-white text-black w-full shadow-lg md:h-14 lg:h-20 xl:h-[108px] 
-    }
+  /* .navbar {
+      @apply min-h-10 h-11 p-0 md:p-2 xl:px-6 bg-white text-black w-full shadow-lg md:h-14 lg:h-20 xl:h-[108px] 
+  }
 
-    .navbar-start {
-        @apply ml-2 text-sm md:text-lg lg:text-xl xl:text-2xl xl:font-bold text-[#4C4C4C]
-    }
-    
-    .container {
-        @apply px-2 md:p-6 mx-auto xl:space-y-20
-    }
+  .navbar-start {
+      @apply ml-2 text-sm md:text-lg lg:text-xl xl:text-2xl xl:font-bold text-[#4C4C4C]
+  }
+  
+  .container {
+      @apply px-2 md:p-6 mx-auto xl:space-y-20
+  } */
 
-    .breadcrumbs {
-        @apply max-w-full text-[10px] md:text-[12px] lg:text-sm text-[#374151] font-normal
-    }
+  .breadcrumbs {
+      @apply max-w-full text-[10px] md:text-[12px] lg:text-sm text-[#374151] font-normal
+  }
 
-    .form-primary {
-       @apply flex flex-col m-5 md:m-8 lg:m-12 xl:mx-[118px] sm:gap-3 md:gap-5 xl:gap-[50px]
-    }
+  .form-primary {
+     @apply flex flex-col m-5 md:m-8 lg:m-12 xl:mx-[118px] sm:gap-3 md:gap-5 xl:gap-[50px]
+  }
 
-    .form-secondary {
-        @apply flex flex-col xl:mx-[77px] xl:mt-[61px]
-    }
+  .form-secondary {
+      @apply flex flex-col xl:mx-[77px] xl:mt-[61px]
+  }
 
-    .title-form {
-        @apply font-semibold xl:font-bold md:text-xl lg:text-2xl xl:text-[32px] 
-    }
+  .title-form {
+      @apply font-semibold xl:font-bold md:text-xl lg:text-2xl xl:text-[32px] 
+  }
 
-    .form-card {
-        @apply flex-col inline-flex justify-start items-start bg-white w-full sm:p-2 md:p-3 lg:py-6 lg:px-[22px] lg:mb-[70px] xl:mb-[72px] sm:shadow lg:shadow-lg sm:gap-4 lg:gap-[58px] 
-    }
+  .form-card {
+      @apply flex-col inline-flex justify-start items-start bg-white w-full sm:p-2 md:p-3 lg:py-6 lg:px-[22px] lg:mb-[70px] xl:mb-[72px] sm:shadow lg:shadow-lg sm:gap-4 lg:gap-[58px] 
+  }
 
-    .form-card-title {
-        @apply text-black lg:text-[24px] xl:text-[32px] font-bold
-    }
+  .form-card-title {
+      @apply text-black lg:text-[24px] xl:text-[32px] font-bold
+  }
 
-    .form-card-box {
-        @apply justify-start items-start md:gap-[50px] lg:gap-[100px] xl:gap-[149px] sm:flex-col md:flex-row md:inline-flex 
-    }
+  .form-card-box {
+      @apply justify-start items-start md:gap-[50px] lg:gap-[100px] xl:gap-[149px] sm:flex-col md:flex-row md:inline-flex 
+  }
 
-    .question-box {
-        @apply flex-col justify-start items-start sm:mb-2 md:mb-4 sm:gap-1 lg:gap-[18px] inline-flex
-    }
+  .question-box {
+      @apply flex-col justify-start items-start sm:mb-2 md:mb-4 sm:gap-1 lg:gap-[18px] inline-flex
+  }
 
-    .question-input {
-        @apply flex-col justify-start items-start inline-flex
-    }
+  .question-input {
+      @apply flex-col justify-start items-start inline-flex
+  }
 
-    .media-input {
-        @apply xl:w-[202px] xl:h-[202px] xl:px-[21px] xl:py-[30px] border-black  gap-2.5 flex-col justify-center items-center inline-flex border border-dashed
-    }
+  .media-input {
+      @apply xl:w-[202px] xl:h-[202px] xl:px-[21px] xl:py-[30px] border-black  gap-2.5 flex-col justify-center items-center inline-flex border border-dashed
+  }
 
-    .question-form {
-        @apply xl:mx-10 xl:mt-[62px] xl:space-y-6 flex-col justify-start items-start inline-flex
-    }
+  .question-form {
+      @apply xl:mx-10 xl:mt-[62px] xl:space-y-6 flex-col justify-start items-start inline-flex
+  }
 
-    .question-card {
-        @apply xl:space-y-3
-    }
+  .question-card {
+      @apply xl:space-y-3
+  }
+
+  .question-input-icon {
+      @apply flex items-center gap-2 sm:w-[248px] md:w-[360px] lg:w-[500px] xl:w-[603px] xl:h-[46px]
+  }
+
+  .button-form {
+      @apply sm:text-xs sm:p-1 sm:w-16 xl:w-[97px] 
+  }
+
+  .sidebar {
+      @apply xl:w-[300px] relative z-50 shadow bg-white xl:h-[1890px]
+  }
+
+  .sidebar-heading {
+      @apply xl:mx-[47px]  justify-start items-center gap-3 inline-flex xl:mt-[22px] xl:mb-[44px]
+  }
+
+  .sidebar-nav {
+      @apply flex-col justify-start items-start gap-[13px] inline-flex
+  }
+
+  .sidebar-list {
+      @apply inline-flex font-semibold text-sm space-x-5 items-center mx-[45px] my-[17px]
+  }
+
+  .dashboard-summary-primary {
+      @apply xl:py-[30px] xl:px-[43px] inline-flex shadow rounded-xl space-x-[20px]
+  }
+
+  .dashboard-summary-secondary {
+      @apply xl:py-[30px] xl:px-[30px] inline-flex shadow rounded-xl space-x-[20px]
+  }
+
+  .article-list {
+      @apply xl:p-4 flex-col space-y-3 rounded-xl shadow
+  }
 
     .question-input-icon {
         @apply flex items-center gap-2 sm:w-[248px] md:w-[360px] lg:w-[500px] xl:w-[603px] xl:h-[46px]
