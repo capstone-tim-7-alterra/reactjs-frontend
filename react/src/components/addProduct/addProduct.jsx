@@ -1,5 +1,5 @@
-import Navbar from "../navbar/Navbar"
-import Breadcrumbs from "../breadcrumbs/Breadcrumb"
+import Navbar from "./NavbarManage"
+import Breadcrumbs from "./Breadcrumb"
 import uploadImage from "../../assets/icons/Picture.svg"
 
 export default function AddPost() {
