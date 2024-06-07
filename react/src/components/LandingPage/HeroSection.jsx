@@ -1,3 +1,4 @@
+/* eslint-disable react/no-unescaped-entities */
 import Gambar from "../../assets/handphone.png";
 import Oval from "../../assets/oval.png";
 import Logokn1 from "../../assets/logokn1.png";
@@ -6,21 +7,21 @@ import dot from "../../assets/Dot.png";
 
 export default function HeroSection() {
   return (
-    <section className="mx-auto container bg-base-170 overflow-x-hidden">
-      <div className="grid grid-cols-1 md:grid-cols-2 mt-10 items-center text-left">
+    <section className="container mx-auto overflow-x-hidden xl:px-[51px]">
+      <div className="grid grid-cols-1 md:grid-cols-2 md:mt-10 items-center text-left">
         <article className="text-xl px-2 mb-40">
-          <h1 className="text-5xl font-bold text-primary-0">
-            Embrace Local Creativity with<br></br>
+          <h1 className="lg:text-[40px] font-bold text-primary-0 leading-[56px]">
+            Embrace Local Creativity with<br/>
             <span className="text-base-150 font-bold">Kreasi Nusantara</span>
           </h1>
           <p className="mt-3 font-light text-base-160 text-2xl">
-            Discover, Connect, and Celebrate Indonesia's<br></br> Diverse Art
-            and Culture
+            Discover, Connect, and Celebrate Indonesia's<br/> Diverse Art and Culture
           </p>
           <button className="bg-base-150 hover:bg-primary-40 text-white font-normal py-1 px-4 rounded-xl mt-5">
             Download Now →
           </button>
         </article>
+        
         <div className="relative w-full ">
           <img src={Awan} className="absolute top-[20%] -left-10" />
           <img src={Oval} className="w-[97%]" />

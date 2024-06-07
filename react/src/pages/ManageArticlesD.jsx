@@ -1,4 +1,4 @@
-import Navbar from "../navbar/Navbar"
+import Navbar from "../components/navbarAdmin/NavbarAdmin"
 import Logo from "../assets/icons/Logo.png"
 import Category  from "../assets/icons/Category.svg"
 import Event  from "../assets/icons/Event.svg"
@@ -13,7 +13,7 @@ import Profit from "../assets/icons/GroupProfit.svg"
 export default function DashboardArticles() {
     return (
         <>
-            <div className="flex flex-row font-poppins">
+            <div className="flex flex-row bg-primary-100">
                 <aside className="sidebar">
                     <header className="sidebar-heading">
                         <img className="xl:w-[85px]" src={ Logo } />
@@ -75,28 +75,28 @@ export default function DashboardArticles() {
                             <div className="dashboard-summary-primary">
                                 <img className="xl:w-[50px]" src={Buy} alt="Product-Sold" />
                                 <div className="flex-col">
-                                    <h3 className="font-bold text-sm text-[#9593A0] capitalize">Product Sold</h3>
+                                    <h3 className="font-bold text-sm text-[#9593A0] capitalize">Total Visitor</h3>
                                     <p className="text-xl font-bold leading-[30px]">12</p>
                                 </div>
                             </div>
                             <div className="dashboard-summary-secondary">
                                 <img className="xl:w-[50px]" src={Profit} alt="Product-Profit" />
                                 <div className="flex-col">
-                                    <h3 className="font-bold text-sm text-[#9593A0] capitalize">Product Profit</h3>
+                                    <h3 className="font-bold text-sm text-[#9593A0] capitalize">Total Likes</h3>
                                     <p className="text-xl font-bold leading-[30px]">IDR 589.000</p>
                                 </div>
                             </div>
                             <div className="dashboard-summary-primary">
                                 <img className="xl:w-[50px]" src={Buy} alt="Ticket-Sold" />
                                 <div className="flex-col">
-                                    <h3 className="font-bold text-sm text-[#9593A0] capitalize">Ticket Sold</h3>
+                                    <h3 className="font-bold text-sm text-[#9593A0] capitalize">Ticket Comments</h3>
                                     <p className="text-xl font-bold leading-[30px]">320</p>
                                 </div>
                             </div>
                             <div className="dashboard-summary-secondary">
                                 <img className="xl:w-[50px]" src={Profit} alt="Ticket-Profit" />
                                 <div className="flex-col">
-                                    <h3 className="font-bold text-sm text-[#9593A0] capitalize">Event Ticket Profit</h3>
+                                    <h3 className="font-bold text-sm text-[#9593A0] capitalize">Total Shares</h3>
                                     <p className="text-xl font-bold leading-[30px]">IDR 712.000</p>
                                 </div>
                             </div>
@@ -104,11 +104,11 @@ export default function DashboardArticles() {
 
                         <div className="space-x-[10px] inline-flex">
                             <button className="btn bg-[#980019] text-white xl:px-6 xl:py-[10px]">
-                                <img src="../../../public/icons/Plus.svg" alt="Plus"/>
-                                Button
+                                <img src="/icons/Plus.svg" alt="Plus"/>
+                                New Post
                             </button>
-                            <label className="input input-bordered flex items-center gap-2 xl:w-[921px]">
-                                <img src="/public/icons/Search.svg" alt="Search" />
+                            <label className="input input-bordered flex items-center gap-2 xl:w-[921px] bg-primary-100">
+                                <img src="/icons/Search.svg" alt="Search" />
                                 <input type="text" className="grow" placeholder="Type here" />
                             </label>
                         </div>

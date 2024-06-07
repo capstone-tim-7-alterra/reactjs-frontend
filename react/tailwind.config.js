@@ -49,7 +49,6 @@ export default {
           99: "#FFF5F5",
           100: "#F5F5F5", //baru thalita
           101: "#FFFFFF",
-          100: "#FFFFFF",
         },
         tertiary: {
           0: "#000000",
