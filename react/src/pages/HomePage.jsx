@@ -5,16 +5,10 @@ export default function HomePage() {
     <div>
       <h1>Home Page</h1>
       <div>
+        <Link to="/ManageDashboardProducts">DashboardProduct</Link>
+      </div>
+      <div>
         <Link to="/editProduct">Edit Product</Link>
-      </div>
-      <div>
-        <Link to="/Dashboard">Dashboard</Link>
-      </div>
-      <div>
-        <Link to="/heroSection">Hero Section</Link>
-      </div>
-      <div>
-        <Link to="/footer">Footer</Link>
       </div>
     </div>
   );

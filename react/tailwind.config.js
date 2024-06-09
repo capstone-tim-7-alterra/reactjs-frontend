@@ -24,12 +24,14 @@ export default {
           20: "#68000E",
           30: "#980019",
           35: "#930018",
+          36: "#BE3846", //new arr
           40: "#BE0924",
           41: "#C00C25",
           45: "#C00C25",
           50: "#E22D39",
           60: "#FF5355",
           70: "#FF8984",
+          75: "#FFA8C6", //New arr
           80: "#FFB3AF",
           90: "#FFDAD7",
           95: "#FFEDEB",
@@ -42,6 +44,7 @@ export default {
           10: "#1A1C1C",
           20: "#2F3131",
           30: "#454747",
+          35: "#504E4E", //new arr
           40: "#3E4040",
           45: "#61646B;",
           50: "#575859",
@@ -51,6 +54,7 @@ export default {
           70: "#AAABAB",
           80: "#C6C6C7",
           90: "#E2E2E2",
+          91: "#F3F4F6", //new arr
           95: "#FFFBFF",
           99: "#FFF5F5",
           100: "#F5F5F5",
@@ -89,6 +93,7 @@ export default {
         neutral: {
           0: "#000000",
           10: "#201A1A",
+          15: "#0F172A",
           20: "#362F2E",
           21: "#4C4C4C",
           30: "#4D4544",
@@ -123,6 +128,8 @@ export default {
         },
         //custom warna yang tidak terdapat di design sistem UI/UX
         base: {
+          50: "#F2F2F2", //new arr
+          70: "#2B3440",
           100: "#1F2937",
           110: "#64748B",
           120: "#1F2937",
@@ -146,13 +153,6 @@ export default {
         "custom-2": "0px 0px 4px 0px #0000000A",
         "custom-4": "0px 0px 6px 0px #0000000D",
         "custom-6": "0px 1px 3px 0px #0000001A",
-      },
-      screens: {
-        sm: "640px",
-        md: "768px",
-        lg: "1024px",
-        xl: "1280px",
-        "2xl": "1440px",
       },
     },
   },

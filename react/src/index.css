@@ -5,7 +5,7 @@
 @layer components {
   /* Start Section EditProduct */
   .section-editProduct {
-    @apply bg-primary-100 w-[1440px] h-[2518px] top-[1721px] left-[1845px] gap-0 mx-auto font-poppins;
+    @apply bg-primary-100 w-[1440px] h-[2889px] top-[3196px] left-[1687px] gap-0 mx-auto font-poppins;
   }
   .header-editProduct {
     @apply w-full h-[108px] left-[1px]  px-6 py-0 mx-auto navbar bg-primary-100  justify-between  shadow-custom md:flex;
@@ -25,18 +25,22 @@
     @apply select select-bordered border w-[603px] min-h-[46px] border-base-300 bg-primary-100 rounded-md text-sm text-base-100;
   }
   .div-detailProduct {
-    @apply w-[1156px] h-[844px] pt-[24px] pr-[22px] pb-[24px] pl-[22px] gap-[58px] mx-auto bg-primary-100  mt-10;
+    @apply w-[1156px] h-[1220px] pt-[24px] pr-[22px] pb-[24px] pl-[22px] gap-[58px] mx-auto bg-primary-100  mt-10;
   }
 
   .textarea-editProduct {
-    @apply textarea textarea-md border min-w-[603px] h-[229px] border-base-300 bg-primary-100 rounded-md text-sm  text-secondary-50 placeholder:text-secondary-55 placeholder:pr-16  text-[16px] leading-[24px] font-normal  overflow-hidden gap-[space-x-2];
+    @apply textarea textarea-md border min-w-[603px] h-[229px] border-base-300 bg-primary-100 rounded-lg text-sm  text-secondary-50 placeholder:text-secondary-55 placeholder:pr-16  text-[16px] leading-[24px] font-normal   gap-[space-x-2] pt-[12px] pr-[16px] pb-[12px] pl-[16px];
   }
   .product-Price {
-    @apply w-[1156px] h-[379px] pt-[24px] pr-[22px] pb-[24px] pl-[22px] gap-[58px] mx-auto bg-primary-100 text-primary-0 mt-10;
+    @apply w-[1156px] h-[522px] pt-[24px] pr-[22px] pb-[24px] pl-[22px] gap-[58px] mx-auto bg-primary-100 text-primary-0 mt-10;
   }
 
-  .btn-editProduct {
-    @apply btn w-[97px] h-[46px] rounded-lg pt-[3.5px] pr-[4px] pb-[3.5px] pl-[4px] gap-[2px] bg-primary-30 border-primary-30 text-base-400 hover:bg-primary-30 hover:border-primary-30;
+  .btn-editProduct-cancel {
+    @apply btn w-[200px] h-[60px] bg-base-50 border-base-50 hover:bg-base-50 hover:border-base-50 rounded-lg pt-[14px] pr-[16px] pb-[14px] pl-[16px] font-semibold text-[18px] leading-[24px]  text-base-100 text-center;
+  }
+
+  .btn-editProduct-save {
+    @apply btn w-[200px] h-[60px] bg-primary-30 border-primary-30 hover:bg-primary-30 hover:border-primary-30 rounded-lg pt-[14px] pr-[16px] pb-[14px] pl-[16px] font-semibold text-[18px] leading-[24px]  text-primary-100 text-center;
   }
   /* End Section EditProduct */
 
