@@ -5,7 +5,7 @@ export default function navbar() {
     <header className="header-navbar shadow-custom-1 shadow-custom-2">
       <div className="flex-1">
         <a className="text-2xl  text-secondary-50 font-semibold w-[203px] h-[32px] cursor-pointer">
-          Manage Product
+          Manage Event
         </a>
       </div>
       <div className="flex-none min-w-[192px] h-[40px] gap-10">
@@ -18,7 +18,7 @@ export default function navbar() {
           <li className="text-secondary-40 ">
             <details>
               <summary>Admin Nanda</summary>
-              <ul className="p-2 rounded w-full bg-primary-100">
+              <ul className="p-2  rounded w-full bg-primary-100">
                 <li className="hover:text-gray-500">
                   <a>Link 1</a>
                 </li>
