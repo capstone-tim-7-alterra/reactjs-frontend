@@ -95,6 +95,14 @@
         @apply inline-flex font-semibold text-sm space-x-5 items-center mx-[45px] my-[17px]
     }
 
+    .active-navlink {
+        @apply bg-[#980019] xl:w-[300px] px-[45px] py-[17px]
+    }
+
+    .default-navlink {
+        @apply xl:w-[300px]
+    }
+
     .dashboard-summary-primary {
         @apply xl:py-[30px] xl:px-[43px] inline-flex shadow rounded-xl space-x-[20px]
     }

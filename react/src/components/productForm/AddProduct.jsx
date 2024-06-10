@@ -1,8 +1,8 @@
 // import Navbar from "../navbar/Navbar"
-import Breadcrumbs from "./Breadcrumb"
-import uploadImage from "../../assets/icons/Picture.svg"
-import uploadVideo from "../../assets/icons/Video.svg"
-import percent  from "../../assets/icons/Percent.svg"
+import Breadcrumbs from "../breadcrumb/Breadcrumb"
+import uploadImage from "../../assets/icons/form/Picture.svg"
+import uploadVideo from "../../assets/icons/form/Video.svg"
+import percent  from "../../assets/icons/form/Percent.svg"
 
 
 export default function AddProduct() {

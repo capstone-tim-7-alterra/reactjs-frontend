@@ -1,6 +1,6 @@
 // import Navbar from "../../components/addProduct/NavbarManage"
-import Breadcrumbs from "../../components/productForm/Breadcrumb"
-import uploadImage from "../../assets/icons/Picture.svg"
+import Breadcrumbs from "../breadcrumb/BreadcrumbF"
+import uploadImage from "../../assets/icons/form/Picture.svg"
 
 export default function AddPost() {
     return (

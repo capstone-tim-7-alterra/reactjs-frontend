@@ -1,11 +1,17 @@
-import PropTypes from 'prop-types';
-import Stroke from "../../../public/icons/Stroke.svg"
+import { useLocation } from 'react-router-dom';
+import Stroke from '../../assets/icons/navbar/Stroke.svg'
+import { nameMap } from '../nameMap';
 
-export default function Navbar({ pages }) {
+export default function Navbar() {
+
+    const location = useLocation();
+    const currentPath = location.pathname;
+    const headerTitle = nameMap[currentPath] || 'Page Not Found';
+
     return (
         <nav className="navbar">
             <header className="navbar-start flex-1">
-                {pages}
+                { headerTitle }
             </header>
 
             <div className="navbar-end flex-none gap-10">
@@ -33,13 +39,3 @@ export default function Navbar({ pages }) {
         </nav>
     )
   }
-
-  Navbar.propTypes = {
-    pages: PropTypes.oneOfType([
-      PropTypes.string,
-      PropTypes.arrayOf(PropTypes.shape({
-        label: PropTypes.string.isRequired,
-        url: PropTypes.string.isRequired,
-      })),
-    ]).isRequired,
-  };
