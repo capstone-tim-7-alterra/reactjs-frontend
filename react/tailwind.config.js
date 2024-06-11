@@ -22,6 +22,14 @@ export default {
           20: "#68000E",
           30: "#980019",
           35: "#930018",
+          36: "#BE3846", //new arr
+          40: "#BE0924",
+          41: "#C00C25",
+          45: "#C00C25",
+          50: "#E22D39",
+          60: "#FF5355",
+          70: "#FF8984",
+          75: "#FFA8C6", //New arr
           40: "#BE0924",
           50: "#E22D39",
           60: "#FF5355",
@@ -34,6 +42,25 @@ export default {
         },
         secondary: {
           0: "#000000",
+          5: "#020617",
+          10: "#1A1C1C",
+          20: "#2F3131",
+          30: "#454747",
+          35: "#504E4E", //new arr
+          40: "#3E4040",
+          45: "#61646B;",
+          50: "#575859",
+          55: "#61646B",
+          60: "#909191",
+          65: "#9593A0",
+          70: "#AAABAB",
+          80: "#C6C6C7",
+          90: "#E2E2E2",
+          91: "#F3F4F6", //new arr
+          95: "#FFFBFF",
+          99: "#FFF5F5",
+          100: "#F5F5F5",
+          101: "#FFFFFF",
           5: "#020617", //baru thalita
           10: "#1A1C1C",
           20: "#2F3131",
@@ -84,6 +111,11 @@ export default {
         neutral: {
           0: "#000000",
           10: "#201A1A",
+          15: "#0F172A",
+          20: "#362F2E",
+          21: "#4C4C4C",
+          30: "#4D4544",
+          35: "#4F4F4F",
           20: "#362F2E",
           30: "#4D4544",
           40: "#374151",
@@ -95,6 +127,7 @@ export default {
           85: "#CFCFCF",
           90: "#EDE0DE",
           95: "#FBEEEC",
+          96: "#E6DEDD",
           96: "#E6DEDD", //baru thalita
           99: "#FFFBFF",
           100: "#FFFFFF",
@@ -112,6 +145,12 @@ export default {
           90: "#F4DDDB",
           95: "#FFEDEB",
           99: "#FFFBFF",
+          100: "#FFFFFF",
+        },
+        //custom warna yang tidak terdapat di design sistem UI/UX
+        base: {
+          50: "#F2F2F2", //new arr
+          70: "#2B3440",
           100:"#FFFFFF",
         },
         base: {
@@ -139,6 +178,23 @@ export default {
         "custom-4": "0px 0px 6px 0px #0000000D",
         "custom-6": "0px 1px 3px 0px #0000001A",
       },
+    },
+  },
+  plugins: [require("daisyui")],
+};
+
+// List Pageckage/Library yang di install
+// 1.
+// 2.
+// 3.
+// 4.
+// 5.
+// 6.
+// 7.
+// 8.
+// 9.
+// 10.
+// Dst
       screens: {
         sm: "640px",
         md: "768px",
