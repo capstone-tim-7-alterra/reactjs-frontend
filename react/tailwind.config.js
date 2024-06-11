@@ -125,7 +125,6 @@ export default {
         base: {
           100: "#1F2937",
           110: "#64748B",
-          120: "#1F2937",
           140: "#D1D5DB",
           150: "#980019",
           160: "#6F6F6F",
@@ -134,6 +133,8 @@ export default {
           300: "#E5E6E6",
           400: "#D4DBFF",
           401: "#F0F4FF",
+          402: "#F9FAFB",//baru thalita
+          403: "#F2F2F2",//baru thalita
         },
       },
       boxShadow: {

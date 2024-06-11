@@ -54,7 +54,7 @@ const LoginDashboard = () => {
                   <input
                     type="checkbox"
                     defaultChecked
-                    className="checkbox mr-4 w-[20px] h-[20px] rounded-lg border py-1 px-1 opacity-20  border-base-120 w-custom-w-6 h-custom-h-6"
+                    className="checkbox mr-4 w-[20px] h-[20px] rounded-lg border py-1 px-1 opacity-20  hover:bg-base-180 border-base-120 w-custom-w-6 h-custom-h-6"
                   />
                   <span className="label-text text-base-100  text-[12px] font-semibold leading-[18px] w-[280px] h-[18px] ">
                     Remember me

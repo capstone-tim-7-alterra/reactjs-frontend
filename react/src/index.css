@@ -1,3 +1,133 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+@layer components {
+  /* Start Section Event */
+  .section-Event {
+    @apply bg-primary-100 w-[1440px] h-[27848px] top-[3196px] left-[3373px] gap-0 mx-auto font-poppins;
+  }
+  .header-Event {
+    @apply w-full h-[108px] left-[1px]  px-6 py-0 mx-auto navbar bg-primary-100  justify-between  shadow-custom md:flex;
+  }
+  .event-information {
+    @apply w-[1156px] h-[496px] pt-[24px] pr-[22px] pb-[24px] pl-[22px] gap-[58px] mx-auto bg-primary-100;
+  }
+
+  .input-Event {
+    @apply input input-md border w-[603px] h-[46px] border-base-300 bg-primary-100 rounded-md text-sm text-base-100 font-semibold opacity-70;
+  }
+
+  .span-Event {
+    @apply ml-3 w-[94px] h-[44px] p-2.5 bg-neutral-85 rounded-[5px] gap-2.5 text-neutral-45 text-sm leading-6 flex items-center justify-center;
+  }
+
+  .dropdownInput-Event {
+    @apply select select-bordered border w-[603px] min-h-[46px] border-base-300 bg-primary-100 rounded-md text-sm text-base-100;
+  }
+
+  .div-detailEvent {
+    @apply w-[1156px] min-h-[983px] pt-[24px] pr-[22px] pb-[24px] pl-[22px] gap-[58px] mx-auto bg-primary-100 mt-20;
+  }
+
+  .textarea-Event {
+    @apply textarea textarea-md  textarea-bordered border min-w-[603px] h-[229px] border-base-300 bg-primary-100 rounded-lg text-xs text-base-100  text-[16px] leading-[24px]   gap-[space-x-2] font-semibold opacity-70;
+  }
+
+  .event-Price {
+    @apply w-[1156px] h-[346px] pt-[24px] pr-[22px] pb-[24px] pl-[22px] gap-[58px] mx-auto bg-primary-100 text-primary-0 mt-10;
+  }
+
+  .event-Price2 {
+    @apply w-[1156px] h-[254px] pt-[24px] pr-[22px] pb-[24px] pl-[22px] gap-[58px] mx-auto bg-primary-100 text-primary-0 mt-10;
+  }
+
+  .input-ticketDetail {
+    @apply input input-md w-[547px] h-[18px] bg-primary-100 text-sm text-base-100 items-center justify-center font-semibold rounded-none mx-auto opacity-70 ml-2;
+  }
+
+  .btn-Event {
+    @apply btn w-[200px] h-[60px] rounded-lg pt-[14px] pr-[16px] pb-[14px] pl-[16px] gap-[2px] bg-primary-30 border-primary-30 text-base-400 hover:bg-primary-30 hover:border-primary-30;
+  }
+
+  .btn-cancel {
+    @apply btn w-[200px] h-[60px] rounded-lg pt-[14px] pr-[16px] pb-[14px] pl-[16px] gap-[2px] bg-base-403 border-base-300 text-base-100 hover:bg-base-300 hover:border-base-300;
+  }
+  /* End Section Event */
+
+  /* Start Header Navbar */
+  .header-navbar {
+    @apply w-[1440px] h-[108px] left-[1px]  pt-[0px] pr-[24px] pb-[0px] pl-[24px] mx-auto navbar bg-primary-100  justify-between md:flex;
+  }
+  /* End Header Navbar */
+
+  /* Start Modal Alamat */
+  .input-building {
+    @apply w-[320px] h-[48px] mt-2 p-2 border bg-primary-100 border-base-300 rounded text-sm text-base-100 font-semibold pt-[14px] pr-[16px] pb-[14px] pl-[16px];
+  }
+
+  .input-address {
+    @apply mt-2 p-2 border bg-primary-100 border-base-300 rounded  w-[319px] h-[94px] font-semibold text-base-100 text-sm pt-[14px] pr-[16px] pb-[14px] pl-[16px];
+  }
+
+  .input-submit {
+    @apply bg-base-150 text-neutral-100 px-4 py-2 rounded-lg text-sm font-semibold w-[126px] h-[46px] pt-[14px] pr-[16px] pb-[14px] pl-[16px] text-center;
+  }
+
+  .input-modalalamat {
+    @apply select select-bordered border w-[318px] min-h-[48px] border-base-300 bg-primary-100 rounded-md text-sm text-base-100 font-semibold;
+  }
+
+  .input-kodepos {
+    @apply w-[102px] h-[48px] mt-2 p-2 border bg-primary-100 border-base-300 rounded text-sm text-base-100 font-semibold pt-[14px] pr-[16px] pb-[14px] pl-[16px];
+  }
+  /* End Modal ALamat */
+
+  /* start Detail Ticket */
+  .input-ticketname {
+    @apply input input-bordered w-[404px] h-[46px] rounded-lg pt-[14px] pr-[16px] pb-[14px] pl-[16px] gap-[2px] border-base-300 text-base-100 text-xs font-semibold leading-5 bg-primary-100;
+  }
+
+  .input-numberofticket {
+    @apply input input-bordered w-[404px] h-[46px] rounded-lg pt-[14px] pr-[16px] pb-[14px] pl-[16px] gap-[2px] border-base-300 text-base-100 text-xs font-semibold leading-5 bg-primary-100;
+  }
+
+  .input-price {
+    @apply input input-bordered flex-1  w-[-345px] h-[18px] bg-primary-100 border-primary-100 rounded-none  text-[12px] leading-5  text-base-100 font-semibold;
+  }
+
+  .div-priceticket {
+    @apply flex items-center border border-base-300 shadow-sm w-[404px] h-[46px] rounded-lg pt-[14px] pr-[16px] pb-[14px] pl-[16px] gap-[2px] bg-primary-100;
+  }
+  /* End Detail Ticket */
+
+  /* Start Ticket Sell */
+  .label-detailticket {
+    @apply block w-[404px] h-[34px] justify-between pt-[8px] pr-[4px] pb-[8px] pl-[4px] text-base-100 text-xs leading-5 font-bold mb-1;
+  }
+
+  .input-datepublish {
+    @apply input input-md w-[131.5px] h-[18px] bg-primary-100 text-xs  leading-[18px] rounded-none text-base-100 font-semibold;
+  }
+
+  .input-clockpublish {
+    @apply input input-md w-[131.5px] h-[18px] bg-primary-100 text-xs  leading-[18px] rounded-none text-base-100 font-semibold;
+  }
+
+  .submit-ticket {
+    @apply w-[404px] h-[46px] pt-[14px] pr-[16px] pb-[14px] pl-[16px] py-2 bg-base-150 text-center text-xs leading-6 text-white font-bold rounded-lg hover:bg-primary-40 focus:ring-2 focus:ring-base-150 mt-14;
+  }
+
+  .label-datepublish {
+    @apply block w-[187.5px] h-[36px] justify-between pt-[8px] pr-[4px] pb-[8px] pl-[4px] text-base-100 text-sm font-semibold leading-5 mb-2;
+  }
+
+  .input-publishdate {
+    @apply flex items-center border border-base-300 bg-white w-[187.5px] h-[46px] rounded-lg pt-[14px] pr-[16px] pb-[14px] pl-[16px];
+  }
+
+  .submit-publishdate {
+    @apply w-[404px] h-[46px] mt-28 pt-[14px] pr-[16px] pb-[14px] pl-[16px] py-2 bg-base-150 text-center text-xs leading-5 text-white font-bold rounded-lg hover:bg-primary-40 focus:ring-2 focus:ring-base-150;
+  }
+  /* end ticket sell */
+}
