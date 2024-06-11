@@ -1,14 +1,15 @@
-import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
-import Dashboard from "./components/ManageDashboard/dashboard";
+import HomePage from './pages/HomePage'
+import AddProduct from "./components/addProduct/addProduct"
+import './App.css'
 
-function App() {
+
+const App = () => {
   return (
-    <Router>
-      <Routes>
-        <Route path="/" element={<Dashboard />} />
-      </Routes>
-    </Router>
-  );
+    <>
+      <HomePage />
+      <AddProduct />
+    </>
+  )
 }
 
-export default App;
+export default App
