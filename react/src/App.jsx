@@ -1,17 +1,15 @@
-import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
+import HomePage from './pages/HomePage'
+import AddProduct from "./components/addProduct/addProduct"
+import './App.css'
 
-import EditProduct from "./components/EditManageProducts/EditProducts";
-import ManageDashboardProducts from "./components/ManageDashboardProduct/ManageDashboardProduct";
 
-function App() {
+const App = () => {
   return (
-    <Router>
-      <Routes>
-        <Route path="/*" element={<ManageDashboardProducts />} />
-        <Route path="/editProduct" element={<EditProduct />} />
-      </Routes>
-    </Router>
-  );
+    <>
+      <HomePage />
+      <AddProduct />
+    </>
+  )
 }
 
-export default App;
+export default App
