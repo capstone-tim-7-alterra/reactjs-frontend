@@ -3,131 +3,136 @@
 @tailwind utilities;
 
 @layer components {
-  /* Start Section Event */
-  .section-Event {
-    @apply bg-primary-100 w-[1440px] h-[27848px] top-[3196px] left-[3373px] gap-0 mx-auto font-poppins;
-  }
-  .header-Event {
-    @apply w-full h-[108px] left-[1px]  px-6 py-0 mx-auto navbar bg-primary-100  justify-between  shadow-custom md:flex;
-  }
-  .event-information {
-    @apply w-[1156px] h-[496px] pt-[24px] pr-[22px] pb-[24px] pl-[22px] gap-[58px] mx-auto bg-primary-100;
+  .navbar {
+      @apply min-h-10 h-11 p-0 md:p-2 xl:px-6 bg-white text-black w-full shadow-lg md:h-14 lg:h-20 xl:h-[108px] 
   }
 
-  .input-Event {
-    @apply input input-md border w-[603px] h-[46px] border-base-300 bg-primary-100 rounded-md text-sm text-base-100 font-semibold opacity-70;
+  .navbar-start {
+      @apply ml-2 text-sm md:text-lg lg:text-xl xl:text-2xl xl:font-bold text-[#4C4C4C]
+  }
+  
+  .container {
+      @apply px-2 md:p-6 mx-auto xl:space-y-20
   }
 
-  .span-Event {
-    @apply ml-3 w-[94px] h-[44px] p-2.5 bg-neutral-85 rounded-[5px] gap-2.5 text-neutral-45 text-sm leading-6 flex items-center justify-center;
+  .breadcrumbs {
+      @apply max-w-full text-[10px] md:text-[12px] lg:text-sm text-[#374151] font-normal
   }
 
-  .dropdownInput-Event {
-    @apply select select-bordered border w-[603px] min-h-[46px] border-base-300 bg-primary-100 rounded-md text-sm text-base-100;
+  .form-primary {
+     @apply flex flex-col m-5 md:m-8 lg:m-12 xl:mx-[118px] sm:gap-3 md:gap-5 xl:gap-[50px]
   }
 
-  .div-detailEvent {
-    @apply w-[1156px] min-h-[983px] pt-[24px] pr-[22px] pb-[24px] pl-[22px] gap-[58px] mx-auto bg-primary-100 mt-20;
+  .form-secondary {
+      @apply flex flex-col xl:mx-[77px] xl:mt-[61px]
   }
 
-  .textarea-Event {
-    @apply textarea textarea-md  textarea-bordered border min-w-[603px] h-[229px] border-base-300 bg-primary-100 rounded-lg text-xs text-base-100  text-[16px] leading-[24px]   gap-[space-x-2] font-semibold opacity-70;
+  .title-form {
+      @apply font-semibold xl:font-bold md:text-xl lg:text-2xl xl:text-[32px] 
   }
 
-  .event-Price {
-    @apply w-[1156px] h-[346px] pt-[24px] pr-[22px] pb-[24px] pl-[22px] gap-[58px] mx-auto bg-primary-100 text-primary-0 mt-10;
+  .form-card {
+      @apply flex-col inline-flex justify-start items-start bg-white w-full sm:p-2 md:p-3 lg:py-6 lg:px-[22px] lg:mb-[70px] xl:mb-[72px] sm:shadow lg:shadow-lg sm:gap-4 lg:gap-[58px] 
   }
 
-  .event-Price2 {
-    @apply w-[1156px] h-[254px] pt-[24px] pr-[22px] pb-[24px] pl-[22px] gap-[58px] mx-auto bg-primary-100 text-primary-0 mt-10;
+  .form-card-title {
+      @apply text-black lg:text-[24px] xl:text-[32px] font-bold
   }
 
-  .input-ticketDetail {
-    @apply input input-md w-[547px] h-[18px] bg-primary-100 text-sm text-base-100 items-center justify-center font-semibold rounded-none mx-auto opacity-70 ml-2;
+  .form-card-box {
+      @apply justify-start items-start md:gap-[50px] lg:gap-[100px] xl:gap-[149px] sm:flex-col md:flex-row md:inline-flex 
   }
 
-  .btn-Event {
-    @apply btn w-[200px] h-[60px] rounded-lg pt-[14px] pr-[16px] pb-[14px] pl-[16px] gap-[2px] bg-primary-30 border-primary-30 text-base-400 hover:bg-primary-30 hover:border-primary-30;
+  .question-box {
+      @apply flex-col justify-start items-start sm:mb-2 md:mb-4 sm:gap-1 lg:gap-[18px] inline-flex
   }
 
-  .btn-cancel {
-    @apply btn w-[200px] h-[60px] rounded-lg pt-[14px] pr-[16px] pb-[14px] pl-[16px] gap-[2px] bg-base-403 border-base-300 text-base-100 hover:bg-base-300 hover:border-base-300;
-  }
-  /* End Section Event */
-
-  /* Start Header Navbar */
-  .header-navbar {
-    @apply w-[1440px] h-[108px] left-[1px]  pt-[0px] pr-[24px] pb-[0px] pl-[24px] mx-auto navbar bg-primary-100  justify-between md:flex;
-  }
-  /* End Header Navbar */
-
-  /* Start Modal Alamat */
-  .input-building {
-    @apply w-[320px] h-[48px] mt-2 p-2 border bg-primary-100 border-base-300 rounded text-sm text-base-100 font-semibold pt-[14px] pr-[16px] pb-[14px] pl-[16px];
+  .question-input {
+      @apply flex-col justify-start items-start inline-flex
   }
 
-  .input-address {
-    @apply mt-2 p-2 border bg-primary-100 border-base-300 rounded  w-[319px] h-[94px] font-semibold text-base-100 text-sm pt-[14px] pr-[16px] pb-[14px] pl-[16px];
+  .media-input {
+      @apply xl:w-[202px] xl:h-[202px] xl:px-[21px] xl:py-[30px] border-black  gap-2.5 flex-col justify-center items-center inline-flex border border-dashed
   }
 
-  .input-submit {
-    @apply bg-base-150 text-neutral-100 px-4 py-2 rounded-lg text-sm font-semibold w-[126px] h-[46px] pt-[14px] pr-[16px] pb-[14px] pl-[16px] text-center;
+  .question-form {
+      @apply xl:mx-10 xl:mt-[62px] xl:space-y-6 flex-col justify-start items-start inline-flex
   }
 
-  .input-modalalamat {
-    @apply select select-bordered border w-[318px] min-h-[48px] border-base-300 bg-primary-100 rounded-md text-sm text-base-100 font-semibold;
+  .question-card {
+      @apply xl:space-y-3
   }
 
-  .input-kodepos {
-    @apply w-[102px] h-[48px] mt-2 p-2 border bg-primary-100 border-base-300 rounded text-sm text-base-100 font-semibold pt-[14px] pr-[16px] pb-[14px] pl-[16px];
-  }
-  /* End Modal ALamat */
-
-  /* start Detail Ticket */
-  .input-ticketname {
-    @apply input input-bordered w-[404px] h-[46px] rounded-lg pt-[14px] pr-[16px] pb-[14px] pl-[16px] gap-[2px] border-base-300 text-base-100 text-xs font-semibold leading-5 bg-primary-100;
+  .question-input-icon {
+      @apply flex items-center gap-2 sm:w-[248px] md:w-[360px] lg:w-[500px] xl:w-[603px] xl:h-[46px]
   }
 
-  .input-numberofticket {
-    @apply input input-bordered w-[404px] h-[46px] rounded-lg pt-[14px] pr-[16px] pb-[14px] pl-[16px] gap-[2px] border-base-300 text-base-100 text-xs font-semibold leading-5 bg-primary-100;
+  .button-form {
+      @apply sm:text-xs sm:p-1 sm:w-16 xl:w-[97px] 
   }
 
-  .input-price {
-    @apply input input-bordered flex-1  w-[-345px] h-[18px] bg-primary-100 border-primary-100 rounded-none  text-[12px] leading-5  text-base-100 font-semibold;
+  .sidebar {
+      @apply xl:w-[300px] relative z-50 shadow bg-white xl:h-[1890px]
   }
 
-  .div-priceticket {
-    @apply flex items-center border border-base-300 shadow-sm w-[404px] h-[46px] rounded-lg pt-[14px] pr-[16px] pb-[14px] pl-[16px] gap-[2px] bg-primary-100;
-  }
-  /* End Detail Ticket */
-
-  /* Start Ticket Sell */
-  .label-detailticket {
-    @apply block w-[404px] h-[34px] justify-between pt-[8px] pr-[4px] pb-[8px] pl-[4px] text-base-100 text-xs leading-5 font-bold mb-1;
+  .sidebar-heading {
+      @apply xl:mx-[47px]  justify-start items-center gap-3 inline-flex xl:mt-[22px] xl:mb-[44px]
   }
 
-  .input-datepublish {
-    @apply input input-md w-[131.5px] h-[18px] bg-primary-100 text-xs  leading-[18px] rounded-none text-base-100 font-semibold;
+  .sidebar-nav {
+      @apply flex-col justify-start items-start gap-[13px] inline-flex
   }
 
-  .input-clockpublish {
-    @apply input input-md w-[131.5px] h-[18px] bg-primary-100 text-xs  leading-[18px] rounded-none text-base-100 font-semibold;
+  .sidebar-list {
+      @apply inline-flex font-semibold text-sm space-x-5 items-center mx-[45px] my-[17px]
   }
 
-  .submit-ticket {
-    @apply w-[404px] h-[46px] pt-[14px] pr-[16px] pb-[14px] pl-[16px] py-2 bg-base-150 text-center text-xs leading-6 text-white font-bold rounded-lg hover:bg-primary-40 focus:ring-2 focus:ring-base-150 mt-14;
+  .dashboard-summary-primary {
+      @apply xl:py-[30px] xl:px-[43px] inline-flex shadow rounded-xl space-x-[20px]
   }
 
-  .label-datepublish {
-    @apply block w-[187.5px] h-[36px] justify-between pt-[8px] pr-[4px] pb-[8px] pl-[4px] text-base-100 text-sm font-semibold leading-5 mb-2;
+  .dashboard-summary-secondary {
+      @apply xl:py-[30px] xl:px-[30px] inline-flex shadow rounded-xl space-x-[20px]
   }
 
-  .input-publishdate {
-    @apply flex items-center border border-base-300 bg-white w-[187.5px] h-[46px] rounded-lg pt-[14px] pr-[16px] pb-[14px] pl-[16px];
+  .article-list {
+      @apply xl:p-4 flex-col space-y-3 rounded-xl shadow
   }
 
-  .submit-publishdate {
-    @apply w-[404px] h-[46px] mt-28 pt-[14px] pr-[16px] pb-[14px] pl-[16px] py-2 bg-base-150 text-center text-xs leading-5 text-white font-bold rounded-lg hover:bg-primary-40 focus:ring-2 focus:ring-base-150;
-  }
-  /* end ticket sell */
+    .question-input-icon {
+        @apply flex items-center gap-2 sm:w-[248px] md:w-[360px] lg:w-[500px] xl:w-[603px] xl:h-[46px]
+    }
+
+    .button-form {
+        @apply sm:text-xs sm:p-1 sm:w-16 xl:w-[97px] 
+    }
+
+    .sidebar {
+        @apply xl:w-[300px] relative z-50 shadow bg-white xl:h-[1890px]
+    }
+
+    .sidebar-heading {
+        @apply xl:mx-[47px]  justify-start items-center gap-3 inline-flex xl:mt-[22px] xl:mb-[44px]
+    }
+
+    .sidebar-nav {
+        @apply flex-col justify-start items-start gap-[13px] inline-flex
+    }
+
+    .sidebar-list {
+        @apply inline-flex font-semibold text-sm space-x-5 items-center mx-[45px] my-[17px]
+    }
+
+    .dashboard-summary-primary {
+        @apply xl:py-[30px] xl:px-[43px] inline-flex shadow rounded-xl space-x-[20px]
+    }
+
+    .dashboard-summary-secondary {
+        @apply xl:py-[30px] xl:px-[30px] inline-flex shadow rounded-xl space-x-[20px]
+    }
+
+    .article-list {
+        @apply xl:p-4 flex-col space-y-3 rounded-xl shadow
+    }
+
 }

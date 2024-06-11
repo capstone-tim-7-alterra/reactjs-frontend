@@ -1,12 +1,13 @@
-import Routing from './Routing'
+import HomePage from './pages/HomePage'
+import AddProduct from "./components/addProduct/addProduct"
 import './App.css'
 
 
 const App = () => {
   return (
     <>
-      <Routing />
-      
+      <HomePage />
+      <AddProduct />
     </>
   )
 }
