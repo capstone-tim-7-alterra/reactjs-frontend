@@ -1,16 +1,16 @@
-import Navbar from "../../components/addProduct/NavbarManage"
-import Breadcrumbs from "../../components/addProduct/Breadcrumb"
-import uploadImage from "../../assets/icons/Picture.svg"
+// import Navbar from "../../components/addProduct/NavbarManage"
+import Breadcrumbs from "../breadcrumb/Breadcrumbs"
+import uploadImage from "../../assets/icons/form/Picture.svg"
 
-export default function AddPost() {
+export default function EditPost() {
     return (
         <>
-            <Navbar pages={ "Manage Article" }/>
-            <section className="container font-poppins xl:px-[45px]">
-                <Breadcrumbs pages={ "Add Article" }/>
+            {/* <Navbar pages={ "Manage Article" }/> */}
+            <section className="container xl:px-[45px] xl:h-[1560px]">
+                <Breadcrumbs />
                 <form className="form-secondary">
                     <h1 className="title-form">
-                        Create New Post
+                        Edit Post
                     </h1>
 
                     <article className="question-form">
@@ -18,7 +18,7 @@ export default function AddPost() {
                             <h2 className="text-zinc-900 lg:text-base lg:font-semibold leading-tight">
                                 Post Title *
                             </h2>
-                            <textarea placeholder="Bio" className="xl:w-[1115px] xl:h-12 textarea textarea-bordered textarea-xs w-full" ></textarea>
+                            <textarea placeholder="Title" className="xl:w-[1115px] xl:h-12 textarea textarea-bordered textarea-sm w-full bg-primary-100" ></textarea>
                             <div className="text-zinc-900 text-sm font-normal leading-tight">
                                 This will be shown as the title on the front page and on the post itself
                             </div>
@@ -53,7 +53,7 @@ export default function AddPost() {
                             <h2 className="text-zinc-900 lg:text-base lg:font-semibold leading-tight">
                                 Post Content *
                             </h2>
-                            <textarea placeholder="Bio" className="xl:w-[1115px] xl:h-[229px] textarea textarea-bordered textarea-xs w-full" ></textarea>
+                            <textarea placeholder="Description" className="xl:w-[1115px] xl:h-[229px] textarea textarea-bordered textarea-sm w-full bg-primary-100" ></textarea>
                             <div className="text-zinc-900 text-sm font-normal leading-tight">
                                 This is your post content
                             </div>
@@ -63,13 +63,13 @@ export default function AddPost() {
                             <h2 className="text-zinc-900 lg:text-base lg:font-semibold leading-tight">
                                 Tags
                             </h2>
-                            <input type="text" className="xl:w-[1115px] h-12 input input-bordered input-sm w-full border-black" />
+                            <textarea placeholder="Tags" className="xl:w-[1115px] xl:h-12 textarea textarea-bordered textarea-sm w-full bg-primary-100" ></textarea>
                         </div>
 
                         <div className="w-full inline-flex sm:gap-3  xl:gap-[21px] sm:justify-center md:justify-end">
-                            <button className="btn btn-primary button-form">Cancel</button>
-                            <button className="btn btn-primary button-form">Save</button>
-                            <button className="btn btn-primary button-form">Draft</button>
+                            <button className="btn btn-form-secondary">Cancel</button>
+                            <button className="btn btn-form-secondary">Save</button>
+                            <button className="btn btn-form-secondary">Draft</button>
                         </div>
                     </article>
                 </form>

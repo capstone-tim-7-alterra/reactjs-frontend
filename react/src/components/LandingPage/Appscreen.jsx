@@ -1,20 +1,19 @@
-import React from "react";
-import hp1 from "../../assets/imgLandingpage/hp1.png";
-import hp2 from "../../assets/imgLandingpage/hp2.png";
-import hp3 from "../../assets/imgLandingpage/hp3.png";
-import hp4 from "../../assets/imgLandingpage/hp4.png";
-import hp5 from "../../assets/imgLandingpage/hp5.png";
-import awan1 from "../../assets/imgLandingpage/awan1.png";
-import dot from "../../assets/imgLandingpage/Dot.png";
+import hp1 from "../../assets/hp1.png";
+import hp2 from "../../assets/hp2.png";
+import hp3 from "../../assets/hp3.png";
+import hp4 from "../../assets/hp4.png";
+import hp5 from "../../assets/hp5.png";
+import awan1 from "../../assets/awan1.png";
+import dot from "../../assets/Dot.png";
 
 export default function Appscreen() {
   return (
-    <section id="product" className="container mx-auto mt-44 text-left ">
+    <section id="product" className="mx-auto mt-44 text-left xl:px-[51px]">
       <div className=" flex justify-between items-start ">
         <div>
-          <h1 className="text-5xl font-bold text-primary-0 text-left">
+          <h1 className="text-[38px] font-bold text-primary-0 text-left leading-[45px]">
             Apps Screens -{" "}
-            <span className="text-5xl font-bold text-base-150 text-left">
+            <span className="text-[38px] font-bold text-base-150 text-left">
               &nbsp;Kreasi Nusantara
             </span>
           </h1>
@@ -23,12 +22,12 @@ export default function Appscreen() {
             Fingertips
           </p>
         </div>
-        <button className="bg-base-150 hover:bg-base-150 text-white font-normal px-4 h-[40px] !pt-0 rounded-xl">
+        <button className="lg:w-[194px] bg-base-150 hover:bg-base-150 text-white font-normal px-4 h-[40px] !pt-0 rounded-xl">
           Download Now →
         </button>
       </div>
 
-      <div className="relative flex justify-center min-h-[700px]">
+      <div className="relative flex justify-center min-h-[618px]">
         <img src={awan1} className="absolute w-[194px] bottom-[33%] right-[24%]" />
         <img src={dot} className="absolute w-[207px] bottom-[22%] right-[38%]" />
         <img src={hp1} className="absolute w-[30%] top-[10%] left-[15%]" />
