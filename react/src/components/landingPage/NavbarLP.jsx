@@ -23,7 +23,7 @@ export default function Nav() {
               <a href="#product">Product</a>
             </li>
             <li className="text-primary-0">
-              <a>Testimoni</a>
+              <a href="#testimoni">Testimoni</a>
             </li>
             <li>
               <a className="btn bg-base-150 font-medium text-primary-100 rounded-xl hover:bg-primary-40 px-8 ">

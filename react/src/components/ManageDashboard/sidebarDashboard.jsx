@@ -58,7 +58,7 @@ export default function SidebarDashboard() {
               }`}
               onClick={() => handleClick("dashboard")}>
               <a
-                href="#"
+                href="/dashboard"
                 className={`flex w-[167px] h-[24px]  gap-[10px] ${
                   activeButton === "dashboard"
                     ? " gap-[10px] text-white"
@@ -84,19 +84,19 @@ export default function SidebarDashboard() {
             {/* Button 2 Manage Event*/}
             <li
               className={`w-[300px] h-[58px] pt-[17px] pr-[45px] pb-[17px] pl-[45px] ${
-                activeButton === "ManageEvent"
+                activeButton === "manageEvent"
                   ? "flex justify-center items-center bg-primary-30 mx-auto"
                   : "bg-primary-100"
               }`}
-              onClick={() => handleClick("ManageEvent")}>
+              onClick={() => handleClick("manageEvent")}>
               <a
-                href="#event"
+                href="/manageEvent"
                 className={`flex w-[167px] h-[24px]  gap-[10px] ${
-                  activeButton === "ManageEvent"
+                  activeButton === "manageEvent"
                     ? " gap-[10px] text-white"
                     : " text-secondary-50"
                 }`}>
-                {activeButton !== "ManageEvent" ? (
+                {activeButton !== "manageEvent" ? (
                   <img
                     src={IconManageEvent}
                     alt="Button ManageEvent Icon"
@@ -116,19 +116,19 @@ export default function SidebarDashboard() {
             {/* Button 3 Manage Product*/}
             <li
               className={`w-[300px] h-[58px] pt-[17px] pr-[45px] pb-[17px] pl-[45px] ${
-                activeButton === "ManageProduct"
+                activeButton === "manageProduct"
                   ? "flex justify-center items-center bg-primary-30 mx-auto"
                   : "bg-primary-100"
               }`}
-              onClick={() => handleClick("ManageProduct")}>
+              onClick={() => handleClick("manageProduct")}>
               <a
-                href="#"
+                href="/manageProduct"
                 className={`flex w-[167px] h-[24px]  gap-[10px] ${
-                  activeButton === "ManageProduct"
+                  activeButton === "manageProduct"
                     ? " gap-[10px] text-white"
                     : " text-secondary-50"
                 }`}>
-                {activeButton !== "ManageProduct" ? (
+                {activeButton !== "manageProduct" ? (
                   <img
                     src={IconManageProduct}
                     alt="Button ManageProduct Icon"
@@ -180,19 +180,19 @@ export default function SidebarDashboard() {
             {/* Button 5 Manage Admin*/}
             <li
               className={`w-[300px] h-[58px] pt-[17px] pr-[45px] pb-[17px] pl-[45px] ${
-                activeButton === "ManageAdmin"
+                activeButton === "manageAdmin"
                   ? "flex justify-center items-center bg-primary-30 mx-auto"
                   : "bg-primary-100"
               }`}
-              onClick={() => handleClick("ManageAdmin")}>
+              onClick={() => handleClick("manageAdmin")}>
               <a
-                href="#"
+                href="/manageAdmin"
                 className={`flex w-[167px] h-[24px]  gap-[10px] ${
-                  activeButton === "ManageAdmin"
+                  activeButton === "manageAdmin"
                     ? " gap-[10px] text-white"
                     : " text-secondary-50"
                 }`}>
-                {activeButton !== "ManageAdmin" ? (
+                {activeButton !== "manageAdmin" ? (
                   <img
                     src={IconManageAdmin}
                     alt="Button ManageAdmin Icon"

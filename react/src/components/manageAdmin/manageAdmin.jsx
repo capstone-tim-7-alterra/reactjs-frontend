@@ -2,7 +2,10 @@ import React, { useState } from "react";
 import IconSearch from "../../assets/icons/IconSearch.png";
 import TombolAtas from "../../assets/icons/TombolAtas.png";
 import TombolBawah from "../../assets/icons/TombolBawah.png";
-import SidebarDashboard from "./sidebarDashboard";
+import Avatar from "../../assets/imgManageadmin/avatar.png";
+import EditSquare from "../../assets/imgManageadmin/EditSquare.png";
+import Trash from "../../assets/imgManageadmin/Trash.png";
+import SidebarDashboard from "./sidebarDashboard"; //pakai dashboardutama
 import HeaderDashboard from "./headerDashboard";
 export default function dashboard() {
   const [counter, setCounter] = useState(5);
@@ -61,12 +64,13 @@ export default function dashboard() {
                 />
               </div>
             </div>
-            <div className="w-[1037px] h-[502px] p-6 mx-auto shadow-custom-3 shadow-custom-4">
+            <div className="w-[1037px] h-[502px] p-6 mx-auto shadow-custom-3 shadow-custom-4 mt-10">
               <div className="overflow-x-auto ">
                 <table className="table">
                   {/* head */}
                   <thead className="mx-auto text-center text-neutral-15 border-none ">
                     <tr className="border-none w-[999px] h-[56px]  pt-[16px] pr-[0px] pb-[16px] pl-[0px] gap-[56px]">
+                      <th></th>
                       <th>Username</th>
                       <th>Roles</th>
                       <th>Email</th>
@@ -79,8 +83,8 @@ export default function dashboard() {
                     <tr className="border-none w-[1003px] h-[64px] pt-[16px] pr-[0px] pb-[16px] pl-[0px] gap-[56px] text-neutral-15 ">
                       <td>
                         <img
-                          src={IconSearch}
-                          alt="Search"
+                          src={Avatar}
+                          alt="avatar"
                           className="w-[32px] h-[32px] "
                         />
                       </td>
@@ -88,42 +92,126 @@ export default function dashboard() {
                       <td>SuperAdmin</td>
                       <td>Example@gmail.com</td>
                       <td>24//05/2024</td>
+                      <td className="flex gap-5 ml-10">
+                        <img
+                          src={EditSquare}
+                          alt="editsquare"
+                          className="w-[24px] h-[24px]  "
+                        />
+                         <img
+                          src={Trash}
+                          alt="Trash"
+                          className="w-[24px] h-[24px]"
+                        />
+                      </td>
                     </tr>
                     {/* row 2 */}
                     <tr className="border-none w-[1003px] h-[64px] pt-[16px] pr-[0px] pb-[16px] pl-[0px] gap-[56px]  text-neutral-15">
-                      <th>2</th>
+                    <td>
+                        <img
+                          src={Avatar}
+                          alt="avatar"
+                          className="w-[32px] h-[32px] "
+                        />
+                      </td>
                       <td>Bessotu Itok</td>
                       <td>SuperAdmin</td>
                       <td>Example@gmail.com</td>
                       <td>24//05/2024</td>
+                      <td className="flex gap-5 ml-10">
+                        <img
+                          src={EditSquare}
+                          alt="editsquare"
+                          className="w-[24px] h-[24px]  "
+                        />
+                         <img
+                          src={Trash}
+                          alt="Trash"
+                          className="w-[24px] h-[24px]"
+                        />
+                      </td>
                     </tr>
                     {/* row 3 */}
                     <tr className="border-none w-[1003px] h-[64px] pt-[16px] pr-[0px] pb-[16px] pl-[0px] gap-[56px]  text-neutral-15 ">
-                      <th>3</th>
+                    <td>
+                        <img
+                          src={Avatar}
+                          alt="avatar"
+                          className="w-[32px] h-[32px] "
+                        />
+                      </td>
                       <td>Mafazan</td>
                       <td>Admin</td>
                       <td>Example@gmail.com</td>
                       <td>24//05/2024</td>
+                      <td className="flex gap-5 ml-10">
+                        <img
+                          src={EditSquare}
+                          alt="editsquare"
+                          className="w-[24px] h-[24px]  "
+                        />
+                         <img
+                          src={Trash}
+                          alt="Trash"
+                          className="w-[24px] h-[24px]"
+                        />
+                      </td>
                     </tr>
                     <tr className="border-none w-[1003px] h-[64px] pt-[16px] pr-[0px] pb-[16px] pl-[0px] gap-[56px]  text-neutral-15 ">
-                      <th>4</th>
+                    <td>
+                        <img
+                          src={Avatar}
+                          alt="avatar"
+                          className="w-[32px] h-[32px] "
+                        />
+                      </td>
                       <td>Putra Senja</td>
                       <td>Admin</td>
                       <td>Example@gmail.com</td>
                       <td>24//05/2024</td>
+                      <td className="flex gap-5 ml-10">
+                        <img
+                          src={EditSquare}
+                          alt="editsquare"
+                          className="w-[24px] h-[24px]  "
+                        />
+                         <img
+                          src={Trash}
+                          alt="Trash"
+                          className="w-[24px] h-[24px]"
+                        />
+                      </td>
                     </tr>
                     <tr className="border-none w-[1003px] h-[64px] pt-[16px] pr-[0px] pb-[16px] pl-[0px] gap-[56px]   text-neutral-15">
-                      <th>5</th>
+                    <td>
+                        <img
+                          src={Avatar}
+                          alt="avatar"
+                          className="w-[32px] h-[32px] "
+                        />
+                      </td>
                       <td>Ananda</td>
                       <td>Admin</td>
                       <td>Example@gmail.com</td>
                       <td>24//05/2024</td>
+                      <td className="flex gap-5 ml-10">
+                        <img
+                          src={EditSquare}
+                          alt="editsquare"
+                          className="w-[24px] h-[24px]  "
+                        />
+                         <img
+                          src={Trash}
+                          alt="Trash"
+                          className="w-[24px] h-[24px]"
+                        />
+                      </td>
                     </tr>
                   </tbody>
                 </table>
               </div>
             </div>
-            <div className="flex w-[1092px] h-[48px] gap-[24px] justify-end items-center">
+            <div className="flex w-[1092px] h-[48px] gap-[24px] justify-end items-center mt-10">
               <div className="flex w-[196px] h-[31px] gap-[10px] ">
                 <p className="w-[42px] h-[24px] bg-primary-100 text-center flex items-center justify-center mt-1 tex-[16px] leading-6 font-normal text-primary-0 ">
                   Show
