@@ -149,11 +149,7 @@ export default {
         },
         //custom warna yang tidak terdapat di design sistem UI/UX
         base: {
-          50: "#F2F2F2", //new arr
-          70: "#2B3440",
-          100:"#FFFFFF",
-        },
-        base: {
+          50: "#F2F2F2",
           100: "#1F2937",
           110: "#64748B",
           120: "#1F2937",
@@ -165,6 +161,8 @@ export default {
           300: "#E5E6E6",
           400: "#D4DBFF",
           401: "#F0F4FF",
+          402: "#F9FAFB",//baru thalita
+          403: "#F2F2F2",//baru thalita
         },
       },
       boxShadow: {
@@ -195,14 +193,3 @@ export default {
 // 9.
 // 10.
 // Dst
-      screens: {
-        sm: "640px",
-        md: "768px",
-        lg: "1024px",
-        xl: "1280px",
-        "2xl": "1440px",
-      },
-    },
-  },
-  plugins: [require("daisyui")],
-};

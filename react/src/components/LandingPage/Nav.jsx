@@ -1,5 +1,5 @@
 import React from "react";
-import Logo from "../../assets/logokn.png";
+import Logo from "../../assets/icons/Logo.png";
 export default function Nav() {
   return (
     <nav className="sticky z-10 top-0 mx-auto container bg-base-170 w-full flex justify-between items-center">
@@ -12,7 +12,7 @@ export default function Nav() {
           </p>
         </div>
         <div className="navbar-end">
-          <ul className="menu menu-horizontal px-25 gap-5 flex items-center">
+          <ul className="menu menu-horizontal px-25 gap-5 flex items-center ">
             <li>
               <a className="text-base-150 font-bold" href="#">
                 Home

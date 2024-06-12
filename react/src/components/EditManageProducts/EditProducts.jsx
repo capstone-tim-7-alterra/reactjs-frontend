@@ -25,12 +25,12 @@ export default function EditProduct() {
                 </a>
               </li>
               <li className="-ml-4 text-center">
-                <li className="w-[77px] h-[20px] mt-2">Edit Product</li>
+                <li className="w-[77px] h-[20px]">Edit Product</li>
               </li>
             </ul>
           </div>
           <div className="w-[1156px] h-[2416px] gap-[50px] mx-auto mt-14 ">
-            <h1 className="w-[1156px] h-[48px] text-[32px] leading-[48px] font-semibold text-primary-0 mx-auto">
+            <h1 className="w-[328px] h-[48px] text-[32px] leading-[48px] font-semibold text-primary-0 mb-10">
               Edit Product
             </h1>
             <EditProductInformation />
@@ -38,8 +38,8 @@ export default function EditProduct() {
             <EditPrice />
           </div>
         </div>
-        <div className="absolute flex w-[424px] h-[60px] top-[2705px] left-[875px] gap-[24px] -mt-32 mx-auto">
-          <button className="btn-editProduct-cancel">Cencel</button>
+        <div className="flex w-[424px] h-[60px] top-[2705px] left-[875px] gap-[24px]  mx-auto">
+          <button className="btn-editProduct-cancel">Cancel</button>
           <button className="btn-editProduct-save">Save</button>
         </div>
       </section>

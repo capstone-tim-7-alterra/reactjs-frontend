@@ -1,5 +1,5 @@
 import React from "react";
-import Gambar from "../../assets/Logo.png";
+import Gambar from "../../assets/iconSidebar/Logo.png";
 
 const LoginDashboard = () => {
   return (
@@ -72,11 +72,11 @@ const LoginDashboard = () => {
 
         {/* Join Our Community */}
         <div className="flex flex-col justify-center items-start w-[572.5px] h-[814px] p-10 relative bg-primary-30 rounded-r-3xl shadow-2xl">
-          <h1 className=" top-[347px] ml-[20px] text-primary-100  text-4xl font-semibold leading-[46px] tracking-normal w-[224px] h-[92px] max-left-[638px] ">
-            Join Our Community
+          <h1 className="text-left absolute top-[332px] ml-[20px] text-primary-100  text-[36px] font-semibold leading-[46px] tracking-normal w-[313px] h-[46px] max-left-[624px] ">
+            Hello!
           </h1>
-          <p className="text-left absolute top-[444px] ml-[20px] text-primary-100  text-base leading-[40px] tracking-normal w-[348px] h-[26px] max-left-[638px] font-normal mt-5">
-            Lorem Ipsum is simply dummy text
+          <p className="text-left absolute top-[390px] ml-[20px] text-primary-100 text-[20px] leading-[26px] tracking-normal w-[483px] h-[52px] max-left-[624px] font-normal mt-1">
+          Stay Connected. Log in now and see what they're sharing today
           </p>
         </div>
       </div>

@@ -1,11 +1,11 @@
 import { useState } from "react";
-import batik1 from "../../assets/batik-1.png";
-import batik2 from "../../assets/batik-2.png";
-import batik3 from "../../assets/batik-3.png";
-import batik4 from "../../assets/batik-4.png";
-import batik5 from "../../assets/batik-5.png";
-import video from "../../assets/video.png";
-import iconimg from "../../assets/iconimg.png";
+import batik1 from "../../assets/imgProduct/batik-1.png";
+import batik2 from "../../assets/imgProduct/batik-2.png";
+import batik3 from "../../assets/imgProduct/batik-3.png";
+import batik4 from "../../assets/imgProduct/batik-4.png";
+import batik5 from "../../assets/imgProduct/batik-5.png";
+import video from "../../assets/imgProduct/video.png";
+import iconimg from "../../assets/imgProduct/iconimg.png";
 
 export default function DetailProduct() {
   const [errorMessageTextarea, setErrorMessageTextarea] = useState("");
@@ -28,7 +28,7 @@ export default function DetailProduct() {
   return (
     <>
       <div className="div-detailProduct  shadow-custom-1 shadow-custom-2">
-        <h1 className="w-[328px] h-[48px] text-[32px] leading-[48px] font-semibold text-primary-0 mb-14">
+        <h1 className="max-w-[328px] h-[48px] text-[32px] leading-[48px] font-semibold text-primary-0 mb-14">
           Detail Product
         </h1>
         <div className="flex md:flex-row items-start justify-between mb-6 w-[1112px]  h-[229px] gap-[149px] ">
@@ -100,7 +100,7 @@ export default function DetailProduct() {
           </div>
         </div>
 
-        <div className="flex  md:flex-row items-start justify-between w-[1112px]  h-[107px] gap-[149px] mt-20 ">
+        <div className="flex  md:flex-row items-start justify-between w-[1112px]  h-[107px] gap-[149px] mt-14">
           <div className="flex flex-col gap-[18px] w-[360px] h-[94px] ">
             <div className="flex items-center justify-between w-[360px] h-[36px] gap-[15px]">
               <label className="min-w-[172px] h-[36px] text-[24px] leading-9 font-semibold text-secondary-50">
@@ -177,7 +177,7 @@ aslinya karena faktor kamera atau pencahayaan
           </div>
         </div>
 
-        <div className="flex md:flex-row items-start justify-start w-[1112px] h-[229px] gap-[149px]">
+        <div className="flex md:flex-row items-start justify-start w-[1112px] h-[229px] gap-[149px] -mt-30">
           <div className="flex flex-col gap-[18px] min-w-[360px] h-[94px]">
             <div className="flex items-center justify-between w-[360px] h-[44px]">
               <label className="min-w-[176px] h-[36px] text-[24px] leading-9 font-semibold text-secondary-50">

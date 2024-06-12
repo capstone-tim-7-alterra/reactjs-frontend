@@ -1,7 +1,7 @@
 import React from "react";
-import awan from "../../assets/awan.png";
-import orang1 from "../../assets/orang1.png";
-import orang2 from "../../assets/orang2.png";
+import awan from "../../assets/imgLandingpage/awan.png";
+import orang1 from "../../assets/imgLandingpage/orang1.png";
+import orang2 from "../../assets/imgLandingpage/orang2.png";
 
 export default function Testimoni() {
   return (

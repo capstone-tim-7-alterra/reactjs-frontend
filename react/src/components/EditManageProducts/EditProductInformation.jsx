@@ -68,7 +68,7 @@ export default function ProductInformation() {
         <div className="flex  md:flex-row items-start justify-between  w-[1112px] h-[142px] gap-[149px] mt-14">
           <div className="flex flex-col gap-[18px] w-[360px] h-[142px] ">
             <div className="flex items-center justify-between w-[360px] h-[44px]">
-              <label className="min-w-[176px] h-[36px] text-[24px] leading-9 font-semibold text-secondary-50">
+              <label className="max-w-[176px] h-[36px] text-[24px] leading-9 font-semibold text-secondary-50">
                 Category
               </label>
               <span className="span-editProduct">Required</span>

@@ -90,7 +90,7 @@ export default function SidebarDashboard() {
               }`}
               onClick={() => handleClick("ManageEvent")}>
               <a
-                href="#"
+                href="#event"
                 className={`flex w-[167px] h-[24px]  gap-[10px] ${
                   activeButton === "ManageEvent"
                     ? " gap-[10px] text-white"

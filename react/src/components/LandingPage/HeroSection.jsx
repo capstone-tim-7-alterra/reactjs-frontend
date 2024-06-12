@@ -1,10 +1,10 @@
-import Gambar from "../../assets/handphone.png";
-import Oval from "../../assets/oval.png";
-import Logokn1 from "../../assets/logokn1.png";
-import Awan from "../../assets/awan.png";
-import dot from "../../assets/Dot.png";
+import Gambar from "../../assets/imgLandingpage/handphone.png";
+import Oval from "../../assets/imgLandingpage/oval.png";
+import Logokn1 from "../../assets/imgLandingpage/logokn.png";
+import Awan from "../../assets/imgLandingpage/awan.png";
+import dot from "../../assets/imgLandingpage/Dot.png";
 
-export default function HeroSection() {
+export default function HeroSection() { 
   return (
     <section className="mx-auto container bg-base-170 overflow-x-hidden">
       <div className="grid grid-cols-1 md:grid-cols-2 mt-10 items-center text-left">
@@ -22,10 +22,10 @@ export default function HeroSection() {
           </button>
         </article>
         <div className="relative w-full ">
-          <img src={Awan} className="absolute top-[20%] -left-10" />
+          {/* <img src={Awan} className="absolute top-[20%] -left-10" /> */}
           <img src={Oval} className="w-[97%]" />
-          <img src={Awan} className="absolute top-[50%] left-20" />
-          <img src={Awan} className="absolute bottom-[3%] -left-10" />
+          {/* <img src={Awan} className="absolute top-[50%] left-20" /> */}
+          {/* <img src={Awan} className="absolute bottom-[3%] -left-10" /> */}
           <img
             src={Logokn1}
             className="absolute w-[60%] bottom-[10%] -right-[10%]"
