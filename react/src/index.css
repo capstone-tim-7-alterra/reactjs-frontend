@@ -12,7 +12,7 @@
     }
 
     .navbar-start {
-        @apply ml-2 text-sm md:text-lg lg:text-xl xl:text-2xl xl:font-bold text-[#4C4C4C]
+        @apply ml-2 text-sm lg:text-lg xl:text-2xl xl:font-bold text-[#4C4C4C]
     }
     
     .container {
@@ -80,11 +80,11 @@
     }
 
     .sidebar {
-        @apply xl:w-[300px] relative z-50 shadow bg-white xl:h-[1890px]
+        @apply xl:w-[300px] z-50 shadow bg-white xl:h-[1890px]
     }
 
     .sidebar-heading {
-        @apply xl:mx-[47px]  justify-start items-center gap-3 inline-flex xl:mt-[22px] xl:mb-[44px]
+        @apply justify-start items-center gap-3 inline-flex xl:mt-[22px] xl:mb-[44px] lg:mb-7 xl:px-2 lg:my-5
     }
 
     .sidebar-nav {
@@ -92,31 +92,15 @@
     }
 
     .sidebar-list {
-        @apply inline-flex font-semibold text-sm space-x-5 items-center mx-[45px] my-[17px]
+        @apply inline-flex font-semibold space-x-5 text-xs items-center xl:mx-[45px] lg:mx-10 lg:my-3 xl:my-[17px]
     }
 
-    .active-navlink {
-        @apply bg-[#980019] xl:w-[300px] px-[45px] py-[17px]
-    }
-
-    .default-navlink {
-        @apply xl:w-[300px]
-    }
-
-    .dashboard-summary-primary {
-        @apply xl:py-[30px] xl:px-[43px] inline-flex shadow rounded-xl space-x-[20px]
-    }
-
-    .dashboard-summary-secondary {
-        @apply xl:py-[30px] xl:px-[30px] inline-flex shadow rounded-xl space-x-[20px]
+    .active-sidebar {
+        @apply lg:pl-[30px] text-white
     }
 
     .article-list {
-        @apply xl:p-4 flex-col space-y-3 rounded-xl shadow
-    }
-
-    .question-input-icon {
-        @apply flex items-center gap-2 sm:w-[248px] md:w-[360px] lg:w-[500px] xl:w-[603px] xl:h-[46px]
+        @apply xl:p-4 lg:p-2 flex-col space-y-3 rounded-xl shadow
     }
 
     .btn-color-primary {
@@ -135,32 +119,9 @@
         @apply sm:text-xs sm:p-1 sm:w-16 xl:w-[97px] md:text-base
     }
 
-    .sidebar {
-        @apply xl:w-[300px] relative z-50 shadow bg-white xl:h-[1890px]
+    .dashboard-summary {
+        @apply xl:p-[30px] lg:p-3 inline-flex shadow rounded-xl space-x-[20px] xl:w-full
     }
 
-    .sidebar-heading {
-        @apply xl:mx-[47px]  justify-start items-center gap-3 inline-flex xl:mt-[22px] xl:mb-[44px]
-    }
-
-    .sidebar-nav {
-        @apply flex-col justify-start items-start gap-[13px] inline-flex
-    }
-
-    .sidebar-list {
-        @apply inline-flex font-semibold text-sm space-x-5 items-center mx-[45px] my-[17px]
-    }
-
-    .dashboard-summary-primary {
-        @apply xl:py-[30px] xl:px-[43px] inline-flex shadow rounded-xl space-x-[20px]
-    }
-
-    .dashboard-summary-secondary {
-        @apply xl:py-[30px] xl:px-[30px] inline-flex shadow rounded-xl space-x-[20px]
-    }
-
-    .article-list {
-        @apply xl:p-4 flex-col space-y-3 rounded-xl shadow
-    }
 
 }

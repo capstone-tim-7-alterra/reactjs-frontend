@@ -1,13 +1,13 @@
 // import Navbar from "../../components/addProduct/NavbarManage"
-import Breadcrumbs from "../breadcrumb/BreadcrumbF"
-import uploadImage from "../../assets/icons/Picture.svg"
+import Breadcrumbs from "../breadcrumb/Breadcrumbs"
+import uploadImage from "../../assets/icons/form/Picture.svg"
 
 export default function EditPost() {
     return (
         <>
             {/* <Navbar pages={ "Manage Article" }/> */}
             <section className="container xl:px-[45px] xl:h-[1560px]">
-                <Breadcrumbs pages={ "Edit Article" }/>
+                <Breadcrumbs />
                 <form className="form-secondary">
                     <h1 className="title-form">
                         Edit Post

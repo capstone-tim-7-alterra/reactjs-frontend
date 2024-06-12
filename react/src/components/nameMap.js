@@ -17,3 +17,5 @@ export const nameMap = {
     '/dashboard/manage-article/add': 'Add Article',
     '/dashboard/manage-article/edit': 'Edit Article',
   };
+
+  

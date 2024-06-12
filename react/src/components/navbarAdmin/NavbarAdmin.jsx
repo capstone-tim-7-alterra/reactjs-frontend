@@ -9,7 +9,7 @@ export default function Navbar() {
     const headerTitle = nameMap[currentPath] || 'Page Not Found';
 
     return (
-        <nav className="navbar">
+        <nav className="navbar lg:sticky lg:top-0">
             <header className="navbar-start flex-1">
                 { headerTitle }
             </header>

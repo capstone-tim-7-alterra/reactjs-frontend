@@ -1,5 +1,5 @@
 // import Navbar from "../navbar/Navbar"
-import Breadcrumbs from "../breadcrumb/Breadcrumb"
+import Breadcrumbs from "../breadcrumb/Breadcrumbs"
 import uploadImage from "../../assets/icons/form/Picture.svg"
 import uploadVideo from "../../assets/icons/form/Video.svg"
 import percent  from "../../assets/icons/form/Percent.svg"
@@ -10,7 +10,7 @@ export default function EditProduct() {
         <>
             {/* <Navbar pages={ "Manage Product" }/> */}
             <section className="container">
-                <Breadcrumbs pages={ "Edit Product" }/>
+                <Breadcrumbs />
                 <form className="form-primary">
                     <h1 className="title-form">
                         Add Product
