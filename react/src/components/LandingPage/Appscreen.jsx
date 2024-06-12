@@ -28,7 +28,7 @@ export default function Appscreen() {
         </button>
       </div>
 
-      <div className="relative flex justify-center min-h-[700px]">
+      <div className="relative flex justify-center min-h-[600px]">
         <img src={awan1} className="absolute w-[194px] bottom-[33%] right-[24%]" />
         <img src={dot} className="absolute w-[207px] bottom-[22%] right-[38%]" />
         <img src={hp1} className="absolute w-[30%] top-[10%] left-[15%]" />

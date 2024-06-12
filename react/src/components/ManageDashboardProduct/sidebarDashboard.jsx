@@ -57,7 +57,7 @@ export default function SidebarDashboard() {
               }`}
               onClick={() => handleClick("dashboard")}>
               <a
-                href="#"
+                href="/dashboard"
                 className={`flex w-[167px] h-[24px]  gap-[10px] ${
                   activeButton === "dashboard"
                     ? " gap-[10px] text-white"

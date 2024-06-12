@@ -6,8 +6,8 @@ import IconDollarTiket from "../../assets/icons/iconDollarEvent.png";
 import IconSearch from "../../assets/icons/IconSearch.png";
 import TombolAtas from "../../assets/icons/TombolAtas.png";
 import TombolBawah from "../../assets/icons/TombolBawah.png";
-import SidebarDashboard from "./sidebarDashboard";
-import HeaderDashboard from "./headerDashboard";
+import SidebarDashboard from "./sidebarDashboard"; //pakai dashboardutama
+import HeaderDashboard from "./headerDashboard"; //pakai dashboardutama
 export default function dashboard() {
   const [counter, setCounter] = useState(5);
 

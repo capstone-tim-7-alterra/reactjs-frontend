@@ -4,6 +4,7 @@ import Nav from "../components/LandingPage/Nav";
 import Benefit from "../components/LandingPage/Benefit";
 import Appscreen from "../components/LandingPage/Appscreen";
 import Testimoni from "../components/LandingPage/Testimoni";
+import Footer from "../components/LandingPage/Footer";
 export default function HomePage() {
     return (
         <>
@@ -12,7 +13,7 @@ export default function HomePage() {
             <Benefit/>
             <Appscreen/>
             <Testimoni/>
-            {/* <Footer/> */}
+            <Footer/>
         </>
 
     )
