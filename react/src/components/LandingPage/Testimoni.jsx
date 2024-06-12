@@ -1,3 +1,4 @@
+/* eslint-disable react/no-unescaped-entities */
 import awan from "../../assets/imgLandingpage/awan.png";
 import orang1 from "../../assets/imgLandingpage/orang1.png";
 import orang2 from "../../assets/imgLandingpage/orang2.png";

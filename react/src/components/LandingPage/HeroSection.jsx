@@ -2,7 +2,6 @@
 import Gambar from "../../assets/handphone.png";
 import Oval from "../../assets/oval.png";
 import Logokn1 from "../../assets/logokn1.png";
-import Awan from "../../assets/awan.png";
 import dot from "../../assets/Dot.png";
 
 export default function HeroSection() { 
