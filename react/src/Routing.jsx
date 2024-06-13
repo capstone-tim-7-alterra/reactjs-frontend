@@ -9,6 +9,7 @@ import ModalAlamat from "./components/modalAlamat/modalAlamat";
 // import EventError from "./components/eventError/eventError";
 import TicketForm from "./components/ticketForm/ticketForm";
 import ManageAdmin from "./components/manageAdmin/manageAdmin";
+import AddAdmin from "./components/addAdmin/addAdmin";
 
 const App = () => {
   return (
@@ -22,6 +23,7 @@ const App = () => {
           <Route path="/modal-alamat" element={<ModalAlamat />} />
           <Route path="/ticket-form" element={<TicketForm />} />
           <Route path="/manage-admin" element={<ManageAdmin />} />
+          <Route path="/add-admin" element={<AddAdmin />} />
           {/* <Route path="/event-error" element={<EventError />} /> */}
         </Routes>
       </div>

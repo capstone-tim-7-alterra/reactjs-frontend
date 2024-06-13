@@ -1,7 +1,5 @@
-/* eslint-disable react-hooks/rules-of-hooks */
-/* eslint-disable no-unused-vars */
 import React, { useState, useRef, useEffect } from "react";
-// import IconLogOut from "../../assets/iconSidebar/iconLogOut.png";
+import IconLogOut from "../../assets/iconSidebar/iconLogOut.png";
 
 export default function headerDashboard() {
   const [open, setOpen] = useState(false);
@@ -34,8 +32,8 @@ export default function headerDashboard() {
       {/* relative jika ingin mengganti fixed */}
       <header className="fixed w-[1140px] h-[108px] left-[300px] bg-primary-100 shadow-custom-1 shadow-custom-2 flex justify-between pt-[0px] pr-[24px] pb-[0px] pl-[24px] z-40 font-poppins">
         <div className="flex items-center">
-          <h2 className="w-[137px] h-[32px] text-2xl font-semibold text-secondary-50">
-            Dashboard
+          <h2 className="min-w-[137px] h-[32px] text-2xl font-semibold text-secondary-50">
+            Manage Admin
           </h2>
         </div>
         <div className="flex items-center">
@@ -76,11 +74,11 @@ export default function headerDashboard() {
                       href="#"
                       className="relative flex w-[167px] h-[24px] gap-[10px] mx-auto">
                       <div>
-                        {/* <img
+                        <img
                           src={IconLogOut}
                           alt="Button LogOut Icon"
                           className="w-[24px] h-[20px]"
-                        /> */}
+                        />
                       </div>
                       <span className="text-base-100  w-[100px] h-[40px] text-[14px] font-semibold leading-3 mt-2">
                         Log Out
