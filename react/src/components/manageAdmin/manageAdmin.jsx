@@ -210,7 +210,7 @@ export default function Dashboard() {
                   type="text"
                   value={currentEditItem.username}
                   className="mt-1 p-2 border w-full"
-                  // Add logic to handle input change
+                
                 />
               </div>
               <div className="mb-4">
@@ -221,7 +221,7 @@ export default function Dashboard() {
                   type="text"
                   value={currentEditItem.role}
                   className="mt-1 p-2 border w-full"
-                  // Add logic to handle input change
+                 
                 />
               </div>
               <div className="mb-4">
@@ -232,7 +232,7 @@ export default function Dashboard() {
                   type="email"
                   value={currentEditItem.email}
                   className="mt-1 p-2 border w-full"
-                  // Add logic to handle input change
+               
                 />
               </div>
               <div className="flex justify-end">
@@ -246,7 +246,7 @@ export default function Dashboard() {
                 <button
                   type="submit"
                   className="bg-blue-500 text-white p-2 rounded"
-                  // Add logic to handle form submission
+                
                 >
                   Save
                 </button>
