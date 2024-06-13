@@ -11,8 +11,8 @@ import FotoProfile from "../../assets/imgDashboard/fotoProfile-1.png";
 import IconComment from "../../assets/icons/iconComment.png";
 import IconLove from "../../assets/icons/iconLove.png";
 import IconLoveArticle from "../../assets/icons/iconLoveActive.png";
-import SidebarDashboard from "./sidebarDashboard";
-import HeaderDashboard from "./headerDashboard";
+// import SidebarDashboard from "./sidebarDashboard";
+// import HeaderDashboard from "./headerDashboard";
 
 export default function dashboard() {
   const [isClicked, setIsClicked] = useState(false);
@@ -22,9 +22,9 @@ export default function dashboard() {
   };
   return (
     <>
-      <SidebarDashboard />
-      <HeaderDashboard />
-      <div className="w-[1440px] min-h-[1034px] h-[2000px] top-[552px] left-[157px] bg-primary-100 font-poppins">
+      {/* <SidebarDashboard />
+      <HeaderDashboard /> */}
+      {/* <div className="w-[1440px] min-h-[1034px] h-[2000px] top-[552px] left-[157px] bg-primary-100 font-poppins">
         <div className="absolute w-[1056px] h-[20px] top-[125px] left-[324px] gap-[t--space/1] bg-primary-100">
           <div className="text-sm font-normal breadcrumbs text-neutral-40 gap-[1px]">
             <ul className="w-[1056px] h-[20px] left-[324px] gap-[t--space/1]">
@@ -36,8 +36,8 @@ export default function dashboard() {
               <li></li>
             </ul>
           </div>
-        </div>
-        <div className="absolute w-[1140px] h-[800.79px] top-[171px] left-[300px] gap-[24px]  bg-primary-100">
+        </div> */}
+        <div className="w-[1140px] h-[800.79px] top-[171px] left-[300px] gap-[24px]  bg-primary-100">
           <div className="flex flex-wrap w-[1056px] h-[121px] gap-[27px] mx-auto">
             <div className="w-[243.75px h-[121px] rounded-[10px] p-[30px] bg-primary-100 shadow-custom-3 shadow-custom-4">
               <div className="flex flex-wrap w-[161px] h-[61px] gap-[20px]">
@@ -262,7 +262,7 @@ export default function dashboard() {
             </div>
           </div>
         </div>
-      </div>
+      {/* </div> */}
     </>
   );
 }

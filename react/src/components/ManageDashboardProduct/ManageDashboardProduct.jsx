@@ -6,8 +6,9 @@ import IconDollarTiket from "../../assets/icons/iconDollarEvent.png";
 import IconSearch from "../../assets/icons/IconSearch.png";
 import TombolAtas from "../../assets/icons/TombolAtas.png";
 import TombolBawah from "../../assets/icons/TombolBawah.png";
-import SidebarDashboard from "./sidebarDashboard"; //pakai dashboardutama
-import HeaderDashboard from "./headerDashboard"; //pakai dashboardutama
+import {Link} from "react-router-dom";
+// import SidebarDashboard from "./sidebarDashboard"; //pakai dashboardutama
+// import HeaderDashboard from "./headerDashboard"; //pakai dashboardutama
 export default function dashboard() {
   const [counter, setCounter] = useState(5);
 
@@ -22,9 +23,9 @@ export default function dashboard() {
   };
   return (
     <>
-      <SidebarDashboard />
-      <HeaderDashboard />
-      <div className="w-[1440px] min-h-[1034px] h-[2000px] top-[552px] left-[157px] bg-primary-100 font-poppins">
+      {/* <SidebarDashboard />
+      <HeaderDashboard /> */}
+      {/* <div className="w-[1440px] min-h-[1034px] h-[2000px] top-[552px] left-[157px] bg-primary-100 font-poppins">
         <div className="absolute w-[1056px] h-[20px] top-[125px] left-[324px] gap-[t--space/1] bg-primary-100">
           <div className="text-sm font-normal breadcrumbs text-neutral-40 gap-[1px]">
             <ul className="w-[1056px] h-[20px] left-[324px] gap-[t--space/1]">
@@ -40,8 +41,8 @@ export default function dashboard() {
               </li>
             </ul>
           </div>
-        </div>
-        <div className="absolute w-[1140px] h-[800.79px] top-[171px] left-[300px] gap-[24px]  bg-primary-100">
+        </div> */}
+        <div className="w-[1140px] h-[800.79px] top-[171px] left-[300px] gap-[24px]  bg-primary-100">
           <div className="flex flex-wrap w-[1056px] h-[121px] gap-[27px] mx-auto">
             <div className="w-[243.75px h-[121px] rounded-[10px] p-[30px] bg-primary-100 shadow-custom-3 shadow-custom-4">
               <div className="flex flex-wrap w-[161px] h-[61px] gap-[20px]">
@@ -121,9 +122,9 @@ export default function dashboard() {
             </div>
             <div className="flex w-[1092px] h-[46px] gap-[24px] bg-primary-100">
               <div className="w-[108px] h-[46px] rounded-lg bg-primary-30 pt-[14px] pr-[16px] pb-[14px] pl-[16px] gap-[space-x-2]">
-                <p className="w-[76px] h-[18px] text-secondary-91 font-semibold text-[12px] leading-[18px] text-center">
+                <Link to="add" className="w-[76px] h-[18px] text-secondary-91 font-semibold text-[12px] leading-[18px] text-center">
                   Add Product
-                </p>
+                </Link>
               </div>
               <div className="flex flex-wrap w-[768px] h-[46px] rounded-lg border pt-[14px] pr-[16px] pb-[14px] pl-[16px] gap-[space-x-2]mx-auto">
                 <div className="w-[16px] h-[18px] opacity-70 flex items-center justify-center">
@@ -224,7 +225,7 @@ export default function dashboard() {
             </div>
           </div>
         </div>
-      </div>
+      {/* </div> */}
     </>
   );
 }

@@ -10,7 +10,7 @@ import circle from "../../assets/imgLandingpage/circle.png";
 export default function Benefit() {
   return (
     <section id="benefit" className="container mx-auto relative xl:px-[51px]">
-      <img src={awan1} alt="awan1" className="absolute w-[194px] top-[5%]" />
+      <img src={awan1} alt="awan1" className="absolute w-[194px] top-[10%]" />
       <img
         src={awan1}
         alt="awan1"

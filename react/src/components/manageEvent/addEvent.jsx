@@ -1,4 +1,4 @@
-import React, { useRef, useState } from 'react';
+import React, { useRef, useState } from "react";
 import Navbar from "./navbar";
 import IconDate from "../../assets/imgEvent/iconDate.png";
 import IconLocation from "../../assets/imgEvent/iconLocation.png";
@@ -123,16 +123,16 @@ export default function AddEvent() {
               </div>
               <div className="relative w-[700px] h-[107px] flex flex-wrap gap-[24px] items-start justify-start">
                 <div className="flex items-center justify-center gap-[24px]">
-                  <div className="w-[603px] h-[46px] flex items-center pt-[14px] pr-[16px] pb-[14px] pl-[16px] gap-[2px] border-secondary-55 bg-primary-100 rounded-lg shadow-custom-1">
+                  <div className="w-[603px] h-[46px] flex items-center pt-[14px] pr-[16px] pb-[14px] pl-[16px] gap-[2px] border-secondary-55 bg-primary-100 rounded-lg ">
                     <input
                       type="text"
-                      placeholder="Address"
-                      className="input input-md w-[547px] h-[18px] text-base-100 bg-primary-100 rounded-md text-sm font-semibold text-[16px] leading-[24px] opacity-70"
+                      placeholder="Pick a date"
+                      className="input input-md border w-[547px] h-[18px] text-base-100 bg-primary-100 rounded-md text-sm font-semibold text-[16px] leading-[24px] opacity-70"
                     />
                     <img
-                      src={IconLocation}
-                      alt="iconLocation"
-                      className="w-[16px] h-[16px] mx-auto mr-15"
+                      src={IconDate}
+                      alt="iconDate"
+                      className="w-[16px] h-[16px] mx-auto"
                     />
                   </div>
                 </div>
@@ -165,7 +165,7 @@ export default function AddEvent() {
                     <img
                       src={IconDate}
                       alt="iconDate"
-                      className="w-[16px] h-[16px] mx-auto mr-15"
+                      className="w-[16px] h-[16px] mx-auto"
                     />
                   </div>
                 </div>
@@ -221,7 +221,7 @@ export default function AddEvent() {
                 accept="image/png, image/jpeg"
                 ref={fileInputRef}
                 onChange={handleFileChange}
-                style={{ display: 'none' }}
+                style={{ display: "none" }}
               />
             </div>
 
@@ -243,7 +243,7 @@ export default function AddEvent() {
                   </p>
                 </div>
               </div>
-              <div className="flex items-center w-[603px] h-[229px] shadow-custom-1">
+              <div className="flex items-center w-[603px] h-[229px]">
                 <textarea
                   type="text"
                   placeholder="Deskripsi"
@@ -285,7 +285,7 @@ export default function AddEvent() {
                     <img
                       src={IconTicket}
                       alt="iconTicket"
-                      className="w-[16px] h-[16px] mx-auto mr-5"
+                      className="w-[16px] h-[16px] mx-auto"
                     />
                   </div>
                 </div>

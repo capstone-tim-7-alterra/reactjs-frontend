@@ -1,10 +1,10 @@
 // import Footer from "../components/LandingPage/Footer";
-import HeroSection from "../components/landingPage/HeroSection";
-import Nav from "../components/landingPage/NavbarLP";
-import Benefit from "../components/landingPage/Benefit";
-import Appscreen from "../components/landingPage/Appscreen";
-import Testimoni from "../components/landingPage/Testimoni";
-import Footer from "../components/landingPage/Footer";
+import HeroSection from "../components/LandingPage/HeroSection";
+import Nav from "../components/LandingPage/NavbarLP";
+import Benefit from "../components/LandingPage/Benefit";
+import Appscreen from "../components/LandingPage/Appscreen";
+import Testimoni from "../components/LandingPage/Testimoni";
+import Footer from "../components/LandingPage/Footer";
 export default function HomePage() {
     return (
         <div className='bg-base-170'>
@@ -15,6 +15,5 @@ export default function HomePage() {
             <Testimoni/>
             <Footer/>
         </div>
-
     )
 } 

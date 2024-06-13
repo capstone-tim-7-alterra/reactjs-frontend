@@ -1,4 +1,5 @@
 /* eslint-disable react/no-unescaped-entities */
+import Awan from "../../assets/imgLandingpage/awan.png";
 import Gambar from "../../assets/imgLandingpage/handphone.png";
 import Oval from "../../assets/imgLandingpage/oval.png";
 import Logokn1 from "../../assets/imgLandingpage/logokn.png";
@@ -21,11 +22,11 @@ export default function HeroSection() {
           </button>
         </article>
         
-        <div className="relative w-full ">
-          {/* <img src={Awan} className="absolute top-[20%] -left-10" /> */}
+        <div className="relative">
+          <img src={Awan} className="absolute w-[194px] top-[20%] -left-10" />
           <img src={Oval} className="w-[97%]" />
-          {/* <img src={Awan} className="absolute top-[50%] left-20" /> */}
-          {/* <img src={Awan} className="absolute bottom-[3%] -left-10" /> */}
+          <img src={Awan} className="absolute w-[194px] top-[50%] left-20" />
+          <img src={Awan} className="absolute w-[194px] bottom-[3%] -left-10" />
           <img
             src={Logokn1}
             className="absolute w-[60%] bottom-[10%] -right-[10%]"

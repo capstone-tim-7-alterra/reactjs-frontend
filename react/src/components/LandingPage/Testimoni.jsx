@@ -31,12 +31,12 @@ export default function Testimoni() {
               <h2 className="card-title justify-center font-bold  text-[#383A47]">
                 Lucas John
               </h2>
-              <div className="mx-auto justify-center inline-flex gap-1 mt-2">
-                <img src={star} className="mx-auto w-[15px]" />
-                <img src={star} className="mx-auto w-[15px]" />
-                <img src={star} className="mx-auto w-[15px]" />
-                <img src={star} className="mx-auto w-[15px]" />
-                <img src={star} className="mx-auto w-[15px] opacity-[0.2]" />
+              <div className="flex justify-center gap-1 mt-2">
+                <img src={star} className="w-[15px]" />
+                <img src={star} className="w-[15px]" />
+                <img src={star} className="w-[15px]" />
+                <img src={star} className="w-[15px]" />
+                <img src={star} className="w-[15px] opacity-[0.2]" />
               </div>
             </div>
           </div>
@@ -58,12 +58,12 @@ export default function Testimoni() {
               <h2 className="card-title justify-center font-bold  text-[#383A47]">
                 Olivia Esther
               </h2>
-              <div className="mx-auto justify-center inline-flex gap-1 mt-2">
-                <img src={star} className="mx-auto w-[15px]" />
-                <img src={star} className="mx-auto w-[15px]" />
-                <img src={star} className="mx-auto w-[15px]" />
-                <img src={star} className="mx-auto w-[15px]" />
-                <img src={star} className="mx-auto w-[15px] opacity-[0.2]" />
+              <div className="flex justify-center gap-1 mt-2">
+                <img src={star} className="w-[15px]" />
+                <img src={star} className="w-[15px]" />
+                <img src={star} className="w-[15px]" />
+                <img src={star} className="w-[15px]" />
+                <img src={star} className="w-[15px] opacity-[0.2]" />
               </div>
             </div>
           </div>
