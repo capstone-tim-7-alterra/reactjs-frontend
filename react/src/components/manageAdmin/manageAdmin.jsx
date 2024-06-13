@@ -36,7 +36,7 @@ export default function Dashboard() {
   };
 
   const confirmDelete = () => {
-    // Add your delete logic here
+   
     console.log(`Deleting item with id: ${currentDeleteItemId}`);
     setIsDeleteDialogOpen(false);
   };
