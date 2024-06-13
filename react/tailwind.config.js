@@ -1,8 +1,10 @@
 /** @type {import('tailwindcss').Config} */
 export default {
-  content: ["./index.html", "./src/**/*.{js,ts,jsx,tsx}",
-  "./src/assets/fonts/fonts.css",
-],
+  content: [
+    "./index.html",
+    "./src/**/*.{js,ts,jsx,tsx}",
+    "./src/assets/fonts/fonts.css",
+  ],
   theme: {
     screens: {
       sm: "320px",
@@ -22,23 +24,19 @@ export default {
           20: "#68000E",
           30: "#980019",
           35: "#930018",
-          36: "#BE3846", //new arr
+          36: "#BE3846",
           40: "#BE0924",
           41: "#C00C25",
           45: "#C00C25",
           50: "#E22D39",
           60: "#FF5355",
           70: "#FF8984",
-          75: "#FFA8C6", //New arr
-          40: "#BE0924",
-          50: "#E22D39",
-          60: "#FF5355",
-          70: "#FF8984",
+          75: "#FFA8C6",
           80: "#FFB3AF",
           90: "#FFDAD7",
           95: "#FFEDEB",
           99: "#FFFBFF",
-          100: "#FFFFFF", //untuk bg
+          100: "#FFFFFF", //Warna bg
         },
         secondary: {
           0: "#000000",
@@ -46,7 +44,7 @@ export default {
           10: "#1A1C1C",
           20: "#2F3131",
           30: "#454747",
-          35: "#504E4E", //new arr
+          35: "#504E4E",
           40: "#3E4040",
           45: "#61646B;",
           50: "#575859",
@@ -56,25 +54,10 @@ export default {
           70: "#AAABAB",
           80: "#C6C6C7",
           90: "#E2E2E2",
-          91: "#F3F4F6", //new arr
+          91: "#F3F4F6",
           95: "#FFFBFF",
           99: "#FFF5F5",
           100: "#F5F5F5",
-          101: "#FFFFFF",
-          5: "#020617", //baru thalita
-          10: "#1A1C1C",
-          20: "#2F3131",
-          30: "#454747",
-          40: "#3E4040",
-          50: "#575859",
-          55: "#61646B",
-          60: "#909191",
-          70: "#AAABAB",
-          80: "#C6C6C7",
-          90: "#E2E2E2",
-          95: "#FFFBFF",
-          99: "#FFF5F5",
-          100: "#F5F5F5", //baru thalita
           101: "#FFFFFF",
         },
         tertiary: {
@@ -115,8 +98,6 @@ export default {
           21: "#4C4C4C",
           30: "#4D4544",
           35: "#4F4F4F",
-          20: "#362F2E",
-          30: "#4D4544",
           40: "#374151",
           45: "#8B8B8B",
           50: "#7F7574",
@@ -127,7 +108,6 @@ export default {
           90: "#EDE0DE",
           95: "#FBEEEC",
           96: "#E6DEDD",
-          96: "#E6DEDD", //baru thalita
           99: "#FFFBFF",
           100: "#FFFFFF",
         },
@@ -148,6 +128,7 @@ export default {
         },
         //custom warna yang tidak terdapat di design sistem UI/UX
         base: {
+          25: "#2B3440", //new ar
           50: "#F2F2F2",
           100: "#1F2937",
           110: "#64748B",
@@ -160,8 +141,8 @@ export default {
           300: "#E5E6E6",
           400: "#D4DBFF",
           401: "#F0F4FF",
-          402: "#F9FAFB",//baru thalita
-          403: "#F2F2F2",//baru thalita
+          402: "#F9FAFB",
+          403: "#F2F2F2",
         },
       },
       boxShadow: {
@@ -179,16 +160,3 @@ export default {
   },
   plugins: [require("daisyui")],
 };
-
-// List Pageckage/Library yang di install
-// 1.
-// 2.
-// 3.
-// 4.
-// 5.
-// 6.
-// 7.
-// 8.
-// 9.
-// 10.
-// Dst

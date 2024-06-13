@@ -1,7 +1,7 @@
 import React, { useRef, useState } from "react";
-import Navbar from "./navbar";
+import Breadcrumbs from "../breadcrumb/Breadcrumbs";
 import IconDate from "../../assets/imgEvent/iconDate.png";
-import IconLocation from "../../assets/imgEvent/iconLocation.png";
+// import IconLocation from "../../assets/imgEvent/iconLocation.png";
 import Photo from "../../assets/imgEvent/photo.png";
 import IconTicket from "../../assets/imgEvent/iconTicket.png";
 
@@ -22,24 +22,8 @@ export default function AddEvent() {
 
   return (
     <>
-      <section className="section-Event">
-        <Navbar />
-        <div className="text-sm font-normal breadcrumbs text-neutral-40 gap-[1px]">
-          <ul className="w-[1391px] h-[20px] mx-auto">
-            <li>
-              <a href="#" className="w-[79px] h-[20px]">
-                Dashboard
-              </a>
-            </li>
-            <li>
-              <a href="#" className="w-[100px] h-[20px] mr-4">
-                Manage Event
-              </a>
-            </li>
-            <li className="w-[106px] h-[20px] font-semibold">Add new event</li>
-          </ul>
-        </div>
-
+      <section className="section-Event mt-4">
+        <Breadcrumbs />
         <div className="w-[1156px] h-[1979px] gap-[50px] mx-auto mt-14 font-poppins ">
           <h1 className="w-[242px] h-[48px] text-[32px] leading-[48px] font-semibold text-primary-0">
             Add new event
@@ -193,8 +177,7 @@ export default function AddEvent() {
               </div>
               <div
                 className="w-[700px] h-[107px] flex flex-wrap gap-[24px] items-start justify-start cursor-pointer"
-                onClick={handleFileUploadClick}
-              >
+                onClick={handleFileUploadClick}>
                 <div className="w-[603px] h-[202px] pt-[30px] pr-[21px] pb-[30px] pl-[21px] gap-[10px] border border-dotted border-primary-0 flex items-center justify-center">
                   {selectedImage ? (
                     <img

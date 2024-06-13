@@ -1,12 +1,12 @@
+/* eslint-disable no-unused-vars */
+/* eslint-disable react-hooks/rules-of-hooks */
 import React, { useState } from "react";
-import IconSearch from "../../assets/icons/IconSearch.png";
-import TombolAtas from "../../assets/icons/TombolAtas.png";
-import TombolBawah from "../../assets/icons/TombolBawah.png";
-import Avatar from "../../assets/icons/navbar/avatar.svg";
-import EditSquare from "../../assets/icons/article/Edit.svg";
-import Trash from "../../assets/icons/article/Trash.svg"; 
-import SidebarDashboard from "./sidebarDashboard"; //pakai dashboardutama
-import HeaderDashboard from "./headerDashboard";
+import IconSearch from "../assets/icons/IconSearch.png";
+import TombolAtas from "../assets/icons/TombolAtas.png";
+import TombolBawah from "../assets/icons/TombolBawah.png";
+import Avatar from "../assets/icons/navbar/avatar.svg";
+import EditSquare from "../assets/icons/article/Edit.svg";
+import Trash from "../assets/icons/article/Trash.svg";
 import { Link } from "react-router-dom";
 export default function dashboard() {
   const [counter, setCounter] = useState(5);
@@ -22,30 +22,14 @@ export default function dashboard() {
   };
   return (
     <>
-      {/* <SidebarDashboard />
-      <HeaderDashboard /> */}
-      <div className="w-[1440px] min-h-[1034px] h-[2000px] top-[552px] left-[157px] bg-primary-100 font-poppins">
-        {/* <div className="absolute w-[1056px] h-[20px] top-[125px] left-[324px] gap-[t--space/1] bg-primary-100">
-          <div className="text-sm font-normal breadcrumbs text-neutral-40 gap-[1px]">
-            <ul className="w-[1056px] h-[20px] left-[324px] gap-[t--space/1]">
-              <li>
-                <a href="#" className="w-[79px] h-[20px]">
-                  Dashboard
-                </a>
-              </li>
-              <li className="">
-                <p className="w-[110px] h-[20px] font-semibold ">
-                  Manage Admin
-                </p>
-              </li>
-            </ul>
-          </div>
-        </div> */}
-        <div className="absolute w-[1140px] h-[800.79px] top-[171px] left-[300px] gap-[24px]  bg-primary-100 mt-14">
-          <div className="flex flex-wrap w-[1056px] h-[121px] gap-[27px] mx-auto">
-            <div className="flex w-[1092px] h-[46px] gap-[24px] bg-primary-100">
+      <div className="w-[1092px] min-h-[672px] gap-[50px] grid grid-cols-4 bg-primary-100 font-poppins">
+        <div className=" w-[1140px] h-[800.79px] top-[171px] left-[300px] gap-[24px]  bg-primary-100">
+          <div className=" w-[1092px] h-[672px] gap-[50px]">
+            <div className="flex w-[1092px] h-[52px] gap-[24px] bg-primary-100">
               <div className="w-[108px] h-[46px] rounded-lg bg-primary-30 pt-[14px] pr-[16px] pb-[14px] pl-[16px] gap-[space-x-2]">
-                <Link to="add" className="w-[76px] h-[18px] text-secondary-91 font-semibold text-[12px] leading-[18px] text-center">
+                <Link
+                  to="add"
+                  className="w-[76px] h-[18px] text-secondary-91 font-semibold text-[12px] leading-[18px] text-center">
                   Add Product
                 </Link>
               </div>
@@ -61,17 +45,16 @@ export default function dashboard() {
                 <input
                   type="text"
                   placeholder="Search"
-                  className="input input-bordered border-none  w-[712px] h-[18px] opacity-40 bg-primary-100 rounded-none mx-auto"
+                  className="input input-bordered border-none w-[712px] h-[18px] opacity-40 bg-primary-100 rounded-none mx-auto"
                 />
               </div>
             </div>
-            <div className="w-[1037px] h-[502px] p-6 mx-auto shadow-custom-3 shadow-custom-4 mt-10">
+            <div className="w-[1051px] h-[472px] p-6 mx-auto shadow-custom-3 shadow-custom-4 mt-10">
               <div className="overflow-x-auto ">
                 <table className="table">
                   {/* head */}
                   <thead className="mx-auto text-center text-neutral-15 border-none ">
                     <tr className="border-none w-[999px] h-[56px]  pt-[16px] pr-[0px] pb-[16px] pl-[0px] gap-[56px]">
-                      <th></th>
                       <th>Username</th>
                       <th>Roles</th>
                       <th>Email</th>
@@ -79,53 +62,58 @@ export default function dashboard() {
                       <th>Action</th>
                     </tr>
                   </thead>
-                  <tbody className="mx-auto text-center border-t-2  ">
+                  <tbody className="mx-auto text-center border-t-2 ">
                     {/* row 1 */}
                     <tr className="border-none w-[1003px] h-[64px] pt-[16px] pr-[0px] pb-[16px] pl-[0px] gap-[56px] text-neutral-15 ">
-                      <td>
+                      <td className="flex items-center  gap-20 mx-auto">
                         <img
                           src={Avatar}
-                          alt="avatar"
-                          className="w-[32px] h-[32px] "
+                          alt="Batik"
+                          className="w-[32px] h-[32px]"
                         />
+                        Inodhi Putra
                       </td>
-                      <td>Inodhi Putra</td>
+
                       <td>SuperAdmin</td>
                       <td>Example@gmail.com</td>
                       <td>24//05/2024</td>
-                      <td className="flex gap-5 ml-10">
-                        <img
-                          src={EditSquare}
-                          alt="editsquare"
-                          className="w-[24px] h-[24px]  "
-                        />
-                         <img
-                          src={Trash}
-                          alt="Trash"
-                          className="w-[24px] h-[24px]"
-                        />
+                      <td className="flex justify-center gap-5 mx-auto">
+                        <Link to="./edit">
+                          <img
+                            src={EditSquare}
+                            alt="editsquare"
+                            className="w-[24px] h-[24px]"
+                          />
+                        </Link>
+                        <Link>
+                          <img
+                            src={Trash}
+                            alt="Trash"
+                            className="w-[24px] h-[24px]"
+                          />
+                        </Link>
                       </td>
                     </tr>
                     {/* row 2 */}
                     <tr className="border-none w-[1003px] h-[64px] pt-[16px] pr-[0px] pb-[16px] pl-[0px] gap-[56px]  text-neutral-15">
-                    <td>
+                      <td className="flex items-center gap-20 mx-auto">
                         <img
                           src={Avatar}
-                          alt="avatar"
-                          className="w-[32px] h-[32px] "
+                          alt="Batik"
+                          className="w-[32px] h-[32px]"
                         />
+                        Bessotu Itok
                       </td>
-                      <td>Bessotu Itok</td>
                       <td>SuperAdmin</td>
                       <td>Example@gmail.com</td>
                       <td>24//05/2024</td>
-                      <td className="flex gap-5 ml-10">
+                      <td className="flex justify-center gap-5 mx-auto">
                         <img
                           src={EditSquare}
                           alt="editsquare"
-                          className="w-[24px] h-[24px]  "
+                          className="w-[24px] h-[24px]"
                         />
-                         <img
+                        <img
                           src={Trash}
                           alt="Trash"
                           className="w-[24px] h-[24px]"
@@ -134,24 +122,24 @@ export default function dashboard() {
                     </tr>
                     {/* row 3 */}
                     <tr className="border-none w-[1003px] h-[64px] pt-[16px] pr-[0px] pb-[16px] pl-[0px] gap-[56px]  text-neutral-15 ">
-                    <td>
+                      <td className="flex items-center gap-20 mx-auto">
                         <img
                           src={Avatar}
-                          alt="avatar"
-                          className="w-[32px] h-[32px] "
+                          alt="Batik"
+                          className="w-[32px] h-[32px]"
                         />
+                        Mafazan
                       </td>
-                      <td>Mafazan</td>
                       <td>Admin</td>
                       <td>Example@gmail.com</td>
                       <td>24//05/2024</td>
-                      <td className="flex gap-5 ml-10">
+                      <td className="flex justify-center gap-10 mx-auto">
                         <img
                           src={EditSquare}
                           alt="editsquare"
-                          className="w-[24px] h-[24px]  "
+                          className="w-[24px] h-[24px]"
                         />
-                         <img
+                        <img
                           src={Trash}
                           alt="Trash"
                           className="w-[24px] h-[24px]"
@@ -159,24 +147,24 @@ export default function dashboard() {
                       </td>
                     </tr>
                     <tr className="border-none w-[1003px] h-[64px] pt-[16px] pr-[0px] pb-[16px] pl-[0px] gap-[56px]  text-neutral-15 ">
-                    <td>
+                      <td className="flex items-center gap-20 mx-auto">
                         <img
                           src={Avatar}
-                          alt="avatar"
-                          className="w-[32px] h-[32px] "
+                          alt="Batik"
+                          className="w-[32px] h-[32px]"
                         />
+                        Putra Senja
                       </td>
-                      <td>Putra Senja</td>
                       <td>Admin</td>
                       <td>Example@gmail.com</td>
                       <td>24//05/2024</td>
-                      <td className="flex gap-5 ml-10">
+                      <td className="flex justify-center gap-5 mx-auto">
                         <img
                           src={EditSquare}
                           alt="editsquare"
-                          className="w-[24px] h-[24px]  "
+                          className="w-[24px] h-[24px]"
                         />
-                         <img
+                        <img
                           src={Trash}
                           alt="Trash"
                           className="w-[24px] h-[24px]"
@@ -184,24 +172,24 @@ export default function dashboard() {
                       </td>
                     </tr>
                     <tr className="border-none w-[1003px] h-[64px] pt-[16px] pr-[0px] pb-[16px] pl-[0px] gap-[56px]   text-neutral-15">
-                    <td>
+                      <td className="flex items-center gap-20 mx-auto">
                         <img
                           src={Avatar}
-                          alt="avatar"
-                          className="w-[32px] h-[32px] "
+                          alt="Batik"
+                          className="w-[32px] h-[32px]"
                         />
+                        Ananda
                       </td>
-                      <td>Ananda</td>
                       <td>Admin</td>
                       <td>Example@gmail.com</td>
                       <td>24//05/2024</td>
-                      <td className="flex gap-5 ml-10">
+                      <td className="flex justify-center gap-5 mx-auto">
                         <img
                           src={EditSquare}
                           alt="editsquare"
-                          className="w-[24px] h-[24px]  "
+                          className="w-[24px] h-[24px]"
                         />
-                         <img
+                        <img
                           src={Trash}
                           alt="Trash"
                           className="w-[24px] h-[24px]"
@@ -242,13 +230,13 @@ export default function dashboard() {
               </div>
 
               <div className="join w-[159px] h-[48px]">
-                <button className="join-item  w-[41px] h-[48px] pt-[14px] pr-[16px] pb-[14px] pl-[16px] gap-[space-x-2] bg-base-50 hover:bg-base-70 border-base-50 mx-auto text-primary-0 text-sm hover:text-primary-100">
+                <button className="join-item  w-[41px] h-[48px] pt-[14px] pr-[16px] pb-[14px] pl-[16px] gap-[space-x-2] bg-base-50 hover:bg-base-25 border-base-50 mx-auto text-primary-0 text-sm hover:text-primary-100">
                   «
                 </button>
                 <button className="join-item  w-[77px] h-[48px] pt-[14px] pr-[16px] pb-[14px] pl-[16px] gap-[space-x-2] bg-base-50 border-base-50 text-sm leading-5 font-semibold text-base-100 ">
                   Page 1
                 </button>
-                <button className="join-item  w-[41px] h-[48px] pt-[14px] pr-[16px] pb-[14px] pl-[16px] gap-[space-x-2] bg-base-50 hover:bg-base-70 border-base-50 mx-auto text-primary-0 text-sm hover:text-primary-100">
+                <button className="join-item  w-[41px] h-[48px] pt-[14px] pr-[16px] pb-[14px] pl-[16px] gap-[space-x-2] bg-base-50 hover:bg-base-25 border-base-50 mx-auto text-primary-0 text-sm hover:text-primary-100">
                   »
                 </button>
               </div>

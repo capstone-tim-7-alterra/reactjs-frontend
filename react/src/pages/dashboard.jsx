@@ -1,18 +1,16 @@
 /* eslint-disable no-unused-vars */
 /* eslint-disable react-hooks/rules-of-hooks */
 import React, { useState } from "react";
-import IconBukteProduct from "../../assets/icons/iconBasketProduct.png";
-import IconDollarProduct from "../../assets/icons/iconDollarProduct.png";
-import IconBusketTiket from "../../assets/icons/iconBasketTiket.png";
-import IconDollarTiket from "../../assets/icons/iconDollarEvent.png";
-import ImgArticel1 from "../../assets/imgDashboard/imgArticel-1.png";
-import ImgArticel2 from "../../assets/imgDashboard/imgArticel-2.png";
-import FotoProfile from "../../assets/imgDashboard/fotoProfile-1.png";
-import IconComment from "../../assets/icons/iconComment.png";
-import IconLove from "../../assets/icons/iconLove.png";
-import IconLoveArticle from "../../assets/icons/iconLoveActive.png";
-// import SidebarDashboard from "./sidebarDashboard";
-// import HeaderDashboard from "./headerDashboard";
+import IconBukteProduct from "../assets/icons/iconBasketProduct.png";
+import IconDollarProduct from "../assets/icons/iconDollarProduct.png";
+import IconBusketTiket from "../assets/icons/iconBasketTiket.png";
+import IconDollarTiket from "../assets/icons/iconDollarEvent.png";
+import ImgArticel1 from "../assets/imgDashboard/imgArticel-1.png";
+import ImgArticel2 from "../assets/imgDashboard/imgArticel-2.png";
+import FotoProfile from "../assets/imgDashboard/fotoProfile-1.png";
+import IconComment from "../assets/icons/iconComment.png";
+import IconLove from "../assets/icons/iconLove.png";
+import IconLoveArticle from "../assets/icons/iconLoveActive.png";
 
 export default function dashboard() {
   const [isClicked, setIsClicked] = useState(false);
@@ -22,22 +20,8 @@ export default function dashboard() {
   };
   return (
     <>
-      {/* <SidebarDashboard />
-      <HeaderDashboard /> */}
-      {/* <div className="w-[1440px] min-h-[1034px] h-[2000px] top-[552px] left-[157px] bg-primary-100 font-poppins">
-        <div className="absolute w-[1056px] h-[20px] top-[125px] left-[324px] gap-[t--space/1] bg-primary-100">
-          <div className="text-sm font-normal breadcrumbs text-neutral-40 gap-[1px]">
-            <ul className="w-[1056px] h-[20px] left-[324px] gap-[t--space/1]">
-              <li>
-                <a href="#" className="w-[79px] h-[20px]">
-                  Dashboard
-                </a>
-              </li>
-              <li></li>
-            </ul>
-          </div>
-        </div> */}
-        <div className="w-[1140px] h-[800.79px] top-[171px] left-[300px] gap-[24px]  bg-primary-100">
+      <div className="relative">
+        <div className="w-[1140px] h-[918px] top-[108px] left-[300px] gap-[24px] grid grid-cols-4 bg-primary-100">
           <div className="flex flex-wrap w-[1056px] h-[121px] gap-[27px] mx-auto">
             <div className="w-[243.75px h-[121px] rounded-[10px] p-[30px] bg-primary-100 shadow-custom-3 shadow-custom-4">
               <div className="flex flex-wrap w-[161px] h-[61px] gap-[20px]">
@@ -109,7 +93,7 @@ export default function dashboard() {
                   <p className="w-[129px] h-[21px] text-[14px] leading-[21px] font-bold text-secondary-65">
                     Event Ticket Profit
                   </p>
-                  <p className="w-[113px] h-[30px] text-[20px] leading-[30px] font-bold text-neutral-35">
+                  <p className="min-w-[150px] h-[30px] text-[20px] leading-[30px] font-bold text-neutral-35">
                     IDR 712.000
                   </p>
                 </div>
@@ -262,7 +246,7 @@ export default function dashboard() {
             </div>
           </div>
         </div>
-      {/* </div> */}
+      </div>
     </>
   );
 }

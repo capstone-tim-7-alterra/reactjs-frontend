@@ -1,4 +1,4 @@
-import Navbar from "./navbar";
+import Breadcrumbs from "../breadcrumb/Breadcrumbs";
 import IconDate from "../../assets/imgEvent/iconDate.png";
 import IconLocation from "../../assets/imgEvent/iconLocation.png";
 import Photo from "../../assets/imgEvent/photo.png";
@@ -10,24 +10,8 @@ import Clock from "../../assets/imgEvent/clock.png";
 export default function EditEvent() {
   return (
     <>
-      <section className="section-Event">
-        <Navbar />
-        <div className=" text-sm font-normal breadcrumbs text-neutral-40 gap-[1px]">
-          <ul className="w-[1391px] h-[20px] mx-auto">
-            <li>
-              <a href="#" className="w-[79px] h-[20px]">
-                Dashboard
-              </a>
-            </li>
-            <li>
-              <a href="#" className="w-[100px] h-[20px] mr-4">
-                Manage Event
-              </a>
-            </li>
-            <li className="w-[106px] h-[20px]">Edit event</li>
-          </ul>
-        </div>
-
+      <section className="section-Event mt-4">
+        <Breadcrumbs />
         <div className="w-[1156px] min-h-[2071px] gap-[50px] mx-auto mt-14 font-poppins ">
           <h1 className="w-[160px] h-[48px] text-[32px] leading-[48px] font-semibold text-primary-0">
             Edit event
@@ -115,8 +99,7 @@ export default function EditEvent() {
                     <input
                       type="text"
                       placeholder="Lamban Pancasila, X3J6+GG3, Way Mengaku, Lampung Barat,Balik Bukit 34874"
-                      className=" input input-md w-[547px] h-[18px] text-base-100 bg-primary-100 rounded-md text-sm font-semibold  text-[16px] leading-[24px] overflow-hidden gap-[space-x-2]  opacity-70"
-                    ></input>
+                      className=" input input-md w-[547px] h-[18px] text-base-100 bg-primary-100 rounded-md text-sm font-semibold  text-[16px] leading-[24px] overflow-hidden gap-[space-x-2]  opacity-70"></input>
                     <img
                       src={IconLocation}
                       alt="iconLocation"
@@ -148,8 +131,7 @@ export default function EditEvent() {
                     <input
                       type="text"
                       placeholder="18/06/2024"
-                      className="input input-md w-[547px] h-[18px] text-base-100 bg-primary-100 rounded-md text-sm font-semibold  text-[16px] leading-[24px] overflow-hidden gap-[space-x-2]  opacity-70"
-                    ></input>
+                      className="input input-md w-[547px] h-[18px] text-base-100 bg-primary-100 rounded-md text-sm font-semibold  text-[16px] leading-[24px] overflow-hidden gap-[space-x-2]  opacity-70"></input>
                     <img
                       src={IconDate}
                       alt="iconDate"
@@ -276,8 +258,7 @@ Oleh karena itu, Dahlin berharap, agar ke depannya Event tahunan tersebut perlu 
                     <input
                       type="text"
                       placeholder="Insert Ticket Detail"
-                      className="input-ticketDetail"
-                    ></input>
+                      className="input-ticketDetail"></input>
                     <img
                       src={IconTicket}
                       alt="iconTicket"
@@ -373,7 +354,7 @@ Oleh karena itu, Dahlin berharap, agar ke depannya Event tahunan tersebut perlu 
                     <div className="w-[227] min-h-[92px] pt-[6px] pr-[0px] pb-[6px] pl-[0px] gap-[10px]  flex flex-col  border-b border-secondary-0 border-dotted ">
                       <div className="w-[227px] h-[24px] justify-between mt-2 flex ">
                         <h3 className=" w-[62px] h-[42px] text-base leading-6">
-                         VVIP
+                          VVIP
                         </h3>
                         <img
                           src={XCircle}
