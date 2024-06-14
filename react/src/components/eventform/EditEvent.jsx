@@ -1,4 +1,3 @@
-import Navbar from "./navbar";
 import IconDate from "../../assets/imgEvent/iconDate.png";
 import IconLocation from "../../assets/imgEvent/iconLocation.png";
 import Photo from "../../assets/imgEvent/photo.png";
@@ -11,7 +10,6 @@ export default function EditEvent() {
   return (
     <>
       <section className="section-Event">
-        <Navbar />
         <div className=" text-sm font-normal breadcrumbs text-neutral-40 gap-[1px]">
           <ul className="w-[1391px] h-[20px] mx-auto">
             <li>

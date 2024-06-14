@@ -1,10 +1,10 @@
-import hp1 from "../../assets/imgLandingpage/hp1.png";
-import hp2 from "../../assets/imgLandingpage/hp2.png";
-import hp3 from "../../assets/imgLandingpage/hp3.png";
-import hp4 from "../../assets/imgLandingpage/hp4.png";
-import hp5 from "../../assets/imgLandingpage/hp5.png";
-import awan1 from "../../assets/imgLandingpage/awan1.png";
-import dot from "../../assets/imgLandingpage/Dot.png";
+import hp1 from "../../assets/images/imgLandingpage/hp1.png";
+import hp2 from "../../assets/images/imgLandingpage/hp2.png";
+import hp3 from "../../assets/images/imgLandingpage/hp3.png";
+import hp4 from "../../assets/images/imgLandingpage/hp4.png";
+import hp5 from "../../assets/images/imgLandingpage/hp5.png";
+import awan1 from "../../assets/images/imgLandingpage/awan1.png";
+import dot from "../../assets/images/imgLandingpage/Dot.png";
 
 export default function Appscreen() {
   return (

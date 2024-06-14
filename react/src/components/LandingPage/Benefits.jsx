@@ -1,11 +1,11 @@
 /* eslint-disable react/no-unescaped-entities */
-import people from "../../assets/imgLandingpage/people.png";
-import info from "../../assets/imgLandingpage/info.png";
-import puzzle from "../../assets/imgLandingpage/puzzle.png";
-import rocket from "../../assets/imgLandingpage/rocket.png";
-import awan1 from "../../assets/imgLandingpage/awan1.png";
-import dot from "../../assets/imgLandingpage/Dot.png";
-import circle from "../../assets/imgLandingpage/circle.png";
+import people from "../../assets/images/imgLandingpage/people.png";
+import info from "../../assets/images/imgLandingpage/info.png";
+import puzzle from "../../assets/images/imgLandingpage/puzzle.png";
+import rocket from "../../assets/images/imgLandingpage/rocket.png";
+import awan1 from "../../assets/images/imgLandingpage/awan1.png";
+import dot from "../../assets/images/imgLandingpage/Dot.png";
+import circle from "../../assets/images/imgLandingpage/circle.png";
 
 export default function Benefit() {
   return (

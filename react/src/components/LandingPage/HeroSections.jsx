@@ -1,9 +1,9 @@
 /* eslint-disable react/no-unescaped-entities */
-import Awan from "../../assets/imgLandingpage/awan.png";
-import Gambar from "../../assets/imgLandingpage/handphone.png";
-import Oval from "../../assets/imgLandingpage/oval.png";
-import Logokn1 from "../../assets/imgLandingpage/logokn.png";
-import dot from "../../assets/imgLandingpage/Dot.png";
+import Awan from "../../assets/images/imgLandingpage/awan.png";
+import Gambar from "../../assets/images/imgLandingpage/handphone.png";
+import Oval from "../../assets/images/imgLandingpage/oval.png";
+import Logokn1 from "../../assets/images/imgLandingpage/logokn.png";
+import dot from "../../assets/images/imgLandingpage/Dot.png";
 
 export default function HeroSection() { 
   return (

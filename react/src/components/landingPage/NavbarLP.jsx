@@ -1,4 +1,4 @@
-import Logo from "../../assets/iconSidebar/Logo.png";
+import Logo from "../../assets/icons/general/Logo.svg";
 export default function Nav() {
   return (
     <nav className="navbar-user">

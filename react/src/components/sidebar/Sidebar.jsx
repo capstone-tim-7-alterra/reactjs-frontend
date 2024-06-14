@@ -1,5 +1,5 @@
 import { NavLink } from 'react-router-dom';
-import Logo from "../../assets/icons/Logo.png"
+import Logo from "../../assets/icons/general/Logo.svg"
 import Category  from "../../assets/icons/sidebar/Category.svg"
 import CategoryActive from "../../assets/icons/sidebar/CategoryActive.svg"
 import Event  from "../../assets/icons/sidebar/Event.svg"
@@ -14,7 +14,7 @@ import AdminActive  from "../../assets/icons/sidebar/GearSixActive.svg"
 
 export default function Sidebar () {
     return (
-        <aside className="sidebar xl:fixed">
+        <aside className="sidebar fixed h-full">
             <header className="sidebar-heading flex justify-center">
                 <img className="xl:w-[85px] lg:w-[55px]" src={ Logo } />
                 <h1 className="text-red-700 lg:text-md xl:text-xl font-semibold leading-[23px]">Kreasi<br/>Nusantara</h1>
