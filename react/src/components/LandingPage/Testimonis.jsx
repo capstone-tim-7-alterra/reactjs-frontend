@@ -1,8 +1,8 @@
 /* eslint-disable react/no-unescaped-entities */
-import awan from "../../assets/imgLandingpage/awan.png";
-import orang1 from "../../assets/imgLandingpage/orang1.png";
-import orang2 from "../../assets/imgLandingpage/orang2.png";
-import star from "../../assets/imgLandingpage/star.png";
+import awan from "../../assets/images/imgLandingpage/awan.png";
+import orang1 from "../../assets/images/imgLandingpage/orang1.png";
+import orang2 from "../../assets/images/imgLandingpage/orang2.png";
+import star from "../../assets/images/imgLandingpage/star.png";
 
 export default function Testimoni() {
   return (

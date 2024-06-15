@@ -1,7 +1,6 @@
-import React, { useRef, useState } from "react";
+import { useRef, useState } from "react";
 import Navbar from "./navbar";
 import IconDate from "../../assets/imgEvent/iconDate.png";
-import IconLocation from "../../assets/imgEvent/iconLocation.png";
 import Photo from "../../assets/imgEvent/photo.png";
 import IconTicket from "../../assets/imgEvent/iconTicket.png";
 

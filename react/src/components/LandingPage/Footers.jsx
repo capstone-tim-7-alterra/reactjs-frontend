@@ -1,6 +1,6 @@
-import Logo from "../../assets/iconSidebar/Logo.png";
-import gplay from "../../assets/imgLandingpage/gplay.png";
-import appstore from "../../assets/imgLandingpage/appstore.png";
+import Logo from "../../assets/icons/general/Logo.svg";
+import gplay from "../../assets/images/imgLandingpage/gplay.png";
+import appstore from "../../assets/images/imgLandingpage/appstore.png";
 export default function Footer() {
   return (
     <section className="container mx-auto bg-base-170 relative mt-10">

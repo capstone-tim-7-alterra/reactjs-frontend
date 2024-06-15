@@ -1,12 +1,10 @@
-import React, { useState } from "react";
+import { useState } from "react";
 import IconSearch from "../../assets/icons/IconSearch.png";
 import TombolAtas from "../../assets/icons/TombolAtas.png";
 import TombolBawah from "../../assets/icons/TombolBawah.png";
-import Avatar from "../../assets/icons/navbar/avatar.svg";
+import Avatar from "../../assets/icons/general/Avatar.svg";
 import EditSquare from "../../assets/icons/article/Edit.svg";
 import Trash from "../../assets/icons/article/Trash.svg"; 
-import SidebarDashboard from "./sidebarDashboard"; //pakai dashboardutama
-import HeaderDashboard from "./headerDashboard";
 import { Link } from "react-router-dom";
 export default function dashboard() {
   const [counter, setCounter] = useState(5);
@@ -22,25 +20,7 @@ export default function dashboard() {
   };
   return (
     <>
-      {/* <SidebarDashboard />
-      <HeaderDashboard /> */}
       <div className="w-[1440px] min-h-[1034px] h-[2000px] top-[552px] left-[157px] bg-primary-100 font-poppins">
-        {/* <div className="absolute w-[1056px] h-[20px] top-[125px] left-[324px] gap-[t--space/1] bg-primary-100">
-          <div className="text-sm font-normal breadcrumbs text-neutral-40 gap-[1px]">
-            <ul className="w-[1056px] h-[20px] left-[324px] gap-[t--space/1]">
-              <li>
-                <a href="#" className="w-[79px] h-[20px]">
-                  Dashboard
-                </a>
-              </li>
-              <li className="">
-                <p className="w-[110px] h-[20px] font-semibold ">
-                  Manage Admin
-                </p>
-              </li>
-            </ul>
-          </div>
-        </div> */}
         <div className="absolute w-[1140px] h-[800.79px] top-[171px] left-[300px] gap-[24px]  bg-primary-100 mt-14">
           <div className="flex flex-wrap w-[1056px] h-[121px] gap-[27px] mx-auto">
             <div className="flex w-[1092px] h-[46px] gap-[24px] bg-primary-100">

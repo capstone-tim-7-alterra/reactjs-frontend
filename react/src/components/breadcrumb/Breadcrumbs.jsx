@@ -1,7 +1,7 @@
 import { useLocation } from 'react-router-dom';
 import { Breadcrumbs, Link, Typography } from '@mui/material';
 import { Link as RouterLink } from 'react-router-dom';
-import { nameMap } from '../nameMap'; // Sesuaikan path jika perlu
+import { nameMap } from '../pathMap'; // Sesuaikan path jika perlu
 
 function LinkRouter(props) {
     return <Link {...props} component={RouterLink} />;

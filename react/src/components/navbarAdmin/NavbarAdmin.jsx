@@ -1,6 +1,6 @@
 import { useLocation } from 'react-router-dom';
 import Stroke from '../../assets/icons/navbar/Stroke.svg'
-import { nameMap } from '../nameMap';
+import { nameMap } from '../pathMap';
 
 export default function Navbar() {
 
