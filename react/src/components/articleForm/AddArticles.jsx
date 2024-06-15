@@ -4,6 +4,7 @@ import uploadImage from "../../assets/icons/form/Picture.svg"
 export default function AddPost() {
     return (
         <>
+            
             <section className="container xl:px-[45px] xl:h-[1560px]">
                 <Breadcrumbs />
                 <form className="form-secondary">
