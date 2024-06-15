@@ -6,9 +6,6 @@ import Search from '../assets/icons/dashboard/Search.svg'
 import HeroMockup from '../assets/icons/article/hero-article.jpg'
 import Edit from '../assets/icons/article/Edit.svg'
 import Trash from '../assets/icons/article/Trash.svg'
-// import Share from '../assets/icons/article/Share.svg'
-// import Comment from '../assets/icons/article/Comment.svg'
-// import Eye from '../assets/icons/article/Eye.svg'
 
 
 export default function ManageArticle() {
@@ -149,9 +146,9 @@ export default function ManageArticle() {
         </div>
         <div className='flex justify-end'>
             <div className="join">
-                <button className="join-item btn">«</button>
-                <button className="join-item btn">Page 22</button>
-                <button className="join-item btn">»</button>
+                <button className="join-item btn btn-color-secondary">«</button>
+                <button className="join-item btn btn-color-secondary">Page 22</button>
+                <button className="join-item btn btn-color-secondary">»</button>
             </div>
         </div>                            
     </>

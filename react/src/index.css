@@ -24,13 +24,13 @@
   }
   /* *------Sidebar-------*/
   .sidebar {
-    @apply xl:w-[300px] z-50 shadow bg-white
+    @apply lg:w-1/5 xl:w-[300px] z-50 shadow bg-white
   }
   .sidebar-heading {
     @apply justify-start items-center gap-3 inline-flex xl:mt-[22px] xl:mb-[44px] lg:mb-7 xl:px-2 lg:my-5
   }
   .sidebar-nav {
-    @apply flex-col justify-start items-start gap-[13px] inline-flex
+    @apply flex-col justify-start items-start gap-[13px] inline-flex w-full
   }
   .sidebar-list {
     @apply inline-flex font-semibold space-x-5 text-xs items-center xl:mx-[45px] lg:mx-10 lg:my-3 xl:my-[17px]
@@ -43,7 +43,7 @@
     @apply bg-primary-30  border-primary-30 text-primary-100 hover:bg-primary-0 hover:border-primary-100
   }
   .btn-color-secondary {
-    @apply bg-[#F2F2F2] border-[#F2F2F2] text-[#1F2937] hover:bg-primary-0  hover:text-primary-100
+    @apply bg-[#F2F2F2] border-[#F2F2F2] text-[#1F2937] hover:bg-[#2B3440]  hover:text-primary-100
   }
   .btn-form-primary {
     @apply sm:text-xs sm:p-1 sm:w-16 xl:w-[200px] md:text-base lg:text-lg

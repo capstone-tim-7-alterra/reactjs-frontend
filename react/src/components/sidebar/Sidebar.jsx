@@ -14,14 +14,14 @@ import AdminActive  from "../../assets/icons/sidebar/GearSixActive.svg"
 
 export default function Sidebar () {
     return (
-        <aside className="sidebar fixed h-full">
+        <aside className="sidebar lg:fixed h-screen">
             <header className="sidebar-heading flex justify-center">
                 <img className="xl:w-[85px] lg:w-[55px]" src={ Logo } />
                 <h1 className="text-red-700 lg:text-md xl:text-xl font-semibold leading-[23px]">Kreasi<br/>Nusantara</h1>
             </header>
 
             <nav className="sidebar-nav">
-                <NavLink className={({ isActive }) => isActive ? 'xl:w-[300px] bg-[#980019] lg:pl-[30px]' : 'xl:w-[300px]'} to="/dashboard" end>
+                <NavLink className={({ isActive }) => isActive ? 'w-full xl:w-[300px] bg-[#980019] lg:pl-[30px]' : 'w-full xl:w-[300px]'} to="/dashboard" end>
                     {({ isActive }) => (
                         <div className="sidebar-list">
                             <img className="xl:w-6" src={isActive ? CategoryActive : Category} alt="Category" />
@@ -29,7 +29,7 @@ export default function Sidebar () {
                         </div>
                     )}
                 </NavLink>
-                <NavLink className={({ isActive }) => isActive ? 'xl:w-[300px] bg-[#980019] lg:pl-[30px]' : 'xl:w-[300px]'} to="/dashboard/manage-event">
+                <NavLink className={({ isActive }) => isActive ? 'w-full xl:w-[300px] bg-[#980019] lg:pl-[30px]' : 'w-full xl:w-[300px]'} to="/dashboard/manage-event">
                     {({ isActive }) => (
                         <div className="sidebar-list">
                             <img className="xl:w-6" src={isActive ? EventActive : Event} alt="Event" />
@@ -37,7 +37,7 @@ export default function Sidebar () {
                         </div>
                     )}
                 </NavLink>
-                <NavLink className={({ isActive }) => isActive ? 'xl:w-[300px] bg-[#980019] lg:pl-6 xl:pl-[30px]' : 'xl:w-[300px]'} to="/dashboard/manage-product">
+                <NavLink className={({ isActive }) => isActive ? 'w-full xl:w-[300px] bg-[#980019] lg:pl-6 xl:pl-[30px]' : 'w-full xl:w-[300px]'} to="/dashboard/manage-product">
                     {({ isActive }) => (
                         <div className="sidebar-list">
                             <img className="xl:w-6" src={isActive ? ProductActive : Product} alt="Product" />
@@ -45,7 +45,7 @@ export default function Sidebar () {
                         </div>
                     )}
                 </NavLink>
-                <NavLink className={({ isActive }) => isActive ? 'xl:w-[300px] bg-[#980019] lg:pl-[30px]' : 'xl:w-[300px]'} to="/dashboard/manage-article">
+                <NavLink className={({ isActive }) => isActive ? 'w-full xl:w-[300px] bg-[#980019] lg:pl-[30px]' : 'w-full xl:w-[300px]'} to="/dashboard/manage-article">
                     {({ isActive }) => (
                         <div className="sidebar-list">
                             <img className="xl:w-6" src={isActive ? ArticleActive : Article} alt="Article" />
@@ -53,7 +53,7 @@ export default function Sidebar () {
                         </div>
                     )}
                 </NavLink>
-                <NavLink className={({ isActive }) => isActive ? 'xl:w-[300px] bg-[#980019] lg:pl-[30px]' : 'xl:w-[300px]'} to="/dashboard/manage-admin">
+                <NavLink className={({ isActive }) => isActive ? 'w-full xl:w-[300px] bg-[#980019] lg:pl-[30px]' : 'w-full xl:w-[300px]'} to="/dashboard/manage-admin">
                     {({ isActive }) => (
                         <div className="sidebar-list">
                             <img className="xl:w-6" src={isActive ? AdminActive : Admin} alt="Admin" />
