@@ -14,50 +14,50 @@ import AdminActive  from "../../assets/icons/sidebar/GearSixActive.svg"
 
 export default function Sidebar () {
     return (
-        <aside className="sidebar lg:fixed h-screen">
+        <aside className="sidebar lg:fixed lg:h-screen sm:h-page">
             <header className="sidebar-heading flex justify-center">
-                <img className="xl:w-[85px] lg:w-[55px]" src={ Logo } />
-                <h1 className="text-red-700 lg:text-md xl:text-xl font-semibold leading-[23px]">Kreasi<br/>Nusantara</h1>
+                <img className="xl:w-[85px] md:w-[55px] sm:w-10" src={ Logo } />
+                <h1 className="text-red-700 lg:text-md xl:text-xl font-semibold leading-[23px] hidden lg:inline">Kreasi<br/>Nusantara</h1>
             </header>
 
             <nav className="sidebar-nav">
-                <NavLink className={({ isActive }) => isActive ? 'w-full xl:w-[300px] bg-[#980019] lg:pl-[30px]' : 'w-full xl:w-[300px]'} to="/dashboard" end>
+                <NavLink className={({ isActive }) => isActive ? 'active-sidebar' : 'default-sidebar'}  to="/dashboard" end>
                     {({ isActive }) => (
                         <div className="sidebar-list">
                             <img className="xl:w-6" src={isActive ? CategoryActive : Category} alt="Category" />
-                            <h2 className={isActive ? "text-white xl:text-base" : "text-zinc-600 xl:text-sm"}>Dashboard</h2>
+                            <h2 className={isActive ? "text-white xl:text-base hidden lg:inline" : "text-zinc-600 xl:text-sm hidden lg:inline"}>Dashboard</h2>
                         </div>
                     )}
                 </NavLink>
-                <NavLink className={({ isActive }) => isActive ? 'w-full xl:w-[300px] bg-[#980019] lg:pl-[30px]' : 'w-full xl:w-[300px]'} to="/dashboard/manage-event">
+                <NavLink className={({ isActive }) => isActive ? 'active-sidebar' : 'default-sidebar'}  to="/dashboard/manage-event">
                     {({ isActive }) => (
                         <div className="sidebar-list">
                             <img className="xl:w-6" src={isActive ? EventActive : Event} alt="Event" />
-                            <h2 className={isActive ? "text-white xl:text-base" : "text-zinc-600 xl:text-sm"}>Manage Event</h2>
+                            <h2 className={isActive ? "text-white xl:text-base hidden lg:inline" : "text-zinc-600 xl:text-sm hidden lg:inline"}>Manage Event</h2>
                         </div>
                     )}
                 </NavLink>
-                <NavLink className={({ isActive }) => isActive ? 'w-full xl:w-[300px] bg-[#980019] lg:pl-6 xl:pl-[30px]' : 'w-full xl:w-[300px]'} to="/dashboard/manage-product">
+                <NavLink className={({ isActive }) => isActive ? 'active-sidebar' : 'default-sidebar'}  to="/dashboard/manage-product">
                     {({ isActive }) => (
                         <div className="sidebar-list">
                             <img className="xl:w-6" src={isActive ? ProductActive : Product} alt="Product" />
-                            <h2 className={isActive ? "text-white xl:text-base" : "text-zinc-600 xl:text-sm"}>Manage Product</h2>
+                            <h2 className={isActive ? "text-white xl:text-base hidden lg:inline" : "text-zinc-600 xl:text-sm hidden lg:inline"}>Manage Product</h2>
                         </div>
                     )}
                 </NavLink>
-                <NavLink className={({ isActive }) => isActive ? 'w-full xl:w-[300px] bg-[#980019] lg:pl-[30px]' : 'w-full xl:w-[300px]'} to="/dashboard/manage-article">
+                <NavLink className={({ isActive }) => isActive ? 'active-sidebar' : 'default-sidebar'} to="/dashboard/manage-article">
                     {({ isActive }) => (
                         <div className="sidebar-list">
                             <img className="xl:w-6" src={isActive ? ArticleActive : Article} alt="Article" />
-                            <h2 className={isActive ? "text-white xl:text-base" : "text-zinc-600 xl:text-sm"}>Manage Article</h2>
+                            <h2 className={isActive ? "text-white xl:text-base hidden lg:inline" : "text-zinc-600 xl:text-sm hidden lg:inline"}>Manage Article</h2>
                         </div>
                     )}
                 </NavLink>
-                <NavLink className={({ isActive }) => isActive ? 'w-full xl:w-[300px] bg-[#980019] lg:pl-[30px]' : 'w-full xl:w-[300px]'} to="/dashboard/manage-admin">
+                <NavLink className={({ isActive }) => isActive ? 'active-sidebar' : 'default-sidebar'}  to="/dashboard/manage-admin">
                     {({ isActive }) => (
                         <div className="sidebar-list">
                             <img className="xl:w-6" src={isActive ? AdminActive : Admin} alt="Admin" />
-                            <h2 className={isActive ? "text-white xl:text-base" : "text-zinc-600 xl:text-sm"}>Manage Admin</h2>
+                            <h2 className={isActive ? "text-white xl:text-base hidden lg:inline" : "text-zinc-600 xl:text-sm hidden lg:inline"}>Manage Admin</h2>
                         </div>
                     )}
                 </NavLink>

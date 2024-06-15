@@ -11,49 +11,49 @@ import Trash from '../assets/icons/article/Trash.svg'
 export default function ManageArticle() {
   return (
     <>
-        <div className="grid grid-cols-4 gap-[20px]">
+        <div className="grid sm:grid-cols-2 md:grid-cols-4 gap-[20px]">
             <div className="dashboard-summary">
-                <img className="xl:w-[50px] lg:w-10" src={Buy} alt="Product-Sold" />
+                <img className="xl:w-[50px] lg:w-10 sm:w-8" src={Buy} alt="Product-Sold" />
                 <div className="flex-col"   >
                     <h3 className="font-bold text-xs xl:text-sm text-[#9593A0]">Total Visitor</h3>
-                    <p className="lg:text-base xl:text-xl font-bold leading-[30px]">12</p>
+                    <p className="sm:text-xs lg:text-base xl:text-xl font-bold leading-[30px]">12</p>
                 </div>
             </div>
             <div className="dashboard-summary">
-                <img className="xl:w-[50px] lg:w-10" src={Profit} alt="Product-Profit" />
+                <img className="xl:w-[50px] lg:w-10 sm:w-8" src={Profit} alt="Product-Profit" />
                 <div className="flex-col">
                     <h3 className="font-bold text-xs xl:text-sm text-[#9593A0]">Total Likes</h3>
-                    <p className="lg:text-base xl:text-xl font-bold leading-[30px]">678.720</p>
+                    <p className="sm:text-xs lg:text-base xl:text-xl font-bold leading-[30px]">678.720</p>
                 </div>
             </div>
             <div className="dashboard-summary">
-                <img className="xl:w-[50px] lg:w-10" src={Buy} alt="Ticket-Sold" />
+                <img className="xl:w-[50px] lg:w-10 sm:w-8" src={Buy} alt="Ticket-Sold" />
                 <div className="flex-col">
                     <h3 className="font-bold text-xs xl:text-sm text-[#9593A0]">Ticket Comment</h3>
-                    <p className="lg:text-base xl:text-xl font-bold leading-[30px]">320</p>
+                    <p className="sm:text-xs lg:text-base xl:text-xl font-bold leading-[30px]">320</p>
                 </div>
             </div>
             <div className="dashboard-summary">
-                <img className="xl:w-[50px] lg:w-10" src={Profit} alt="Ticket-Profit" />
+                <img className="xl:w-[50px] lg:w-10 sm:w-8" src={Profit} alt="Ticket-Profit" />
                 <div className="flex-col">
                     <h3 className="font-bold text-xs xl:text-sm text-[#9593A0]">Total Shares</h3>
-                    <p className="lg:text-base xl:text-xl font-bold leading-[30px]">711.211</p>
+                    <p className="sm:text-xs lg:text-base xl:text-xl font-bold leading-[30px]">711.211</p>
                 </div>
             </div>
         </div>
 
-        <div className="gap-[10px] flex justify-between">
-            <Link className="grow btn bg-[#980019] text-white xl:px-6 xl:py-[10px]" to="add">
+        <div className="gap-[10px] flex sm:justify-center md:justify-between sm:flex-col md:flex-row">
+            <Link className="grow btn bg-[#980019] text-white xl:px-6 xl:py-[10px] sm:btn-xs md:btn-sm lg:btn-md" to="add">
                 <img src={ Plus } alt="Plus"/>
                 New Post
             </Link>
-            <label className="input input-bordered flex items-center gap-2 xl:w-[921px] w-4/5  bg-primary-100">
+            <label className="input input-bordered flex items-center gap-2 sm:input-xs md:input-sm lg:input-md xl:w-[921px] md:w-4/5 bg-primary-100">
                 <img src={ Search } alt="Search" />
                 <input type="text" className="grow" placeholder="Type here" />
             </label>
         </div>
 
-        <div className="mx-auto grid grid-cols-1 gap-x-6 gap-y-6 lg:grid-cols-3">
+        <div className="mx-auto grid grid-cols-1 gap-x-6 gap-y-6 lg:grid-cols-3 md:grid-cols-2">
             <article className="article-list">
                 <img className="rounded-xl w-full xl:h-178px" src={ HeroMockup } alt="article-hero"/>
                 <div>
