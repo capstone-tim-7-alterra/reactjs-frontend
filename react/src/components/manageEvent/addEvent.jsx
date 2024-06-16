@@ -4,6 +4,7 @@ import IconDate from "../../assets/imgEvent/iconDate.png";
 // import IconLocation from "../../assets/imgEvent/iconLocation.png";
 import Photo from "../../assets/imgEvent/photo.png";
 import IconTicket from "../../assets/imgEvent/iconTicket.png";
+import Button from "../../assets/imgEvent/button.png";
 
 export default function AddEvent() {
   const fileInputRef = useRef(null);
@@ -58,15 +59,15 @@ export default function AddEvent() {
               </div>
             </div>
 
-            <div className="flex md:flex-row items-start justify-between w-[1112px] h-[142px] gap-[149px] mt-16">
+            <div className="flex  md:flex-row items-start justify-between  w-[1112px] h-[142px] gap-[149px] mt-16">
               <div className="flex flex-col gap-[18px] w-[360px] h-[142px] ">
                 <div className="flex items-center justify-between w-[360px] h-[44px]">
-                  <label className="min-w-[115px] h-[36px] text-[24px] leading-9 font-semibold text-secondary-50">
+                  <label className="min-w-[176px] h-[36px] text-[24px] leading-9 font-semibold text-secondary-50">
                     Category
                   </label>
                   <span className="span-Event">Required</span>
                 </div>
-                <div className="text-secondary-50 w-[360px] min-h-[160px]">
+                <div className="text-secondary-50  w-[360px] min-h-[160px]">
                   <p className="text-[14px] font-normal leading-[20px] text-justify">
                     Pilih kategori yang sesuai karena biaya layanan akan
                     tergantung pada kategori. Jika pemilihan kategori kurang
@@ -74,7 +75,7 @@ export default function AddEvent() {
                   </p>
                 </div>
               </div>
-              <div className="flex items-start md:items-center justify-end md:w-3/5 font-semibold">
+              <div className="flex items-start md:items-center justify-end  md:w-3/5 font-semibold">
                 <select className="dropdownInput-Event ">
                   <option disabled selected>
                     Pick your an option
@@ -82,6 +83,11 @@ export default function AddEvent() {
                   <option>Festival</option>
                   <option>Greedo</option>
                 </select>
+                <img
+                      src={Button}
+                      alt="button"
+                      className="w-[56px] h-[52px] rounded-lg gap-[8px] mx-auto "
+                    />
               </div>
             </div>
           </div>
@@ -116,6 +122,15 @@ export default function AddEvent() {
                     <img
                       src={IconDate}
                       alt="iconDate"
+                  <div className="w-[603px] h-[46px] flex items-center pt-[14px] pr-[16px] pb-[14px] pl-[16px] gap-[2px] border-secondary-55 bg-primary-100 rounded-lg  opacity-70">
+                    <input
+                      type="text"
+                      placeholder="Address"
+                      className="input input-md border w-[547px] h-[18px] text-base-100 bg-primary-100 rounded-md text-sm font-semibold text-[16px] leading-[24px] opacity-70"
+                    />
+                    <img
+                      src={IconLocation}
+                      alt="iconLocation"
                       className="w-[16px] h-[16px] mx-auto"
                     />
                   </div>
@@ -140,11 +155,11 @@ export default function AddEvent() {
               </div>
               <div className="w-[700px] h-[107px] flex flex-wrap gap-[24px] items-start justify-start">
                 <div className="flex items-center justify-center gap-[24px]">
-                  <div className="w-[603px] h-[46px] flex items-center pt-[14px] pr-[16px] pb-[14px] pl-[16px] gap-[2px] border-secondary-55 bg-primary-100 rounded-lg shadow-custom-1">
+                  <div className="w-[603px] h-[46px] flex items-center pt-[14px] pr-[16px] pb-[14px] pl-[16px] gap-[2px] border-secondary-55 bg-primary-100 rounded-lg ">
                     <input
                       type="text"
                       placeholder="Pick a date"
-                      className="input input-md w-[547px] h-[18px] text-base-100 bg-primary-100 rounded-md text-sm font-semibold text-[16px] leading-[24px] opacity-70"
+                      className="input input-md border w-[547px] h-[18px] text-base-100 bg-primary-100 rounded-md text-sm font-semibold text-[16px] leading-[24px] opacity-70"
                     />
                     <img
                       src={IconDate}
@@ -226,7 +241,7 @@ export default function AddEvent() {
                   </p>
                 </div>
               </div>
-              <div className="flex items-center w-[603px] h-[229px]">
+              <div className="flex items-center w-[603px] h-[229px] ">
                 <textarea
                   type="text"
                   placeholder="Deskripsi"
