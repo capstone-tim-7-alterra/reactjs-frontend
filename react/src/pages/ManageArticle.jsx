@@ -1,4 +1,6 @@
 import { Link } from 'react-router-dom';
+import useSWR from 'swr';
+import { getAllArticles } from '../services/articleAdmin/articleService'
 import Buy from '../assets/icons/dashboard/GroupProduct.svg'
 import Profit from '../assets/icons/dashboard/GroupProfit.svg'
 import Plus from '../assets/icons/dashboard/Plus.svg'
@@ -9,6 +11,12 @@ import Trash from '../assets/icons/article/Trash.svg'
 
 
 export default function ManageArticle() {
+    const { data, error } = useSWR('/articles', getAllArticles);
+
+    if (error) return <div>Error: {error.message}</div>;
+    if (!data) return <div>Loading...</div>;
+    
+    
   return (
     <>
         <div className="grid sm:grid-cols-2 md:grid-cols-4 gap-[20px]">
@@ -54,13 +62,14 @@ export default function ManageArticle() {
         </div>
 
         <div className="mx-auto grid grid-cols-1 gap-x-6 gap-y-6 lg:grid-cols-3 md:grid-cols-2">
-            <article className="article-list">
+            {data.map(article => (
+            <article key={article.id} className="article-list">
                 <img className="rounded-xl w-full xl:h-178px" src={ HeroMockup } alt="article-hero"/>
                 <div>
                     <h3 className="text-black text-xs font-semibold leading-normal tracking-wide">
-                        Mengenal Sejarah dan Asal Tari Kecak - Kreasi Nusantara
+                        {article.title}
                     </h3>
-                    <time className="text-[10px] tracking-wide">Published • May 29, 2023</time>
+                    <time className="text-[10px] tracking-wide">Published • </time>
                     <p className="text-black text-xs">Admin Nanda</p>
                 </div>
                 <div className="w-full inline-flex  gap-4 justify-end">
@@ -68,82 +77,9 @@ export default function ManageArticle() {
                     <img src={ Trash } alt="Comment" />
                 </div>
             </article>
-
-            <article className="article-list">
-                <img className="rounded-xl w-full xl:h-178px" src={ HeroMockup } alt="article-hero"/>
-                <div>
-                    <h3 className="text-black text-xs font-semibold leading-normal tracking-wide">
-                        Mengenal Sejarah dan Asal Tari Kecak - Kreasi Nusantara
-                    </h3>
-                    <time className="text-[10px] tracking-wide">Published • May 29, 2023</time>
-                    <p className="text-black text-xs">Admin Nanda</p>
-                </div>
-                <div className="w-full inline-flex  gap-4 justify-end">
-                    <img src={ Edit } alt="Share" />
-                    <img src={ Trash } alt="Comment" />
-                </div>
-            </article>
-
-            <article className="article-list">
-                <img className="rounded-xl w-full xl:h-178px" src={ HeroMockup } alt="article-hero"/>
-                <div>
-                    <h3 className="text-black text-xs font-semibold leading-normal tracking-wide">
-                        Mengenal Sejarah dan Asal Tari Kecak - Kreasi Nusantara
-                    </h3>
-                    <time className="text-[10px] tracking-wide">Published • May 29, 2023</time>
-                    <p className="text-black text-xs">Admin Nanda</p>
-                </div>
-                <div className="w-full inline-flex  gap-4 justify-end">
-                    <img src={ Edit } alt="Share" />
-                    <img src={ Trash } alt="Comment" />
-                </div>
-            </article>
-
-            <article className="article-list">
-                <img className="rounded-xl w-full xl:h-178px" src={ HeroMockup } alt="article-hero"/>
-                <div>
-                    <h3 className="text-black text-xs font-semibold leading-normal tracking-wide">
-                        Mengenal Sejarah dan Asal Tari Kecak - Kreasi Nusantara
-                    </h3>
-                    <time className="text-[10px] tracking-wide">Published • May 29, 2023</time>
-                    <p className="text-black text-xs">Admin Nanda</p>
-                </div>
-                <div className="w-full inline-flex  gap-4 justify-end">
-                    <img src={ Edit } alt="Share" />
-                    <img src={ Trash } alt="Comment" />
-                </div>
-            </article>
-
-            <article className="article-list">
-                <img className="rounded-xl w-full xl:h-178px" src={ HeroMockup } alt="article-hero"/>
-                <div>
-                    <h3 className="text-black text-xs font-semibold leading-normal tracking-wide">
-                        Mengenal Sejarah dan Asal Tari Kecak - Kreasi Nusantara
-                    </h3>
-                    <time className="text-[10px] tracking-wide">Published • May 29, 2023</time>
-                    <p className="text-black text-xs">Admin Nanda</p>
-                </div>
-                <div className="w-full inline-flex  gap-4 justify-end">
-                    <img src={ Edit } alt="Share" />
-                    <img src={ Trash } alt="Comment" />
-                </div>
-            </article>
-
-            <article className="article-list">
-                <img className="rounded-xl w-full xl:h-178px" src={ HeroMockup } alt="article-hero"/>
-                <div>
-                    <h3 className="text-black text-xs font-semibold leading-normal tracking-wide">
-                        Mengenal Sejarah dan Asal Tari Kecak - Kreasi Nusantara
-                    </h3>
-                    <time className="text-[10px] tracking-wide">Published • May 29, 2023</time>
-                    <p className="text-black text-xs">Admin Nanda</p>
-                </div>
-                <div className="w-full inline-flex  gap-4 justify-end">
-                    <img src={ Edit } alt="Share" />
-                    <img src={ Trash } alt="Comment" />
-                </div>
-            </article>
+            ))}
         </div>
+
         <div className='flex justify-end'>
             <div className="join">
                 <button className="join-item btn btn-color-secondary">«</button>
