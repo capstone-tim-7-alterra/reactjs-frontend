@@ -17,6 +17,10 @@ import AddAdmin from "../components/manageAdmin/AddAdmin";
 import ErrorPage from "../pages/ErrorPage";
 
 
+// function Login() {
+//   return <LoginDashboard />;
+// }
+
 const router = createBrowserRouter([
   { index: true, element: <LandingPage /> },
   {

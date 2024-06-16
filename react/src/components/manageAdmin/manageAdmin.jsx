@@ -26,7 +26,7 @@ export default function dashboard() {
             <div className="flex w-[1092px] h-[46px] gap-[24px] bg-primary-100">
               <div className="w-[108px] h-[46px] rounded-lg bg-primary-30 pt-[14px] pr-[16px] pb-[14px] pl-[16px] gap-[space-x-2]">
                 <Link to="add" className="w-[76px] h-[18px] text-secondary-91 font-semibold text-[12px] leading-[18px] text-center">
-                  Add Product
+                  Add Admin
                 </Link>
               </div>
               <div className="flex flex-wrap w-[768px] h-[46px] rounded-lg border pt-[14px] pr-[16px] pb-[14px] pl-[16px] gap-[space-x-2] text-base-100 font-semibold text-xs ">

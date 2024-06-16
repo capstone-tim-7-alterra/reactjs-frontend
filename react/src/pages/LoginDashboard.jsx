@@ -8,17 +8,17 @@ const LoginDashboard = () => {
   const [password, setPassword] = useState("");
   const navigate = useNavigate();
 
-  const handleLogin = (e) => {
-    e.preventDefault();
-    const adminEmail = "kreasinusantara@gmail.com";
-    const adminPassword = "admin123";
+  // const handleLogin = (e) => {
+  //   e.preventDefault();
+  //   const adminEmail = "kreasinusantara@gmail.com";
+  //   const adminPassword = "admin123";
 
-    if (email === adminEmail && password === adminPassword) {
-      navigate("/dashboard");
-    } else {
-      alert("Invalid email or password");
-    }
-  };
+  //   if (email === adminEmail && password === adminPassword) {
+  //     navigate("/dashboard");
+  //   } else {
+  //     alert("Invalid email or password");
+  //   }
+  // };
 
   return (
     <div className="bg-neutral-96 min-w-[1440px] h-[1024px] py-[105px] px-[147px] mx-auto font-poppins">
