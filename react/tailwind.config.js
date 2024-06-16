@@ -143,6 +143,10 @@ export default {
           401: "#F0F4FF",
           402: "#F9FAFB",//baru thalita
           403: "#F2F2F2",//baru thalita
+          404: "#5C5C5C",//baru thalita
+          405: "#DBDBDD", //baru thalita
+          406: "#3F3F3F", //baru thalita
+
         },
       },
       boxShadow: {

@@ -1,6 +1,7 @@
 import Navbar from "./navbar";
+// import Breadcrumb from "../breadcrumb/Breadcrumbs";
 import Photo from "../../assets/imgEvent/photo.png";
-// import IconEye from "../../assets/icons/iconeye.png";
+// import IconEye from "../../assets/icons/article/Eye.svg";
 
 export default function AddEvent() {
   return (
@@ -24,6 +25,8 @@ export default function AddEvent() {
             </li>
           </ul>
         </div>
+
+        {/* <Breadcrumb /> */}
 
         <div className="w-[1156px] h-[1634px] gap-[50px] mx-auto mt-14 font-poppins ">
           <h1 className="w-[258px] h-[48px] text-[32px] leading-[48px] font-semibold text-primary-0 mb-10">
@@ -209,11 +212,11 @@ export default function AddEvent() {
                   placeholder="Type here"
                   className="input input-md border w-[686px] h-[48px] border-base-300 bg-primary-100 rounded-md text-sm text-base-100 font-semibold opacity-70 pr-10"
                 />
-                <img
+                {/* <img
                   src={IconEye}
                   alt="iconeye"
                   className="absolute right-3 w-[16px] h-[16px]"
-                />
+                /> */}
               </div>
             </div>
           </div>

@@ -23,7 +23,7 @@
   }
 
   .dropdownInput-Event {
-    @apply select select-bordered border w-[603px] min-h-[46px] border-base-300 bg-primary-100 rounded-md text-sm text-base-100;
+    @apply select select-bordered border w-[517px] min-h-[46px] border-base-300 bg-primary-100 rounded-md text-sm text-base-100;
   }
 
   .div-detailEvent {
@@ -85,7 +85,7 @@
 
   /* start Detail Ticket */
   .input-ticketname {
-    @apply input input-bordered w-[404px] h-[46px] rounded-lg pt-[14px] pr-[16px] pb-[14px] pl-[16px] gap-[2px] border-base-300 text-base-100 text-xs font-semibold leading-5 bg-primary-100;
+    @apply select select-bordered border w-[404px] h-[46px] rounded-lg pt-[14px] pr-[16px] pb-[14px] pl-[16px] gap-[2px] border-base-300 text-base-100 text-xs font-semibold leading-5 bg-primary-100;
   }
 
   .input-numberofticket {
@@ -130,4 +130,30 @@
     @apply w-[404px] h-[46px] mt-28 pt-[14px] pr-[16px] pb-[14px] pl-[16px] py-2 bg-base-150 text-center text-xs leading-5 text-white font-bold rounded-lg hover:bg-primary-40 focus:ring-2 focus:ring-base-150;
   }
   /* end ticket sell */
+
+  /* Start import form */
+  .div-nameimport {
+    @apply flex items-center border border-base-300 shadow-sm w-[464px] h-[48px] rounded-lg pt-[14px] pr-[16px] pb-[14px] pl-[16px] gap-[2px] bg-primary-100 mb-4;
+  }
+  .input-csv {
+    @apply input input-bordered flex-1  w-[-384px] h-[12px] bg-primary-100 border-primary-100 rounded-none  text-[12px] leading-5  text-base-100 font-semibold;
+  }
+  .button-import {
+    @apply input input-bordered flex-1  w-[-384px] h-[12px] bg-primary-100 border-primary-100 rounded-none  text-[12px] leading-5  text-base-100 font-semibold;
+  }
+  .button-cancel {
+    @apply btn w-[76px] h-[46px] rounded-lg pt-[14px] pr-[16px] pb-[14px] pl-[16px] gap-[2px] bg-base-403 border-base-300 text-base-100 hover:bg-base-300 hover:border-base-300 text-xs;
+  }
+  .button-upload {
+    @apply btn w-[76px] h-[46px] rounded-lg pt-[14px] pr-[16px] pb-[14px] pl-[16px] gap-[2px] bg-base-150 border-primary-30 text-base-400 hover:bg-primary-30 hover:border-primary-30 text-xs;
+  }
+  /* End import form */
+  
+  /* start category form */
+  .label-category{
+    @apply text-base-100 text-[16px] leading-6 font-normal mb-2 w-[464px] h-[56px] pt-[16px] pr-[0px] pb-[16px] pl-[0px];
+}
+  .input-category{
+    @apply input input-md border w-[464px] h-[48px] border-base-300 bg-primary-100 rounded-md text-xs text-base-100 font-semibold opacity-70 mt-5;
+}
 }

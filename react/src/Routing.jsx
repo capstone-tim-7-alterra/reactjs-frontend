@@ -10,6 +10,8 @@ import ModalAlamat from "./components/modalAlamat/modalAlamat";
 import TicketForm from "./components/ticketForm/ticketForm";
 import ManageAdmin from "./components/manageAdmin/manageAdmin";
 import AddAdmin from "./components/addAdmin/addAdmin";
+import CategoryForm from "./components/categoryForm/categoryform";
+import ImportForm from "./components/importForm/importForm";;
 
 const App = () => {
   return (
@@ -24,6 +26,8 @@ const App = () => {
           <Route path="/ticket-form" element={<TicketForm />} />
           <Route path="/manage-admin" element={<ManageAdmin />} />
           <Route path="/add-admin" element={<AddAdmin />} />
+          <Route path="/category-form" element={<CategoryForm />} />
+          <Route path="/import-form" element={<ImportForm />} />
           {/* <Route path="/event-error" element={<EventError />} /> */}
         </Routes>
       </div>

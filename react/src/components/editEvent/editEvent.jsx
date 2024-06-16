@@ -6,7 +6,7 @@ import Photo1 from "../../assets/imgEvent/photo1.png";
 import IconTicket from "../../assets/imgEvent/iconTicket.png";
 import XCircle from "../../assets/imgEvent/xCircle.png";
 import Clock from "../../assets/imgEvent/clock.png";
-
+import Button from "../../assets/imgEvent/button.png";
 export default function EditEvent() {
   return (
     <>
@@ -86,6 +86,11 @@ export default function EditEvent() {
                   <option>Festival</option>
                   <option>Greedo</option>
                 </select>
+                <img
+                      src={Button}
+                      alt="button"
+                      className="w-[56px] h-[52px] rounded-lg ga-[8px] mx-auto "
+                    />
               </div>
             </div>
           </div>
@@ -111,7 +116,7 @@ export default function EditEvent() {
               </div>
               <div className="w-[700px]  h-[107px] flex flex-wrap gap-[24px]  items-start first-line:justify-start">
                 <div className="flex items-center justify-center gap-[24px]">
-                  <div className="w-[603px] h-[46px] items-center pt-[14px] pr-[16px] pb-[14px] pl-[16px] gap-[2px] flex border-secondary-55 bg-primary-100 rounded-lg shadow-custom-1">
+                  <div className="w-[603px] h-[46px] items-center pt-[14px] pr-[16px] pb-[14px] pl-[16px] gap-[2px] flex border-secondary-55 bg-primary-100 rounded-lg ">
                     <input
                       type="text"
                       placeholder="Lamban Pancasila, X3J6+GG3, Way Mengaku, Lampung Barat,Balik Bukit 34874"
@@ -120,7 +125,7 @@ export default function EditEvent() {
                     <img
                       src={IconLocation}
                       alt="iconLocation"
-                      className="w-[16px] h-[16px] mx-auto mr-15"
+                      className="w-[16px] h-[16px] mx-auto"
                     />
                   </div>
                 </div>
@@ -144,7 +149,7 @@ export default function EditEvent() {
               </div>
               <div className="w-[700px]  h-[107px] flex flex-wrap gap-[24px]  items-start first-line:justify-start">
                 <div className="flex items-center justify-center gap-[24px]">
-                  <div className="w-[603px] h-[46px] items-center pt-[14px] pr-[16px] pb-[14px] pl-[16px] gap-[2px] flex border-secondary-55 bg-primary-100 rounded-lg shadow-custom-1">
+                  <div className="w-[603px] h-[46px] items-center pt-[14px] pr-[16px] pb-[14px] pl-[16px] gap-[2px] flex border-secondary-55 bg-primary-100 rounded-lg ">
                     <input
                       type="text"
                       placeholder="18/06/2024"
@@ -153,7 +158,7 @@ export default function EditEvent() {
                     <img
                       src={IconDate}
                       alt="iconDate"
-                      className="w-[16px] h-[16px] mx-auto mr-15"
+                      className="w-[16px] h-[16px] mx-auto "
                     />
                   </div>
                 </div>
@@ -281,7 +286,7 @@ Oleh karena itu, Dahlin berharap, agar ke depannya Event tahunan tersebut perlu 
                     <img
                       src={IconTicket}
                       alt="iconTicket"
-                      className="w-[16px] h-[16px] mx-auto mr-5"
+                      className="w-[16px] h-[16px] mx-auto "
                     />
                   </div>
                 </div>
