@@ -1,9 +1,15 @@
-// import Navbar from "./navbar";
+import React, { useState } from 'react';
 import Breadcrumb from "../breadcrumb/Breadcrumbs";
 import Photo from "../../assets/imgEvent/photo.png";
 import IconEye from "../../assets/icons/article/Eye.svg";
 
 export default function AddAdmin() {
+  const [showPassword, setShowPassword] = useState(false);
+
+  const togglePasswordVisibility = () => {
+    setShowPassword(!showPassword);
+  };
+
   return (
     <>
       <section className="section-editProduct mt-4">
@@ -188,14 +194,17 @@ export default function AddAdmin() {
               </div>
               <div className="relative flex items-center opacity-90">
                 <input
-                  type="text"
+                  type={showPassword ? "text" : "password"}
                   placeholder="Type here"
                   className="input input-md border w-[686px] h-[48px] border-base-300 bg-primary-100 rounded-md text-sm text-base-100 font-semibold opacity-70 pr-10"
                 />
                 <img
                   src={IconEye}
-                  alt="iconeye"
-                  className="absolute right-3 w-[16px] h-[16px]"
+                  alt="toggle visibility"
+                  className={`absolute right-3 w-[16px] h-[16px] cursor-pointer ${
+                    showPassword ? "opacity-100" : "opacity-50"
+                  }`}
+                  onClick={togglePasswordVisibility}
                 />
               </div>
             </div>

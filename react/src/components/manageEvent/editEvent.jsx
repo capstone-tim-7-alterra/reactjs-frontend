@@ -71,10 +71,10 @@ export default function EditEvent() {
                   <option>Greedo</option>
                 </select>
                 <img
-                      src={Button}
-                      alt="button"
-                      className="w-[56px] h-[52px] rounded-lg ga-[8px] mx-auto "
-                    />
+                  src={Button}
+                  alt="button"
+                  className="w-[56px] h-[52px] rounded-lg ga-[8px] mx-auto "
+                />
               </div>
             </div>
           </div>
@@ -100,15 +100,16 @@ export default function EditEvent() {
               </div>
               <div className="w-[700px]  h-[107px] flex flex-wrap gap-[24px]  items-start first-line:justify-start">
                 <div className="flex items-center justify-center gap-[24px]">
-                  <div className="w-[603px] h-[46px] items-center pt-[14px] pr-[16px] pb-[14px] pl-[16px] gap-[2px] flex border-secondary-55 bg-primary-100 rounded-lg ">
+                  <div className="w-[603px] h-[46px] items-center pt-[14px] pr-[16px] pb-[14px] pl-[16px] gap-[2px] flex border border-base-300 bg-primary-100 rounded-lg ">
                     <input
                       type="text"
                       placeholder="Lamban Pancasila, X3J6+GG3, Way Mengaku, Lampung Barat,Balik Bukit 34874"
-                      className=" input input-md w-[547px] h-[18px] text-base-100 bg-primary-100 rounded-md text-sm font-semibold  text-[16px] leading-[24px] overflow-hidden gap-[space-x-2]  opacity-70"></input>
+                      className=" input input-md w-[547px] h-[18px] bg-primary-100 text-sm text-base-100 items-center justify-center font-semibold rounded-none mx-auto opacity-70 ml-2"
+                    ></input>
                     <img
                       src={IconLocation}
                       alt="iconLocation"
-                      className="w-[16px] h-[16px] mx-auto"
+                      className="w-[16px] h-[16px] "
                     />
                   </div>
                 </div>
@@ -132,11 +133,12 @@ export default function EditEvent() {
               </div>
               <div className="w-[700px]  h-[107px] flex flex-wrap gap-[24px]  items-start first-line:justify-start">
                 <div className="flex items-center justify-center gap-[24px]">
-                  <div className="w-[603px] h-[46px] items-center pt-[14px] pr-[16px] pb-[14px] pl-[16px] gap-[2px] flex border-secondary-55 bg-primary-100 rounded-lg ">
+                  <div className="w-[603px] h-[46px] items-center pt-[14px] pr-[16px] pb-[14px] pl-[16px] gap-[2px] flex border border-base-300 bg-primary-100 rounded-lg">
                     <input
                       type="text"
-                      placeholder="18/06/2024"
-                      className="input input-md w-[547px] h-[18px] text-base-100 bg-primary-100 rounded-md text-sm font-semibold  text-[16px] leading-[24px] overflow-hidden gap-[space-x-2]  opacity-70"></input>
+                      placeholder="18/06/2024 | 06:00 - 12:00"
+                      className="input input-md w-[547px] h-[18px] bg-primary-100 text-sm text-base-100 items-center justify-center font-semibold rounded-none mx-auto opacity-70 ml-2"
+                    ></input>
                     <img
                       src={IconDate}
                       alt="iconDate"
@@ -263,7 +265,8 @@ Oleh karena itu, Dahlin berharap, agar ke depannya Event tahunan tersebut perlu 
                     <input
                       type="text"
                       placeholder="Insert Ticket Detail"
-                      className="input-ticketDetail"></input>
+                      className="input-ticketDetail"
+                    ></input>
                     <img
                       src={IconTicket}
                       alt="iconTicket"

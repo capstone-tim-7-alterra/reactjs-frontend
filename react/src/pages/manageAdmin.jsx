@@ -133,7 +133,7 @@ export default function dashboard() {
                       <td>Admin</td>
                       <td>Example@gmail.com</td>
                       <td>24//05/2024</td>
-                      <td className="flex justify-center gap-10 mx-auto">
+                      <td className="flex justify-center gap-5 mx-auto">
                         <img
                           src={EditSquare}
                           alt="editsquare"

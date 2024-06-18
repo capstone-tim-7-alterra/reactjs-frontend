@@ -19,6 +19,7 @@ import AddArticle from "./components/articleForm/AddArticles";
 import EditArticle from "./components/articleForm/EditArticles";
 import ErrorPage from "./pages/ErrorPage";
 import LoginDashboard from "./components/LoginDashboard/LoginDashboard";
+import TicketForm from"./components/ticketForm/ticketForm";
 
 const router = createBrowserRouter([
   { index: true, element: <LandingPage /> },
@@ -31,6 +32,7 @@ const router = createBrowserRouter([
       { path: "manage-product", element: <ManageProduct /> },
       { path: "manage-article", element: <ManageArticle /> },
       { path: "manage-admin", element: <ManageAdmin /> },
+      { path: "ticket-form", element: <TicketForm /> },
       {
         path: "*",
         element: <ErrorPage />,
@@ -42,10 +44,16 @@ const router = createBrowserRouter([
     element: <FormL />,
     children: [{ index: true, element: <AddEvent /> }],
   },
+
   {
     path: "/dashboard/manage-event/edit",
     element: <FormL />,
     children: [{ index: true, element: <EditEvent /> }],
+  },
+  {
+    path: "/dashboard/ticket-form/ticket",
+    element: <FormL />,
+    children: [{ index: true, element: <TicketForm /> }],
   },
   {
     path: "/dashboard/manage-product/add",

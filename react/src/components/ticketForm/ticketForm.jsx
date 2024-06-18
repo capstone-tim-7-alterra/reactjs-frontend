@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import DatePublish from "../../assets/ticketForm/datePublish.png";
 import ClockPublish from "../../assets/ticketForm/clockPublish.png";
+import Button from "../../assets/imgEvent/button.png";
 function App() {
   const [activeTab, setActiveTab] = useState("detail");
 
@@ -34,13 +35,11 @@ function App() {
         {activeTab === "detail" ? (
           <form>
             <div>
-              <label
-                className="label-detailticket"
-                htmlFor="ticketName"
-              >
+              <label className="label-detailticket" htmlFor="ticketName">
                 Ticket
               </label>
-              <select className="input-ticketname">
+              <div className="flex items-center space-x-2 w-[404px] h-[52px] gap-[10px]">
+                <select className="select select-bordered border w-[338px] h-[46px] rounded-lg pt-[14px] pr-[16px] pb-[14px] pl-[16px] gap-[2px] border-base-300 text-base-100 text-xs font-semibold leading-5 bg-primary-100">
                   <option disabled selected>
                     Pick your an option
                   </option>
@@ -48,11 +47,16 @@ function App() {
                   <option>VIP</option>
                   <option>VVIP</option>
                 </select>
-
+                <img
+                  src={Button}
+                  alt="button"
+                  className="w-[56px] h-[52px] rounded-lg "
+                />
+              </div>
             </div>
             <div>
               <label
-                className="label-detailticket"
+                className="label-detailticket mt-10"
                 htmlFor="ticketNumber"
               >
                 Number of Ticket
@@ -64,10 +68,7 @@ function App() {
               />
             </div>
             <div>
-              <label
-                className="label-detailticket"
-                htmlFor="ticketPrice"
-              >
+              <label className="label-detailticket" htmlFor="ticketPrice">
                 Price
               </label>
               <div className="div-priceticket">
@@ -82,10 +83,7 @@ function App() {
               </div>
             </div>
 
-            <button
-              type="submit"
-              className="submit-ticket"
-            >
+            <button type="submit" className="submit-ticket ">
               Next
             </button>
           </form>
@@ -93,9 +91,7 @@ function App() {
           <form>
             <div className="space-y-4">
               <div>
-                <label className="label-datepublish">
-                  Publish Date
-                </label>
+                <label className="label-datepublish">Publish Date</label>
                 <div className="flex items-center space-x-4">
                   <div className="input-publishdate">
                     <input
@@ -115,18 +111,17 @@ function App() {
                       alt="clockpublish"
                       className="w-[16px] h-[16px]"
                     />
+
                     <input
                       type="text"
                       placeholder="00:00"
-                      className="input-clockpublish"
+                      className="input input-md w-[68.5px] h-[18px] top-[14px] left-[40px] bg-primary-100 text-xs  leading-[18px] rounded-none text-base-100 font-semibold"
                     />
                   </div>
                 </div>
               </div>
               <div>
-                <label className="label-datepublish">
-                  End Date
-                </label>
+                <label className="label-datepublish">End Date</label>
                 <div className="flex items-center space-x-4">
                   <div className="input-publishdate">
                     <input
@@ -155,10 +150,7 @@ function App() {
                 </div>
               </div>
             </div>
-            <button
-              type="submit"
-              className="submit-publishdate"
-            >
+            <button type="submit" className="submit-publishdate">
               Next
             </button>
           </form>

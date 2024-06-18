@@ -3,7 +3,7 @@ import React from "react";
 const ImportCSV = () => {
   return (
     <div className="flex justify-center items-center h-screen font-poppins">
-      <div className="bg-primary-100 shadow-2xl rounded-2xl p-8 w-[512px] h-[284px] top-[2407px] left-[1683px] pt-[24px] pr-[24px] pb-[24px] pl-[24px]">
+      <div className="bg-primary-100 shadow-custom-1 rounded-2xl p-8 w-[512px] h-[284px] top-[2407px] left-[1683px] pt-[24px] pr-[24px] pb-[24px] pl-[24px]">
         <h2 className="text-xl font-semibold text-base-100">Import CSV</h2>
         <p className="text-base-404  w-[464px] h-[56px] pt-[16px] pr-[0px] pb-[16px] pl-[0px] text-base font-normal">
           Select a file and click upload

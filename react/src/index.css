@@ -235,7 +235,7 @@
 
   /* start Detail Ticket */
   .input-ticketname {
-    @apply select select-bordered border w-[404px] h-[46px] rounded-lg pt-[14px] pr-[16px] pb-[14px] pl-[16px] gap-[2px] border-base-300 text-base-100 text-xs font-semibold leading-5 bg-primary-100;
+    @apply select select-bordered border w-[338px] h-[46px] rounded-lg pt-[14px] pr-[16px] pb-[14px] pl-[16px] gap-[2px] border-base-300 text-base-100 text-xs font-semibold leading-5 bg-primary-100;
   }
 
   .input-numberofticket {
@@ -265,7 +265,7 @@
   }
 
   .submit-ticket {
-    @apply w-[404px] h-[46px] pt-[14px] pr-[16px] pb-[14px] pl-[16px] py-2 bg-base-150 text-center text-xs leading-6 text-white font-bold rounded-lg hover:bg-primary-40 focus:ring-2 focus:ring-base-150 mt-14;
+    @apply w-[404px] h-[46px] pt-[14px] pr-[16px] pb-[14px] pl-[16px] py-2 bg-base-150 text-center text-xs leading-6 text-white font-bold rounded-lg hover:bg-primary-40 focus:ring-2 focus:ring-base-150 mt-6;
   }
 
   .label-datepublish {
@@ -273,7 +273,7 @@
   }
 
   .input-publishdate {
-    @apply flex items-center border border-base-300 bg-white w-[187.5px] h-[46px] rounded-lg pt-[14px] pr-[16px] pb-[14px] pl-[16px];
+    @apply flex items-center border border-base-300 bg-white w-[187.5px] h-[46px] top-[123px] left-[237px] rounded-lg pt-[14px] pr-[16px] pb-[14px] pl-[16px] ;
   }
 
   .submit-publishdate {
