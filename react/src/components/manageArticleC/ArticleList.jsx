@@ -83,7 +83,7 @@ export default function ArticleList() {
                         <p className="text-xs text-red-700 font-bold">{article.author || "Admin Nanda"}</p>
                     </div>
                     <div className="w-full inline-flex  gap-4 justify-end">
-                        <Link><img src={ Edit } alt="Share" /></Link>
+                        <Link to={`./edit/${article.id}`}><img src={ Edit } alt="Share" /></Link>
                         <Link><img src={ Trash } alt="Comment" /></Link>
                     </div>
                 </article>

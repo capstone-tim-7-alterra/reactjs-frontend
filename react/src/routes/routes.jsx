@@ -50,7 +50,7 @@ const router = createBrowserRouter([
     children: [{ index: true, element: <AddArticle /> }],
   },
   {
-    path: "/dashboard/manage-article/edit",
+    path: "/dashboard/manage-article/edit/:articleId",
     element: <FormL />,
     children: [{ index: true, element: <EditArticle /> }],
   },

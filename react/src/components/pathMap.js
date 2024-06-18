@@ -6,7 +6,7 @@ export const nameMap = {
     '/dashboard/manage-product/edit': 'Edit Product',
     '/dashboard/manage-article': 'Manage Article',
     '/dashboard/manage-article/add': 'Add Article',
-    '/dashboard/manage-article/edit': 'Edit Article',
+    '/dashboard/manage-article/edit/:articleId': 'Edit Article',
     '/dashboard/manage-admin': 'Manage Admin',
     '/dashboard/manage-admin/add': 'Add Admin',
     '/dashboard/manage-admin/edit': 'Edit Admin',
