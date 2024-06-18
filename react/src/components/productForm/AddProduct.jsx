@@ -1,5 +1,5 @@
 // import Navbar from "../navbar/Navbar"
-import Breadcrumbs from "../breadcrumb/Breadcrumbs"
+import Breadcrumbs from "../breadcrumbAdmin/Breadcrumbs"
 import uploadImage from "../../assets/icons/form/Picture.svg"
 import uploadVideo from "../../assets/icons/form/Video.svg"
 import percent  from "../../assets/icons/form/Percent.svg"

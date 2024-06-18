@@ -3,16 +3,16 @@ import LandingPage from "../pages/LandingPage";
 import LoginDashboard from "../pages/LoginDashboard";
 
 import DashboardL from "../layouts/DashboardL";
-import Dashboard from "../components/manageMain/dashboard";
+import Dashboard from "../components/manageMainC/dashboard";
 import ManageArticle from "../pages/ManageArticle";
 import ManageEvent from "../pages/ManageArticle";
-import ManageAdmin from "../components/manageAdmin/manageAdmin";
+import ManageAdmin from "../components/manageAdminC/manageAdmin";
 
 import FormL from "../layouts/FormL";
 import AddProduct from "../components/productForm/AddProduct";
 import AddArticle from "../components/articleForm/AddArticles";
 import EditArticle from "../components/articleForm/EditArticles";
-import AddAdmin from "../components/manageAdmin/AddAdmin";
+import AddAdmin from "../components/manageAdminC/AddAdmin";
 
 import ErrorPage from "../pages/ErrorPage";
 

@@ -1,4 +1,4 @@
-import Breadcrumbs from "../breadcrumb/Breadcrumbs"
+import Breadcrumbs from "../breadcrumbAdmin/Breadcrumbs"
 import uploadImage from "../../assets/icons/form/Picture.svg"
 
 export default function EditPost() {

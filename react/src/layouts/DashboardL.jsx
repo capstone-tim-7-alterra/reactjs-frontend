@@ -1,6 +1,6 @@
-import Sidebar from '../components/sidebar/Sidebar';
+import Sidebar from '../components/sidebarAdmin/Sidebar';
 import Navbar from "../components/navbarAdmin/NavbarAdmin"
-import Breadcrumbs from '../components/breadcrumb/Breadcrumbs';
+import Breadcrumbs from '../components/breadcrumbAdmin/Breadcrumbs';
 import { Outlet } from 'react-router-dom';
 
 export default function DashboardL() {
