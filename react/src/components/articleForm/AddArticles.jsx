@@ -1,11 +1,10 @@
-// import Navbar from "../../components/addProduct/NavbarManage"
-import Breadcrumbs from "../breadcrumb/Breadcrumbs"
+import Breadcrumbs from "../breadcrumbAdmin/Breadcrumbs"
 import uploadImage from "../../assets/icons/form/Picture.svg"
 
 export default function AddPost() {
+    
     return (
         <>
-            {/* <Navbar pages={ "Manage Article" }/> */}
             <section className="container xl:px-[45px] xl:h-[1560px]">
                 <Breadcrumbs />
                 <form className="form-secondary">
@@ -19,7 +18,17 @@ export default function AddPost() {
                                 Post Title *
                             </h2>
                             <textarea placeholder="Title" className="xl:w-[1115px] xl:h-12 textarea textarea-bordered textarea-sm w-full bg-primary-100" ></textarea>
-                            <div className="text-zinc-900 text-sm font-normal leading-tight">
+                            <div className="text-zinc-900 text-xs md:text-sm font-normal leading-tight text-justify">
+                                This will be shown as the title on the front page and on the post itself
+                            </div>
+                        </div>
+
+                        <div className="question-card">
+                            <h2 className="text-zinc-900 lg:text-base lg:font-semibold leading-tight">
+                                Author *
+                            </h2>
+                            <input placeholder="Title" className="xl:w-[1115px] xl:h-12 input input-bordered input-sm w-full bg-primary-100" ></input>
+                            <div className="text-zinc-900 text-xs md:text-sm font-normal leading-tight text-justify">
                                 This will be shown as the title on the front page and on the post itself
                             </div>
                         </div>
@@ -44,7 +53,7 @@ export default function AddPost() {
                                     className="hidden"
                                 />
                             </div>
-                            <div className="text-zinc-900 text-sm font-normal leading-tight">
+                            <div className="text-zinc-900 text-xs md:text-sm font-normal leading-tight text-justify">
                                 This image will appear in the header of the post when it is viewed. The recommended size is 500x500px
                             </div>
                         </div>
@@ -54,7 +63,7 @@ export default function AddPost() {
                                 Post Content *
                             </h2>
                             <textarea placeholder="Description" className="xl:w-[1115px] xl:h-[229px] textarea textarea-bordered textarea-sm w-full bg-primary-100" ></textarea>
-                            <div className="text-zinc-900 text-sm font-normal leading-tight">
+                            <div className="text-zinc-900 text-xs md:text-sm font-normal leading-tight text-justify">
                                 This is your post content
                             </div>
                         </div>
@@ -66,15 +75,15 @@ export default function AddPost() {
                             <textarea placeholder="Tags" className="xl:w-[1115px] xl:h-12 textarea textarea-bordered textarea-sm w-full bg-primary-100" ></textarea>
                         </div>
 
-                        <div className="w-full inline-flex sm:gap-3  xl:gap-[21px] sm:justify-center md:justify-end">
-                            <button className="btn btn-form-secondary">Cancel</button>
-                            <button className="btn btn-form-secondary">Delete</button>
-                            <button className="btn btn-form-secondary">Save</button>
-                            <button className="btn btn-form-secondary">Draft</button>
+                        <div className="w-full inline-flex sm:gap-3 xl:gap-[21px] sm:justify-center md:justify-end">
+                            <button className="btn sm:btn-form-secondary lg:btn-form-primary btn-color-secondary sm:btn-sm md:btn-md">Cancel</button>
+                            <button className="btn sm:btn-form-secondary lg:btn-form-primary btn-color-secondary sm:btn-sm md:btn-md">Draft</button>
+                            <button className="btn sm:btn-form-secondary lg:btn-form-primary btn-color-primary sm:btn-sm md:btn-md">Publish</button>
                         </div>
                     </article>
                 </form>
             </section>
+            <br/>
         </>
     )
 }
