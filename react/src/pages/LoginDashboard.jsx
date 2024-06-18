@@ -8,17 +8,18 @@ const LoginDashboard = () => {
   const [password, setPassword] = useState("");
   const navigate = useNavigate();
 
-  // const handleLogin = (e) => {
-  //   e.preventDefault();
-  //   const adminEmail = "kreasinusantara@gmail.com";
-  //   const adminPassword = "admin123";
+  const handleLogin = (e) => {
+    e.preventDefault();
 
-  //   if (email === adminEmail && password === adminPassword) {
-  //     navigate("/dashboard");
-  //   } else {
-  //     alert("Invalid email or password");
-  //   }
-  // };
+    // Verifikasi username dan password
+    if (email === "admin" && password === "admin123") {
+      // Jika berhasil, arahkan ke dashboard
+      navigate("/dashboard");
+    } else {
+      // Jika gagal, tampilkan pesan error
+      alert("Invalid email or password");
+    }
+  };
 
   return (
     <div className="bg-neutral-96 min-w-[1440px] h-[1024px] py-[105px] px-[147px] mx-auto font-poppins">
@@ -48,7 +49,7 @@ const LoginDashboard = () => {
                   </span>
                 </label>
                 <input
-                  type="email"
+                  type="text"
                   value={email}
                   onChange={(e) => setEmail(e.target.value)}
                   placeholder="email"

@@ -5,7 +5,7 @@ import Breadcrumb from "../breadcrumbAdmin/Breadcrumbs";
 import Photo from "../../assets/images/imgEvent/photo.png";
 import IconEye from "../../assets/icons/article/Eye.svg";
 
-export default function AddAdmin() {
+export default function AddAdmin({fetchAdmins}) {
   const [formData, setFormData] = useState({
     image: null,
     email: "",
@@ -17,6 +17,10 @@ export default function AddAdmin() {
   });
 
   const navigate = useNavigate();
+  
+  const handleCancel = () => {
+    navigate("/dashboard/manage-admin");
+  };
 
   const handleChange = (e) => {
     const { name, value, files } = e.target;
@@ -89,6 +93,9 @@ export default function AddAdmin() {
         }
       );
       console.log("Success:", response.data);
+
+      fetchAdmins(); //refresh list admin 
+      
       navigate("/dashboard/manage-admin");
     } catch (error) {
       console.error(
@@ -167,30 +174,28 @@ export default function AddAdmin() {
                 </div>
                 <div className="flex items-center opacity-90">
                   <input
-                    type="text"
+                    type="email"
                     name="email"
-                    placeholder="Type here"
-                    className="input input-md border w-[686px] h-[48px] border-base-300 bg-primary-100 rounded-md text-sm text-base-100 font-semibold opacity-70"
                     onChange={handleChange}
-                    value={formData.email}
                     required
+                    className="bg-primary-0 border rounded-[10px] border-primary-500 pl-5 w-[629px] h-[70px] text-secondary-50 focus:outline-none focus:border-primary-500"
+                    placeholder="Masukan email..."
                   />
                 </div>
               </div>
 
-              <div className="flex flex-row items-start justify-between w-[1113px] h-[162px] gap-[149px] mt-14">
-                <div className="flex flex-col gap-[18px] w-[278px] h-[162px] ">
+              <div className="flex flex-row items-start justify-between w-[1113px] h-[102px] gap-[149px] mt-14">
+                <div className="flex flex-col gap-[18px] w-[278px] h-[102px] ">
                   <div className="flex items-center justify-between w-[278px] h-[44px]">
-                    <label className="min-w-[127px] h-[36px] text-[24px] leading-9 font-semibold text-secondary-50 ">
+                    <label className="min-w-[147px] h-[36px] text-[24px] leading-9 font-semibold text-secondary-50 ">
                       Username
                     </label>
                     <span className="span-Event">Required</span>
                   </div>
                   <div className="text-secondary-50 w-[360px] h-[140px]">
-                    <p className="text-[14px] font-normal leading-[20px] text-justify w-[278px] h-[100px]">
-                      Nama username maximal 100 karakter dan jangan menggunakan
-                      simbol <br /> <br />
-                      Disarankan untuk tidak menggunakan huruf kapital berlebih.
+                    <p className="text-[14px] font-normal leading-[20px] text-justify w-[278px] h-[40px]">
+                      Masukan username dengan ketentuan menggunakan huruf kecil
+                      dan tidak ada spasi.
                     </p>
                   </div>
                 </div>
@@ -198,17 +203,16 @@ export default function AddAdmin() {
                   <input
                     type="text"
                     name="username"
-                    placeholder="Type here"
-                    className="input input-md border w-[686px] h-[48px] border-base-300 bg-primary-100 rounded-md text-sm text-base-100 font-semibold opacity-70"
                     onChange={handleChange}
-                    value={formData.username}
                     required
+                    className="bg-primary-0 border rounded-[10px] border-primary-500 pl-5 w-[629px] h-[70px] text-secondary-50 focus:outline-none focus:border-primary-500"
+                    placeholder="Masukan username..."
                   />
                 </div>
               </div>
 
-              <div className="flex flex-row items-start justify-between w-[1113px] h-[162px] gap-[149px] mt-14">
-                <div className="flex flex-col gap-[18px] w-[278px] h-[162px] ">
+              <div className="flex flex-row items-start justify-between w-[1113px] h-[102px] gap-[149px] mt-14">
+                <div className="flex flex-col gap-[18px] w-[278px] h-[102px] ">
                   <div className="flex items-center justify-between w-[278px] h-[44px]">
                     <label className="min-w-[147px] h-[36px] text-[24px] leading-9 font-semibold text-secondary-50 ">
                       First Name
@@ -216,10 +220,9 @@ export default function AddAdmin() {
                     <span className="span-Event">Required</span>
                   </div>
                   <div className="text-secondary-50 w-[360px] h-[140px]">
-                    <p className="text-[14px] font-normal leading-[20px] text-justify w-[278px] h-[100px]">
-                      Nama username maximal 100 karakter dan jangan menggunakan
-                      simbol <br /> <br />
-                      Disarankan untuk tidak menggunakan huruf kapital berlebih.
+                    <p className="text-[14px] font-normal leading-[20px] text-justify w-[278px] h-[40px]">
+                      Masukan first name dengan ketentuan menggunakan huruf
+                      kapital dan tidak ada spasi.
                     </p>
                   </div>
                 </div>
@@ -227,17 +230,16 @@ export default function AddAdmin() {
                   <input
                     type="text"
                     name="first_name"
-                    placeholder="Type here"
-                    className="input input-md border w-[686px] h-[48px] border-base-300 bg-primary-100 rounded-md text-sm text-base-100 font-semibold opacity-70"
                     onChange={handleChange}
-                    value={formData.firstName}
                     required
+                    className="bg-primary-0 border rounded-[10px] border-primary-500 pl-5 w-[629px] h-[70px] text-secondary-50 focus:outline-none focus:border-primary-500"
+                    placeholder="Masukan first name..."
                   />
                 </div>
               </div>
 
-              <div className="flex flex-row items-start justify-between w-[1113px] h-[162px] gap-[149px] mt-14">
-                <div className="flex flex-col gap-[18px] w-[278px] h-[162px] ">
+              <div className="flex flex-row items-start justify-between w-[1113px] h-[102px] gap-[149px] mt-14">
+                <div className="flex flex-col gap-[18px] w-[278px] h-[102px] ">
                   <div className="flex items-center justify-between w-[278px] h-[44px]">
                     <label className="min-w-[147px] h-[36px] text-[24px] leading-9 font-semibold text-secondary-50 ">
                       Last Name
@@ -245,10 +247,9 @@ export default function AddAdmin() {
                     <span className="span-Event">Required</span>
                   </div>
                   <div className="text-secondary-50 w-[360px] h-[140px]">
-                    <p className="text-[14px] font-normal leading-[20px] text-justify w-[278px] h-[100px]">
-                      Nama username maximal 100 karakter dan jangan menggunakan
-                      simbol <br /> <br />
-                      Disarankan untuk tidak menggunakan huruf kapital berlebih.
+                    <p className="text-[14px] font-normal leading-[20px] text-justify w-[278px] h-[40px]">
+                      Masukan last name dengan ketentuan menggunakan huruf
+                      kapital dan tidak ada spasi.
                     </p>
                   </div>
                 </div>
@@ -256,84 +257,86 @@ export default function AddAdmin() {
                   <input
                     type="text"
                     name="last_name"
-                    placeholder="Type here"
-                    className="input input-md border w-[686px] h-[48px] border-base-300 bg-primary-100 rounded-md text-sm text-base-100 font-semibold opacity-70"
                     onChange={handleChange}
-                    value={formData.lastName}
                     required
+                    className="bg-primary-0 border rounded-[10px] border-primary-500 pl-5 w-[629px] h-[70px] text-secondary-50 focus:outline-none focus:border-primary-500"
+                    placeholder="Masukan last name..."
                   />
                 </div>
               </div>
 
-              <div className="flex md:flex-row items-start justify-between w-[1113px] h-[102px] gap-[149px] mt-14">
+              <div className="flex flex-row items-start justify-between w-[1113px] h-[102px] gap-[149px] mt-14">
                 <div className="flex flex-col gap-[18px] w-[278px] h-[102px] ">
                   <div className="flex items-center justify-between w-[278px] h-[44px]">
-                    <label className="min-w-[82px] h-[36px] text-[24px] leading-9 font-semibold text-secondary-50">
-                      Admin
+                    <label className="min-w-[147px] h-[36px] text-[24px] leading-9 font-semibold text-secondary-50 ">
+                      Role
                     </label>
                     <span className="span-Event">Required</span>
                   </div>
-                  <div className="text-secondary-50 w-[360px] min-h-[160px]">
+                  <div className="text-secondary-50 w-[360px] h-[140px]">
                     <p className="text-[14px] font-normal leading-[20px] text-justify w-[278px] h-[40px]">
-                      Pilih Admin yang sesuai karena super admin dan admin
-                      berbeda fungsi
+                      Pilih role sebagai admin atau superadmin.
                     </p>
                   </div>
                 </div>
-                <div className="flex items-start md:items-center justify-end font-semibold">
+                <div className="flex items-center opacity-90">
                   <select
-                    className="select select-bordered border w-[686px] h-[48px] border-base-300 bg-primary-100 rounded-md text-sm text-base-100"
+                    name="is_super_admin"
                     onChange={handleChange}
-                    value={formData.is_super_admin ? 'SuperAdmin' : 'Admin'}
                     required
+                    className="bg-primary-0 border rounded-[10px] border-primary-500 pl-5 w-[629px] h-[70px] text-secondary-50 focus:outline-none focus:border-primary-500"
                   >
-                    <option disabled selected>
-                      Pick your an option
-                    </option>
-                    <option>SuperAdmin</option>
-                    <option>Admin</option>
+                    <option value="Admin">Admin</option>
+                    <option value="SuperAdmin">SuperAdmin</option>
                   </select>
                 </div>
               </div>
 
-              <div className="flex flex-row items-start justify-between w-[1113px] h-[142px] gap-[149px] mt-14">
-                <div className="flex flex-col gap-[18px] w-[278px] h-[142px] ">
+              <div className="flex flex-row items-start justify-between w-[1113px] h-[102px] gap-[149px] mt-14">
+                <div className="flex flex-col gap-[18px] w-[278px] h-[102px] ">
                   <div className="flex items-center justify-between w-[278px] h-[44px]">
-                    <label className="min-w-[119px] h-[36px] text-[24px] leading-9 font-semibold text-secondary-50 ">
+                    <label className="min-w-[147px] h-[36px] text-[24px] leading-9 font-semibold text-secondary-50 ">
                       Password
                     </label>
                     <span className="span-Event">Required</span>
                   </div>
                   <div className="text-secondary-50 w-[360px] h-[140px]">
-                    <p className="text-[14px] font-normal leading-[20px] text-justify w-[278px] h-[80px]">
-                      Masukan password dengan minimal 1 huruf kapital, wajib
-                      menggunakan angka dan jangan menggunakan simbol
+                    <p className="text-[14px] font-normal leading-[20px] text-justify w-[278px] h-[40px]">
+                      Masukan password dengan minimal 8 karakter.
                     </p>
                   </div>
                 </div>
-                <div className="relative flex items-center opacity-90">
+                <div className="flex items-center opacity-90">
                   <input
-                    type="text"
+                    type="password"
                     name="password"
-                    placeholder="Type here"
-                    className="input input-md border w-[686px] h-[48px] border-base-300 bg-primary-100 rounded-md text-sm text-base-100 font-semibold opacity-70 pr-10"
                     onChange={handleChange}
-                    value={formData.password}
+                    required
+                    className="bg-primary-0 border rounded-[10px] border-primary-500 pl-5 w-[629px] h-[70px] text-secondary-50 focus:outline-none focus:border-primary-500"
+                    placeholder="Masukan password..."
                   />
                   <img
                     src={IconEye}
-                    alt="iconeye"
-                    className="absolute right-3 w-[16px] h-[16px]"
+                    alt="IconEye"
+                    className="absolute w-[24px] h-[24px] right-[20px]"
                   />
                 </div>
               </div>
             </div>
-            <div className="flex justify-end min-w-[424px] h-[60px] top-[2348px] left-[875px] gap-[24px] pr-[135px] mt-10">
-              <button type="button" className="btn-cancel">
+
+            <div className="flex flex-row items-center justify-center gap-[20px] mt-[100px] mb-[50px]">
+              <button
+                type="button"
+                onClick={handleCancel}
+                className="w-[180px] h-[60px] bg-secondary-500 rounded-[10px] text-[20px] leading-[30px] font-semibold text-primary-0"
+              >
                 Cancel
               </button>
-              <button type="submit" className="btn-Event">
-                Save
+              <button
+                type="submit"
+                className="w-[180px] h-[60px] bg-secondary-500 rounded-[10px] text-[20px] leading-[30px] font-semibold text-primary-0"
+              >
+                Submit
               </button>
             </div>
           </form>
