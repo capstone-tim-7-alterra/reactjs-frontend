@@ -58,8 +58,8 @@ export default function Dashboard() {
   };
 
   return (
-    <div className="w-[1440px] min-h-[1034px] h-[2000px] top-[552px] left-[157px] bg-primary-100 font-poppins">
-      <div className="absolute w-[1140px] h-[800.79px] top-[171px] left-[300px] gap-[24px] bg-primary-100 mt-14">
+    <div className="w-[1440px] h-[1024px] top-[552px] left-0 bg-primary-100 font-poppins">
+      <div className="w-[1140px] h-[800.79px] top-[171px] left-[300px] gap-[24px] bg-primary-100 mt-14">
         <div className="flex flex-wrap w-[1056px] h-[121px] gap-[27px] mx-auto">
           <div className="flex w-[1092px] h-[46px] gap-[24px] bg-primary-100">
             <div className="w-[108px] h-[46px] rounded-lg bg-primary-30 pt-[14px] pr-[16px] pb-[14px] pl-[16px] gap-[space-x-2]">
@@ -87,7 +87,7 @@ export default function Dashboard() {
               />
             </div>
           </div>
-          <div className="w-[1037px] h-[502px] p-6 mx-auto shadow-custom-3 shadow-custom-4 mt-10">
+          <div className="w-[1037px] h-auto p-6 mx-auto shadow-custom-3 shadow-custom-4 mt-10">
             <div className="overflow-x-auto">
               <table className="table">
                 <thead className="mx-auto text-center text-neutral-15 border-none">

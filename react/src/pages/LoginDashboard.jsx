@@ -1,25 +1,36 @@
 /* eslint-disable react/no-unescaped-entities */
 import { useState } from "react";
 import { useNavigate } from "react-router-dom";
+import axios from "axios";
 import Gambar from "../assets/icons/general/Logo.svg";
 
 const LoginDashboard = () => {
-  const [email, setEmail] = useState("");
-  const [password, setPassword] = useState("");
+  const [email, setEmail] = useState('');
+  const [password, setPassword] = useState('');
   const navigate = useNavigate();
 
-  const handleLogin = (e) => {
+  const handleLogin = async (e) => {
     e.preventDefault();
 
-    // Verifikasi username dan password
-    if (email === "admin" && password === "admin123") {
-      // Jika berhasil, arahkan ke dashboard
-      navigate("/dashboard");
-    } else {
-      // Jika gagal, tampilkan pesan error
-      alert("Invalid email or password");
+    try {
+      const response = await axios.post('https://your-api-url/api/v1/admin/login', {
+        username,
+        password
+      });
+
+      if (response.data.status === 'success') {
+        localStorage.setItem('token', response.data.data.token);
+        navigate('/dashboard');
+      } else {
+        alert('Login failed');
+      }
+    } catch (error) {
+      console.error('Error logging in', error);
+      alert('Login failed');
     }
   };
+
+
 
   return (
     <div className="bg-neutral-96 min-w-[1440px] h-[1024px] py-[105px] px-[147px] mx-auto font-poppins">
@@ -40,7 +51,7 @@ const LoginDashboard = () => {
               </p>
             </div>
           </div>
-          <form className="w-[340px] h-[260px] gap-[24px]" onSubmit={handleLogin}>
+          <form className="w-[340px] h-[260px] gap-[24px]">
             <div className="w-[96px] h-[364px] p-8 space-y-2 bg-primary-100">
               <div className="form-control w-[320px] h-[80px]">
                 <label className="label w-[320px] h-[34px] py-2 px-1 gap-0 justify-between">

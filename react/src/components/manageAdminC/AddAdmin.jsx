@@ -17,6 +17,12 @@ export default function AddAdmin({fetchAdmins}) {
   });
 
   const navigate = useNavigate();
+
+  const [showPassword, setShowPassword] = useState(false);
+
+  const handleTogglePassword = () => {
+    setShowPassword(!showPassword);
+  };
   
   const handleCancel = () => {
     navigate("/dashboard/manage-admin");
@@ -42,6 +48,7 @@ export default function AddAdmin({fetchAdmins}) {
       });
     }
   };
+  //validation form
   const validateFormData = (data) => {
     if (!(data.image instanceof File)) {
       return "Image must be a file";
@@ -160,7 +167,7 @@ export default function AddAdmin({fetchAdmins}) {
               <div className="flex flex-row items-start justify-between w-[1113px] h-[102px] gap-[149px] mt-14">
                 <div className="flex flex-col gap-[18px] w-[278px] h-[102px] ">
                   <div className="flex items-center justify-between w-[278px] h-[44px]">
-                    <label className="min-w-[147px] h-[36px] text-[24px] leading-9 font-semibold text-secondary-50 ">
+                    <label className="min-w-[147px] h-[36px] text-[24px] leading-9 font-semibold text-secondary-50">
                       Email
                     </label>
                     <span className="span-Event">Required</span>
@@ -178,7 +185,7 @@ export default function AddAdmin({fetchAdmins}) {
                     name="email"
                     onChange={handleChange}
                     required
-                    className="bg-primary-0 border rounded-[10px] border-primary-500 pl-5 w-[629px] h-[70px] text-secondary-50 focus:outline-none focus:border-primary-500"
+                    className="bg-primary-100 border rounded-[10px] border-primary-500 pl-5 w-[629px] h-[70px] text-secondary-50 focus:outline-none focus:border-primary-500"
                     placeholder="Masukan email..."
                   />
                 </div>
@@ -205,7 +212,7 @@ export default function AddAdmin({fetchAdmins}) {
                     name="username"
                     onChange={handleChange}
                     required
-                    className="bg-primary-0 border rounded-[10px] border-primary-500 pl-5 w-[629px] h-[70px] text-secondary-50 focus:outline-none focus:border-primary-500"
+                    className="bg-primary-100 border rounded-[10px] border-primary-500 pl-5 w-[629px] h-[70px] text-secondary-50 focus:outline-none focus:border-primary-500"
                     placeholder="Masukan username..."
                   />
                 </div>
@@ -232,7 +239,7 @@ export default function AddAdmin({fetchAdmins}) {
                     name="first_name"
                     onChange={handleChange}
                     required
-                    className="bg-primary-0 border rounded-[10px] border-primary-500 pl-5 w-[629px] h-[70px] text-secondary-50 focus:outline-none focus:border-primary-500"
+                    className="bg-primary-100 border rounded-[10px] border-primary-500 pl-5 w-[629px] h-[70px] text-secondary-50 focus:outline-none focus:border-primary-500"
                     placeholder="Masukan first name..."
                   />
                 </div>
@@ -259,7 +266,7 @@ export default function AddAdmin({fetchAdmins}) {
                     name="last_name"
                     onChange={handleChange}
                     required
-                    className="bg-primary-0 border rounded-[10px] border-primary-500 pl-5 w-[629px] h-[70px] text-secondary-50 focus:outline-none focus:border-primary-500"
+                    className="bg-primary-100 border rounded-[10px] border-primary-500 pl-5 w-[629px] h-[70px] text-secondary-50 focus:outline-none focus:border-primary-500"
                     placeholder="Masukan last name..."
                   />
                 </div>
@@ -284,7 +291,7 @@ export default function AddAdmin({fetchAdmins}) {
                     name="is_super_admin"
                     onChange={handleChange}
                     required
-                    className="bg-primary-0 border rounded-[10px] border-primary-500 pl-5 w-[629px] h-[70px] text-secondary-50 focus:outline-none focus:border-primary-500"
+                    className="bg-primary-100 border rounded-[10px] border-primary-500 pl-5 w-[629px] h-[70px] text-secondary-50 focus:outline-none focus:border-primary-500"
                   >
                     <option value="Admin">Admin</option>
                     <option value="SuperAdmin">SuperAdmin</option>
@@ -308,17 +315,18 @@ export default function AddAdmin({fetchAdmins}) {
                 </div>
                 <div className="flex items-center opacity-90">
                   <input
-                    type="password"
+                    type={showPassword ? "text" : "password"}
                     name="password"
                     onChange={handleChange}
                     required
-                    className="bg-primary-0 border rounded-[10px] border-primary-500 pl-5 w-[629px] h-[70px] text-secondary-50 focus:outline-none focus:border-primary-500"
+                    className="bg-primary-100 border rounded-[10px] border-primary-500 pl-5 w-[629px] h-[70px] text-secondary-50 focus:outline-none focus:border-primary-500"
                     placeholder="Masukan password..."
                   />
                   <img
                     src={IconEye}
-                    alt="IconEye"
-                    className="absolute w-[24px] h-[24px] right-[20px]"
+                    alt="Toggle Password"
+                    onClick={handleTogglePassword}
+                    className={`absolute w-[24px] h-[24px] right-[50px] cursor-pointer ${showPassword ? 'opacity-20' : ''}`}
                   />
                 </div>
               </div>
@@ -334,7 +342,7 @@ export default function AddAdmin({fetchAdmins}) {
               </button>
               <button
                 type="submit"
-                className="w-[180px] h-[60px] bg-secondary-500 rounded-[10px] text-[20px] leading-[30px] font-semibold text-primary-0"
+                className="w-[180px] h-[60px] bg-base-150 rounded-[10px] text-[20px] leading-[30px] font-semibold text-primary-100"
               >
                 Submit
               </button>
