@@ -1,10 +1,23 @@
 import Sidebar from '../components/sidebarAdmin/Sidebar';
 import Navbar from "../components/navbarAdmin/NavbarAdmin"
 import Breadcrumbs from '../components/breadcrumbAdmin/Breadcrumbs';
-import { Outlet } from 'react-router-dom';
+import { Outlet, useNavigate } from 'react-router-dom';
+import { useEffect } from 'react';
 
 export default function DashboardL() {
+    console.log('DashboardL');
 
+    const navigate = useNavigate();
+    
+    useEffect(() => {
+    if(
+        localStorage.getItem("token") === null
+      ){
+        navigate("/login");
+        return;  
+      };
+    });
+    
     return (
         <>
             <div className="flex flex-row bg-primary-100 relative">

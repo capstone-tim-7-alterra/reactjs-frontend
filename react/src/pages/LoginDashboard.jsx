@@ -5,32 +5,33 @@ import axios from "axios";
 import Gambar from "../assets/icons/general/Logo.svg";
 
 const LoginDashboard = () => {
-  const [email, setEmail] = useState('');
-  const [password, setPassword] = useState('');
+  const [email, setEmail] = useState("");
+  const [password, setPassword] = useState("");
   const navigate = useNavigate();
 
-  const handleLogin = async (e) => {
+  const  handleLogin = async (e) => {
     e.preventDefault();
 
     try {
-      const response = await axios.post('https://your-api-url/api/v1/admin/login', {
-        username,
-        password
-      });
+      const response = await axios.post(
+        "https://kreasinusantara.shop/api/v1/admin/login",
+        {
+          email,
+          password,
+        }
+      );
 
-      if (response.data.status === 'success') {
-        localStorage.setItem('token', response.data.data.token);
-        navigate('/dashboard');
+      if (response.data.status === "success") {
+        localStorage.setItem("token", response.data.data.token);
+        navigate("/dashboard");
       } else {
-        alert('Login failed');
+        alert("Login failed");
       }
     } catch (error) {
-      console.error('Error logging in', error);
-      alert('Login failed');
+      console.error("Error logging in", error);
+      alert("Login failed");
     }
   };
-
-
 
   return (
     <div className="bg-neutral-96 min-w-[1440px] h-[1024px] py-[105px] px-[147px] mx-auto font-poppins">
@@ -51,7 +52,10 @@ const LoginDashboard = () => {
               </p>
             </div>
           </div>
-          <form className="w-[340px] h-[260px] gap-[24px]">
+          <form
+            onSubmit={handleLogin}
+            className="w-[340px] h-[260px] gap-[24px]"
+          >
             <div className="w-[96px] h-[364px] p-8 space-y-2 bg-primary-100">
               <div className="form-control w-[320px] h-[80px]">
                 <label className="label w-[320px] h-[34px] py-2 px-1 gap-0 justify-between">
@@ -96,7 +100,10 @@ const LoginDashboard = () => {
                 </label>
               </div>
               <div className="form-control mt-6 text-base font-semibold leading-6 text-center">
-                <button type="submit" className="w-[320px] h-[52px] gap-[10px] text-primary-100 bg-primary-30 rounded-md opacity-[1] mt-4">
+                <button
+                  type="submit"
+                  className="w-[320px] h-[52px] gap-[10px] text-primary-100 bg-primary-30 rounded-md opacity-[1] mt-4"
+                >
                   Login
                 </button>
               </div>

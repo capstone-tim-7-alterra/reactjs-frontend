@@ -99,7 +99,7 @@ export default function AddAdmin({fetchAdmins}) {
           },
         }
       );
-      console.log("Success:", response.data);
+      console.log("Success:", response.data,response);
 
       fetchAdmins(); //refresh list admin 
       

@@ -6,20 +6,26 @@ import TombolBawah from "../../assets/icons/TombolBawah.png";
 import Avatar from "../../assets/icons/general/Avatar.svg";
 import EditSquare from "../../assets/icons/article/Edit.svg";
 import Trash from "../../assets/icons/article/Trash.svg";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 
 export default function Dashboard() {
   const [admins, setAdmins] = useState([]);
   const [searchQuery, setSearchQuery] = useState("");
   const [counter, setCounter] = useState(5);
 
-  useEffect(() => {
-    fetchAdmins();
-  }, []);
+  const navigate = useNavigate();
 
   const fetchAdmins = async () => {
-    const token =
-      "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjBhMjI0ZThhLTg1NTQtNGNhOC1hNjJkLThiZTEyOWQxNDVmYSIsInJvbGUiOiJzdXBlcl9hZG1pbiIsImV4cCI6MTcyMTE2ODcxNn0.ZiZSCYYhQiccWPlMdx9eFpgeKqdnZvb1p6YtcH2KtpU";
+    
+    const token = localStorage.getItem("token");
+    
+    if(
+      token === null
+    ){
+      navigate("/login");
+      return;  
+    }
+
     try {
       const response = await axios.get(
         "https://kreasinusantara.shop/api/v1/admin?username=",
@@ -37,6 +43,10 @@ export default function Dashboard() {
       );
     }
   };
+  
+  useEffect(() => {
+    fetchAdmins();
+  }, []);
 
   
   const handleSearch = (e) => {
@@ -108,15 +118,15 @@ export default function Dashboard() {
                     >
                       <td>
                         <img
-                          src={Avatar}
+                          src={admin.photo}
                           alt="avatar"
                           className="w-[32px] h-[32px]"
                         />
                       </td>
                       <td>{admin.username}</td>
-                      <td>{admin.roles}</td>
+                      <td>{admin.is_super_admin.toString()}</td>
                       <td>{admin.email}</td>
-                      <td>{admin.createdAt}</td>
+                      <td>{admin.created_at}</td>
                       <td className="flex gap-5 ml-10">
                         <img
                           src={EditSquare}
