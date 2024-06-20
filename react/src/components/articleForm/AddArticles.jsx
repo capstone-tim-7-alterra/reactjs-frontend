@@ -1,0 +1,89 @@
+import Breadcrumbs from "../breadcrumbAdmin/Breadcrumbs"
+import uploadImage from "../../assets/icons/form/Picture.svg"
+
+export default function AddPost() {
+    
+    return (
+        <>
+            <section className="container xl:px-[45px] xl:h-[1560px]">
+                <Breadcrumbs />
+                <form className="form-secondary">
+                    <h1 className="title-form">
+                        Create New Post
+                    </h1>
+
+                    <article className="question-form">
+                        <div className="question-card">
+                            <h2 className="text-zinc-900 lg:text-base lg:font-semibold leading-tight">
+                                Post Title *
+                            </h2>
+                            <textarea placeholder="Title" className="xl:w-[1115px] xl:h-12 textarea textarea-bordered textarea-sm w-full bg-primary-100" ></textarea>
+                            <div className="text-zinc-900 text-xs md:text-sm font-normal leading-tight text-justify">
+                                This will be shown as the title on the front page and on the post itself
+                            </div>
+                        </div>
+
+                        <div className="question-card">
+                            <h2 className="text-zinc-900 lg:text-base lg:font-semibold leading-tight">
+                                Author *
+                            </h2>
+                            <input placeholder="Title" className="xl:w-[1115px] xl:h-12 input input-bordered input-sm w-full bg-primary-100" ></input>
+                            <div className="text-zinc-900 text-xs md:text-sm font-normal leading-tight text-justify">
+                                This will be shown as the title on the front page and on the post itself
+                            </div>
+                        </div>
+
+                        <div className="question-card">
+                            <h2 className="text-zinc-900 lg:text-base lg:font-semibold leading-tight">
+                                Post Image
+                            </h2>
+                            <div className="media-input">
+                                <label htmlFor="file-upload" className="cursor-pointer gap-2 mx-auto">
+                                    <img
+                                    src={uploadImage}
+                                    alt="upload-icon"
+                                    className="xl:w-6 xl:h-6 mx-auto"
+                                    />
+                                    <span className="text-black text-xs font-light">Upload Foto</span>
+                                </label>
+                                <input
+                                    id="file-upload"
+                                    type="file"
+                                    accept="image/*"
+                                    className="hidden"
+                                />
+                            </div>
+                            <div className="text-zinc-900 text-xs md:text-sm font-normal leading-tight text-justify">
+                                This image will appear in the header of the post when it is viewed. The recommended size is 500x500px
+                            </div>
+                        </div>
+
+                        <div className="question-card">
+                            <h2 className="text-zinc-900 lg:text-base lg:font-semibold leading-tight">
+                                Post Content *
+                            </h2>
+                            <textarea placeholder="Description" className="xl:w-[1115px] xl:h-[229px] textarea textarea-bordered textarea-sm w-full bg-primary-100" ></textarea>
+                            <div className="text-zinc-900 text-xs md:text-sm font-normal leading-tight text-justify">
+                                This is your post content
+                            </div>
+                        </div>
+
+                        <div className="question-card">
+                            <h2 className="text-zinc-900 lg:text-base lg:font-semibold leading-tight">
+                                Tags
+                            </h2>
+                            <textarea placeholder="Tags" className="xl:w-[1115px] xl:h-12 textarea textarea-bordered textarea-sm w-full bg-primary-100" ></textarea>
+                        </div>
+
+                        <div className="w-full inline-flex sm:gap-3 xl:gap-[21px] sm:justify-center md:justify-end">
+                            <button className="btn sm:btn-form-secondary lg:btn-form-primary btn-color-secondary sm:btn-sm md:btn-md">Cancel</button>
+                            <button className="btn sm:btn-form-secondary lg:btn-form-primary btn-color-secondary sm:btn-sm md:btn-md">Draft</button>
+                            <button className="btn sm:btn-form-secondary lg:btn-form-primary btn-color-primary sm:btn-sm md:btn-md">Publish</button>
+                        </div>
+                    </article>
+                </form>
+            </section>
+            <br/>
+        </>
+    )
+}
