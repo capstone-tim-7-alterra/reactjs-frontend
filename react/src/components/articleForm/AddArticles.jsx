@@ -10,6 +10,7 @@ export default function AddPost() {
     const [image, setImage] = useState(null);
     const [content, setContent] = useState('');
     const [tags, setTags] = useState('');
+    
     const navigate = useNavigate();
 
     const handleFileChange = (e) => {

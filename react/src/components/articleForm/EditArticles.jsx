@@ -11,6 +11,7 @@ export default function EditPost() {
     const navigate = useNavigate();
     const [formData, setFormData] = useState({
       title: '',
+      author: '',
       content: '',
       tags: '',
       image: null,
@@ -24,6 +25,7 @@ export default function EditPost() {
       if (data) {
         setFormData({
           title: data.title,
+          author: data.author,
           content: data.content,
           tags: data.tags,
           image: data.image || null,
@@ -48,6 +50,7 @@ export default function EditPost() {
       e.preventDefault();
       const updatedData = new FormData();
       updatedData.append('title', formData.title);
+      updatedData.append('author', formData.author);
       updatedData.append('content', formData.content);
       updatedData.append('tags', formData.tags);
       if (formData.image && formData.image !== data.image) {
@@ -90,6 +93,21 @@ export default function EditPost() {
                             ></textarea>
                             <div className="text-zinc-900 text-sm font-normal leading-tight text-justify">
                                 This will be shown as the title on the front page and on the post itself
+                            </div>
+                        </div>
+
+                        <div className="question-card">
+                            <h2 className="text-zinc-900 lg:text-base lg:font-semibold leading-tight">
+                                Post Author *
+                            </h2>
+                            <input 
+                                placeholder="Author" 
+                                className="xl:w-[1115px] xl:h-12 input input-bordered input-sm w-full bg-primary-100"
+                                value={formData.author}
+                                onChange={handleChange}
+                            ></input>
+                            <div className="text-zinc-900 text-xs md:text-sm font-normal leading-tight text-justify">
+                                This will be shown as the author on the front page and on the post itself
                             </div>
                         </div>
 
