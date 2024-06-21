@@ -6,7 +6,20 @@ export default function Navbar() {
 
     const location = useLocation();
     const currentPath = location.pathname;
-    const headerTitle = nameMap[currentPath] || 'Page Not Found';
+
+    // Fungsi untuk mencocokkan rute dengan parameter dinamis
+    const getHeaderTitle = (path) => {
+        for (let pattern in nameMap) {
+            const regex = new RegExp(`^${pattern.replace(/:[^\s/]+/g, '([^\\s/]+)')}$`);
+            if (regex.test(path)) {
+                return nameMap[pattern];
+            }
+        }
+        return 'Page Not Found';
+    };
+
+    const headerTitle = getHeaderTitle(currentPath);
+
 
     const navigate = useNavigate();
 

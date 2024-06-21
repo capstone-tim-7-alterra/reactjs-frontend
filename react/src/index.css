@@ -82,7 +82,7 @@
     @apply justify-start items-start inline-flex bg-primary-100 lg:font-semibold text-xs
   }
   .media-input {
-      @apply w-full md:w-[202px] md:h-[202px] xl:px-[21px] xl:py-[30px] p-4 border-black  gap-2.5 flex-col justify-center items-center inline-flex border border-dashed
+      @apply w-full md:w-[202px] md:h-[202px]  border-black  gap-2.5 flex-col justify-center items-center inline-flex border border-dashed
   }
   .input::placeholder {
       @apply lg:font-semibold text-xs
