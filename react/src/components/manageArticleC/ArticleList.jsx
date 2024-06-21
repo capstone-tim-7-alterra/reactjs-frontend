@@ -1,7 +1,7 @@
 import { useState } from 'react';
 import { Link } from 'react-router-dom';
 import useSWR from 'swr';
-import { getAllArticles, searchForArticles } from '../../services/articleAdmin/articleService';
+import { getAllArticles, searchForArticles, removeArticle } from '../../services/articleAdmin/articleService';
 import HeroMockup from '../../assets/images/article/hero-article.jpg'
 import Plus from '../../assets/icons/dashboard/Plus.svg'
 import Search from '../../assets/icons/dashboard/Search.svg'
@@ -14,8 +14,8 @@ export default function ArticleList() {
     const [item, setItem] = useState('');
     const [isSearching, setIsSearching] = useState(false);
 
-    const { data: allArticles, error: allError } = useSWR('/articles', getAllArticles);
-    const { data: searchResults, error: searchError, mutate } = useSWR(
+    const { data: allArticles, error: allError, mutate: mutateAll } = useSWR('/articles', getAllArticles);
+    const { data: searchResults, error: searchError, mutate: mutateSearch } = useSWR(
         isSearching && item.length >= 3 ? ['/search', item] : null,
         () => searchForArticles(item),
         { revalidateOnFocus: false }
@@ -39,6 +39,18 @@ export default function ArticleList() {
                 setIsSearching(false);
                 mutate();
             }
+        }
+    };
+
+    const handleDelete = async (id) => {
+        try {
+            await removeArticle(id);
+            mutateAll((articles) => articles.filter(article => article.id !== id), false);
+            if (isSearching) {
+                mutateSearch((articles) => articles.filter(article => article.id !== id), false);
+            }
+        } catch (error) {
+            alert('Error deleting article');
         }
     };
 
@@ -73,18 +85,18 @@ export default function ArticleList() {
                 <article key={article.id}  className="article-list">
                     <img className="rounded-xl w-full xl:max-h-[178px] object-cover" src={article.image || HeroMockup } alt="article-hero"/>
                     <button className="rounded-3xl border-2 lg:text-sm sm:text-xs lg:py-1 lg:px-[10px] border-pink-300 text-rose-700 xl:w-[100px]">
-                        <Link className="text-center">{article.tags || "Wayang"} </Link>
+                        <Link className="text-center">{article.tags || "Untitle"} </Link>
                     </button>
                     <div>
                         <h3 className="text-black text-xs font-bold leading-normal tracking-wide">
-                            {article.title}
+                            {article.title || "Untitle"}
                         </h3>
                         <time className="text-xs tracking-wide text-black leading-[18px]">Published • {new Date(article.created_at).toLocaleDateString()}</time>
-                        <p className="text-xs text-red-700 font-bold">{article.author || "Admin Nanda"}</p>
+                        <p className="text-xs text-red-700 font-bold">{article.author || "Untitle"}</p>
                     </div>
                     <div className="w-full inline-flex  gap-4 justify-end">
-                        <Link to={`./edit/${article.id}`}><img src={ Edit } alt="Share" /></Link>
-                        <Link><img src={ Trash } alt="Comment" /></Link>
+                        <Link to={`./${article.id}`}><img src={ Edit } alt="Share" /></Link>
+                        <Link onClick={() => handleDelete(article.id)}><img src={ Trash } alt="Comment" /></Link>
                     </div>
                 </article>
                 ))}

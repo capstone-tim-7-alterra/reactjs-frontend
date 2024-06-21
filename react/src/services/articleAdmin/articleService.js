@@ -1,9 +1,10 @@
-import axiosInstance from './api/axiosInstance';
 import {
     fetchAllArticles,
     searchArticles,
     createArticle,
     editArticle,
+    fetchArticleById,
+    deleteArticle
   } from './api/articleAPI';
 
 export const getAllArticles = async () => {
@@ -25,20 +26,22 @@ export const searchForArticles = async (item) => {
 
 export const createPost = async (formData) => {
   const response = await createArticle(formData);
-  return response.data;
+  return response.data.data;
 };
 
-export const editPost = async (id, formData) => {
-  const response = await editArticle(`/articles/${id}`, formData);
-  return response.data;
+export const getArticleById = async (id) => {
+  const response = await fetchArticleById(id);
+  return response.data.data;
+};
+
+export const updatePost = async (id, formData) => {
+  const response = await editArticle(id, formData);
+  return response.data.data;
 };
 
 
-export const submitArticle = async (formData) => {
-  const response = await axiosInstance.put(`/api/v1/admin/articles/${formData.get('id')}`, formData, {
-    headers: {
-      'Content-Type': 'multipart/form-data',
-    },
-  });
-  return response.data;
+export const removeArticle = async (id) => {
+  const response = await deleteArticle(id);
+  return response.data.data;
 };
+
