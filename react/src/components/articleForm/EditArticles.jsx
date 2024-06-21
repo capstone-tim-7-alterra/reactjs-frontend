@@ -1,64 +1,70 @@
 import { useEffect, useState } from 'react';
+import useSWR from 'swr';
 import { useNavigate, useParams } from 'react-router-dom';
 import axiosInstance from '../../services/articleAdmin/api/axiosInstance';
+import { updatePost } from '../../services/articleAdmin/articleService';
 import Breadcrumbs from "../breadcrumbAdmin/Breadcrumbs"
 import uploadImage from "../../assets/icons/form/Picture.svg"
 
 export default function EditPost() {
     const { articleId } = useParams();
     const navigate = useNavigate();
-    const [article, setArticle] = useState({
+    const [formData, setFormData] = useState({
       title: '',
       content: '',
       tags: '',
       image: null,
     });
-
-    const [loading, setLoading] = useState(true);
-    const [error, setError] = useState(null);
+    const [previewImage, setPreviewImage] = useState(null);
+  
+    const fetcher = url => axiosInstance.get(url).then(res => res.data.data);
+    const { data, error } = useSWR(`/api/v1/admin/articles/${articleId}`, fetcher);
   
     useEffect(() => {
-        axiosInstance.get(`/api/v1/admin/articles/${articleId}`)
-          .then(response => {
-            setArticle(response.data);
-            setLoading(false);
-          })
-          .catch(error => {
-            setError('Error fetching article data');
-            setLoading(false);
-          });
-      }, [articleId]);
+      if (data) {
+        setFormData({
+          title: data.title,
+          content: data.content,
+          tags: data.tags,
+          image: data.image || null,
+        });
+        setPreviewImage(data.image || null);
+      }
+    }, [data]);
   
-      const handleChange = (e) => {
-        const { name, value, files } = e.target;
-        if (name === 'image') {
-          setArticle({ ...article, image: files[0] });
-        } else {
-          setArticle({ ...article, [name]: value });
-        }
-      };
+    const handleChange = (e) => {
+      const { name, value, files } = e.target;
+      if (name === 'image' && files.length > 0) {
+        const file = files[0];
+        const imageUrl = URL.createObjectURL(file);
+        setPreviewImage(imageUrl);
+        setFormData({ ...formData, image: file });
+      } else {
+        setFormData({ ...formData, [name]: value });
+      }
+    };
   
-      const handleSubmit = (e) => {
-        e.preventDefault();
-        const formData = new FormData();
-        formData.append('title', article.title);
-        formData.append('content', article.content);
-        formData.append('tags', article.tags);
-        if (article.image) {
-          formData.append('image', article.image);
-        }
-    
-        axiosInstance.put(`/api/v1/admin/articles/${articleId}`, formData)
-          .then(() => {
-            navigate('/articles');
-          })
-          .catch(error => {
-            setError('Error updating article');
-          });
-      };
-
-      if (loading) return <p>Loading...</p>;
-      if (error) return <p>{error}</p>;
+    const handleSubmit = (e) => {
+      e.preventDefault();
+      const updatedData = new FormData();
+      updatedData.append('title', formData.title);
+      updatedData.append('content', formData.content);
+      updatedData.append('tags', formData.tags);
+      if (formData.image && formData.image !== data.image) {
+        updatedData.append('image', formData.image);
+      }
+  
+      updatePost(articleId, updatedData)
+        .then(() => {
+          navigate('/articles');
+        })
+        .catch(err => {
+          console.error('Error updating article:', err);
+        });
+    };
+  
+    if (!data) return <p>Loading...</p>;
+    if (error) return <p>Error loading article</p>;
 
     return (
         <>
@@ -78,7 +84,7 @@ export default function EditPost() {
                                 name="title"
                                 placeholder="Title" 
                                 className="xl:w-[1115px] xl:h-12 textarea textarea-bordered textarea-sm w-full bg-primary-100" 
-                                value={article.title}
+                                value={formData.title}
                                 onChange={handleChange}
                                 required
                             ></textarea>
@@ -93,19 +99,30 @@ export default function EditPost() {
                             </h2>
                             <div className="media-input">
                                 <label htmlFor="file-upload" className="cursor-pointer gap-2 mx-auto">
+                                {previewImage ? (
                                     <img
-                                    src={uploadImage}
-                                    alt="upload-icon"
-                                    className="xl:w-6 xl:h-6 mx-auto"
+                                        src={previewImage}
+                                        alt="selected-preview"
+                                        className="xl:w-full xl:h-[202px] object-cover"
                                     />
-                                    <span className="text-black text-xs font-light">Upload Foto</span>
+                                    ) : (
+                                    <>
+                                        <img
+                                        src={uploadImage}
+                                        alt="upload-icon"
+                                        className="xl:w-6 xl:h-6 mx-auto"
+                                        />
+                                        <span className="text-black text-xs font-light">Upload Foto</span>
+                                    </>
+                                    )}
+
                                 </label>
                                 <input
                                     id="file-upload"
-                                    name="image"
                                     type="file"
                                     accept="image/*"
                                     className="hidden"
+                                    name="image"
                                     onChange={handleChange}
                                 />
                             </div>
@@ -120,7 +137,7 @@ export default function EditPost() {
                             </h2>
                             <textarea 
                                 name="content"
-                                value={article.content}
+                                value={formData.content}
                                 onChange={handleChange}
                                 placeholder="Description" 
                                 className="xl:w-[1115px] xl:h-[229px] textarea textarea-bordered textarea-sm w-full bg-primary-100"
@@ -137,7 +154,7 @@ export default function EditPost() {
                             </h2>
                             <textarea 
                                 name="tags"
-                                value={article.tags}
+                                value={formData.tags}
                                 onChange={handleChange}
                                 placeholder="Tags" 
                                 className="xl:w-[1115px] xl:h-12 textarea textarea-bordered textarea-sm w-full bg-primary-100" 
@@ -145,9 +162,9 @@ export default function EditPost() {
                         </div>
 
                         <div className="w-full inline-flex sm:gap-3 xl:gap-[21px] sm:justify-center md:justify-end">
-                            <button className="btn sm:btn-form-secondary lg:btn-form-primary btn-color-secondary sm:btn-sm md:btn-md">Cancel</button>
+                            <button className="btn sm:btn-form-secondary lg:btn-form-primary btn-color-secondary sm:btn-sm md:btn-md" onClick={() => window.history.back()}>Cancel</button>
                             <button className="btn sm:btn-form-secondary lg:btn-form-primary btn-color-secondary sm:btn-sm md:btn-md">Draft</button>
-                            <button type="submit" className="btn sm:btn-form-secondary lg:btn-form-primary btn-color-secondary sm:btn-sm md:btn-md">Save</button>
+                            <button type="submit" className="btn sm:btn-form-secondary lg:btn-form-primary btn-color-primary sm:btn-sm md:btn-md">Save</button>
                         </div>
                     </article>
                 </form>
