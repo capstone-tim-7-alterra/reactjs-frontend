@@ -3,9 +3,6 @@ import Breadcrumb from "../breadcrumbAdmin/Breadcrumbs";
 import Photo from "../../assets/images/imgEvent/photo.png";
 import IconEye from "../../assets/icons/article/Eye.svg";
 
-<<<<<<< Updated upstream
-export default function AddEvent() {
-=======
 export default function AddAdmin({fetchAdmins}) {
   const [formData, setFormData] = useState({
     image: null,
@@ -113,7 +110,6 @@ export default function AddAdmin({fetchAdmins}) {
     }
   };
 
->>>>>>> Stashed changes
   return (
     <>
       <section className="w-[1440px] h-[2032px] top-[3668px] left-[14883px] bg-primary-100">
