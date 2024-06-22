@@ -11,7 +11,6 @@ export default function EditPost() {
     const navigate = useNavigate();
     const [formData, setFormData] = useState({
       title: '',
-      author: '',
       content: '',
       tags: '',
       image: null,
@@ -50,16 +49,13 @@ export default function EditPost() {
       e.preventDefault();
       const updatedData = new FormData();
       updatedData.append('title', formData.title);
-      updatedData.append('author', formData.author);
       updatedData.append('content', formData.content);
       updatedData.append('tags', formData.tags);
-      if (formData.image && formData.image !== data.image) {
-        updatedData.append('image', formData.image);
-      }
+      updatedData.append('image', formData.image);
   
       updatePost(articleId, updatedData)
         .then(() => {
-          navigate('/articles');
+          navigate('/dashboard/manage-article');
         })
         .catch(err => {
           console.error('Error updating article:', err);
@@ -93,21 +89,6 @@ export default function EditPost() {
                             ></textarea>
                             <div className="text-zinc-900 text-sm font-normal leading-tight text-justify">
                                 This will be shown as the title on the front page and on the post itself
-                            </div>
-                        </div>
-
-                        <div className="question-card">
-                            <h2 className="text-zinc-900 lg:text-base lg:font-semibold leading-tight">
-                                Post Author *
-                            </h2>
-                            <input 
-                                placeholder="Author" 
-                                className="xl:w-[1115px] xl:h-12 input input-bordered input-sm w-full bg-primary-100"
-                                value={formData.author}
-                                onChange={handleChange}
-                            ></input>
-                            <div className="text-zinc-900 text-xs md:text-sm font-normal leading-tight text-justify">
-                                This will be shown as the author on the front page and on the post itself
                             </div>
                         </div>
 
@@ -182,7 +163,7 @@ export default function EditPost() {
                         <div className="w-full inline-flex sm:gap-3 xl:gap-[21px] sm:justify-center md:justify-end">
                             <button className="btn sm:btn-form-secondary lg:btn-form-primary btn-color-secondary sm:btn-sm md:btn-md" onClick={() => window.history.back()}>Cancel</button>
                             <button className="btn sm:btn-form-secondary lg:btn-form-primary btn-color-secondary sm:btn-sm md:btn-md">Draft</button>
-                            <button type="submit" className="btn sm:btn-form-secondary lg:btn-form-primary btn-color-primary sm:btn-sm md:btn-md">Save</button>
+                            <button type="submit" className="btn sm:btn-form-secondary lg:btn-form-primary btn-color-primary sm:btn-sm md:btn-md">Update</button>
                         </div>
                     </article>
                 </form>

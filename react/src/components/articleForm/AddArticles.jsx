@@ -6,7 +6,6 @@ import uploadImage from "../../assets/icons/form/Picture.svg"
 
 export default function AddPost() {
     const [title, setTitle] = useState('');
-    const [author, setAuthor] = useState('');
     const [image, setImage] = useState(null);
     const [content, setContent] = useState('');
     const [tags, setTags] = useState('');
@@ -16,22 +15,23 @@ export default function AddPost() {
     const handleFileChange = (e) => {
         const file = e.target.files[0];
         if (file) {
-            const imageUrl = URL.createObjectURL(file);
-            setImage(imageUrl);
-          }
+          setImage(file);
+        }
       };
+      
     
       const handleSubmit = async (e) => {
         e.preventDefault();
     
         const formData = new FormData();
         formData.append('title', title);
-        formData.append('author', author);
         formData.append('content', content);
         formData.append('tags', tags);
         if (image) {
           formData.append('image', image);
         }
+
+        console.log(formData);
     
         try {
           await createPost(formData);
@@ -69,30 +69,15 @@ export default function AddPost() {
 
                         <div className="question-card">
                             <h2 className="text-zinc-900 lg:text-base lg:font-semibold leading-tight">
-                                Author *
-                            </h2>
-                            <input 
-                                placeholder="Author" 
-                                className="xl:w-[1115px] xl:h-12 input input-bordered input-sm w-full bg-primary-100"
-                                value={author}
-                                onChange={(e) => setAuthor(e.target.value)}
-                            ></input>
-                            <div className="text-zinc-900 text-xs md:text-sm font-normal leading-tight text-justify">
-                                This will be shown as the author on the front page and on the post itself
-                            </div>
-                        </div>
-
-                        <div className="question-card">
-                            <h2 className="text-zinc-900 lg:text-base lg:font-semibold leading-tight">
                                 Post Image
                             </h2>
                             <div className="media-input">
                                 <label htmlFor="file-upload" className="cursor-pointer gap-2 mx-auto">
                                 {image ? (
                                         <img
-                                        src={image}
+                                        src={image instanceof File ? URL.createObjectURL(image) : image}
                                         alt="selected-preview"
-                                        className="xl:w-full xl:h-[202px] object-cover"
+                                        className="lg:w-full lg:h-[202px] object-cover"
                                         />
                                     ) : (
                                         <>                                        

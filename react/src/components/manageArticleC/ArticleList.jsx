@@ -13,8 +13,20 @@ export default function ArticleList() {
     const [current, setCurrent] = useState('')
     const [item, setItem] = useState('');
     const [isSearching, setIsSearching] = useState(false);
+    const [page, setPage] = useState(1);
+    const [hasMore, setHasMore] = useState(true);
 
-    const { data: allArticles, error: allError, mutate: mutateAll } = useSWR('/articles', getAllArticles);
+    const fetcher = async () => {
+        const data = await getAllArticles(page);
+        if (data.length < 6) {
+            setHasMore(false);
+        } else {
+            setHasMore(true);
+        }
+        return data;
+    };
+
+    const { data: allArticles, error: allError, mutate: mutateAll } = useSWR(['/articles', page], fetcher, { revalidateOnFocus: false });
     const { data: searchResults, error: searchError, mutate: mutateSearch } = useSWR(
         isSearching && item.length >= 3 ? ['/search', item] : null,
         () => searchForArticles(item),
@@ -25,7 +37,7 @@ export default function ArticleList() {
         setCurrent(e.target.value);
         if (e.target.value === '') {
             setIsSearching(false);
-            mutate();
+            mutateAll();
         }
     };
 
@@ -37,7 +49,7 @@ export default function ArticleList() {
                 setIsSearching(true);
             } else {
                 setIsSearching(false);
-                mutate();
+                mutateAll();
             }
         }
     };
@@ -52,6 +64,10 @@ export default function ArticleList() {
         } catch (error) {
             alert('Error deleting article');
         }
+    };
+
+    const handlePageChange = (newPage) => {
+        setPage(newPage);
     };
 
     const articles = isSearching ? searchResults : allArticles;
@@ -83,7 +99,7 @@ export default function ArticleList() {
             <div className="mx-auto grid grid-cols-1 gap-x-6 gap-y-6 lg:grid-cols-3 md:grid-cols-2">
                 {articles.map(article => (
                 <article key={article.id}  className="article-list">
-                    <img className="rounded-xl w-full xl:max-h-[178px] object-cover" src={article.image || HeroMockup } alt="article-hero"/>
+                    <img className="rounded-xl w-full max-h-[178px] object-cover" src={article.image || HeroMockup } alt="article-hero"/>
                     <button className="rounded-3xl border-2 lg:text-sm sm:text-xs lg:py-1 lg:px-[10px] border-pink-300 text-rose-700 xl:w-[100px]">
                         <Link className="text-center">{article.tags || "Untitle"} </Link>
                     </button>
@@ -91,7 +107,7 @@ export default function ArticleList() {
                         <h3 className="text-black text-xs font-bold leading-normal tracking-wide">
                             {article.title || "Untitle"}
                         </h3>
-                        <time className="text-xs tracking-wide text-black leading-[18px]">Published • {new Date(article.created_at).toLocaleDateString()}</time>
+                        <time className="text-xs tracking-wide text-black leading-[18px]">Published • { article.created_at }</time>
                         <p className="text-xs text-red-700 font-bold">{article.author || "Untitle"}</p>
                     </div>
                     <div className="w-full inline-flex  gap-4 justify-end">
@@ -101,6 +117,26 @@ export default function ArticleList() {
                 </article>
                 ))}
             </div>
+
+            <div className='flex justify-end'>
+            <div className="join">
+                <button 
+                    className="join-item btn btn-color-secondary" 
+                    disabled={page === 1} 
+                    onClick={() => handlePageChange(page - 1)}
+                >
+                    «
+                </button>
+                <button className="join-item btn btn-color-secondary">Page {page}</button>;
+                <button 
+                    className="join-item btn btn-color-secondary" 
+                    disabled={!hasMore} 
+                    onClick={() => handlePageChange(page + 1)}
+                >
+                    »
+                </button>
+            </div>
+        </div> 
         </>
     )
 }
