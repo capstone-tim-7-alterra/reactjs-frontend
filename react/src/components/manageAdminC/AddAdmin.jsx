@@ -3,7 +3,117 @@ import Breadcrumb from "../breadcrumbAdmin/Breadcrumbs";
 import Photo from "../../assets/images/imgEvent/photo.png";
 import IconEye from "../../assets/icons/article/Eye.svg";
 
+<<<<<<< Updated upstream
 export default function AddEvent() {
+=======
+export default function AddAdmin({fetchAdmins}) {
+  const [formData, setFormData] = useState({
+    image: null,
+    email: "",
+    username: "",
+    first_name: "",
+    last_name: "",
+    is_super_admin: true,
+    password: "",
+  });
+
+  const navigate = useNavigate();
+
+  const [showPassword, setShowPassword] = useState(false);
+
+  const handleTogglePassword = () => {
+    setShowPassword(!showPassword);
+  };
+  
+  const handleCancel = () => {
+    navigate("/dashboard/manage-admin");
+  };
+
+  const handleChange = (e) => {
+    const { name, value, files } = e.target;
+    if (name === "image") {
+      console.log('File selected:', files[0]);
+      setFormData({
+        ...formData,
+        image: files[0],
+      });
+    } else if (name === 'is_super_admin') {
+      setFormData({
+        ...formData,
+        is_super_admin: value === 'SuperAdmin',
+      });
+    } else {
+      setFormData({
+        ...formData,
+        [name]: value,
+      });
+    }
+  };
+  //validation form
+  const validateFormData = (data) => {
+    if (!(data.image instanceof File)) {
+      return "Image must be a file";
+    }
+    if (typeof data.email !== "string" || !/^\S+@\S+\.\S+$/.test(data.email)) {
+      return "Invalid email format";
+    }
+    if (typeof data.username !== "string" || data.username.trim() === "") {
+      return "Username must be a non-empty string";
+    }
+    if (typeof data.first_name !== "string" || data.first_name.trim() === "") {
+      return "First name must be a non-empty string";
+    }
+    if (typeof data.last_name !== "string" || data.last_name.trim() === "") {
+      return "Last name must be a non-empty string";
+    }
+    if (typeof data.password !== "string" || data.password.trim().length < 8) {
+      return "Password must be at least 8 characters";
+    }
+    if (typeof data.is_super_admin !== "boolean") {
+      return "isSuperAdmin must be a boolean";
+    }
+    return null;
+  };
+  const handleSubmit = async (e) => {
+    e.preventDefault();
+    const validationError = validateFormData(formData);
+    if (validationError) {
+      console.error("Validation Error:", validationError);
+      return;
+    }
+    const data = new FormData();
+    data.append("image", formData.image);
+    data.append("email", formData.email);
+    data.append("username", formData.username);
+    data.append("first_name", formData.first_name);
+    data.append("last_name", formData.last_name);
+    data.append("is_super_admin", formData.is_super_admin);
+    data.append("password", formData.password);
+
+    try {
+      const response = await axios.post(
+        "https://kreasinusantara.shop/api/v1/admin/register",
+        data,
+        {
+          headers: {
+            "Content-Type": "multipart/form-data",
+          },
+        }
+      );
+      console.log("Success:", response.data,response);
+
+      fetchAdmins(); //refresh list admin 
+      
+      navigate("/dashboard/manage-admin");
+    } catch (error) {
+      console.error(
+        "Error:",
+        error.response ? error.response.data : error.message
+      );
+    }
+  };
+
+>>>>>>> Stashed changes
   return (
     <>
       <section className="w-[1440px] h-[2032px] top-[3668px] left-[14883px] bg-primary-100">

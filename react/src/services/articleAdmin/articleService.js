@@ -7,8 +7,10 @@ import {
     deleteArticle
   } from './api/articleAPI';
 
-export const getAllArticles = async () => {
-    const response = await fetchAllArticles();
+  
+
+export const getAllArticles = async (page = 1) => {
+    const response = await fetchAllArticles(page);
     console.log('Response Data:', response.data.data)
     return response.data.data;
 };
@@ -19,18 +21,21 @@ export const searchForArticles = async (item) => {
       console.log('Response Data:', response.data.data);
       return response.data.data;
   } catch (error) {
-      console.error('Error searching articles:', error.response ? error.response.data : error.message);
+      console.error('Error searching articles:', 
+        error.response ? error.response.data : error.message)
       throw error;
   }
 };
 
 export const createPost = async (formData) => {
   const response = await createArticle(formData);
+  console.log('Data Create:', response.data.data)
   return response.data.data;
 };
 
 export const getArticleById = async (id) => {
   const response = await fetchArticleById(id);
+  console.log('Data Edit:', response.data.data)
   return response.data.data;
 };
 

@@ -13,10 +13,31 @@ const LoginDashboard = () => {
     const adminEmail = "kreasinusantara@gmail.com";
     const adminPassword = "admin123";
 
+<<<<<<< Updated upstream
     if (email === adminEmail && password === adminPassword) {
       navigate("/dashboard");
     } else {
       alert("Invalid email or password");
+=======
+    try {
+      const response = await axios.post(
+        "https://kreasinusantara.shop/api/v1/admin/login",
+        { email, password },
+        { headers: { 'Content-Type': 'application/json' } }
+      );
+      
+
+      if (response.data.status === "success") {
+        localStorage.setItem("token", response.data.data.token);
+        console.log("Login success", response.data.data.token);
+        navigate("/dashboard");
+      } else {
+        alert("Login failed");
+      }
+    } catch (error) {
+      console.error("Error logging in", error);
+      alert("Login failed");
+>>>>>>> Stashed changes
     }
   };
 
