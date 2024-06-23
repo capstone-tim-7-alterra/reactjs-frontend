@@ -146,6 +146,8 @@ export default {
           404: "#5C5C5C",//baru thalita
           405: "#DBDBDD", //baru thalita
           406: "#3F3F3F", //baru thalita
+           410: "#00CA92",
+          420: "#D9D9D9"
 
         },
       },

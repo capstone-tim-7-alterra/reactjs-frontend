@@ -1,4 +1,4 @@
-import Navbar from "../components/NavbarAdmin/navbar";
+import Navbar from "../components/navbarAdmin/NavbarAdmin"
 import { Outlet } from "react-router-dom";
 
 export default function FormL() {

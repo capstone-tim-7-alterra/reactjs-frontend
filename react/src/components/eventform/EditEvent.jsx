@@ -1,11 +1,11 @@
-import IconDate from "../../assets/imgEvent/iconDate.png";
-import IconLocation from "../../assets/imgEvent/iconLocation.png";
-import Photo from "../../assets/imgEvent/photo.png";
-import Photo1 from "../../assets/imgEvent/photo1.png";
-import IconTicket from "../../assets/imgEvent/iconTicket.png";
-import XCircle from "../../assets/imgEvent/xCircle.png";
-import Clock from "../../assets/imgEvent/clock.png";
-
+import Photo from "../../assets/images/imgEvent/photo.png";
+import Photo1 from "../../assets/images/imgEvent/photo1.png";
+import IconTicket from "../../assets/images/imgEvent/iconTicket.png";
+import XCircle from "../../assets/images/imgEvent/xCircle.png";
+import Clock from "../../assets/images/imgEvent/Clock.png";
+import Button from "../../assets/images/imgEvent/button.png";
+import DateEvent from "../../assets/images/imgEvent/dateEvent.png";
+import Location from "../../assets/images/imgEvent/location.png";
 export default function EditEvent() {
   return (
     <>
@@ -84,6 +84,11 @@ export default function EditEvent() {
                   <option>Festival</option>
                   <option>Greedo</option>
                 </select>
+                <img
+                  src={Button}
+                  alt="button"
+                  className="w-[56px] h-[52px] rounded-lg ga-[8px] mx-auto "
+                />
               </div>
             </div>
           </div>
@@ -109,16 +114,16 @@ export default function EditEvent() {
               </div>
               <div className="w-[700px]  h-[107px] flex flex-wrap gap-[24px]  items-start first-line:justify-start">
                 <div className="flex items-center justify-center gap-[24px]">
-                  <div className="w-[603px] h-[46px] items-center pt-[14px] pr-[16px] pb-[14px] pl-[16px] gap-[2px] flex border-secondary-55 bg-primary-100 rounded-lg shadow-custom-1">
+                  <div className="w-[603px] h-[46px] items-center flex border border-base-300 bg-primary-100 rounded-lg">
                     <input
                       type="text"
-                      placeholder="Lamban Pancasila, X3J6+GG3, Way Mengaku, Lampung Barat,Balik Bukit 34874"
-                      className=" input input-md w-[547px] h-[18px] text-base-100 bg-primary-100 rounded-md text-sm font-semibold  text-[16px] leading-[24px] overflow-hidden gap-[space-x-2]  opacity-70"
+                      placeholder="Lamban Pancasila, X3J6+GG3, Way Mengaku, Lampung Barat, Balik Bukit 34874"
+                      className="input input-md w-[547px] h-[18px] bg-primary-100 text-sm text-base-100 items-center justify-center font-semibold rounded-none mx-auto opacity-70 ml-2"
                     ></input>
                     <img
-                      src={IconLocation}
-                      alt="iconLocation"
-                      className="w-[16px] h-[16px] mx-auto mr-15"
+                      src={Location}
+                      alt="location"
+                      className="w-[16px] h-[16px] mx-auto mr-5"
                     />
                   </div>
                 </div>
@@ -142,16 +147,16 @@ export default function EditEvent() {
               </div>
               <div className="w-[700px]  h-[107px] flex flex-wrap gap-[24px]  items-start first-line:justify-start">
                 <div className="flex items-center justify-center gap-[24px]">
-                  <div className="w-[603px] h-[46px] items-center pt-[14px] pr-[16px] pb-[14px] pl-[16px] gap-[2px] flex border-secondary-55 bg-primary-100 rounded-lg shadow-custom-1">
+                  <div className="w-[603px] h-[46px] items-center flex border border-base-300 bg-primary-100 rounded-lg">
                     <input
                       type="text"
-                      placeholder="18/06/2024"
-                      className="input input-md w-[547px] h-[18px] text-base-100 bg-primary-100 rounded-md text-sm font-semibold  text-[16px] leading-[24px] overflow-hidden gap-[space-x-2]  opacity-70"
+                      placeholder="18/06/2024 | 06:00 - 12:00"
+                      className="input input-md w-[547px] h-[18px] bg-primary-100 text-sm text-base-100 items-center justify-center font-semibold rounded-none mx-auto opacity-70 ml-2"
                     ></input>
                     <img
-                      src={IconDate}
+                      src={DateEvent}
                       alt="iconDate"
-                      className="w-[16px] h-[16px] mx-auto mr-15"
+                      className="w-[16px] h-[16px] mx-auto"
                     />
                   </div>
                 </div>
@@ -285,127 +290,105 @@ Oleh karena itu, Dahlin berharap, agar ke depannya Event tahunan tersebut perlu 
                 </div>
 
                 <div className="carousel carousel-center rounded-box min-w-[615px] min-h-[128px] ">
-                  <div className="carousel-item min-w-[237px] h-[127px] gap-[12px] pt-[0px] pr-[5px] pb-[5px] pl-[5px] rounded-md bg-primary-100  border  shadow-custom-1 flex-col ml-1 ">
-                    <div className="w-[227] min-h-[92px] pt-[6px] pr-[0px] pb-[6px] pl-[0px] gap-[10px]  flex flex-col  border-b border-secondary-0 border-dotted ">
-                      <div className="w-[227px] h-[24px] justify-between mt-2 flex ">
-                        <h3 className=" w-[62px] h-[42px] text-base leading-6">
+                  <div className="carousel-item min-w-[354.38px] h-[131.78px] gap-[12px] pt-[0px] pr-[5px] pb-[5px] pl-[5px] rounded-md bg-base-405 border shadow-custom-1 flex-col ml-1">
+                    <div className="min-h-[92px] pt-[6px] pr-[0px] pb-[6px] pl-[0px] gap-[10px] flex flex-col border-b border-t  border-secondary-0">
+                      <div className="w-full h-[24px] justify-between mt-2 flex">
+                        <h3 className="w-[62px] h-[42px] text-base leading-6">
                           Regular
                         </h3>
                         <img
                           src={XCircle}
                           alt="xCircle"
-                          className="  w-[19.5px] h-[19.5px] top-[2.25px] left-[2.25px] ml-10"
+                          className="w-[19.5px] h-[19.5px] ml-10"
                         />
                       </div>
-                      <div className="w-[227px] h-[18px] gap-[10px]  flex flex-wrap mx-auto">
-                        <div className="flex">
+
+                      <div className="w-full h-[18px] gap-[10px] flex items-center mt-5">
+                        <div className="flex items-center">
                           <img
                             src={Clock}
                             alt="clock"
-                            className="w-[12px] h-[12px] "
+                            className="w-[12px] h-[12px]"
                           />
+                          <h3 className="text-[10px] leading-[18px] text-error-30 ml-1">
+                            Berakhir 17 Juni 2024 • 12:00 WIB
+                          </h3>
                         </div>
-                        <h3 className=" w-[205px] h-[18px] text-[10px] leading-[18px]">
-                          Mulai dijual tanggal 16 Juni 2024 | 00:00
-                        </h3>
-                      </div>
-                      <div className="w-[227px] h-[18px] gap-[10px]  flex flex-wrap mx-auto">
-                        <div className="flex">
-                          <img
-                            src={Clock}
-                            alt="clock"
-                            className="w-[12px] h-[12px] "
-                          />
-                        </div>
-                        <h3 className=" w-[205px] h-[18px] text-[10px] leading-[18px]">
-                          Selesai dijual tanggal 17 Juni 2024 | 00:00
-                        </h3>
-                        <h3 className=" w-[55px] h-[18px] text-[10px] leading-[18px] font-semibold mt-2">
-                          Rp.100.000
-                        </h3>
                       </div>
                     </div>
+
+                    <div className="w-full flex justify-start mt-2">
+                      <h3 className="text-[10px] leading-[18px] font-semibold">
+                        Rp.100.000
+                      </h3>
+                    </div>
                   </div>
-                  <div className="carousel-item min-w-[237px] h-[127px] gap-[12px] pt-[0px] pr-[5px] pb-[5px] pl-[5px] rounded-md bg-primary-100  border  shadow-custom-1 flex-col ml-1 ">
-                    <div className="w-[227] min-h-[92px] pt-[6px] pr-[0px] pb-[6px] pl-[0px] gap-[10px]  flex flex-col  border-b border-secondary-0 border-dotted ">
-                      <div className="w-[227px] h-[24px] justify-between mt-2 flex ">
-                        <h3 className=" w-[62px] h-[42px] text-base leading-6">
-                          VIP
+
+                  <div className="carousel-item min-w-[354.38px] h-[131.78px] gap-[12px] pt-[0px] pr-[5px] pb-[5px] pl-[5px] rounded-md bg-base-405 border shadow-custom-1 flex-col ml-1">
+                    <div className="min-h-[92px] pt-[6px] pr-[0px] pb-[6px] pl-[0px] gap-[10px] flex flex-col border-b border-t  border-secondary-0">
+                      <div className="w-full h-[24px] justify-between mt-2 flex">
+                        <h3 className="w-[62px] h-[42px] text-base leading-6">
+                          Regular
                         </h3>
                         <img
                           src={XCircle}
                           alt="xCircle"
-                          className="  w-[19.5px] h-[19.5px] top-[2.25px] left-[2.25px] ml-10"
+                          className="w-[19.5px] h-[19.5px] ml-10"
                         />
                       </div>
-                      <div className="w-[227px] h-[18px] gap-[10px]  flex flex-wrap mx-auto">
-                        <div className="flex">
+
+                      <div className="w-full h-[18px] gap-[10px] flex items-center mt-5">
+                        <div className="flex items-center">
                           <img
                             src={Clock}
                             alt="clock"
-                            className="w-[12px] h-[12px] "
+                            className="w-[12px] h-[12px]"
                           />
+                          <h3 className="text-[10px] leading-[18px] text-error-30 ml-1">
+                            Berakhir 17 Juni 2024 • 12:00 WIB
+                          </h3>
                         </div>
-                        <h3 className=" w-[205px] h-[18px] text-[10px] leading-[18px]">
-                          Mulai dijual tanggal 16 Juni 2024 | 00:00
-                        </h3>
-                      </div>
-                      <div className="w-[227px] h-[18px] gap-[10px]  flex flex-wrap mx-auto">
-                        <div className="flex">
-                          <img
-                            src={Clock}
-                            alt="clock"
-                            className="w-[12px] h-[12px] "
-                          />
-                        </div>
-                        <h3 className=" w-[205px] h-[18px] text-[10px] leading-[18px]">
-                          Selesai dijual tanggal 17 Juni 2024 | 00:00
-                        </h3>
-                        <h3 className=" w-[55px] h-[18px] text-[10px] leading-[18px] font-semibold mt-2">
-                          Rp.150.000
-                        </h3>
                       </div>
                     </div>
+
+                    <div className="w-full flex justify-start mt-2">
+                      <h3 className="text-[10px] leading-[18px] font-semibold">
+                        Rp.100.000
+                      </h3>
+                    </div>
                   </div>
-                  <div className="carousel-item min-w-[237px] h-[127px] gap-[12px] pt-[0px] pr-[5px] pb-[5px] pl-[5px] rounded-md bg-primary-100  border  shadow-custom-1 flex-col ml-1 ">
-                    <div className="w-[227] min-h-[92px] pt-[6px] pr-[0px] pb-[6px] pl-[0px] gap-[10px]  flex flex-col  border-b border-secondary-0 border-dotted ">
-                      <div className="w-[227px] h-[24px] justify-between mt-2 flex ">
-                        <h3 className=" w-[62px] h-[42px] text-base leading-6">
-                         VVIP
+
+                  <div className="carousel-item min-w-[354.38px] h-[131.78px] gap-[12px] pt-[0px] pr-[5px] pb-[5px] pl-[5px] rounded-md bg-base-405 border shadow-custom-1 flex-col ml-1">
+                    <div className="min-h-[92px] pt-[6px] pr-[0px] pb-[6px] pl-[0px] gap-[10px] flex flex-col border-b border-secondary-0 border-t ">
+                      <div className="w-full h-[24px] justify-between mt-2 flex">
+                        <h3 className="w-[62px] h-[42px] text-base leading-6">
+                          Regular
                         </h3>
                         <img
                           src={XCircle}
                           alt="xCircle"
-                          className="  w-[19.5px] h-[19.5px] top-[2.25px] left-[2.25px] ml-10"
+                          className="w-[19.5px] h-[19.5px] ml-10"
                         />
                       </div>
-                      <div className="w-[227px] h-[18px] gap-[10px]  flex flex-wrap mx-auto">
-                        <div className="flex">
+
+                      <div className="w-full h-[18px] gap-[10px] flex items-center mt-5">
+                        <div className="flex items-center">
                           <img
                             src={Clock}
                             alt="clock"
-                            className="w-[12px] h-[12px] "
+                            className="w-[12px] h-[12px]"
                           />
+                          <h3 className="text-[10px] leading-[18px] text-error-30 ml-1">
+                            Berakhir 17 Juni 2024 • 12:00 WIB
+                          </h3>
                         </div>
-                        <h3 className=" w-[205px] h-[18px] text-[10px] leading-[18px]">
-                          Mulai dijual tanggal 16 Juni 2024 | 00:00
-                        </h3>
                       </div>
-                      <div className="w-[227px] h-[18px] gap-[10px]  flex flex-wrap mx-auto">
-                        <div className="flex">
-                          <img
-                            src={Clock}
-                            alt="clock"
-                            className="w-[12px] h-[12px] "
-                          />
-                        </div>
-                        <h3 className=" w-[205px] h-[18px] text-[10px] leading-[18px]">
-                          Selesai dijual tanggal 17 Juni 2024 | 00:00
-                        </h3>
-                        <h3 className=" w-[55px] h-[18px] text-[10px] leading-[18px] font-semibold mt-2">
-                          Rp.200.000
-                        </h3>
-                      </div>
+                    </div>
+
+                    <div className="w-full flex justify-start mt-2">
+                      <h3 className="text-[10px] leading-[18px] font-semibold">
+                        Rp.100.000
+                      </h3>
                     </div>
                   </div>
                 </div>

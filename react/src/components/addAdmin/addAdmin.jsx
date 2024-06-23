@@ -1,4 +1,4 @@
-import Navbar from "./navbar";
+
 // import Breadcrumb from "../breadcrumb/Breadcrumbs";
 import Photo from "../../assets/imgEvent/photo.png";
 // import IconEye from "../../assets/icons/article/Eye.svg";

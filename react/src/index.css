@@ -176,7 +176,7 @@
   }
 
   .dropdownInput-Event {
-    @apply select select-bordered border w-[603px] min-h-[46px] border-base-300 bg-primary-100 rounded-md text-sm text-base-100;
+    @apply select select-bordered border w-[517px] min-h-[46px] border-base-300 bg-primary-100 rounded-md text-sm text-base-100;
   }
 
   .div-detailEvent {

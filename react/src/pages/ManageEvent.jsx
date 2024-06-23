@@ -1,7 +1,7 @@
 /* eslint-disable react-hooks/rules-of-hooks */
 /* eslint-disable no-unused-vars */
 import React, { useState } from "react";
-import Batik from "../assets/imgProduct/batik-1.png";
+import Batik from "../assets/images/imgProduct/batik-1.png";
 import EditSquare from "../assets/icons/article/Edit.svg";
 import Trash from "..//assets/icons/article/Trash.svg";
 import IconBukteProduct from "../assets/icons/iconBasketProduct.png";
@@ -188,12 +188,15 @@ export default function dashboard() {
                     <td>Active</td>
                     <td>20-12-2024</td>
                     <td>Regular/VIP</td>
-                    <td className="flex justify-center gap-5 mx-auto ">
-                      <img
-                        src={EditSquare}
-                        alt="editsquare"
-                        className="w-[24px] h-[24px]   "
-                      />
+                    <td className="flex justify-center gap-5 mx-auto "> 
+
+                    <Link to="./edit">
+                        <img
+                          src={EditSquare}
+                          alt="editsquare"
+                          className="w-[24px] h-[24px]"
+                        />
+                      </Link>
                       <img
                         src={Trash}
                         alt="Trash"
@@ -216,11 +219,13 @@ export default function dashboard() {
                     <td>20-12-2024</td>
                     <td>Regular/VIP</td>
                     <td className="flex justify-center gap-5 mx-auto">
-                      <img
-                        src={EditSquare}
-                        alt="editsquare"
-                        className="w-[24px] h-[24px]  "
-                      />
+                    <Link to="./edit">
+                        <img
+                          src={EditSquare}
+                          alt="editsquare"
+                          className="w-[24px] h-[24px]"
+                        />
+                      </Link>
                       <img
                         src={Trash}
                         alt="Trash"
@@ -242,11 +247,13 @@ export default function dashboard() {
                     <td>20-12-2024</td>
                     <td>Regular/VIP</td>
                     <td className="flex justify-center gap-5 mx-auto">
-                      <img
-                        src={EditSquare}
-                        alt="editsquare"
-                        className="w-[24px] h-[24px]  "
-                      />
+                    <Link to="./edit">
+                        <img
+                          src={EditSquare}
+                          alt="editsquare"
+                          className="w-[24px] h-[24px]"
+                        />
+                      </Link>
                       <img
                         src={Trash}
                         alt="Trash"
@@ -268,11 +275,13 @@ export default function dashboard() {
                     <td>20-12-2024</td>
                     <td>Regular/VIP</td>
                     <td className="flex justify-center gap-5 mx-auto">
-                      <img
-                        src={EditSquare}
-                        alt="editsquare"
-                        className="w-[24px] h-[24px]  "
-                      />
+                    <Link to="./edit">
+                        <img
+                          src={EditSquare}
+                          alt="editsquare"
+                          className="w-[24px] h-[24px]"
+                        />
+                      </Link>
                       <img
                         src={Trash}
                         alt="Trash"
