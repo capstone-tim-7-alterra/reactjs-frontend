@@ -9,22 +9,27 @@ import uploadImage from "../../assets/icons/form/Picture.svg"
 export default function EditPost() {
     const { articleId } = useParams();
     const navigate = useNavigate();
+    // Consolidate form data into a single state object
     const [formData, setFormData] = useState({
       title: '',
+    //   author: '',
       content: '',
       tags: '',
       image: null,
     });
     const [errors, setErrors] = useState({});
+    const [loading, setLoading] = useState(false);
     const [previewImage, setPreviewImage] = useState(null);
   
     const fetcher = url => axiosInstance.get(url).then(res => res.data.data);
     const { data, error } = useSWR(`/api/v1/admin/articles/${articleId}`, fetcher);
-  
+    
+    // Get latest article data from API and populate form fields
     useEffect(() => {
       if (data) {
         setFormData({
           title: data.title,
+        //   author: data.author,
           content: data.content,
           tags: data.tags,
           image: data.image || null,
@@ -32,7 +37,8 @@ export default function EditPost() {
         setPreviewImage(data.image || null);
       }
     }, [data]);
-  
+    
+    // Handle form input change
     const handleChange = (e) => {
       const { name, value, files } = e.target;
       if (name === 'image' && files.length > 0) {
@@ -46,7 +52,8 @@ export default function EditPost() {
         setErrors((prev) => ({ ...prev, [name]: '' })); 
       }
     };
-  
+    
+    // Handle form submission
     const handleSubmit = (e) => {
         e.preventDefault();
 
@@ -55,6 +62,9 @@ export default function EditPost() {
         if (!formData.title?.trim()) {
             newErrors.title = 'Post Title cannot be empty';
         }
+        // if (!formData.author?.trim()) {
+        //     newErrors.author = 'Post Author cannot be empty';
+        // }
         if (!formData.content?.trim()) {
             newErrors.content = 'Post Content cannot be empty';
         }
@@ -73,10 +83,14 @@ export default function EditPost() {
         }
       const updatedData = new FormData();
       updatedData.append('title', formData.title);
+    //   updatedData.append('author', formData.title);
       updatedData.append('content', formData.content);
       updatedData.append('tags', formData.tags);
       updatedData.append('image', formData.image);
-  
+
+      // Set loading state to true
+      setLoading(true);
+
       updatePost(articleId, updatedData)
         .then(() => {
           navigate('/dashboard/manage-article');
@@ -85,6 +99,8 @@ export default function EditPost() {
           console.error('Error updating article:', err);
         });
     };
+
+    if (error) return <p>Error loading article: {error.message}</p>;
 
     return (
         <>
@@ -117,6 +133,28 @@ export default function EditPost() {
                                 </div>
                             )}
                         </div>
+
+                        {/* <div className="question-card">
+                            <h2 className="text-zinc-900 lg:text-base lg:font-semibold leading-tight">
+                                Post Author <span className={`${errors.author ? 'text-red-500' : ''}`} >*</span>
+                            </h2>
+                            <textarea 
+                                name="author"
+                                placeholder="Author" 
+                                className={`xl:w-[1115px] xl:h-12 textarea textarea-bordered textarea-sm w-full bg-primary-100 ${errors.title ? 'border-red-500' : ''}`}
+                                value={formData.author}
+                                onChange={handleChange}
+                            ></textarea>
+                            {errors.author ? (
+                                <div className="text-red-500 text-xs md:text-sm font-normal leading-tight text-justify">
+                                    {errors.author}
+                                </div>
+                            ) : (
+                                <div className="text-zinc-900 text-xs md:text-sm font-normal leading-tight text-justify">
+                                    This will be shown as the author on the front page and on the post itself
+                                </div>
+                            )}
+                        </div> */}
 
                         <div className="question-card">
                             <h2 className="text-zinc-900 lg:text-base lg:font-semibold leading-tight">
@@ -210,6 +248,12 @@ export default function EditPost() {
                     </article>
                 </form>
             </section>
+            {loading && (
+                <div className="fixed inset-0 flex items-center justify-center bg-black bg-opacity-50 z-50">
+                    <span className="loading loading-infinity xl:w-20 text-red-700"></span>
+                    <span className="text-white text-lg">Submitting Edit...</span>
+                </div>
+            )}
         </>
     )
 }
