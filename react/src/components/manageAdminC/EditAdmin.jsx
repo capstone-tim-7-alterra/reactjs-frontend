@@ -1,11 +1,11 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import axios from "axios";
-import { useNavigate } from "react-router-dom";
+import { useNavigate, useParams } from "react-router-dom";
 import Breadcrumb from "../breadcrumbAdmin/Breadcrumbs";
 import Photo from "../../assets/images/imgEvent/photo.png";
 import IconEye from "../../assets/icons/article/Eye.svg";
 
-export default function EditAdmin({ fetchAdmins }) {
+export default function EditAdmin() {
   const [formData, setFormData] = useState({
     image: null,
     email: "",
@@ -16,11 +16,41 @@ export default function EditAdmin({ fetchAdmins }) {
     password: "",
   });
 
-  const [imageBlob, setImageBlob] = useState();
+
+  let { username } = useParams();
+
+  const [imageBlob, setImageBlob] = useState("");
 
   const navigate = useNavigate();
 
   const [showPassword, setShowPassword] = useState(false);
+
+  async function fetchAdmin() {
+    const token = localStorage.getItem("token");
+    try {
+      const response = await axios.get(
+        "https://kreasinusantara.shop/api/v1/admin/search?limit=5&offset=0&item=" +
+          username,
+        {
+          headers: {
+            Authorization: `Bearer ${token}`,
+          },
+        }
+      );
+      // setResData(response.data);
+      setFormData(response.data.data[0]); // data adalah array admin
+      setImageBlob(response.data.data[0].photo);
+    } catch (error) {
+      console.error(
+        "Error:",
+        error.response ? error.response.data : error.message
+      );
+    }
+  }
+
+  useEffect(() => {
+    fetchAdmin();
+  }, []);
 
   const handleTogglePassword = () => {
     setShowPassword(!showPassword);
@@ -56,6 +86,7 @@ export default function EditAdmin({ fetchAdmins }) {
       });
     }
   };
+
   //validation form
   const validateFormData = (data) => {
     if (!(data.image instanceof File)) {
@@ -95,11 +126,13 @@ export default function EditAdmin({ fetchAdmins }) {
     data.append("first_name", formData.first_name);
     data.append("last_name", formData.last_name);
     data.append("is_super_admin", formData.is_super_admin);
+    if (formData.password !== ""){
     data.append("password", formData.password);
+    }
 
     try {
       const response = await axios.put(
-        "https://kreasinusantara.shop/api/v1/admin/{adm inId}",
+        "https://kreasinusantara.shop/api/v1/admin/"+formData.id,
         data,
         {
           headers: {
@@ -107,10 +140,8 @@ export default function EditAdmin({ fetchAdmins }) {
           },
         }
       );
-      console.log("Success:", response.data,response);
+      console.log("Success:", response.data, response);
 
-      fetchAdmins(); //refresh list admin 
-      
       navigate("/dashboard/manage-admin");
     } catch (error) {
       console.error(
@@ -151,31 +182,15 @@ export default function EditAdmin({ fetchAdmins }) {
                 <div className="w-[700px] h-[107px] flex flex-wrap gap-[24px] items-start justify-start">
                   <div className="w-[225px] h-[202px] pt-[30px] pr-[21px] pb-[30px] pl-[21px] gap-[10px] border border-dotted border-primary-0 flex items-center justify-center">
                     <div className="text-center min-w-[69px] h-[47px]">
-                      {formData.image != null ? (
+                      <label htmlFor="upload-photo" className="cursor-pointer">
+                        <input
+                          type="file"
+                          name="image"
+                          onChange={handleChange}
+                          required
+                        />
                         <img src={imageBlob}></img>
-                      ) : (
-                        <>
-                          <input
-                            type="file"
-                            name="image"
-                            onChange={handleChange}
-                            required
-                          />
-                          <label
-                            htmlFor="upload-photo"
-                            className="cursor-pointer"
-                          >
-                            <img
-                              src={Photo}
-                              alt="photo"
-                              className="w-[24px] h-[24px] mx-auto"
-                            />
-                            <span className="w-[69px] h-[15px] mx-auto text-[12px] leading-[14.52px] text-primary-0">
-                              Upload Foto
-                            </span>
-                          </label>
-                        </>
-                      )}
+                      </label>
                     </div>
                   </div>
                 </div>
@@ -200,6 +215,7 @@ export default function EditAdmin({ fetchAdmins }) {
                   <input
                     type="email"
                     name="email"
+                    value={formData.email}
                     onChange={handleChange}
                     required
                     className="bg-primary-100 border rounded-[10px] border-primary-500 pl-5 w-[629px] h-[70px] text-secondary-50 focus:outline-none focus:border-primary-500"
@@ -227,6 +243,7 @@ export default function EditAdmin({ fetchAdmins }) {
                   <input
                     type="text"
                     name="username"
+                    value={formData.username}
                     onChange={handleChange}
                     required
                     className="bg-primary-100 border rounded-[10px] border-primary-500 pl-5 w-[629px] h-[70px] text-secondary-50 focus:outline-none focus:border-primary-500"
@@ -254,6 +271,7 @@ export default function EditAdmin({ fetchAdmins }) {
                   <input
                     type="text"
                     name="first_name"
+                    value={formData.first_name}
                     onChange={handleChange}
                     required
                     className="bg-primary-100 border rounded-[10px] border-primary-500 pl-5 w-[629px] h-[70px] text-secondary-50 focus:outline-none focus:border-primary-500"
@@ -281,6 +299,7 @@ export default function EditAdmin({ fetchAdmins }) {
                   <input
                     type="text"
                     name="last_name"
+                    value={formData.last_name}
                     onChange={handleChange}
                     required
                     className="bg-primary-100 border rounded-[10px] border-primary-500 pl-5 w-[629px] h-[70px] text-secondary-50 focus:outline-none focus:border-primary-500"
@@ -307,11 +326,16 @@ export default function EditAdmin({ fetchAdmins }) {
                   <select
                     name="is_super_admin"
                     onChange={handleChange}
+                    defaultValue={formData.is_super_admin ? "SuperAdmin" : "Admin"}
                     required
                     className="bg-primary-100 border rounded-[10px] border-primary-500 pl-5 w-[629px] h-[70px] text-secondary-50 focus:outline-none focus:border-primary-500"
                   >
-                    <option value="Admin">Admin</option>
-                    <option value="SuperAdmin">SuperAdmin</option>
+                    <option value="Admin">
+                      Admin
+                    </option>
+                    <option value="SuperAdmin">
+                      SuperAdmin
+                    </option>
                   </select>
                 </div>
               </div>
@@ -335,7 +359,6 @@ export default function EditAdmin({ fetchAdmins }) {
                     type={showPassword ? "text" : "password"}
                     name="password"
                     onChange={handleChange}
-                    required
                     className="bg-primary-100 border rounded-[10px] border-primary-500 pl-5 w-[629px] h-[70px] text-secondary-50 focus:outline-none focus:border-primary-500"
                     placeholder="Masukan password..."
                   />

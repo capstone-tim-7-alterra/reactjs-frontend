@@ -5,7 +5,7 @@ import Breadcrumb from "../breadcrumbAdmin/Breadcrumbs";
 import Photo from "../../assets/images/imgEvent/photo.png";
 import IconEye from "../../assets/icons/article/Eye.svg";
 
-export default function AddAdmin({ fetchAdmins }) {
+export default function AddAdmin() {
   const [formData, setFormData] = useState({
     image: null,
     email: "",
@@ -108,10 +108,8 @@ export default function AddAdmin({ fetchAdmins }) {
         }
       );
       console.log("Success:", response.data, response);
-
-      fetchAdmins(); //refresh list admin
-
       navigate("/dashboard/manage-admin");
+      
     } catch (error) {
       console.error(
         "Error:",

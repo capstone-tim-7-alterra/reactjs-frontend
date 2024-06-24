@@ -10,33 +10,27 @@ import { Link, useNavigate } from "react-router-dom";
 export default function Dashboard() {
   const [admins, setAdmins] = useState([]);
   const [searchQuery, setSearchQuery] = useState("");
-  const [counter, setCounter] = useState(10 );
+  const [counter, setCounter] = useState(10);
   const [resData, setResData] = useState();
-  
 
   const navigate = useNavigate();
 
   const [pagination, setPagination] = useState();
   function handlePagination(isNext) {
-    if(
-      isNext
-    ){
-      fetchData("https://kreasinusantara.shop"+resData.link.next)
-    }else {
-      fetchData("https://kreasinusantara.shop"+resData.link.prev)
+    if (isNext) {
+      fetchData("https://kreasinusantara.shop" + resData.link.next);
+    } else {
+      fetchData("https://kreasinusantara.shop" + resData.link.prev);
     }
   }
-  async function fetchData(url){
+  async function fetchData(url) {
     const token = localStorage.getItem("token");
     try {
-      const response = await axios.get(
-        url,
-        {
-          headers: {
-            Authorization: `Bearer ${token}`,
-          },
-        }
-      );
+      const response = await axios.get(url, {
+        headers: {
+          Authorization: `Bearer ${token}`,
+        },
+      });
       setResData(response.data);
       setAdmins(response.data.data); // data adalah array admin
     } catch (error) {
@@ -54,13 +48,34 @@ export default function Dashboard() {
       return;
     }
 
-   fetchData("https://kreasinusantara.shop/api/v1/admin");
+    fetchData("https://kreasinusantara.shop/api/v1/admin");
   };
 
   useEffect(() => {
     fetchAdmins();
   }, []);
 
+  const handleDelete = async (id) => {
+    const token = localStorage.getItem("token");
+
+    try {
+      const response = await axios.delete(
+        "https://kreasinusantara.shop/api/v1/admin/" + id,
+        {
+          headers: {
+            Authorization: `Bearer ${token}`,
+          },
+        }
+      );
+      console.log(response);
+      fetchAdmins();
+    } catch (error) {
+      console.error(
+        "Error:",
+        error.response ? error.response.data : error.message
+      );
+    }
+  };
   const handleSearch = (e) => {
     setSearchQuery(e.target.value);
   };
@@ -140,18 +155,19 @@ export default function Dashboard() {
                       <td>{admin.email}</td>
                       <td>{admin.created_at}</td>
                       <td className="flex gap-5 ml-10">
-                        <img
-                          src={Trash}
-                          alt="Trash"
-                          className="w-[24px] h-[24px]"
-                        />
-                        <Link to={`./edit/${admin.id}`}>
+                        <button onClick={() => handleDelete(admin.id)}>
                           <img
-                            src={EditSquare}
-                            alt="editsquare"
+                            src={Trash}
+                            alt="Trash"
                             className="w-[24px] h-[24px]"
                           />
-                        </Link>
+                        </button>
+
+                        <img
+                          src={EditSquare}
+                          alt="editsquare"
+                          className="w-[24px] h-[24px]"
+                        />
                       </td>
                     </tr>
                   ))}
@@ -189,13 +205,19 @@ export default function Dashboard() {
             </div>
 
             <div className="join w-[159px] h-[48px]">
-              <button onClick={()=>handlePagination(false)} className="join-item w-[41px] h-[48px] pt-[14px] pr-[16px] pb-[14px] pl-[16px] gap-[space-x-2] bg-base-50 hover:bg-base-70 border-base-50 mx-auto text-primary-0 text-sm">
+              <button
+                onClick={() => handlePagination(false)}
+                className="join-item w-[41px] h-[48px] pt-[14px] pr-[16px] pb-[14px] pl-[16px] gap-[space-x-2] bg-base-50 hover:bg-base-70 border-base-50 mx-auto text-primary-0 text-sm"
+              >
                 «
               </button>
               <button className="join-item w-[77px] h-[48px] pt-[14px] pr-[16px] pb-[14px] pl-[16px] gap-[space-x-2] bg-base-50 border-base-50 text-sm leading-5 font-semibold text-base-100">
-                Page {resData?.pagination.current_page ?? 1 }
+                Page {resData?.pagination.current_page ?? 1}
               </button>
-              <button onClick={()=>handlePagination(true)} className="join-item w-[41px] h-[48px] pt-[14px] pr-[16px] pb-[14px] pl-[16px] gap-[space-x-2] bg-base-50 hover:bg-base-70 border-base-50 mx-auto text-primary-0 text-sm">
+              <button
+                onClick={() => handlePagination(true)}
+                className="join-item w-[41px] h-[48px] pt-[14px] pr-[16px] pb-[14px] pl-[16px] gap-[space-x-2] bg-base-50 hover:bg-base-70 border-base-50 mx-auto text-primary-0 text-sm"
+              >
                 »
               </button>
             </div>

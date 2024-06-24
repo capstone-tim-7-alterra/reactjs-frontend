@@ -15,6 +15,7 @@ import EditArticle from "../components/articleForm/EditArticles";
 import AddAdmin from "../components/manageAdminC/AddAdmin";
 
 import ErrorPage from "../pages/ErrorPage";
+import EditAdmin from "../components/manageAdminC/EditAdmin";
 
 
 // function Login() {
@@ -47,6 +48,11 @@ const router = createBrowserRouter([
     path: "/dashboard/manage-admin/add",
     element: <FormL />,
     children: [{ index: true, element: <AddAdmin /> }],
+  },
+  {
+    path: "/dashboard/manage-admin/:username",
+    element: <FormL />,
+    children: [{ index: true, element: <EditAdmin /> }],
   },
   {
     path: "/dashboard/manage-article/add",
