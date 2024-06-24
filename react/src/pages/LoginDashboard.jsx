@@ -23,6 +23,9 @@ const LoginDashboard = () => {
 
       if (response.data.status === "success") {
         localStorage.setItem("token", response.data.data.token);
+        localStorage.setItem("username", response.data.data.username);
+        localStorage.setItem("last_name", response.data.data.last_name);
+        localStorage.setItem("last_name", response.data.data.last_name);
         navigate("/dashboard");
       } else {
         alert("Login failed");

@@ -36,10 +36,10 @@
     @apply inline-flex font-semibold space-x-5 text-xs items-center xl:mx-[45px] lg:mx-10 md:mx-5 sm:mx-1 lg:my-3 xl:my-[17px]
   }
   .active-sidebar {
-    @apply w-full xl:w-[300px] bg-[#980019] lg:pl-[30px] flex justify-center
+    @apply w-full xl:w-[300px] bg-[#980019] lg:pl-[30px] flex justify-start
   }
   .default-sidebar {
-    @apply w-full xl:w-[300px] flex justify-center
+    @apply w-full xl:w-[300px] flex justify-start
   }
 
   /* *-------Button--------*/
@@ -54,6 +54,9 @@
   }
   .brn-form-secondary {
     @apply sm:text-xs sm:p-1 sm:w-16 lg:w-[97px] md:text-base
+  }
+  .btn-article-tags {
+    @apply rounded-3xl border-2 lg:text-sm sm:text-xs lg:py-1 lg:px-[10px] border-pink-300 text-rose-700 xl:w-[100px]
   }
 
   /* *----------------Form Class Utilities Admin----------------*/
@@ -82,7 +85,7 @@
     @apply justify-start items-start inline-flex bg-primary-100 lg:font-semibold text-xs
   }
   .media-input {
-      @apply w-full md:w-[202px] md:h-[202px] xl:px-[21px] xl:py-[30px] p-4 border-black  gap-2.5 flex-col justify-center items-center inline-flex border border-dashed
+      @apply w-full md:w-[202px] md:h-[202px]  border-black  gap-2.5 flex-col justify-center items-center inline-flex border border-dashed
   }
   .input::placeholder {
       @apply lg:font-semibold text-xs
@@ -106,8 +109,14 @@
   }
 
   /* *----------------Manage Class Utilities Admin----------------*/
+  .article-map {
+    @apply mx-auto grid grid-cols-1 gap-x-6 gap-y-6 lg:grid-cols-3 md:grid-cols-2
+  };
   .article-list {
     @apply xl:p-4 lg:p-2 flex-col space-y-3 rounded-xl shadow
+  }
+  .article-title {
+    @apply text-black text-xs font-bold leading-normal tracking-wide
   }
   /* !---------------------------End------------------------------*/
 
@@ -176,7 +185,7 @@
   }
 
   .dropdownInput-Event {
-    @apply select select-bordered border w-[603px] min-h-[46px] border-base-300 bg-primary-100 rounded-md text-sm text-base-100;
+    @apply select select-bordered border w-[517px] min-h-[46px] border-base-300 bg-primary-100 rounded-md text-sm text-base-100;
   }
 
   .div-detailEvent {
