@@ -65,10 +65,6 @@ export default function Dashboard() {
     setSearchQuery(e.target.value);
   };
 
-  const filteredAdmins = admins.filter((admin) =>
-    admin.username.toLowerCase().includes(searchQuery.toLowerCase())
-  );
-
   const handleIncrement = () => {
     setCounter((prevCounter) => prevCounter + 1);
   };
@@ -79,11 +75,27 @@ export default function Dashboard() {
     );
   };
 
+  const itemsPerPage = counter;
+  const indexOfLastItem = currentPage * itemsPerPage;
+  const indexOfFirstItem = indexOfLastItem - itemsPerPage;
+  const filteredAdmins = admins.filter((admin) =>
+    admin.username.toLowerCase().includes(searchQuery.toLowerCase())
+  );
+  const currentAdmins = filteredAdmins.slice(indexOfFirstItem, indexOfLastItem);
+
+  const nextPage = () => {
+    setCurrentPage((prevPage) => prevPage + 1);
+  };
+
+  const prevPage = () => {
+    setCurrentPage((prevPage) => prevPage - 1);
+  };
+
   return (
     <div className="w-[1440px] h-[1024px] top-[552px] left-0 bg-primary-100 font-poppins">
       <div className="w-[1140px] h-[800.79px] top-[171px] left-[300px] gap-[24px] bg-primary-100 mt-14">
         <div className="flex flex-wrap w-[1056px] h-[121px] gap-[27px] mx-auto">
-          <div className="flex w-[1092px] h-[46px] gap-[24px] bg-primary-100">
+          <div className="flex w-[1092px] h-[52px] gap-[24px] bg-primary-100">
             <div className="w-[108px] h-[46px] rounded-lg bg-primary-30 pt-[14px] pr-[16px] pb-[14px] pl-[16px] gap-[space-x-2]">
               <Link
                 to="add"
@@ -161,7 +173,7 @@ export default function Dashboard() {
           </div>
           <div className="flex w-[1092px] h-[48px] gap-[24px] justify-end items-center mt-10">
             <div className="flex w-[196px] h-[31px] gap-[10px]">
-              <p className="w-[42px] h-[24px] bg-primary-100 text-center flex items-center justify-center mt-1 tex-[16px] leading-6 font-normal text-primary-0">
+              <p className="w-[42px] h-[24px] bg-primary-100 text-center flex items-center justify-center mt-1 text-[16px] leading-6 font-normal text-primary-0">
                 Show
               </p>
               <div className="flex w-[79px] h-[31px] rounded-[10px] border-2 pt-[2px] pr-[10px] pb-[2px] pl-[10px] gap-[28px] border-primary-0 items-center">
