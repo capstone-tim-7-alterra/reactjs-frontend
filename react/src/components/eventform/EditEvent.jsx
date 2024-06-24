@@ -2,7 +2,7 @@ import Photo from "../../assets/images/imgEvent/photo.png";
 import Photo1 from "../../assets/images/imgEvent/photo1.png";
 import IconTicket from "../../assets/images/imgEvent/iconTicket.png";
 import XCircle from "../../assets/images/imgEvent/xCircle.png";
-import Clock from "../../assets/images/imgEvent/Clock.png";
+import Clock from "../../assets/images/imgEvent/clock.png";
 import Button from "../../assets/images/imgEvent/button.png";
 import DateEvent from "../../assets/images/imgEvent/dateEvent.png";
 import Location from "../../assets/images/imgEvent/location.png";
