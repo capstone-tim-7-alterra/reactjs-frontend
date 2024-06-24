@@ -58,6 +58,11 @@ const router = createBrowserRouter([
     children: [{ index: true, element: <EditProduct /> }],
   },
   {
+    path: "/dashboard/manage-product/edit/:id",
+    element: <FormL />,
+    children: [{ index: true, element: <EditProduct /> }],
+  },
+  {
     path: "/dashboard/manage-admin/add",
     element: <FormL />,
     children: [{ index: true, element: <AddAdmin /> }],
