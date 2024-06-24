@@ -38,13 +38,17 @@ function App() {
                 className="label-detailticket"
                 htmlFor="ticketName"
               >
-                Ticket Name
+                Ticket
               </label>
-              <input
-                type="text"
-                placeholder="Type here"
-                className="input-ticketname"
-              />
+              <select className="input-ticketname">
+                  <option disabled selected>
+                    Pick your an option
+                  </option>
+                  <option>Regular</option>
+                  <option>VIP</option>
+                  <option>VVIP</option>
+                </select>
+
             </div>
             <div>
               <label

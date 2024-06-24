@@ -141,8 +141,12 @@ export default {
           300: "#E5E6E6",
           400: "#D4DBFF",
           401: "#F0F4FF",
-          402: "#F9FAFB",
-          403: "#F2F2F2",
+          402: "#F9FAFB",//baru thalita
+          403: "#F2F2F2",//baru thalita
+          404: "#5C5C5C",//baru thalita
+          405: "#DBDBDD", //baru thalita
+          406: "#3F3F3F", //baru thalita
+
         },
       },
       boxShadow: {
@@ -160,3 +164,16 @@ export default {
   },
   plugins: [require("daisyui")],
 };
+
+// List Pageckage/Library yang di install
+// 1.
+// 2.
+// 3.
+// 4.
+// 5.
+// 6.
+// 7.
+// 8.
+// 9.
+// 10.
+// Dst
