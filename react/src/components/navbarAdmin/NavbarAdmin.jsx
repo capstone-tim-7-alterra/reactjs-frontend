@@ -1,12 +1,26 @@
-import { useLocation, useNavigate } from 'react-router-dom';
+import { Link, useLocation, useNavigate } from 'react-router-dom';
 import Stroke from '../../assets/icons/navbar/Stroke.svg'
-import { nameMap } from '../pathMap';
+import Logout from '../../assets/icons/navbar/Logout.svg'
+import { nameMap } from '../pathMap'
 
 export default function Navbar() {
 
     const location = useLocation();
     const currentPath = location.pathname;
-    const headerTitle = nameMap[currentPath] || 'Page Not Found';
+
+    // Fungsi untuk mencocokkan rute dengan parameter dinamis
+    const getHeaderTitle = (path) => {
+        for (let pattern in nameMap) {
+            const regex = new RegExp(`^${pattern.replace(/:[^\s/]+/g, '([^\\s/]+)')}$`);
+            if (regex.test(path)) {
+                return nameMap[pattern];
+            }
+        }
+        return 'Page Not Found';
+    };
+
+    const headerTitle = getHeaderTitle(currentPath);
+
 
     const navigate = useNavigate();
 
@@ -31,19 +45,13 @@ export default function Navbar() {
                         <figure><img src={Stroke}  alt="Stroke" className="w-4" /></figure>
                     </div>
 
-                    <ul tabIndex={0} className="mt-3 z-[1] p-2 shadow menu menu-sm dropdown-content bg-primary-100 rounded-box w-52 text-black">
-                        <li>
-                            <a className="justify-between">
-                                Profile
-                                <span className="badge">New</span>
-                            </a>
-                        </li>
-                        <li><a>Settings</a></li>
-                        <li>
-                            <button onClick={handleLogout}>
+                    <ul tabIndex={0} className="mt-3 z-[1] p-2 shadow menu menu-sm dropdown-content bg-primary-100 rounded-sm w-52 text-black">
+                        <Link>
+                            <button onClick={handleLogout} className="flex gap-2">
+                                <img src={Logout} alt="Logout" />
                                 Logout
                             </button>
-                        </li>
+                        </Link>
                     </ul>
                 </div>
             </div>
