@@ -5,7 +5,7 @@ import Breadcrumb from "../breadcrumbAdmin/Breadcrumbs";
 import Photo from "../../assets/images/imgEvent/photo.png";
 import IconEye from "../../assets/icons/article/Eye.svg";
 
-export default function AddAdmin({ fetchAdmins }) {
+export default function EditAdmin({ fetchAdmins }) {
   const [formData, setFormData] = useState({
     image: null,
     email: "",
@@ -98,8 +98,8 @@ export default function AddAdmin({ fetchAdmins }) {
     data.append("password", formData.password);
 
     try {
-      const response = await axios.post(
-        "https://kreasinusantara.shop/api/v1/admin/register",
+      const response = await axios.put(
+        "https://kreasinusantara.shop/api/v1/admin/{adm inId}",
         data,
         {
           headers: {
@@ -107,10 +107,10 @@ export default function AddAdmin({ fetchAdmins }) {
           },
         }
       );
-      console.log("Success:", response.data, response);
+      console.log("Success:", response.data,response);
 
-      fetchAdmins(); //refresh list admin
-
+      fetchAdmins(); //refresh list admin 
+      
       navigate("/dashboard/manage-admin");
     } catch (error) {
       console.error(
@@ -127,7 +127,7 @@ export default function AddAdmin({ fetchAdmins }) {
 
         <div className="w-[1156px] h-[1634px] gap-[50px] mx-auto mt-14 font-poppins ">
           <h1 className="w-[258px] h-[48px] text-[32px] leading-[48px] font-semibold text-primary-0 mb-10">
-            Add admin
+            Edit admin
           </h1>
           <form onSubmit={handleSubmit}>
             <div className="w-[1156px] h-[1536px] pt-[24px] pr-[22px] pb-[24px] pl-[22px] gap-[58px] shadow-custom-1">

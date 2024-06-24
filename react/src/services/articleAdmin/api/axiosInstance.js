@@ -9,7 +9,7 @@ const axiosInstance = axios.create({
 
 axiosInstance.interceptors.request.use(
     (config) => {
-      const token = localStorage.getItem('tokenAdmin'); // Ambil token dari localStorage
+      const token = localStorage.getItem('token'); // Ambil token dari localStorage
       if (token) {
         config.headers['Authorization'] = `Bearer ${token}`; // Tambahkan token ke header
       }

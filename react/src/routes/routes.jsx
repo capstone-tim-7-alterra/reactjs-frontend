@@ -7,6 +7,7 @@ import Dashboard from "../components/manageMainC/dashboard";
 import ManageArticle from "../pages/ManageArticle";
 import ManageEvent from "../pages/ManageArticle";
 import ManageAdmin from "../components/manageAdminC/manageAdmin";
+import EditAdmin from "../components/manageAdminC/EditAdmin";
 
 import FormL from "../layouts/FormL";
 import AddProduct from "../components/productForm/AddProduct";
@@ -49,12 +50,17 @@ const router = createBrowserRouter([
     children: [{ index: true, element: <AddAdmin /> }],
   },
   {
+    path: "/dashboard/manage-admin/edit/:adminId",
+    element: <FormL />,
+    children: [{ index: true, element: <EditAdmin /> }],
+  },
+  {
     path: "/dashboard/manage-article/add",
     element: <FormL />,
     children: [{ index: true, element: <AddArticle /> }],
   },
   {
-    path: "/dashboard/manage-article/edit",
+    path: "/dashboard/manage-article/edit/:articleId",
     element: <FormL />,
     children: [{ index: true, element: <EditArticle /> }],
   },
