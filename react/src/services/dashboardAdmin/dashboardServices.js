@@ -1,6 +1,6 @@
 import {
     fetchReportProducts,
-  } from './api/articleAPI';
+  } from './api/dashboardAPI';
 
 
 /**

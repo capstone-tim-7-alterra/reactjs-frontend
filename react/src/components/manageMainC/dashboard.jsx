@@ -2,7 +2,7 @@
 /* eslint-disable react-hooks/rules-of-hooks */
 import React, { useState } from "react";
 
-import TableProduct from "./TableProductD";
+import TableProduct from "./TableProductDRaisalVer";
 import TableTicket from "./TableTicketD"
 
 import IconBukteProduct from "../../assets/icons/iconBasketProduct.png";

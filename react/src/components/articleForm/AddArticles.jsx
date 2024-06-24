@@ -9,6 +9,7 @@ export default function AddPost() {
     const [formData, setFormData] = useState({
         title: '',
         image: null,
+        author: '',
         content: '',
         tags: ''
     });
@@ -45,6 +46,9 @@ export default function AddPost() {
         if (!formData.content?.trim()) {
             newErrors.content = 'Post Content cannot be empty';
         }
+        if (!formData.author?.trim()) {
+            newErrors.author = 'Post Author cannot be empty';
+        }
         if (!formData.tags?.trim()) {
             newErrors.tags = 'Tags cannot be empty';
         }
@@ -61,6 +65,7 @@ export default function AddPost() {
         const newData = new FormData();
         newData.append('title', formData.title);
         newData.append('content', formData.content);
+        newData.append('author', formData.author);
         newData.append('tags', formData.tags);
         newData.append('image', formData.image);
 
