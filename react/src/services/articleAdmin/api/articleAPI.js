@@ -1,4 +1,4 @@
-import axiosInstance from './axiosInstance';
+import axiosInstance from '../../axiosInstance';
 
 // export const fetchSummaryArticles = async () => {
 //   const response = await axios.get('/api/summary-articles');

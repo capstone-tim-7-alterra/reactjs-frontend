@@ -21,11 +21,13 @@ export default function Navbar() {
 
     const headerTitle = getHeaderTitle(currentPath);
 
-
     const navigate = useNavigate();
 
     const handleLogout = () => {    
         localStorage.removeItem('token');
+        localStorage.removeItem('firstName');
+        localStorage.removeItem('lastName');
+        localStorage.removeItem('LastName');
         navigate('/login');
     }
 
