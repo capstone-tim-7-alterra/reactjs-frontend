@@ -11,6 +11,16 @@ export default function Breadcrumb() {
     const location = useLocation();
     const pathnames = location.pathname.split('/').filter((x) => x);
 
+    const getBreadcrumbName = (path) => {
+        for (let pattern in nameMap) {
+            const regex = new RegExp(`^${pattern.replace(/:[^\s/]+/g, '[^/]+')}$`);
+            if (regex.test(path)) {
+                return nameMap[pattern];
+            }
+        }
+        return 'Page Not Found';
+    };
+
     return (
         <Breadcrumbs aria-label="breadcrumb" separator="›">
             {pathnames.map((value, index) => {
@@ -19,11 +29,11 @@ export default function Breadcrumb() {
 
                 return last ? (
                     <Typography color="text.primary" key={to}>
-                        {nameMap[to]}
+                        {getBreadcrumbName(to)}
                     </Typography>
                 ) : (
                     <LinkRouter underline="hover" color="inherit" to={to} key={to}>
-                        {nameMap[to]}
+                        {getBreadcrumbName(to)}
                     </LinkRouter>
                 );
             })}

@@ -1,10 +1,18 @@
 import { useRef, useState } from "react";
-import Navbar from "./navbar";
-import IconDate from "../../assets/imgEvent/iconDate.png";
-import Photo from "../../assets/imgEvent/photo.png";
-import IconTicket from "../../assets/imgEvent/iconTicket.png";
+import Photo from "../../assets/images/imgEvent/photo.png";
+import IconTicket from "../../assets/images/imgEvent/iconTicket.png";
+import Breadcrumb from "../breadcrumbAdmin/Breadcrumbs";
+import Button from "../../assets/images/imgEvent/button.png";
+import DateEvent from "../../assets/images/imgEvent/dateEvent.png";
+import Location from "../../assets/images/imgEvent/location.png";
+
 
 export default function AddEvent() {
+
+
+
+
+
   const fileInputRef = useRef(null);
   const [selectedImage, setSelectedImage] = useState(null);
 
@@ -22,22 +30,7 @@ export default function AddEvent() {
   return (
     <>
       <section className="section-Event">
-        <Navbar />
-        <div className="text-sm font-normal breadcrumbs text-neutral-40 gap-[1px]">
-          <ul className="w-[1391px] h-[20px] mx-auto">
-            <li>
-              <a href="#" className="w-[79px] h-[20px]">
-                Dashboard
-              </a>
-            </li>
-            <li>
-              <a href="#" className="w-[100px] h-[20px] mr-4">
-                Manage Event
-              </a>
-            </li>
-            <li className="w-[106px] h-[20px] font-semibold">Add new event</li>
-          </ul>
-        </div>
+       <Breadcrumb />
 
         <div className="w-[1156px] h-[1979px] gap-[50px] mx-auto mt-14 font-poppins ">
           <h1 className="w-[242px] h-[48px] text-[32px] leading-[48px] font-semibold text-primary-0">
@@ -47,7 +40,6 @@ export default function AddEvent() {
             <h1 className="w-[328px] h-[48px] text-[32px] leading-[48px] font-semibold text-primary-0 mb-10">
               Event Information
             </h1>
-
             <div className="flex flex-row items-start justify-between w-[1112px] h-[142px] gap-[149px]">
               <div className="flex flex-col gap-[18px] w-[360px] h-[142px] ">
                 <div className="flex items-center justify-between w-[360px] h-[44px]">
@@ -89,7 +81,7 @@ export default function AddEvent() {
                   </p>
                 </div>
               </div>
-              <div className="flex items-start md:items-center justify-end md:w-3/5 font-semibold">
+              <div className="flex items-start md:items-center justify-end  md:w-3/5 font-semibold">
                 <select className="dropdownInput-Event ">
                   <option disabled selected>
                     Pick your an option
@@ -97,6 +89,11 @@ export default function AddEvent() {
                   <option>Festival</option>
                   <option>Greedo</option>
                 </select>
+                <img
+                  src={Button}
+                  alt="button"
+                  className="w-[56px] h-[52px] rounded-lg ga-[8px] mx-auto "
+                />
               </div>
             </div>
           </div>
@@ -125,12 +122,12 @@ export default function AddEvent() {
                   <div className="w-[603px] h-[46px] flex items-center pt-[14px] pr-[16px] pb-[14px] pl-[16px] gap-[2px] border-secondary-55 bg-primary-100 rounded-lg ">
                     <input
                       type="text"
-                      placeholder="Pick a date"
-                      className="input input-md border w-[547px] h-[18px] text-base-100 bg-primary-100 rounded-md text-sm font-semibold text-[16px] leading-[24px] opacity-70"
+                      placeholder="Addres"
+                      className="input input-md border w-[547px] h-[18px] text-base-100 bg-primary-100 rounded-md text-sm font-semibold text-[16px] leading-[24px]"
                     />
                     <img
-                      src={IconDate}
-                      alt="iconDate"
+                      src={Location}
+                      alt="location"
                       className="w-[16px] h-[16px] mx-auto"
                     />
                   </div>
@@ -155,14 +152,14 @@ export default function AddEvent() {
               </div>
               <div className="w-[700px] h-[107px] flex flex-wrap gap-[24px] items-start justify-start">
                 <div className="flex items-center justify-center gap-[24px]">
-                  <div className="w-[603px] h-[46px] flex items-center pt-[14px] pr-[16px] pb-[14px] pl-[16px] gap-[2px] border-secondary-55 bg-primary-100 rounded-lg shadow-custom-1">
+                  <div className="w-[603px] h-[46px] flex items-center pt-[14px] pr-[16px] pb-[14px] pl-[16px] gap-[2px] border-secondary-55 bg-primary-100 rounded-lg">
                     <input
                       type="text"
                       placeholder="Pick a date"
-                      className="input input-md w-[547px] h-[18px] text-base-100 bg-primary-100 rounded-md text-sm font-semibold text-[16px] leading-[24px] opacity-70"
+                      className="input input-md w-[547px] h-[18px] text-base-100 bg-primary-100 rounded-md text-sm font-semibold text-[16px] leading-[24px] "
                     />
                     <img
-                      src={IconDate}
+                      src={DateEvent}
                       alt="iconDate"
                       className="w-[16px] h-[16px] mx-auto"
                     />
@@ -194,25 +191,17 @@ export default function AddEvent() {
                 className="w-[700px] h-[107px] flex flex-wrap gap-[24px] items-start justify-start cursor-pointer"
                 onClick={handleFileUploadClick}
               >
-                <div className="w-[603px] h-[202px] pt-[30px] pr-[21px] pb-[30px] pl-[21px] gap-[10px] border border-dotted border-primary-0 flex items-center justify-center">
-                  {selectedImage ? (
+                <div className="w-[108px] h-[107px] border border-dotted  border-primary-0 flex items-center justify-center">
+                  <div className="text-center min-w-[69px] h-[47px]">
                     <img
-                      src={selectedImage}
-                      alt="Selected"
-                      className="w-full h-full object-cover"
+                      src={Photo}
+                      alt="photo"
+                      className="w-[18px] h-[18px] mx-auto"
                     />
-                  ) : (
-                    <div className="text-center min-w-[69px] h-[47px]">
-                      <img
-                        src={Photo}
-                        alt="photo"
-                        className="w-[24px] h-[24px] mx-auto"
-                      />
-                      <span className="w-[69px] h-[15px] mx-auto text-[12px] leading-[14.52px] text-primary-0">
-                        Upload Foto
-                      </span>
-                    </div>
-                  )}
+                    <span className="w-[69px] h-[15px] mx-auto text-[12px] leading-[14.52px] text-primary-0">
+                      Tambah Foto
+                    </span>
+                  </div>
                 </div>
               </div>
               <input

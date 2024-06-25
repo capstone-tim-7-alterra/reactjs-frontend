@@ -5,7 +5,7 @@ import Breadcrumb from "../breadcrumbAdmin/Breadcrumbs";
 import Photo from "../../assets/images/imgEvent/photo.png";
 import IconEye from "../../assets/icons/article/Eye.svg";
 
-export default function AddAdmin({fetchAdmins}) {
+export default function AddAdmin() {
   const [formData, setFormData] = useState({
     image: null,
     email: "",
@@ -16,6 +16,8 @@ export default function AddAdmin({fetchAdmins}) {
     password: "",
   });
 
+  const [imageBlob, setImageBlob] = useState();
+
   const navigate = useNavigate();
 
   const [showPassword, setShowPassword] = useState(false);
@@ -23,7 +25,7 @@ export default function AddAdmin({fetchAdmins}) {
   const handleTogglePassword = () => {
     setShowPassword(!showPassword);
   };
-  
+
   const handleCancel = () => {
     navigate("/dashboard/manage-admin");
   };
@@ -31,15 +33,21 @@ export default function AddAdmin({fetchAdmins}) {
   const handleChange = (e) => {
     const { name, value, files } = e.target;
     if (name === "image") {
-      console.log('File selected:', files[0]);
+      const r = new FileReader();
+      r.onload = function (e) {
+        setImageBlob(r.result);
+      };
+      r.readAsDataURL(files[0]);
+
+      console.log("File selected:", files);
       setFormData({
         ...formData,
         image: files[0], // Store the selected file
       });
-    } else if (name === 'is_super_admin') {
+    } else if (name === "is_super_admin") {
       setFormData({
         ...formData,
-        is_super_admin: value === 'SuperAdmin', // Set boolean based on selection
+        is_super_admin: value === "SuperAdmin", // Set boolean based on selection
       });
     } else {
       setFormData({
@@ -99,11 +107,9 @@ export default function AddAdmin({fetchAdmins}) {
           },
         }
       );
-      console.log("Success:", response.data,response);
-
-      fetchAdmins(); //refresh list admin 
-      
+      console.log("Success:", response.data, response);
       navigate("/dashboard/manage-admin");
+      
     } catch (error) {
       console.error(
         "Error:",
@@ -119,7 +125,7 @@ export default function AddAdmin({fetchAdmins}) {
 
         <div className="w-[1156px] h-[1634px] gap-[50px] mx-auto mt-14 font-poppins ">
           <h1 className="w-[258px] h-[48px] text-[32px] leading-[48px] font-semibold text-primary-0 mb-10">
-            Add new admin
+            Add admin
           </h1>
           <form onSubmit={handleSubmit}>
             <div className="w-[1156px] h-[1536px] pt-[24px] pr-[22px] pb-[24px] pl-[22px] gap-[58px] shadow-custom-1">
@@ -143,22 +149,31 @@ export default function AddAdmin({fetchAdmins}) {
                 <div className="w-[700px] h-[107px] flex flex-wrap gap-[24px] items-start justify-start">
                   <div className="w-[225px] h-[202px] pt-[30px] pr-[21px] pb-[30px] pl-[21px] gap-[10px] border border-dotted border-primary-0 flex items-center justify-center">
                     <div className="text-center min-w-[69px] h-[47px]">
-                      <input
-                        type="file"
-                        name="image"
-                        onChange={handleChange}
-                        required
-                      />
-                      <label htmlFor="upload-photo" className="cursor-pointer">
-                        <img
-                          src={Photo}
-                          alt="photo"
-                          className="w-[24px] h-[24px] mx-auto"
-                        />
-                        <span className="w-[69px] h-[15px] mx-auto text-[12px] leading-[14.52px] text-primary-0">
-                          Upload Foto
-                        </span>
-                      </label>
+                      {formData.image != null ? (
+                        <img src={imageBlob}></img>
+                      ) : (
+                        <>
+                          <input
+                            type="file"
+                            name="image"
+                            onChange={handleChange}
+                            required
+                          />
+                          <label
+                            htmlFor="upload-photo"
+                            className="cursor-pointer"
+                          >
+                            <img
+                              src={Photo}
+                              alt="photo"
+                              className="w-[24px] h-[24px] mx-auto"
+                            />
+                            <span className="w-[69px] h-[15px] mx-auto text-[12px] leading-[14.52px] text-primary-0">
+                              Upload Foto
+                            </span>
+                          </label>
+                        </>
+                      )}
                     </div>
                   </div>
                 </div>
@@ -326,7 +341,9 @@ export default function AddAdmin({fetchAdmins}) {
                     src={IconEye}
                     alt="Toggle Password"
                     onClick={handleTogglePassword}
-                    className={`absolute w-[24px] h-[24px] right-[50px] cursor-pointer ${showPassword ? 'opacity-20' : ''}`}
+                    className={`absolute w-[24px] h-[24px] right-[50px] cursor-pointer ${
+                      showPassword ? "opacity-20" : ""
+                    }`}
                   />
                 </div>
               </div>
