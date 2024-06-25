@@ -157,11 +157,11 @@
   }
 
   .btn-editProduct-cancel {
-    @apply btn w-[200px] h-[60px] bg-base-50 border-base-50 hover:bg-base-50 hover:border-base-50 rounded-lg pt-[14px] pr-[16px] pb-[14px] pl-[16px] font-semibold text-[18px] leading-[24px]  text-base-100 text-center;
+    @apply btn bg-base-50 border-base-50 hover:bg-base-50 hover:border-base-50 rounded-lg  font-semibold text-[18px] leading-[24px]  text-base-100 text-center xl:w-[200px] xl:h-[60px] lg:w-[200px] lg:h-[60px] md:w-[200px] md:h-[60px] sm:w-[150px] sm:h-[30px] xl:-mt-1 lg:-mt-1 md:mt-10 sm:mt-10;
   }
 
   .btn-editProduct-save {
-    @apply btn w-[200px] h-[60px] bg-primary-30 border-primary-30 hover:bg-primary-30 hover:border-primary-30 rounded-lg pt-[14px] pr-[16px] pb-[14px] pl-[16px] font-semibold text-[18px] leading-[24px]  text-primary-100 text-center;
+    @apply btn  bg-primary-30 border-primary-30 hover:bg-primary-30 hover:border-primary-30 rounded-lg  font-semibold text-[18px] leading-[24px]  text-primary-100 text-center xl:w-[200px] xl:h-[60px] lg:w-[200px] lg:h-[60px] md:w-[200px] md:h-[60px] sm:w-[150px] sm:h-[30px] xl:-mt-1 lg:-mt-1 md:mt-10 sm:mt-10;
   }
   /* End Section EditProduct */
     

@@ -10,33 +10,27 @@ import { Link, useNavigate } from "react-router-dom";
 export default function Dashboard() {
   const [admins, setAdmins] = useState([]);
   const [searchQuery, setSearchQuery] = useState("");
-  const [counter, setCounter] = useState(10 );
+  const [counter, setCounter] = useState(10);
   const [resData, setResData] = useState();
-  
 
   const navigate = useNavigate();
 
   const [pagination, setPagination] = useState();
   function handlePagination(isNext) {
-    if(
-      isNext
-    ){
-      fetchData("https://kreasinusantara.shop"+resData.link.next)
-    }else {
-      fetchData("https://kreasinusantara.shop"+resData.link.prev)
+    if (isNext) {
+      fetchData("https://kreasinusantara.shop" + resData.link.next);
+    } else {
+      fetchData("https://kreasinusantara.shop" + resData.link.prev);
     }
   }
-  async function fetchData(url){
+  async function fetchData(url) {
     const token = localStorage.getItem("token");
     try {
-      const response = await axios.get(
-        url,
-        {
-          headers: {
-            Authorization: `Bearer ${token}`,
-          },
-        }
-      );
+      const response = await axios.get(url, {
+        headers: {
+          Authorization: `Bearer ${token}`,
+        },
+      });
       setResData(response.data);
       setAdmins(response.data.data); // data adalah array admin
     } catch (error) {
@@ -54,16 +48,41 @@ export default function Dashboard() {
       return;
     }
 
-   fetchData("https://kreasinusantara.shop/api/v1/admin");
+    fetchData("https://kreasinusantara.shop/api/v1/admin");
   };
 
   useEffect(() => {
     fetchAdmins();
   }, []);
 
+  const handleDelete = async (id) => {
+    const token = localStorage.getItem("token");
+
+    try {
+      const response = await axios.delete(
+        "https://kreasinusantara.shop/api/v1/admin/" + id,
+        {
+          headers: {
+            Authorization: `Bearer ${token}`,
+          },
+        }
+      );
+      console.log(response);
+      fetchAdmins();
+    } catch (error) {
+      console.error(
+        "Error:",
+        error.response ? error.response.data : error.message
+      );
+    }
+  };
   const handleSearch = (e) => {
     setSearchQuery(e.target.value);
   };
+
+  const filteredAdmins = admins.filter((admin) =>
+    admin.username.toLowerCase().includes(searchQuery.toLowerCase())
+  );
 
   const handleIncrement = () => {
     setCounter((prevCounter) => prevCounter + 1);
@@ -75,27 +94,11 @@ export default function Dashboard() {
     );
   };
 
-  const itemsPerPage = counter;
-  const indexOfLastItem = currentPage * itemsPerPage;
-  const indexOfFirstItem = indexOfLastItem - itemsPerPage;
-  const filteredAdmins = admins.filter((admin) =>
-    admin.username.toLowerCase().includes(searchQuery.toLowerCase())
-  );
-  const currentAdmins = filteredAdmins.slice(indexOfFirstItem, indexOfLastItem);
-
-  const nextPage = () => {
-    setCurrentPage((prevPage) => prevPage + 1);
-  };
-
-  const prevPage = () => {
-    setCurrentPage((prevPage) => prevPage - 1);
-  };
-
   return (
     <div className="w-[1440px] h-[1024px] top-[552px] left-0 bg-primary-100 font-poppins">
       <div className="w-[1140px] h-[800.79px] top-[171px] left-[300px] gap-[24px] bg-primary-100 mt-14">
         <div className="flex flex-wrap w-[1056px] h-[121px] gap-[27px] mx-auto">
-          <div className="flex w-[1092px] h-[52px] gap-[24px] bg-primary-100">
+          <div className="flex w-[1092px] h-[46px] gap-[24px] bg-primary-100">
             <div className="w-[108px] h-[46px] rounded-lg bg-primary-30 pt-[14px] pr-[16px] pb-[14px] pl-[16px] gap-[space-x-2]">
               <Link
                 to="add"
@@ -152,18 +155,20 @@ export default function Dashboard() {
                       <td>{admin.email}</td>
                       <td>{admin.created_at}</td>
                       <td className="flex gap-5 ml-10">
-                        <img
-                          src={Trash}
-                          alt="Trash"
-                          className="w-[24px] h-[24px]"
-                        />
-                        <Link to={`./edit/${admin.id}`}>
+                        <button onClick={() => handleDelete(admin.id)}>
                           <img
-                            src={EditSquare}
-                            alt="editsquare"
+                            src={Trash}
+                            alt="Trash"
                             className="w-[24px] h-[24px]"
                           />
-                        </Link>
+                        </button>
+                      <Link to={admin.username}>
+                        <img
+                          src={EditSquare}
+                          alt="editsquare"
+                          className="w-[24px] h-[24px]"
+                        />
+                      </Link>
                       </td>
                     </tr>
                   ))}
@@ -173,7 +178,7 @@ export default function Dashboard() {
           </div>
           <div className="flex w-[1092px] h-[48px] gap-[24px] justify-end items-center mt-10">
             <div className="flex w-[196px] h-[31px] gap-[10px]">
-              <p className="w-[42px] h-[24px] bg-primary-100 text-center flex items-center justify-center mt-1 text-[16px] leading-6 font-normal text-primary-0">
+              <p className="w-[42px] h-[24px] bg-primary-100 text-center flex items-center justify-center mt-1 tex-[16px] leading-6 font-normal text-primary-0">
                 Show
               </p>
               <div className="flex w-[79px] h-[31px] rounded-[10px] border-2 pt-[2px] pr-[10px] pb-[2px] pl-[10px] gap-[28px] border-primary-0 items-center">
@@ -201,13 +206,19 @@ export default function Dashboard() {
             </div>
 
             <div className="join w-[159px] h-[48px]">
-              <button onClick={()=>handlePagination(false)} className="join-item w-[41px] h-[48px] pt-[14px] pr-[16px] pb-[14px] pl-[16px] gap-[space-x-2] bg-base-50 hover:bg-base-70 border-base-50 mx-auto text-primary-0 text-sm">
+              <button
+                onClick={() => handlePagination(false)}
+                className="join-item w-[41px] h-[48px] pt-[14px] pr-[16px] pb-[14px] pl-[16px] gap-[space-x-2] bg-base-50 hover:bg-base-70 border-base-50 mx-auto text-primary-0 text-sm"
+              >
                 «
               </button>
               <button className="join-item w-[77px] h-[48px] pt-[14px] pr-[16px] pb-[14px] pl-[16px] gap-[space-x-2] bg-base-50 border-base-50 text-sm leading-5 font-semibold text-base-100">
-                Page {resData?.pagination.current_page ?? 1 }
+                Page {resData?.pagination.current_page ?? 1}
               </button>
-              <button onClick={()=>handlePagination(true)} className="join-item w-[41px] h-[48px] pt-[14px] pr-[16px] pb-[14px] pl-[16px] gap-[space-x-2] bg-base-50 hover:bg-base-70 border-base-50 mx-auto text-primary-0 text-sm">
+              <button
+                onClick={() => handlePagination(true)}
+                className="join-item w-[41px] h-[48px] pt-[14px] pr-[16px] pb-[14px] pl-[16px] gap-[space-x-2] bg-base-50 hover:bg-base-70 border-base-50 mx-auto text-primary-0 text-sm"
+              >
                 »
               </button>
             </div>

@@ -8,8 +8,8 @@ export default function AddPost() {
     // Consolidate form data into a single state object
     const [formData, setFormData] = useState({
         title: '',
-        //   author: '',
         image: null,
+        author: '',
         content: '',
         tags: ''
     });
@@ -43,11 +43,11 @@ export default function AddPost() {
         if (!formData.title?.trim()) {
             newErrors.title = 'Post Title cannot be empty';
         }
-        // if (!formData.author?.trim()) {
-        //     newErrors.author = 'Post Author cannot be empty';
-        // }
         if (!formData.content?.trim()) {
             newErrors.content = 'Post Content cannot be empty';
+        }
+        if (!formData.author?.trim()) {
+            newErrors.author = 'Post Author cannot be empty';
         }
         if (!formData.tags?.trim()) {
             newErrors.tags = 'Tags cannot be empty';
@@ -65,6 +65,7 @@ export default function AddPost() {
         const newData = new FormData();
         newData.append('title', formData.title);
         newData.append('content', formData.content);
+        newData.append('author', formData.author);
         newData.append('tags', formData.tags);
         newData.append('image', formData.image);
 
@@ -115,7 +116,7 @@ export default function AddPost() {
                         </div>
                         
                         {/* Post Author */}
-                        {/* <div className="question-card">
+                        <div className="question-card">
                             <h2 className="text-zinc-900 lg:text-base lg:font-semibold leading-tight">
                                 Post Author <span className={`${errors.author ? 'text-red-500' : ''}`} >*</span>
                             </h2>
@@ -135,7 +136,7 @@ export default function AddPost() {
                                     This will be shown as the author on the front page and on the post itself
                                 </div>
                             )}
-                        </div> */}
+                        </div>
 
                         {/* Post Image */}
                         <div className="question-card">

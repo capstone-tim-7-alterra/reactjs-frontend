@@ -7,15 +7,16 @@ import DashboardL from "../layouts/DashboardL";
 import Dashboard from "../components/manageMainC/dashboard";
 import ManageArticle from "../pages/ManageArticle";
 import ManageEvent from "../pages/ManageEvent";
-import ManageProduct from "../components/manageProductC/ManageDashboardProduct";
+import ManageProduct from "../pages/manageProducts";
 import AddProduct from "../components/productForm/AddProduct";
+import EditProduct from "../components/manageProductC/editProducts/EditProducts";
 import ManageAdmin from "../components/manageAdminC/manageAdmin";
 import AddAdmin from "../components/manageAdminC/AddAdmin";
+import EditAdmin from "../components/manageAdminC/EditAdmin";
 import AddArticle from "../components/articleForm/AddArticles";
 import EditArticle from "../components/articleForm/EditArticles";
 import ErrorPage from "../pages/ErrorPage";
 import LoginDashboard from "../pages/LoginDashboard";
-import AddEvent from "../components/eventForm/AddEvent";
 import EditEvent from "../components/eventForm/EditEvent";
 
 const router = createBrowserRouter([
@@ -41,16 +42,20 @@ const router = createBrowserRouter([
     children: [{ index: true, element: <AddProduct /> }],
   },
   {
+    path: "/dashboard/manage-product/edit/:id",
+    element: <FormL />,
+    children: [{ index: true, element: <EditProduct /> }],
+  },
+  {
     path: "/dashboard/manage-admin/add",
     element: <FormL />,
     children: [{ index: true, element: <AddAdmin /> }],
   },
   {
-    path: "/dashboard/manage-event/add",
+    path: "/dashboard/manage-admin/:username",
     element: <FormL />,
-    children: [{ index: true, element: <AddEvent /> }],
+    children: [{ index: true, element: <EditAdmin /> }],
   },
-
   {
     path: "/dashboard/manage-article/add",
     element: <FormL />,
