@@ -11,9 +11,10 @@ import TombolAtas from "../assets/icons/TombolAtas.png";
 import TombolBawah from "../assets/icons/TombolBawah.png";
 import Trash from "../assets/icons/article/Trash.svg";
 import IconSucces from "../assets/icons/form/iconSucces.svg";
-import { useParams } from "react-router-dom";
+import { useParams, useNavigate } from "react-router-dom";
 
 export default function Dashboard() {
+  const navigate = useNavigate();
   const { id } = useParams();
   const [products, setProducts] = useState([]);
   const [error, setError] = useState(null);
@@ -24,6 +25,7 @@ export default function Dashboard() {
   const [fileName, setFileName] = useState("");
   const [fileContent, setFileContent] = useState(null);
   const [isModalOpen, setIsModalOpen] = useState(false);
+  const [isImportModalOpen, setIsImportModalOpen] = useState(false);
   const [selectedProduct, setSelectedProduct] = useState(null);
   const [isSuccessModalOpen, setIsSuccessModalOpen] = useState(false);
 
@@ -38,16 +40,13 @@ export default function Dashboard() {
   const handleUpload = async () => {
     if (fileContent) {
       const formData = new FormData();
-
       const renamedFile = new File([fileContent], fileName, {
         type: fileContent.type,
       });
-
       formData.append("file", renamedFile);
 
       try {
         const token = localStorage.getItem("token");
-
         if (!token) {
           throw new Error("Token tidak ditemukan di localStorage");
         }
@@ -67,18 +66,20 @@ export default function Dashboard() {
           console.log("File uploaded successfully.");
           setFileName("");
           setFileContent(null);
-          alert("File uploaded successfully.");
+          setIsImportModalOpen(false);
+          setIsSuccessModalOpen(true);
+          setTimeout(() => {
+            setIsSuccessModalOpen(false);
+            navigate("/dashboard/manage-product");
+          }, 2000);
         } else {
           console.error("Failed to upload file.");
-          alert("Failed to upload file.");
         }
       } catch (error) {
         console.error("Error:", error);
-        alert("Error uploading file.");
       }
     } else {
       console.log("No file selected.");
-      alert("Please select a file first.");
     }
   };
 
@@ -162,6 +163,14 @@ export default function Dashboard() {
     indexOfFirstItem,
     indexOfLastItem
   );
+
+  useEffect(() => {
+    const newTotalPages = Math.ceil(filteredProducts.length / itemsPerPage);
+    if (currentPage > newTotalPages) {
+      setCurrentPage(newTotalPages);
+    }
+  }, [filteredProducts, itemsPerPage, currentPage]);
+
   function handlePagination(isNext) {
     if (isNext && resData?.link?.next) {
       fetchProducts(resData.link.next);
@@ -264,62 +273,60 @@ export default function Dashboard() {
                 </Link>
               </div>
               <button
-                className="btn w-[108px] h-[46px] rounded-lg bg-primary-30 border-primary-30 pt-[14px] pr-[16px] pb-[14px] pl-[16px] gap-[space-x-2] flex items-center justify-center hover:bg-primary-40 hover:border-primary-30  text-secondary-91 font-semibold text-[12px] leading-[18px] text-center "
-                onClick={() =>
-                  document.getElementById("my_modal_5").showModal()
-                }>
+                className="btn w-[108px] h-[46px] rounded-lg bg-primary-30 border-primary-30 pt-[14px] pr-[16px] pb-[14px] pl-[16px] gap-[space-x-2] flex items-center justify-center hover:bg-primary-40 hover:border-primary-30  text-secondary-91 font-semibold text-[12px] leading-[18px] text-center"
+                onClick={() => setIsImportModalOpen(true)}>
                 Import CSV
               </button>
 
               {/* Import CSV Modal */}
-              <dialog
-                id="my_modal_5"
-                className="modal modal-bottom sm:modal-middle">
-                <div className="modal-box bg-primary-100 min-w-lg h-[284px] rounded-lg pt-[24px] pr-[24px] pb-[24px] pl-[24px]">
-                  <h3 className="text-lg text-neutral-15 font-semibold text-[18px] leading-[27px] max-w-[464px] h-[27px]">
-                    Import CSV
-                  </h3>
-                  <p className="py-4 max-w-[464px] h-[24px] font-normal text-[16px] leading-6 mb-6">
-                    Select a file and click upload
-                  </p>
-                  <div>
-                    <input
-                      type="text"
-                      value={fileName}
-                      onChange={(e) => setFileName(e.target.value)}
-                      placeholder="Rename file..."
-                      className="input input-bordered w-full bg-primary-100 text-black"
-                      readOnly={!fileContent}
-                    />
-                  </div>
-                  <div className="modal-action justify-start">
-                    <input
-                      type="file"
-                      accept=".csv"
-                      onChange={handleFileChange}
-                      className="hidden"
-                      id="fileInput"
-                    />
-                    <label
-                      htmlFor="fileInput"
-                      className="text-[#3F3F3F] bg-[#DBDBDD] hover:bg-base-140 w-[76px] h-[32px] text-center rounded-[4px] gap-2.5 items-center cursor-pointer">
-                      <p className="text-center mt-2.5">Browse...</p>
-                    </label>
-                  </div>
-                  <div className="modal-action">
-                    <form method="dialog">
-                      <button className="btn bg-base-50 border-base-50 hover:bg-[#DBDBDD] hover:border-base-50 rounded-lg text-primary-0 font-semibold text-center w-[76px] h-[46px]">
+              {isImportModalOpen && (
+                <div className="fixed inset-0 flex items-center justify-center z-50 bg-gray-800 bg-opacity-50">
+                  <div className="modal-box bg-primary-100 min-w-lg h-[284px] rounded-lg pt-[24px] pr-[24px] pb-[24px] pl-[24px]">
+                    <h3 className="text-lg text-neutral-15 font-semibold text-[18px] leading-[27px] max-w-[464px] h-[27px]">
+                      Import CSV
+                    </h3>
+                    <p className="py-4 max-w-[464px] h-[24px] font-normal text-[16px] leading-6 mb-6">
+                      Select a file and click upload
+                    </p>
+                    <div>
+                      <input
+                        type="text"
+                        value={fileName}
+                        onChange={(e) => setFileName(e.target.value)}
+                        placeholder="Rename file..."
+                        className="input input-bordered w-full bg-primary-100 text-black"
+                        readOnly={!fileContent}
+                      />
+                    </div>
+                    <div className="modal-action justify-start">
+                      <input
+                        type="file"
+                        accept=".csv"
+                        onChange={handleFileChange}
+                        className="hidden"
+                        id="fileInput"
+                      />
+                      <label
+                        htmlFor="fileInput"
+                        className="text-[#3F3F3F] bg-[#DBDBDD] hover:bg-base-140 w-[76px] h-[32px] text-center rounded-[4px] gap-2.5 items-center cursor-pointer">
+                        <p className="text-center mt-2.5">Browse...</p>
+                      </label>
+                    </div>
+                    <div className="modal-action">
+                      <button
+                        className="btn bg-base-50 border-base-50 hover:bg-[#DBDBDD] hover:border-base-50 rounded-lg text-primary-0 font-semibold text-center w-[76px] h-[46px]"
+                        onClick={() => setIsImportModalOpen(false)}>
                         Cancel
                       </button>
-                    </form>
-                    <button
-                      className="btn text-primary-100 font-semibold bg-primary-30 border-primary-30 hover:bg-primary-40 hover:border-primary-40 w-[76px] h-[46px]"
-                      onClick={handleUpload}>
-                      Upload
-                    </button>
+                      <button
+                        className="btn text-primary-100 font-semibold bg-primary-30 border-primary-30 hover:bg-primary-40 hover:border-primary-40 w-[76px] h-[46px]"
+                        onClick={handleUpload}>
+                        Upload
+                      </button>
+                    </div>
                   </div>
                 </div>
-              </dialog>
+              )}
             </div>
             <div className="flex w-[768px] h-[46px] rounded-lg border pt-[14px] pr-[16px] pb-[14px] pl-[16px] gap-[space-x-2]">
               <img
