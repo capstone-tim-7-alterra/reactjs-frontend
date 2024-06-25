@@ -2,7 +2,7 @@
 /* eslint-disable react-hooks/rules-of-hooks */
 import React, { useState } from "react";
 
-import TableProduct from "./TableProductDRaisalVer";
+import TableProduct from "./TableProductD";
 import TableTicket from "./TableTicketD"
 
 import IconBukteProduct from "../../assets/icons/iconBasketProduct.png";
@@ -12,17 +12,6 @@ import IconDollarTiket from "../../assets/icons/iconDollarEvent.png";
 import BatikPiring from "../../assets/images/imgDashboard/batikpiring.png";
 
 export default function dashboard() {
-  const [isClicked, setIsClicked] = useState(false);
-  const [activeTab, setActiveTab] = useState("product");
-
-    
-  const handleClick = () => {
-    setIsClicked(!isClicked);
-  };
-
-  const handleTabClick = (tab) => {
-    setActiveTab(tab);
-  };
 
   return (
     <>

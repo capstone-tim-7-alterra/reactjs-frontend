@@ -1,7 +1,7 @@
 /* eslint-disable no-undef */
 /* eslint-disable no-unused-vars */
 import React, { useState, useEffect } from "react";
-import Breadcrumbs from "../breadcrumb/Breadcrumbs";
+import Breadcrumbs from "../../components/breadcrumbAdmin/Breadcrumbs";
 import uploadImage from "../../assets/icons/form/Picture.svg";
 import uploadVideo from "../../assets/icons/form/Video.svg";
 import { useNavigate } from "react-router-dom";

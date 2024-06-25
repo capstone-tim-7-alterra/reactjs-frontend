@@ -1,12 +1,12 @@
-import React, { useState, useEffect, useCallback } from "react";
+import { useState, useEffect, useCallback } from "react";
 import { useParams, useNavigate } from "react-router-dom";
-import Breadcrumbs from "../breadcrumb/Breadcrumbs";
-import uploadImage from "../../assets/icons/form/Picture.svg";
-import uploadVideo from "../../assets/icons/form/Video.svg";
-import percent from "../../assets/icons/form/Percent.svg";
-import CategoryProduct from "../productForm/CategoryProduct";
+import Breadcrumbs from "../../breadcrumbAdmin/Breadcrumbs";
+import uploadImage from "../../../assets/icons/form/Picture.svg";
+import uploadVideo from "../../../assets/icons/form/Video.svg";
+import percent from "../../../assets/icons/form/Percent.svg";
+import CategoryProduct from "../../productForm/CategoryProduct";
 import useSWR from "swr";
-import axiosInstance from "../../services/ProductAdmin/api/axiosInstance";
+import axiosInstance from "../../../services/axiosInstance";
 // import { updateProduct } from "../../services/ProductAdmin/productService";
 
 export default function EditProduct() {

@@ -1,4 +1,4 @@
-import axiosInstance from '../axiosInstance';
+import { fetchReportProducts, fetchReportEvents } from "./api/dashboardAPI";
 /**
  * Fetch report products transaction.
  * @returns {Promise<Array>} Resolves with an array of products.
@@ -7,11 +7,7 @@ import axiosInstance from '../axiosInstance';
 
 export const getReportProducts = async () => {
   try {
-    const response = await axiosInstance.get('/api/v1/admin/products-report',{
-      headers: {
-        'Authorization': `Bearer ${localStorage.getItem('token')}`
-      }
-    });
+    const response = await fetchReportProducts();
     console.log('Response Data:', response.data.data);
     return response.data.data;
   } catch (error) {
@@ -20,17 +16,13 @@ export const getReportProducts = async () => {
   }
 }
 
-export const getReportEvent = async () => {
+export const getReportEvents = async () => {
   try {
-    const response = await axiosInstance.get('https://kreasinusantara.shop/api/v1/admin/events-report',{
-      headers: {
-        'Authorization': `Bearer ${localStorage.getItem('token')}`
-      } 
-    });
+    const response = await fetchReportEvents();
     console.log('Response Data:', response.data.data);
     return response.data.data;
-  }catch (error) {  
+  } catch (error) {
     console.error('Error fetching report events:', error);
     throw new Error('Failed to fetch report events. Please try again later.');
-  } 
+  }
 }
