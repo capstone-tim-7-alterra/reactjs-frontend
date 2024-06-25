@@ -2,7 +2,6 @@ import { useEffect, useState } from "react";
 import axios from "axios";
 import { useNavigate, useParams } from "react-router-dom";
 import Breadcrumb from "../breadcrumbAdmin/Breadcrumbs";
-import Photo from "../../assets/images/imgEvent/photo.png";
 import IconEye from "../../assets/icons/article/Eye.svg";
 
 export default function EditAdmin() {
