@@ -1,6 +1,7 @@
 import BatikPiring from "../../assets/images/imgDashboard/batikpiring.png";
 
 export default function TableProduct() {
+  
     return (
         <>
                 <table className="table">

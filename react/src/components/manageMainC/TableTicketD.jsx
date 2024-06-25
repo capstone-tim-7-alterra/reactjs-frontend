@@ -1,6 +1,19 @@
 import Festival from "../../assets/images/imgDashboard/festival.png";
+import { useEffect, useState } from "react";
+import { getReportEvent } from "../../services/dashboardAdmin/dashboardServices";
+
 
 export default function TableTicket() {
+
+    const [event, setEvent] = useState();
+
+    useEffect(() => {
+      getReportEvent();
+    }, []);
+
+    
+    setEvent(response.data.data);
+
     return (
         <>
                 <table className="table">
