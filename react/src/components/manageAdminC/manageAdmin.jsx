@@ -162,12 +162,13 @@ export default function Dashboard() {
                             className="w-[24px] h-[24px]"
                           />
                         </button>
-
+                      <Link to={admin.username}>
                         <img
                           src={EditSquare}
                           alt="editsquare"
                           className="w-[24px] h-[24px]"
                         />
+                      </Link>
                       </td>
                     </tr>
                   ))}
