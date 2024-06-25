@@ -276,7 +276,7 @@ export default function dashboard() {
                     <td>20-12-2024</td>
                     <td>Regular/VIP</td>
                     <td className="flex justify-center gap-5 mx-auto">
-                    <Link to="./edit">
+                    <Link to="edit">
                         <img
                           src={EditSquare}
                           alt="editsquare"
