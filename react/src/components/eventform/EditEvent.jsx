@@ -6,25 +6,13 @@ import Clock from "../../assets/images/imgEvent/clock.png";
 import Button from "../../assets/images/imgEvent/button.png";
 import DateEvent from "../../assets/images/imgEvent/dateEvent.png";
 import Location from "../../assets/images/imgEvent/location.png";
+import Breadcrumb from "../breadcrumbAdmin/Breadcrumbs";
+
 export default function EditEvent() {
   return (
     <>
       <section className="section-Event">
-        <div className=" text-sm font-normal breadcrumbs text-neutral-40 gap-[1px]">
-          <ul className="w-[1391px] h-[20px] mx-auto">
-            <li>
-              <a href="#" className="w-[79px] h-[20px]">
-                Dashboard
-              </a>
-            </li>
-            <li>
-              <a href="#" className="w-[100px] h-[20px] mr-4">
-                Manage Event
-              </a>
-            </li>
-            <li className="w-[106px] h-[20px]">Edit event</li>
-          </ul>
-        </div>
+        <Breadcrumb />
 
         <div className="w-[1156px] min-h-[2071px] gap-[50px] mx-auto mt-14 font-poppins ">
           <h1 className="w-[160px] h-[48px] text-[32px] leading-[48px] font-semibold text-primary-0">

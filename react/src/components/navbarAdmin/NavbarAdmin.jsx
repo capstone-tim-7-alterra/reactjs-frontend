@@ -32,7 +32,7 @@ export default function Navbar() {
     }
 
     return (
-        <nav className="navbar lg:sticky lg:top-0">
+        <nav className="navbar lg:sticky lg:top-0 z-40">
             <header className="navbar-start flex-1">
                 { headerTitle }
             </header>

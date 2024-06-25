@@ -5,7 +5,14 @@ import Breadcrumb from "../breadcrumbAdmin/Breadcrumbs";
 import Button from "../../assets/images/imgEvent/button.png";
 import DateEvent from "../../assets/images/imgEvent/dateEvent.png";
 import Location from "../../assets/images/imgEvent/location.png";
+
+
 export default function AddEvent() {
+
+
+
+
+
   const fileInputRef = useRef(null);
   const [selectedImage, setSelectedImage] = useState(null);
 
