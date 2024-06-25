@@ -17,7 +17,6 @@ import AddArticle from "../components/articleForm/AddArticles";
 import EditArticle from "../components/articleForm/EditArticles";
 import ErrorPage from "../pages/ErrorPage";
 import LoginDashboard from "../pages/LoginDashboard";
-import EditEvent from "../components/eventForm/EditEvent";
 
 const router = createBrowserRouter([
   { index: true, element: <LandingPage /> },
@@ -66,12 +65,6 @@ const router = createBrowserRouter([
     element: <FormL />,
     children: [{ index: true, element: <EditArticle /> }],
   },
-  {
-    path: "/dashboard/manage-event/edit",
-    element: <FormL />,
-    children: [{ index: true, element: <EditEvent /> }],
-  },
-
   {
     path: "/login",
     element: <LoginDashboard />,
