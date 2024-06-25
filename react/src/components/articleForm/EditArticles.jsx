@@ -1,7 +1,7 @@
 import { useEffect, useState } from 'react';
 import useSWR from 'swr';
 import { useNavigate, useParams } from 'react-router-dom';
-import axiosInstance from '../../services/articleAdmin/api/axiosInstance';
+import axiosInstance from '../../services/axiosInstance';
 import { updatePost } from '../../services/articleAdmin/articleService';
 import Breadcrumbs from "../breadcrumbAdmin/Breadcrumbs"
 import uploadImage from "../../assets/icons/form/Picture.svg"
@@ -12,7 +12,6 @@ export default function EditPost() {
     // Consolidate form data into a single state object
     const [formData, setFormData] = useState({
       title: '',
-    //   author: '',
       content: '',
       tags: '',
       image: null,
@@ -62,9 +61,6 @@ export default function EditPost() {
         if (!formData.title?.trim()) {
             newErrors.title = 'Post Title cannot be empty';
         }
-        // if (!formData.author?.trim()) {
-        //     newErrors.author = 'Post Author cannot be empty';
-        // }
         if (!formData.content?.trim()) {
             newErrors.content = 'Post Content cannot be empty';
         }
@@ -83,7 +79,6 @@ export default function EditPost() {
         }
       const updatedData = new FormData();
       updatedData.append('title', formData.title);
-    //   updatedData.append('author', formData.title);
       updatedData.append('content', formData.content);
       updatedData.append('tags', formData.tags);
       updatedData.append('image', formData.image);
@@ -133,28 +128,6 @@ export default function EditPost() {
                                 </div>
                             )}
                         </div>
-
-                        {/* <div className="question-card">
-                            <h2 className="text-zinc-900 lg:text-base lg:font-semibold leading-tight">
-                                Post Author <span className={`${errors.author ? 'text-red-500' : ''}`} >*</span>
-                            </h2>
-                            <textarea 
-                                name="author"
-                                placeholder="Author" 
-                                className={`xl:w-[1115px] xl:h-12 textarea textarea-bordered textarea-sm w-full bg-primary-100 ${errors.title ? 'border-red-500' : ''}`}
-                                value={formData.author}
-                                onChange={handleChange}
-                            ></textarea>
-                            {errors.author ? (
-                                <div className="text-red-500 text-xs md:text-sm font-normal leading-tight text-justify">
-                                    {errors.author}
-                                </div>
-                            ) : (
-                                <div className="text-zinc-900 text-xs md:text-sm font-normal leading-tight text-justify">
-                                    This will be shown as the author on the front page and on the post itself
-                                </div>
-                            )}
-                        </div> */}
 
                         <div className="question-card">
                             <h2 className="text-zinc-900 lg:text-base lg:font-semibold leading-tight">
