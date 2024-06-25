@@ -9,6 +9,7 @@ import ManageArticle from "../pages/ManageArticle";
 import ManageEvent from "../pages/ManageEvent";
 import ManageProduct from "../components/manageProductC/ManageDashboardProduct";
 import AddProduct from "../components/productForm/AddProduct";
+import EditProduct from "../components/productForm/EditProduct";
 import ManageAdmin from "../components/manageAdminC/manageAdmin";
 import AddAdmin from "../components/manageAdminC/AddAdmin";
 import EditAdmin from "../components/manageAdminC/EditAdmin";
@@ -39,6 +40,11 @@ const router = createBrowserRouter([
     path: "/dashboard/manage-product/add",
     element: <FormL />,
     children: [{ index: true, element: <AddProduct /> }],
+  },
+  {
+    path: "/dashboard/manage-product/edit/:id",
+    element: <FormL />,
+    children: [{ index: true, element: <EditProduct /> }],
   },
   {
     path: "/dashboard/manage-admin/add",
