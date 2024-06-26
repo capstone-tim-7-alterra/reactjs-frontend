@@ -109,7 +109,7 @@ export default function AddProduct() {
         }
 
         const response = await fetch(
-          "https://kreasinusantara.shop/api/v1/admin/categories",
+          import.meta.env.VITE_API_PRODUCT_CATEGORY_URL,
           {
             method: "GET",
             headers: {
@@ -306,16 +306,13 @@ export default function AddProduct() {
         throw new Error("Token tidak ditemukan di localStorage");
       }
 
-      const response = await fetch(
-        "https://kreasinusantara.shop/api/v1/admin/products",
-        {
-          method: "POST",
-          headers: {
-            Authorization: `Bearer ${token}`,
-          },
-          body: data,
-        }
-      );
+      const response = await fetch(import.meta.env.VITE_API_PRODUCT_URL, {
+        method: "POST",
+        headers: {
+          Authorization: `Bearer ${token}`,
+        },
+        body: data,
+      });
 
       if (!response.ok) {
         throw new Error("Respon jaringan tidak ok");
@@ -350,6 +347,8 @@ export default function AddProduct() {
       console.error("Error menambahkan produk:", error.message);
     }
     console.log(formData);
+    // Reset form atau navigasi ke halaman lain setelah berhasil
+    navigate("/dashboard/manage-product");
   };
 
   // const handleCancel = () => {

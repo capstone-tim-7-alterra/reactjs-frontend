@@ -7,7 +7,6 @@ import percent from "../../../assets/icons/form/Percent.svg";
 import CategoryProduct from "../../productForm/CategoryProduct";
 import useSWR from "swr";
 import axiosInstance from "../../../services/axiosInstance";
-// import { updateProduct } from "../../services/ProductAdmin/productService";
 
 export default function EditProduct() {
   const { id } = useParams();
@@ -44,6 +43,7 @@ export default function EditProduct() {
     if (data) {
       setFormData((prevData) => ({
         ...prevData,
+        id: data.id,
         name: data.name,
         description: data.description,
         min_order: data.min_order,
@@ -61,6 +61,7 @@ export default function EditProduct() {
       }));
       setIsLoading(false);
     }
+    console.log(data);
   }, [data]);
 
   const fetchCategories = useCallback(async () => {
@@ -102,14 +103,24 @@ export default function EditProduct() {
   };
 
   const handleChangeStock = (size, value) => {
-    setFormData((prevData) => ({
-      ...prevData,
-      product_variants: prevData.product_variants.map((variant) =>
-        variant.size === size
-          ? { ...variant, stock: parseInt(value) || null }
-          : variant
-      ),
-    }));
+    const numValue = value === "" ? "" : parseInt(value, 10);
+    setFormData((prevData) => {
+      let newVariants;
+      if (size === "Stock") {
+        // Update the first (and only) variant
+        newVariants = [{ ...prevData.product_variants[0], stock: numValue }];
+      } else {
+        // For other sizes, we keep the existing behavior
+        newVariants = prevData.product_variants.map((variant) =>
+          variant.size === size ? { ...variant, stock: numValue } : variant
+        );
+        // If the size doesn't exist, add a new variant
+        if (!newVariants.some((v) => v.size === size)) {
+          newVariants.push({ size, stock: numValue });
+        }
+      }
+      return { ...prevData, product_variants: newVariants };
+    });
   };
 
   const handleImageUpload = (e) => {
@@ -209,65 +220,81 @@ export default function EditProduct() {
 
   const handleSubmit = async (event) => {
     event.preventDefault();
-  
     if (!validateForm()) {
       return;
     }
-  
-    const uptudata = new FormData();
-    uptudata.append("name", formData.name);
-    uptudata.append("description", formData.description);
-    uptudata.append("min_order", parseInt(formData.min_order) || 0);
-    uptudata.append("category_id", parseInt(formData.category_id, 10) || 0);
-    uptudata.append("original_price", parseFloat(formData.original_price) || 0);
-    uptudata.append("discount_percent", parseFloat(formData.discount_percent) || 0);
-  
-    formData.product_images.image_urls.forEach((file, index) => {
-      if (file instanceof File) {
-        uptudata.append(`product_images[${index}]`, file);
+
+    const data = new FormData();
+
+    // Append basic product information
+    data.append("name", formData.name);
+    data.append("description", formData.description);
+    data.append("min_order", parseInt(formData.min_order) || 0);
+    data.append("category_id", parseInt(formData.category_id, 10) || 0);
+    data.append("original_price", parseFloat(formData.original_price) || 0);
+    data.append("discount_percent", parseFloat(formData.discount_percent) || 0);
+
+    // Append product images
+    formData.product_images.image_urls.forEach((image) => {
+      if (image.file) {
+        data.append("product_images.image_url", image.file);
       }
     });
-  
-    formData.product_videos.video_urls.forEach((file, index) => {
-      if (file instanceof File) {
-        uptudata.append(`product_videos[${index}]`, file);
+
+    // Append product videos
+    formData.product_videos.video_urls.forEach((video) => {
+      if (video.file) {
+        data.append("product_videos.video_url", video.file);
       }
     });
-  
-    formData.product_variants.forEach((variant, index) => {
-      if (variant.stock !== null) {
-        uptudata.append(`product_variants[${index}][size]`, variant.size);
-        uptudata.append(`product_variants[${index}][stock]`, variant.stock);
-      }
+
+    // Append product variants
+    Object.values(formData.product_variants)
+      .filter((variant) => variant.stock !== null)
+      .forEach((variant) => {
+        data.append("product_variants.size", variant.size);
+        data.append("product_variants.stock", variant.stock);
+      });
+
+    // Append deleted images and videos if needed
+    deletedImages.forEach((id) => {
+      data.append("deleted_images[]", id);
     });
-  
+
+    deletedVideos.forEach((id) => {
+      data.append("deleted_videos[]", id);
+    });
+
     try {
       const token = localStorage.getItem("token");
-      if (!token) {
-        throw new Error("Token tidak ditemukan di localStorage");
-      }
-  
-      const response = await fetch(`${import.meta.env.VITE_API_PRODUCT_URL}/${id}`, {
-        method: "PUT",
-        headers: {
-          Authorization: `Bearer ${token}`,
-        },
-        body: uptudata,
-      });
-  
+      const response = await fetch(
+        `${import.meta.env.VITE_API_PRODUCT_URL}/${formData.id}`,
+        {
+          method: "PUT",
+          headers: {
+            Authorization: `Bearer ${token}`,
+            // Content-Type is not set manually for FormData
+          },
+          body: data,
+        }
+      );
+
       if (!response.ok) {
         const errorData = await response.json();
-        throw new Error(errorData.message || "Failed to update product");
+        throw new Error(
+          errorData.message || `HTTP error! status: ${response.status}`
+        );
       }
-  
+
       const result = await response.json();
-      console.log("Memperbarui Product berhasil", result);
-  
-      // Reset form atau navigasi ke halaman lain setelah berhasil
+      console.log("Product updated successfully", result);
       navigate("/dashboard/manage-product");
     } catch (error) {
-      console.error("Error memperbarui Product:", error.message);
-      setErrors(prev => ({ ...prev, submit: error.message }));
+      console.error("Error updating product:", error);
+      setErrors((prev) => ({
+        ...prev,
+        submit: error.message || "An error occurred while updating the product",
+      }));
     }
   };
 
@@ -556,31 +583,33 @@ export default function EditProduct() {
             </div>
 
             <div className="flex flex-col gap-[6px] w-full md:w-[80%] mx-auto max-w-full">
-              {["Stock", "S", "M", "L", "XL", "XXL", "XXXL"].map((size) => (
-                <div
-                  key={size}
-                  className="flex items-center justify-center w-full max-w-[603px] h-[46px] mx-auto">
-                  <div className="flex items-center justify-between question-input-icon input lg:font-semibold text-xs input-bordered bg-primary-100 p-4 gap-8 ">
-                    <p className="text-center mx-auto text-[14px] leading-5 text-base-100 font-semibold disabled:bg-primary-100 disabled:text-primary-100 ">
-                      {size}
-                    </p>
-                    <div className="">
+              {["Stock", "S", "M", "L", "XL", "XXL", "XXXL"].map((size) => {
+                const variant =
+                  formData.product_variants.find((v) => v.size === size) ||
+                  (size === "Stock"
+                    ? formData.product_variants[0]
+                    : { size, stock: "" });
+                return (
+                  <div
+                    key={size}
+                    className="flex items-center justify-center w-full max-w-[603px] h-[46px] mx-auto">
+                    <div className="flex items-center justify-between question-input-icon input lg:font-semibold text-xs input-bordered bg-primary-100 p-4 gap-8 w-full">
+                      <p className="text-center w-20 text-[14px] leading-5 text-base-100 font-semibold">
+                        {size}
+                      </p>
                       <input
                         type="number"
-                        value={
-                          formData.product_variants.find((v) => v.size === size)
-                            ?.stock || ""
-                        }
+                        value={variant.stock}
                         onChange={(e) =>
                           handleChangeStock(size, e.target.value)
                         }
                         placeholder="Type Here"
-                        className="input border-none grow mx-auto text-sm text-base-100 font-semibold rounded-none bg-primary-100 text-left disabled:bg-primary-100 disabled:h-8 disabled:text-primary-0 disabled:cursor-not-allowed disabled:placeholder-opacity-95 sm:w-[248px] md:w-[360px] lg:w-[500px] xl:w-[603px] xl:h-[200px]"
+                        className="input border-none grow mx-auto text-sm text-base-100 font-semibold rounded-none bg-primary-100 text-left disabled:bg-primary-100 disabled:h-8 disabled:text-primary-0 disabled:cursor-not-allowed disabled:placeholder-opacity-95 sm:w-[200px] md:w-[280px] lg:w-[400px] xl:w-[500px]"
                       />
                     </div>
                   </div>
-                </div>
-              ))}
+                );
+              })}
             </div>
           </div>
         </article>
