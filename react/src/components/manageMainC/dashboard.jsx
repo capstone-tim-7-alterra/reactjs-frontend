@@ -94,6 +94,7 @@ export default function dashboard() {
                 </div>
               </div>
             </div>
+<<<<<<< Updated upstream
             <div className="mx-auto">
               {/* Nanti https nya di taroh aja di file .env */}
               <iframe
@@ -112,13 +113,29 @@ export default function dashboard() {
                   defaultChecked/>
                 <div role="tabpanel" className="tab-content bg-primary-100 border-base-300 rounded-box p-6">
                   <TableProduct/>
+=======
+            <div className="w-[1039px] h-[621px] top-[597px] left-[350px] p-[24px] mx-auto shadow-custom-3 shadow-custom-4 mt-10">
+              <div role="tablist" className="tabs tabs-lifted w-full">
+                <input
+                  type="radio"
+                  name="tabs_dashboard"
+                  role="tab"
+                  className="tab"
+                  aria-label="Product"
+                  defaultChecked
+                />
+                <div
+                  role="tabpanel"
+                  className="tab-content bg-primary-100 border-base-300 rounded-box p-6">
+                  <TableProduct />
+>>>>>>> Stashed changes
                 </div>
 
                 <input
                   type="radio"
                   name="tabs_dashboard"
                   role="tab"
-                  className="tab"
+                  className="tab w-1/2"
                   aria-label="Ticket"
                 />
                 <div role="tabpanel" className="tab-content bg-primary-100 border-base-300 rounded-box p-6">
