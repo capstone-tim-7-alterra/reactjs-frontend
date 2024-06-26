@@ -4,7 +4,7 @@ import { createBrowserRouter } from "react-router-dom";
 import LandingPage from "../pages/LandingPage";
 import FormL from "../layouts/FormL";
 import DashboardL from "../layouts/DashboardL";
-import Dashboard from "../components/manageMainC/dashboard";
+import Dashboard from "../components/manageMainC/Dashboard";
 import ManageArticle from "../pages/ManageArticle";
 import AddEvent from "../components/eventForm/AddEvent";
 import ManageEvent from "../pages/ManageEvent";
