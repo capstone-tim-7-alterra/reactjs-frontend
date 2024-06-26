@@ -93,33 +93,27 @@ export default function dashboard() {
                 </div>
               </div>
             </div>
-            <div className="mx-auto">
-              {/* Nanti https nya di taroh aja di file .env */}
-              <iframe
-                className="w-[1065px] h-[300px] gap-[27px]"
-                src="https://lookerstudio.google.com/embed/reporting/69e7d653-7753-4180-8c43-45330d219825/page/6zXD"></iframe>
-            </div>
             <div className="w-[1039px] h-[621px] top-[597px] left-[350px] p-[24px] mx-auto shadow-custom-3 shadow-custom-4 mt-10">
               <div role="tablist" className="tabs tabs-lifted">
-                <input
-                  type="radio"
-                  name="tabs_dashboard"
-                  role="tab"
-                  className="tab"
-                  aria-label="Product"
-                  defaultChecked
-                />
-                <div
-                  role="tabpanel"
+                <input 
+                  type="radio" 
+                  name="tabs_dashboard" 
+                  role="tab" 
+                  className="tab" 
+                  aria-label="Product" 
+                  defaultChecked/>
+                    
+                <div 
+                  role="tabpanel" 
                   className="tab-content bg-primary-100 border-base-300 rounded-box p-6">
-                  <TableProduct />
+                  <TableProduct/>
                 </div>
 
                 <input
                   type="radio"
                   name="tabs_dashboard"
                   role="tab"
-                  className="tab"
+                  className="tab w-1/2"
                   aria-label="Ticket"
                 />
                 <div
