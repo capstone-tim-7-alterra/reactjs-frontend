@@ -121,7 +121,7 @@ export default function AddAdmin() {
 
   return (
     <>
-      <section className="w-[1440px] h-[2032px] top-[3668px] left-[14883px] bg-primary-100">
+      <section className="h-[1900px] top-[3668px] bg-primary-100">
         <Breadcrumb />
 
         <div className="w-[1156px] h-[1634px] gap-[50px] mx-auto mt-14 font-poppins ">

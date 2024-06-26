@@ -94,8 +94,8 @@ export default function Dashboard() {
   };
 
   return (
-    <div className="w-[1440px] h-[1024px] top-[552px] left-0 bg-primary-100 font-poppins">
-      <div className="w-[1140px] h-[800.79px] top-[171px] left-[300px] gap-[24px] bg-primary-100 mt-14">
+    <div className="bg-primary-100 font-poppins min-h-[1000px]">
+      <div className="top-[171px] left-[300px] gap-[24px] bg-primary-100 mt-14">
         <div className="flex flex-wrap w-[1056px] h-[121px] gap-[27px] mx-auto">
           <div className="flex w-[1092px] h-[46px] gap-[24px] bg-primary-100">
             <div className="w-[108px] h-[46px] rounded-lg bg-primary-30 pt-[14px] pr-[16px] pb-[14px] pl-[16px] gap-[space-x-2]">
