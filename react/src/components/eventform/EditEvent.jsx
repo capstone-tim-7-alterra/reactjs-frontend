@@ -9,6 +9,73 @@ import Location from "../../assets/images/imgEvent/location.png";
 import Breadcrumb from "../breadcrumbAdmin/Breadcrumbs";
 
 export default function EditEvent() {
+  
+  const [imageBlob, setImageBlob] = useState("");
+  const navigate = useNavigate();
+  const [showPassword, setShowPassword] = useState(false);
+
+  async function fetchAdmin() {
+    const token = localStorage.getItem("token");
+    try {
+      const response = await axios.get(
+        "https://kreasinusantara.shop/api/v1/admin/search?limit=5&offset=0&item=" +
+          username,
+        {
+          headers: {
+            Authorization: `Bearer ${token}`,
+          },
+        }
+      );
+      // setResData(response.data);
+      setFormData(response.data.data[0]); // data adalah array admin
+      setImageBlob(response.data.data[0].photo);
+    } catch (error) {
+      console.error(
+        "Error:",
+        error.response ? error.response.data : error.message
+      );
+    }
+  }
+
+  useEffect(() => {
+    fetchAdmin();
+  }, []);
+
+  const handleChange = (e) => {
+    const { name, value, files } = e.target;
+    if (name === "image") {
+      const r = new FileReader();
+      r.onload = function (e) {
+        setImageBlob(r.result);
+      };
+      r.readAsDataURL(files[0]);
+
+      console.log("File selected:", files);
+      setFormData({
+        ...formData,
+        image: files[0], // Store the selected file
+      });
+    } else if (name === "is_super_admin") {
+      setFormData({
+        ...formData,
+        is_super_admin: value === "SuperAdmin", // Set boolean based on selection
+      });
+    } else {
+      setFormData({
+        ...formData,
+        [name]: value,
+      });
+    }
+  };
+
+  const handleTogglePassword = () => {
+    setShowPassword(!showPassword);
+  };
+
+  const handleCancel = () => {
+    navigate("/dashboard/manage-admin");
+  };
+
   return (
     <>
       <section className="section-Event">

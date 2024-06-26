@@ -1,6 +1,7 @@
 /* eslint-disable react-hooks/rules-of-hooks */
 /* eslint-disable no-unused-vars */
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
+import axios from "axios";
 import Batik from "../assets/images/imgProduct/batik-1.png";
 import EditSquare from "../assets/icons/article/Edit.svg";
 import Trash from "..//assets/icons/article/Trash.svg";
@@ -12,18 +13,63 @@ import IconSearch from "../assets/icons/IconSearch.png";
 import TombolAtas from "../assets/icons/TombolAtas.png";
 import TombolBawah from "../assets/icons/TombolBawah.png";
 import { Link } from "react-router-dom";
-export default function dashboard() {
+
+export default function ManageEvent() {
+  const [events, setEvents] = useState([]);
+  const [searchQuery, setSearchQuery] = useState("");
   const [counter, setCounter] = useState(5);
+  const [respData, setRespData] = useState();
+
+  //jaga jaga kalo ada pagination atau link di postman
+  // function handlePagination(isNext) {
+  //   if (isNext) {
+  //     fetchData("https://kreasinusantara.shop" + respData.link.next);
+  //   } else {
+  //     fetchData("https://kreasinusantara.shop" + respData.link.prev);
+  //   }
+  // }
+
+  async function fetchData(url) {
+    const token = localStorage.getItem("token");
+    try {
+      const response = await axios.get(url, {
+        headers: {
+          Authorization: `Bearer ${token}`,
+        },
+      });
+      setRespData(response.data);
+      setEvents(response.data.data);
+    } catch (error) {
+      console.error(
+        "Error:",
+        error.response ? error.response.data : error.message
+      );
+    }
+  }
+  const fetchAdmins = async () => {
+    const token = localStorage.getItem("token");
+
+    if (token === null) {
+      navigate("/login");
+      return;
+    }
+
+    fetchData("https://kreasinusantara.shop/api/v1/admin/events");
+  };
+
+  useEffect(() => {
+    fetchAdmins();
+  }, []);
 
   const handleIncrement = () => {
     setCounter((prevCounter) => prevCounter + 1);
   };
 
   const handleDecrement = () => {
-    setCounter((prevCounter) =>
-      prevCounter > 0 ? prevCounter - 1 : prevCounter
-    );
+    setCounter((prevCounter) => (prevCounter > 0 ? prevCounter - 1 : prevCounter));
   };
+
+
   return (
     <>
       <div className="w-[1140px] h-[800.79px] top-[171px] left-[300px] gap-[24px] grid grid-cols-4 bg-primary-100">
@@ -144,54 +190,25 @@ export default function dashboard() {
                   </tr>
                 </thead>
                 <tbody className="mx-auto text-center  border-t-2  ">
-                  {/* row 1 */}
-                  <tr className="border-none w-[1003px] h-[64px] pt-[16px] pr-[0px] pb-[16px] pl-[0px] gap-[56px] text-neutral-15  ">
+                {events.slice(0,counter).map((event, index) => (
+                  <tr
+                    key={index}
+                    className="border-none w-[1003px] h-[64px] pt-[16px] pr-[0px] pb-[16px] pl-[0px] gap-[56px] text-neutral-15"
+                  >
                     <td className="flex gap-4">
                       <img
-                        src={Batik}
+                        src={event.photos[0].image_url}
                         alt="Batik"
-                        className="w-[32px] h-[32px] "
+                        className="w-[32px] h-[32px]"
                       />
-                      Festival Sekala Bekhak
+                      {event.name} {/* Adjust field name according to your data structure */}
                     </td>
-                    <td>Jakarta Timur</td>
-                    <td>Active</td>
-                    <td>20-12-2024</td>
-                    <td>Regular/VIP</td>
+                    <td>{event.location}</td>
+                    <td>{event.status}</td>
+                    <td>{event.type_ticket}</td>
+                    <td>{event.date}</td>
                     <td className="flex justify-center gap-5 mx-auto">
-                      <Link to="edit">
-                        <img
-                          src={EditSquare}
-                          alt="editsquare"
-                          className="w-[24px] h-[24px]"
-                        />
-                      </Link>
-                      <Link>
-                        <img
-                          src={Trash}
-                          alt="Trash"
-                          className="w-[24px] h-[24px]"
-                        />
-                      </Link>
-                    </td>
-                  </tr>
-                  {/* row 2 */}
-                  <tr className="border-none w-[1003px] h-[64px] pt-[16px] pr-[0px] pb-[16px] pl-[0px] gap-[56px]  text-neutral-15">
-                    <td className="flex gap-4">
-                      <img
-                        src={Batik}
-                        alt="Batik"
-                        className="w-[32px] h-[32px] "
-                      />
-                      Festival Sekala Bekhak
-                    </td>
-                    <td>Jakarta Timur</td>
-                    <td>Active</td>
-                    <td>20-12-2024</td>
-                    <td>Regular/VIP</td>
-                    <td className="flex justify-center gap-5 mx-auto "> 
-
-                    <Link to="./edit">
+                      <Link to={`edit/${event.id}`}>
                         <img
                           src={EditSquare}
                           alt="editsquare"
@@ -202,96 +219,13 @@ export default function dashboard() {
                         src={Trash}
                         alt="Trash"
                         className="w-[24px] h-[24px]"
+                        onClick={() => deleteEvent(event.id)}
                       />
                     </td>
                   </tr>
-                  {/* row 3 */}
-                  <tr className="border-none w-[1003px] h-[64px] pt-[16px] pr-[0px] pb-[16px] pl-[0px] gap-[56px]  text-neutral-15 ">
-                    <td className="flex gap-4">
-                      <img
-                        src={Batik}
-                        alt="Batik"
-                        className="w-[32px] h-[32px] "
-                      />
-                      Festival Sekala Bekhak
-                    </td>
-                    <td>Jakarta Timur</td>
-                    <td>Active</td>
-                    <td>20-12-2024</td>
-                    <td>Regular/VIP</td>
-                    <td className="flex justify-center gap-5 mx-auto">
-                    <Link to="./edit">
-                        <img
-                          src={EditSquare}
-                          alt="editsquare"
-                          className="w-[24px] h-[24px]"
-                        />
-                      </Link>
-                      <img
-                        src={Trash}
-                        alt="Trash"
-                        className="w-[24px] h-[24px]"
-                      />
-                    </td>
-                  </tr>
-                  <tr className="border-none w-[1003px] h-[64px] pt-[16px] pr-[0px] pb-[16px] pl-[0px] gap-[56px]  text-neutral-15 ">
-                    <td className="flex gap-4">
-                      <img
-                        src={Batik}
-                        alt="Batik"
-                        className="w-[32px] h-[32px] "
-                      />
-                      Festival Sekala Bekhak
-                    </td>
-                    <td>Jakarta Timur</td>
-                    <td>Active</td>
-                    <td>20-12-2024</td>
-                    <td>Regular/VIP</td>
-                    <td className="flex justify-center gap-5 mx-auto">
-                    <Link to="./edit">
-                        <img
-                          src={EditSquare}
-                          alt="editsquare"
-                          className="w-[24px] h-[24px]"
-                        />
-                      </Link>
-                      <img
-                        src={Trash}
-                        alt="Trash"
-                        className="w-[24px] h-[24px]"
-                      />
-                    </td>
-                  </tr>
-                  <tr className="border-none w-[1003px] h-[64px] pt-[16px] pr-[0px] pb-[16px] pl-[0px] gap-[56px]   text-neutral-15">
-                    <td className="flex gap-4">
-                      <img
-                        src={Batik}
-                        alt="Batik"
-                        className="w-[32px] h-[32px] "
-                      />
-                      Festival Sekala Bekhak
-                    </td>
-                    <td>Jakarta Timur</td>
-                    <td>Active</td>
-                    <td>20-12-2024</td>
-                    <td>Regular/VIP</td>
-                    <td className="flex justify-center gap-5 mx-auto">
-                    <Link to="edit">
-                        <img
-                          src={EditSquare}
-                          alt="editsquare"
-                          className="w-[24px] h-[24px]"
-                        />
-                      </Link>
-                      <img
-                        src={Trash}
-                        alt="Trash"
-                        className="w-[24px] h-[24px]"
-                      />
-                    </td>
-                  </tr>
-                </tbody>
-              </table>
+                ))}
+              </tbody>
+            </table>
             </div>
           </div>
           <div className="flex w-[1092px] h-[48px] gap-[24px] justify-end items-center">

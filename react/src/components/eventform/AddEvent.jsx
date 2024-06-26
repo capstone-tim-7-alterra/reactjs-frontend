@@ -9,8 +9,67 @@ import Location from "../../assets/images/imgEvent/location.png";
 
 export default function AddEvent() {
 
+  const [formDataEvent, setFormDataEvent] = useState({
+    name: "",
+    description: "",
+    category_id: "",
+    date: "",
+    location: {
+      building:"",
+      province: "",
+      address: "",
+      city: "",
+      postal_code: "",
+    },
+    prices: {
+      price: "",
+      ticket_type_id: "",
+      no_of_ticket: "", 
+      publish: "",
+      end_publish: "",
+    }
+  }); 
+  const handleSubmit = async (e) => {
+    e.preventDefault();
+    const validationError = validateFormData(formDataEvent);
+    if (validationError) {
+      console.error("Validation Error:", validationError);
+      return;
+    }
+    const data = new FormData();
+    data.append("name", formDataEvent.name);
+    data.append("description", formDataEvent.description);
+    data.append("username", formDataEvent.category_id);
+    data.append("first_name", formDataEvent.date);
+    data.append("last_name", formDataEvent.last_name);
+    data.append("is_super_admin", formDataEvent.is_super_admin);
+    data.append("password", formDataEvent.password);
 
-
+    try {
+      const response = await axios.post(
+        "https://kreasinusantara.shop/api/v1/admin/register",
+        data,
+        {
+          headers: {
+            "Content-Type": "multipart/form-data",
+          },
+        }
+      );
+      console.log("Success:", response.data, response);
+      navigate("/dashboard/manage-admin");
+      
+    } catch (error) {
+      console.error(
+        "Error:",
+        error.response ? error.response.data : error.message
+      );
+    }
+  };
+  const [imageBlob, setImageBlob] = useState();
+  const navigate = useNavigate();
+  const handleCancel = () => {
+    navigate("/dashboard/manage-admin");
+  };
 
 
   const fileInputRef = useRef(null);

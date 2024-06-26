@@ -14,8 +14,7 @@ export default function Dashboard() {
   const [resData, setResData] = useState();
 
   const navigate = useNavigate();
-
-  const [pagination, setPagination] = useState();
+  
   function handlePagination(isNext) {
     if (isNext) {
       fetchData("https://kreasinusantara.shop" + resData.link.next);
