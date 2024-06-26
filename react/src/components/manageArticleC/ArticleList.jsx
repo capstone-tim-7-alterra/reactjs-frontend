@@ -9,7 +9,6 @@ import Edit from '../../assets/icons/article/Edit.svg'
 import Trash from '../../assets/icons/article/Trash.svg'
 import DeleteModal from '../confirmationModal/DeleteM';
 
-
 export default function ArticleList() {
     const [searchQuery, setSearchQuery] = useState('');
     const [isSearching, setIsSearching] = useState(false);
@@ -44,15 +43,14 @@ export default function ArticleList() {
     const handleSearch = (e) => {
         const { value } = e.target;
         setSearchQuery(value);
-        setIsSearching(value.length >= 3);
-        setPage(1); // Reset page when starting a new search
+        setIsSearching(false); // Reset searching state to false
     };
 
     // Handle search input key press
     const handleKeyPress = (e) => {
         if (e.key === 'Enter') {
             e.preventDefault();
-            if (searchQuery.trim() && searchQuery.length >= 3) {
+            if (searchQuery.trim() && searchQuery.length >= 4) {
                 setIsSearching(true);
             } else {
                 setIsSearching(false);
@@ -60,6 +58,7 @@ export default function ArticleList() {
             }
         }
     };
+
     
     // Handle article deletion
     const handleDelete = async () => {

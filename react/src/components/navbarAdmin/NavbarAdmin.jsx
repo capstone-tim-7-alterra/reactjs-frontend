@@ -1,12 +1,36 @@
+import useSWR from 'swr';
+import { getProfile } from '../../services/navbarAdmin/navbarService';
 import { Link, useLocation, useNavigate } from 'react-router-dom';
 import Stroke from '../../assets/icons/navbar/Stroke.svg'
 import Logout from '../../assets/icons/navbar/Logout.svg'
 import { nameMap } from '../pathMap'
 
 export default function Navbar() {
-
+    const navigate = useNavigate();
     const location = useLocation();
     const currentPath = location.pathname;
+
+    const fetcher = async () => {
+        const data = await getProfile();
+        console.log('Fetched Profile:', data); 
+        return data;
+    }
+
+    const { data: profile, error } = useSWR('/api/profile', fetcher);
+
+    // Display error message if there's an error fetching data
+    if (error) {
+        return <div>Error: {error.message}</div>;
+    }
+
+    if (!profile) {
+        return (
+            <div className="text-center flex-col">
+                <span className="loading loading-lg xl:w-20 text-red-700"></span>
+                <span className="text-3xl">Loading...</span>
+            </div>
+        );
+    }
 
     // Fungsi untuk mencocokkan rute dengan parameter dinamis
     const getHeaderTitle = (path) => {
@@ -20,8 +44,6 @@ export default function Navbar() {
     };
 
     const headerTitle = getHeaderTitle(currentPath);
-
-    const navigate = useNavigate();
 
     const handleLogout = () => {    
         localStorage.removeItem('token');
@@ -41,9 +63,9 @@ export default function Navbar() {
                 <div className="dropdown dropdown-end">
                     <div tabIndex={0} role="button" className="btn btn-ghost">
                         <div className="avatar w-8 md:w-10">
-                            <img alt="Tailwind CSS Navbar component" src="https://img.daisyui.com/images/stock/photo-1534528741775-53994a69daeb.jpg" className="rounded-full"/>
+                            <img alt="Profile Photo" src={profile.photo || "https://img.daisyui.com/images/stock/photo-1534528741775-53994a69daeb.jpg" } className="rounded-full"/>
                         </div>
-                        <h1 className="font-light text-base hidden md:inline">Admin Nanda</h1>
+                        <h1 className="font-light text-base hidden md:inline">{profile.name}</h1>
                         <figure><img src={Stroke}  alt="Stroke" className="w-4" /></figure>
                     </div>
 

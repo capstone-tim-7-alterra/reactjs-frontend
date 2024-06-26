@@ -14,7 +14,6 @@
 //             </p>
 //             <div>
 //               <input
-//                 type="text"
 //                 placeholder="Rename file..."
 //                 className="input input-bordered w-full bg-primary-100 text-black"
 //               />

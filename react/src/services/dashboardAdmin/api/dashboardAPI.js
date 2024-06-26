@@ -7,3 +7,7 @@ export const fetchReportProducts = () => {
 export const fetchReportEvents = () => {
     return axiosInstance.get('/api/v1/admin/events-report');
 }
+
+export const fetchSummaryDashboard = () => {
+    return axiosInstance.get('/api/v1/admin/dashboard-header');
+}
