@@ -136,6 +136,7 @@ export default function EditAdmin() {
         {
           headers: {
             "Content-Type": "multipart/form-data",
+            Authorization: `Bearer ${localStorage.getItem("token")}`,
           },
         }
       );
@@ -179,7 +180,7 @@ export default function EditAdmin() {
                   </div>
                 </div>
                 <div className="w-[700px] h-[107px] flex flex-wrap gap-[24px] items-start justify-start">
-                  <div className="w-[225px] h-[202px] pt-[30px] pr-[21px] pb-[30px] pl-[21px] gap-[10px] border border-dotted border-primary-0 flex items-center justify-center">
+                  <div className="w-[105px] h-[105px] pt-[30px] pr-[21px] pb-[30px] pl-[21px] gap-[10px] border border-dotted border-primary-0 flex items-center justify-center">
                     <div className="text-center min-w-[69px] h-[47px]">
                       <label htmlFor="upload-photo" className="cursor-pointer">
                         <input

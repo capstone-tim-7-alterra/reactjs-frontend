@@ -4,7 +4,7 @@ import {
   editProduct,
   fetchProductById,
   deleteProduct,
-} from "../../services/ProductAdmin/api/productAPI";
+} from "./api/productAPI";
 // import axiosInstance from "../../services/ProductAdmin/api/axiosInstance";
 
 export const getAllProducts = async (page = 1) => {

@@ -29,14 +29,6 @@ export default function Sidebar () {
                         </div>
                     )}
                 </NavLink>
-                <NavLink className={({ isActive }) => isActive ? 'active-sidebar' : 'default-sidebar'}  to="/dashboard/manage-event">
-                    {({ isActive }) => (
-                        <div className="sidebar-list">
-                            <img className="xl:w-6" src={isActive ? EventActive : Event} alt="Event" />
-                            <h2 className={isActive ? "text-white xl:text-base hidden lg:inline" : "text-zinc-600 xl:text-sm hidden lg:inline"}>Manage Event</h2>
-                        </div>
-                    )}
-                </NavLink>
                 <NavLink className={({ isActive }) => isActive ? 'active-sidebar' : 'default-sidebar'}  to="/dashboard/manage-product">
                     {({ isActive }) => (
                         <div className="sidebar-list">
@@ -58,6 +50,14 @@ export default function Sidebar () {
                         <div className="sidebar-list">
                             <img className="xl:w-6" src={isActive ? AdminActive : Admin} alt="Admin" />
                             <h2 className={isActive ? "text-white xl:text-base hidden lg:inline" : "text-zinc-600 xl:text-sm hidden lg:inline"}>Manage Admin</h2>
+                        </div>
+                    )}
+                </NavLink>
+                <NavLink className={({ isActive }) => isActive ? 'active-sidebar' : 'default-sidebar'}  to="/dashboard/manage-event">
+                    {({ isActive }) => (
+                        <div className="sidebar-list">
+                            <img className="xl:w-6" src={isActive ? EventActive : Event} alt="Event" />
+                            <h2 className={isActive ? "text-white xl:text-base hidden lg:inline" : "text-zinc-600 xl:text-sm hidden lg:inline"}>Manage Event</h2>
                         </div>
                     )}
                 </NavLink>

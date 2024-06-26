@@ -26,7 +26,7 @@ export default function CategoryProduct() {
         }
 
         const response = await fetch(
-          "https://kreasinusantara.shop/api/v1/admin/categories",
+          import.meta.env.VITE_API_PRODUCT_CATEGORY_URL,
           {
             method: "POST",
             headers: {

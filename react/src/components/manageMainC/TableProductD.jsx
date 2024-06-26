@@ -3,7 +3,6 @@ import { getReportProducts } from "../../services/dashboardAdmin/dashboardServic
 import BatikPiring from "../../assets/images/imgDashboard/batikpiring.png";
 
 export default function TableProduct() { 
-      // Fetch articles from API using SWR library
       const fetcher = async () => {
       const data = await getReportProducts();
         console.log('Datanya ada ga:', data);
